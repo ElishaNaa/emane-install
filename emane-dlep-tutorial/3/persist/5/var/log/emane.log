@@ -1,0 +1,118 @@
+14:05:57.031984  INFO application: emane -r -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/5/var/log/emane.log --pidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/5/var/run/emane.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/5/var/run/emane.uuid platform5.xml 
+14:05:57.032158  INFO application uuid: 71841efa-9bfc-4e53-9828-60c2e4e433f6
+14:05:57.033511  INFO TRANSPORTI 005 VirtualTransport::configure address: 10.100.0.5
+14:05:57.033569  INFO TRANSPORTI 005 VirtualTransport::configure mask: 255.255.255.0
+14:05:57.033591  INFO TRANSPORTI 005 VirtualTransport::configure arpcacheenable: 1
+14:05:57.033609  INFO TRANSPORTI 005 VirtualTransport::configure arpmodeenable: 1
+14:05:57.033624  INFO TRANSPORTI 005 VirtualTransport::configure bitrate: 0
+14:05:57.033640  INFO TRANSPORTI 005 VirtualTransport::configure broadcastmodeenable: 0
+14:05:57.033656  INFO TRANSPORTI 005 VirtualTransport::configure device: emane0
+14:05:57.033671  INFO TRANSPORTI 005 VirtualTransport::configure devicepath: /dev/net/tun
+14:05:57.033688  INFO TRANSPORTI 005 VirtualTransport::configure flowcontrolenable: 0
+14:05:57.063806  INFO SHIMI 005 DLEP::ModemService::configure ackprobability = 100
+14:05:57.063879  INFO SHIMI 005 DLEP::ModemService::configure acktimeout = 3
+14:05:57.063897  INFO SHIMI 005 DLEP::ModemService::configure configfile = 
+14:05:57.063907  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertenable = 1
+14:05:57.063918  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertexpirecount = 0
+14:05:57.063927  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertholdinterval = 0
+14:05:57.063938  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertiface = eth1
+14:05:57.063948  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertmcastaddress = 225.6.7.8
+14:05:57.063957  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertport = 33445
+14:05:57.063968  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertsendinterval = 5
+14:05:57.063977  INFO SHIMI 005 DLEP::ModemService::configure discoveryenable = 1
+14:05:57.063986  INFO SHIMI 005 DLEP::ModemService::configure discoveryiface = lo
+14:05:57.063995  INFO SHIMI 005 DLEP::ModemService::configure discoveryinterval = 5
+14:05:57.064004  INFO SHIMI 005 DLEP::ModemService::configure discoverymcastaddress = 225.0.0.45
+14:05:57.064015  INFO SHIMI 005 DLEP::ModemService::configure discoveryport = 30002
+14:05:57.064029  INFO SHIMI 005 DLEP::ModemService::configure etheraddroui = 01:02:03
+14:05:57.064040  INFO SHIMI 005 DLEP::ModemService::configure extensions = 
+14:05:57.064050  INFO SHIMI 005 DLEP::ModemService::configure heartbeatinterval = 5
+14:05:57.064060  INFO SHIMI 005 DLEP::ModemService::configure heartbeatthreshold = 2
+14:05:57.064070  INFO SHIMI 005 DLEP::ModemService::configure localtype = modem
+14:05:57.064080  INFO SHIMI 005 DLEP::ModemService::configure logfile = dlep.log
+14:05:57.064090  INFO SHIMI 005 DLEP::ModemService::configure loglevel = 1
+14:05:57.064103  INFO SHIMI 005 DLEP::ModemService::configure macaddress = 01 0a:B2:C3:D4:E5:01
+14:05:57.064116  INFO SHIMI 005 DLEP::ModemService::configure macaddress = 02 0a:B2:C3:D4:E5:02
+14:05:57.064153  INFO SHIMI 005 DLEP::ModemService::configure peertype = emane
+14:05:57.064163  INFO SHIMI 005 DLEP::ModemService::configure protocolconfigfile = dlep-draft-24.xml
+14:05:57.064222  INFO SHIMI 005 DLEP::ModemService::configure sendtries = 3
+14:05:57.064257  INFO SHIMI 005 DLEP::ModemService::configure sessionport = 30003
+14:05:57.064268  INFO SHIMI 005 DLEP::ModemService::configure sinrmax = 20.000000 dBm
+14:05:57.064284  INFO SHIMI 005 DLEP::ModemService::configure sinrmin = 0.000000 dBm
+14:05:57.064295  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertrfid = 0,5
+14:05:57.064305  INFO SHIMI 005 DLEP::ModemService::configure protocolconfigschema = protocol-config.xsd
+14:05:57.065338  INFO MACI 005 RFPipeMACLayer::configure datarate = 1000000
+14:05:57.065384  INFO MACI 005 RFPipeMACLayer::configure delay = 0.000000
+14:05:57.065401  INFO MACI 005 RFPipeMACLayer::configure enablepromiscuousmode = off
+14:05:57.065410  INFO MACI 005 RFPipeMACLayer::configure flowcontrolenable = off
+14:05:57.065420  INFO MACI 005 RFPipeMACLayer::configure flowcontroltokens = 10
+14:05:57.065428  INFO MACI 005 RFPipeMACLayer::configure jitter = 0.000000
+14:05:57.065439  INFO MACI 005 RFPipeMACLayer::configure pcrcurveuri = file:///usr/share/emane/xml/models/mac/rfpipe/rfpipepcr.xml
+14:05:57.065450  INFO MACI 005 RFPipeMACLayer::configure radiometricenable = on
+14:05:57.065460  INFO MACI 005 RFPipeMACLayer::configure neighbormetricdeletetime = 60.000000
+14:05:57.065475  INFO MACI 005 RFPipeMACLayer::configure radiometricreportinterval = 1.000000
+14:05:57.065813  INFO PHYI 005 FrameworkPHY::configure: bandwidth = 1000000 Hz
+14:05:57.065858  INFO PHYI 005 FrameworkPHY::configure: fixedantennagain = 0.00 dBi
+14:05:57.065874  INFO PHYI 005 FrameworkPHY::configure: fixedantennagainenable = on
+14:05:57.065884  INFO PHYI 005 FrameworkPHY::configure: noisemode = outofband
+14:05:57.065893  INFO PHYI 005 FrameworkPHY::configure: propagationmodel = precomputed
+14:05:57.065904  INFO PHYI 005 FrameworkPHY::configure: subid = 2
+14:05:57.065914  INFO PHYI 005 FrameworkPHY::configure: systemnoisefigure = 4.00 dB
+14:05:57.065924  INFO PHYI 005 FrameworkPHY::configure: txpower = 0.00 dBm
+14:05:57.065935  INFO PHYI 005 FrameworkPHY::configure: frequency = 2347000000 Hz
+14:05:57.065947  INFO PHYI 005 FrameworkPHY::configure: frequencyofinterest = 2347000000 Hz
+14:05:57.065956  INFO PHYI 005 FrameworkPHY::configure: noisebinsize = 20 usec
+14:05:57.065966  INFO PHYI 005 FrameworkPHY::configure: noisemaxclampenable = off
+14:05:57.065976  INFO PHYI 005 FrameworkPHY::configure: noisemaxmessagepropagation = 200000 usec
+14:05:57.065985  INFO PHYI 005 FrameworkPHY::configure: noisemaxsegmentduration = 1000000 usec
+14:05:57.065996  INFO PHYI 005 FrameworkPHY::configure: noisemaxsegmentoffset = 300000 usec
+14:05:57.066006  INFO PHYI 005 FrameworkPHY::configure: timesyncthreshold = 10000 usec
+14:05:57.067138  INFO SHIMI 005 DLEP::ModemService::configure ackprobability = 100
+14:05:57.067180  INFO SHIMI 005 DLEP::ModemService::configure acktimeout = 3
+14:05:57.067193  INFO SHIMI 005 DLEP::ModemService::configure configfile = 
+14:05:57.067203  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertenable = 1
+14:05:57.067247  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertexpirecount = 0
+14:05:57.067257  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertholdinterval = 0
+14:05:57.067267  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertiface = eth1
+14:05:57.067277  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertmcastaddress = 225.6.7.8
+14:05:57.067286  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertport = 33445
+14:05:57.067296  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertsendinterval = 5
+14:05:57.067305  INFO SHIMI 005 DLEP::ModemService::configure discoveryenable = 1
+14:05:57.067315  INFO SHIMI 005 DLEP::ModemService::configure discoveryiface = emane0
+14:05:57.067325  INFO SHIMI 005 DLEP::ModemService::configure discoveryinterval = 5
+14:05:57.067335  INFO SHIMI 005 DLEP::ModemService::configure discoverymcastaddress = 225.0.0.45
+14:05:57.067345  INFO SHIMI 005 DLEP::ModemService::configure discoveryport = 30002
+14:05:57.067358  INFO SHIMI 005 DLEP::ModemService::configure etheraddroui = 00:00:05
+14:05:57.067369  INFO SHIMI 005 DLEP::ModemService::configure extensions = 
+14:05:57.067379  INFO SHIMI 005 DLEP::ModemService::configure heartbeatinterval = 5
+14:05:57.067389  INFO SHIMI 005 DLEP::ModemService::configure heartbeatthreshold = 2
+14:05:57.067419  INFO SHIMI 005 DLEP::ModemService::configure localtype = modem
+14:05:57.067429  INFO SHIMI 005 DLEP::ModemService::configure logfile = dlep5.log
+14:05:57.067443  INFO SHIMI 005 DLEP::ModemService::configure loglevel = 1
+14:05:57.067465  INFO SHIMI 005 DLEP::ModemService::configure macaddress = 05 0a:B2:C3:D4:00:05
+14:05:57.067483  INFO SHIMI 005 DLEP::ModemService::configure peertype = emane
+14:05:57.067494  INFO SHIMI 005 DLEP::ModemService::configure protocolconfigfile = dlep-draft-24.xml
+14:05:57.067503  INFO SHIMI 005 DLEP::ModemService::configure sendtries = 3
+14:05:57.067513  INFO SHIMI 005 DLEP::ModemService::configure sessionport = 30003
+14:05:57.067522  INFO SHIMI 005 DLEP::ModemService::configure sinrmax = 20.000000 dBm
+14:05:57.067535  INFO SHIMI 005 DLEP::ModemService::configure sinrmin = 0.000000 dBm
+14:05:57.067546  INFO SHIMI 005 DLEP::ModemService::configure destinationadvertrfid = 0,5
+14:05:57.067556  INFO SHIMI 005 DLEP::ModemService::configure protocolconfigschema = protocol-config.xsd
+14:05:57.067751  INFO NEMManagerImpl::configure controlportendpoint: 0.0.0.0:47000
+14:05:57.067786  INFO NEMManagerImpl::configure eventservicedevice: eth1
+14:05:57.067800  INFO NEMManagerImpl::configure eventservicegroup: 224.1.2.8:45703
+14:05:57.067809  INFO NEMManagerImpl::configure otamanagerchannelenable: on
+14:05:57.067817  INFO NEMManagerImpl::configure otamanagerdevice: eth1
+14:05:57.067827  INFO NEMManagerImpl::configure OTA Manager Channel Group: 224.1.2.8:45702
+14:05:57.067837  INFO NEMManagerImpl::configure eventservicettl: 1
+14:05:57.067845  INFO NEMManagerImpl::configure otamanagerloopback: off
+14:05:57.067854  INFO NEMManagerImpl::configure otamanagerttl: 1
+14:05:57.067865  INFO NEMManagerImpl::configure stats.event.maxeventcountrows: 0
+14:05:57.067878  INFO NEMManagerImpl::configure stats.ota.maxeventcountrows: 0
+14:05:57.067912  INFO NEMManagerImpl::configure stats.ota.maxpacketcountrows: 0
+14:05:57.067973 ERROR OTAManager succeed1
+14:05:57.068051 ERROR OTAManager succeed2
+14:05:57.068140 ERROR processOTAMessage start1
+14:05:57.085391 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+14:05:57.596066 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+14:05:57.850032 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state

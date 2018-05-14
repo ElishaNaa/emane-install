@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/emane",
+            "args": ["platform.xml", "-l", "3", "-f", "persist/host/var/log/emane.log",
+             "--pidfile", "persist/host/var/run/emane.pid", 
+             "--uuidfile", "persist/host/var/run/emane.uuid"],
+            "stopAtEntry": false,
+            "cwd": "/home/ubuntu/Python/models/emanedemos/tdma",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

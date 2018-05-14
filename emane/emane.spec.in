@@ -1,0 +1,533 @@
+Summary: EMANE - Extendable Mobile Ad-hoc Network Emulator 
+Name: emane
+Version: @VERSION@
+Release: 1%{?dist}
+License: BSD
+Group: Applications/System
+URL: https://github.com/adjacentlink/emane
+Source0: %{name}-%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Provides: %{name}-transportfactory%{?_isa} = %{version}-%{release}
+Requires: %{name}-libs%{?_isa} = %{version}-%{release}
+Requires: %{name}-dtds = %{version}-%{release}
+BuildRequires: python-setuptools libxml2-devel protobuf-devel pcre-devel libpcap-devel libuuid-devel
+Vendor: Adjacent Link LLC
+
+%{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
+
+%description
+EMANE is an Extendable Mobile Ad-hoc Network Emulator that allows for 
+heterogeneous network emulation using a pluggable MAC and PHY layer 
+architecture.
+
+%package devel
+Requires: %{name}-libs%{?_isa} = %{version}-%{release}
+Summary: Headers necessary to build EMANE network emulation modules.
+Group: Development/Libraries
+
+%description devel
+Headers necessary to build EMANE network emulation modules.
+
+%package dtds
+Summary: EMANE DTDs
+Group: Applications/System
+BuildArch: noarch
+
+%description  dtds
+EMANE DTDs required for EMANE XML.
+
+%package utils
+Requires: %{name}-dtds = %{version}-%{release}
+Requires: python-lxml
+Summary: EMANE utilities
+Group:  Applications/System
+BuildArch: noarch
+
+%description  utils
+EMANE utilities
+
+%package libs
+Summary: EMANE Libraries
+Group: Libraries
+
+%description  libs
+EMANE Libraries required for components
+
+%package transportdaemon
+Provides: %{name}-transportfactory%{?_isa} = %{version}-%{release}
+Requires: %{name}-libs%{?_isa} = %{version}-%{release}
+Requires: %{name}-dtds = %{version}-%{release}
+Summary: EMANE transport daemon
+Group: Applications/System
+
+%description  transportdaemon
+EMANE transport daemon.  Creates and manages one or more transports.
+
+%package eventdaemon
+Requires: %{name}-libs%{?_isa} = %{version}-%{release}
+Requires: %{name}-dtds = %{version}-%{release}
+Summary: EMANE event daemon
+Group: Applications/System
+
+%description  eventdaemon
+EMANE event daemon forwards events to registered agents.
+
+%package eventservice
+Requires: %{name}-libs%{?_isa} = %{version}-%{release}
+Requires: %{name}-dtds = %{version}-%{release}
+Summary: EMANE event service
+Group: Applications/System
+
+%description  eventservice
+EMANE event service creates and manages event generators. 
+
+%package model-rfpipe
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Summary: EMANE RF Pipe MAC Layer
+Group: Libraries
+
+%description model-rfpipe
+EMANE RF Pipe MAC Layer
+
+%package model-ieee80211abg
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Summary: EMANE  802.11abg MAC Layer
+Group: Libraries
+
+%description model-ieee80211abg
+EMANE 802.11abg MAC Layer
+
+%package model-bypass
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Summary: EMANE Bypass MAC and PHY Layer
+Group: Libraries
+
+%description model-bypass
+EMANE Bypass MAC and PHY Layer
+
+%package model-commeffect
+Summary: EMANE commeffect shim model.
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Group: Libraries
+
+%description model-commeffect
+EMANE commeffect model replacement for commercial network emulators.
+
+%package model-tdmaeventscheduler
+Summary: EMANE TDMA Event Scheduler radio model.
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Group: Libraries
+
+%description model-tdmaeventscheduler
+EMANE TDMA event scheduler model.
+
+%package agent-gpsdlocation
+Requires: %{name}-eventdaemon%{?_isa} = %{version}-%{release}
+Summary: EMANE gpsd location agent 
+Group: Libraries
+
+%description agent-gpsdlocation
+EMANE gpsd location agent translates location events into NMEA strings
+and transmits them to gpsd via a pseudo terminal device.
+
+%package trans-virtual
+Requires: %{name}-trans-common%{?_isa} = %{version}-%{release}
+Summary: EMANE virtual transport implementation
+Group: Libraries
+
+%description trans-virtual
+EMANE virtual transport.  Uses tun device to create a network layer
+entry point for the NEM stack.
+
+%package trans-raw
+Requires: %{name}-trans-common%{?_isa} = %{version}-%{release}
+Summary: EMANE raw transport implementation
+Group: Libraries
+
+%description trans-raw
+EMANE raw transport.  Uses raw IP to create a network layer
+entry point for the NEM stack.
+
+%package trans-common
+Requires: %{name}-transportfactory%{?_isa} = %{version}-%{release}
+Summary: EMANE common transport ethernet functionality
+Group: Libraries
+
+%description trans-common
+EMANE common transport ethernet functionality.
+
+%package model-phyapitestshim
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Summary: EMANE PHY API Test shim
+Group: Libraries
+
+%description model-phyapitestshim
+EMANE PHY API Test shim
+
+%package model-timinganalysisshim
+Requires: %{name}%{?_isa} = %{version}-%{release}
+Summary: EMANE Timing Test shim
+Group: Libraries
+
+%description model-timinganalysisshim
+EMANE Timing Test shim
+
+%package gen-eel
+Requires: %{name}-eventservice%{?_isa} = %{version}-%{release}
+Summary: EMANE Emulation Event Log Generator
+Group: Libraries
+
+%description gen-eel
+EMANE Emulation Event Log Generator
+
+%package manifest
+Summary: EMANE Plugin Manifests
+Group: Applications/System
+BuildArch: noarch
+
+%description manifest
+EMANE Plugin Manifests
+
+%package -n python-emane
+Requires: python-setuptools
+Requires: protobuf-python
+Requires: python-lxml
+Summary: EMANE Python modules and utilities
+Group: Development/Libraries
+Obsoletes: emanesh
+BuildArch: noarch
+
+%description -n python-emane
+EMANE Python modules and utilities
+
+%prep
+%setup -q
+
+%build
+export CXXFLAGS="%{optflags} -O3 -Wall -Wextra"
+%configure
+make %{?_smp_mflags}
+
+%install
+make DESTDIR=${RPM_BUILD_ROOT} install
+find ${RPM_BUILD_ROOT} -name '*.a' -exec rm '{}'  \;
+find ${RPM_BUILD_ROOT} -name '*.la' -exec rm '{}' \;
+mkdir -p ${RPM_BUILD_ROOT}%{_pkgdocdir}
+install -t ${RPM_BUILD_ROOT}%{_pkgdocdir} AUTHORS %{!?_licensedir:COPYING} ChangeLog NEWS README SPONSOR
+%if 0%{?_licensedir:1}
+mkdir -p ${RPM_BUILD_ROOT}%{_licensedir}/%{name}
+install -t ${RPM_BUILD_ROOT}%{_licensedir}/%{name} COPYING
+%endif
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+/sbin/ldconfig
+
+%postun
+/sbin/ldconfig
+
+%files
+%defattr(-,root,root,-)
+%{_bindir}/emane
+%{_bindir}/emaneinfo
+%{_mandir}/man1/emane.1.gz
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files utils
+%defattr(-, root, root)
+%{_bindir}/emanegentransportxml
+%{_mandir}/man1/emanegentransportxml.1.gz
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files dtds
+%defattr(-, root, root)
+%dir %{_datadir}/emane
+%dir %{_datadir}/emane/dtd
+%{_datadir}/emane/dtd/attrs.ent
+%{_datadir}/emane/dtd/mac.dtd
+%{_datadir}/emane/dtd/nem.dtd
+%{_datadir}/emane/dtd/nemcontents.dtd
+%{_datadir}/emane/dtd/param.dtd
+%{_datadir}/emane/dtd/phy.dtd
+%{_datadir}/emane/dtd/platform.dtd
+%{_datadir}/emane/dtd/shim.dtd
+%{_datadir}/emane/dtd/transport.dtd
+%{_datadir}/emane/dtd/transportdaemon.dtd
+%{_datadir}/emane/dtd/eventagent.dtd
+%{_datadir}/emane/dtd/eventdaemon.dtd
+%{_datadir}/emane/dtd/eventgenerator.dtd
+%{_datadir}/emane/dtd/eventservice.dtd
+%{_datadir}/emane/dtd/rfpipepcr.dtd
+%{_datadir}/emane/dtd/ieee80211pcr.dtd
+%{_datadir}/emane/dtd/antennaprofile.dtd
+%{_datadir}/emane/dtd/commeffectfilters.dtd
+%dir %{_datadir}/emane/schema
+%{_datadir}/emane/schema/manifest.xsd
+%{_datadir}/emane/schema/tdmabasemodelpcr.xsd
+%dir %{_datadir}/emane/xml
+%dir %{_datadir}/emane/xml/agents
+%dir %{_datadir}/emane/xml/generators
+%dir %{_datadir}/emane/xml/models
+%dir %{_datadir}/emane/xml/models/mac
+%dir %{_datadir}/emane/xml/models/phy
+%dir %{_datadir}/emane/xml/models/shim
+%dir %{_datadir}/emane/xml/transports
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files libs
+%defattr(-, root, root)
+%{_libdir}/libemanexmlparser.*
+%{_libdir}/libemane.*
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files transportdaemon
+%defattr(-, root, root)
+%{_bindir}/emanetransportd
+%{_mandir}/man1/emanetransportd.1.gz
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files eventdaemon
+%defattr(-, root, root)
+%{_bindir}/emaneeventd
+%{_mandir}/man1/emaneeventd.1.gz
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files eventservice
+%defattr(-, root, root)
+%{_bindir}/emaneeventservice
+%{_mandir}/man1/emaneeventservice.1.gz
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files devel
+%defattr(-, root, root)
+%dir %{_includedir}/emane
+%{_includedir}/emane/*
+%{_libdir}/pkgconfig/*
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-rfpipe
+%defattr(-, root, root)
+%{_libdir}/librfpipemaclayer.*
+%dir %{_datadir}/emane/xml/models/mac/rfpipe
+%{_datadir}/emane/xml/models/mac/rfpipe/rfpipemac.xml
+%{_datadir}/emane/xml/models/mac/rfpipe/rfpipenem.xml
+%{_datadir}/emane/xml/models/mac/rfpipe/rfpipepcr.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-bypass
+%defattr(-, root, root)
+%{_libdir}/libbypassmaclayer.*
+%{_libdir}/libbypassphylayer.*
+%dir %{_datadir}/emane/xml/models/phy/bypass
+%{_datadir}/emane/xml/models/phy/bypass/bypassphy.xml
+%dir %{_datadir}/emane/xml/models/mac/bypass
+%{_datadir}/emane/xml/models/mac/bypass/bypassmac.xml
+%{_datadir}/emane/xml/models/mac/bypass/bypassnem.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-ieee80211abg
+%defattr(-, root, root)
+%{_libdir}/libieee80211abgmaclayer.*
+%dir %{_datadir}/emane/xml/models/mac/ieee80211abg
+%{_datadir}/emane/xml/models/mac/ieee80211abg/ieee80211abgmac.xml
+%{_datadir}/emane/xml/models/mac/ieee80211abg/ieee80211abgnem.xml
+%{_datadir}/emane/xml/models/mac/ieee80211abg/ieee80211pcr.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files agent-gpsdlocation
+%defattr(-, root, root)
+%{_libdir}/libgpsdlocationagent.*
+%dir %{_datadir}/emane/xml/agents/gpsdlocation
+%{_datadir}/emane/xml/agents/gpsdlocation/gpsdlocationagent.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files trans-virtual
+%defattr(-, root, root)
+%{_libdir}/libtransvirtual.*
+%dir %{_datadir}/emane/xml/transports/virtual
+%{_datadir}/emane/xml/transports/virtual/transvirtual.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files trans-raw
+%defattr(-, root, root)
+%{_libdir}/libtransraw.*
+%dir %{_datadir}/emane/xml/transports/raw
+%{_datadir}/emane/xml/transports/raw/transraw.xml
+
+%files trans-common
+%defattr(-, root, root)
+%{_libdir}/libcommontransport.*
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-phyapitestshim
+%defattr(-, root, root)
+%{_libdir}/libphyapitestshim.*
+%dir %{_datadir}/emane/xml/models/shim/phyapitest
+%{_datadir}/emane/xml/models/shim/phyapitest/phyapitestshim.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-timinganalysisshim
+%defattr(-, root, root)
+%{_libdir}/libtiminganalysisshim.*
+%dir %{_datadir}/emane/xml/models/shim/timinganalysis
+%{_datadir}/emane/xml/models/shim/timinganalysis/timinganalysisshim.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-commeffect
+%defattr(-,root,root,-)
+%{_libdir}/libcommeffectshim.*
+%dir %{_datadir}/emane/xml/models/shim/commeffect
+%{_datadir}/emane/xml/models/shim/commeffect/commeffectshim.xml
+%{_datadir}/emane/xml/models/shim/commeffect/commeffectnem.xml
+%{_datadir}/emane/xml/models/shim/commeffect/commeffectfilters.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files model-tdmaeventscheduler
+%defattr(-,root,root,-)
+%{_libdir}/libtdmabase.*
+%{_libdir}/libtdmaeventschedulerradiomodel.*
+%dir %{_datadir}/emane/xml/models/mac/tdmaeventscheduler
+%{_datadir}/emane/xml/models/mac/tdmaeventscheduler/tdmanem.xml
+%{_datadir}/emane/xml/models/mac/tdmaeventscheduler/tdmaradiomodel.xml
+%{_datadir}/emane/xml/models/mac/tdmaeventscheduler/tdmabasemodelpcr.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files gen-eel
+%defattr(-,root,root,-)
+%{_libdir}/libeelgenerator.*
+%{_libdir}/libeelloaderlocation.*
+%{_libdir}/libeelloaderpathloss.*
+%{_libdir}/libeelloaderantennaprofile.*
+%{_libdir}/libeelloadercommeffect.*
+%dir %{_datadir}/emane/xml/generators/eel
+%{_datadir}/emane/xml/generators/eel/eelgenerator.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files manifest
+%defattr(-,root,root,-)
+%dir %{_datadir}/emane
+%dir %{_datadir}/emane/manifest
+%{_datadir}/emane/manifest/*.xml
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif
+
+%files -n python-emane
+%defattr(-,root,root,-)
+%{_bindir}/emanecommand-eel
+%{_bindir}/emaneevent-antennaprofile
+%{_bindir}/emaneevent-commeffect
+%{_bindir}/emaneevent-dump
+%{_bindir}/emaneevent-location
+%{_bindir}/emaneevent-pathloss
+%{_bindir}/emaneevent-tdmaschedule
+%{_bindir}/emaneota-publisher
+%{_bindir}/emanesh
+%{python_sitelib}/emanesh
+%{python_sitelib}/emanesh-%{version}-*.egg-info
+
+%doc %{_pkgdocdir}
+%if 0%{?_licensedir:1}
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/COPYING
+%endif

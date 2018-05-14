@@ -1,0 +1,27 @@
+14:06:01.186433 INFO [otestpointd/application] commandline: otestpointd -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/log/otestpointd.log --pidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/run/otestpointd.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/run/otestpointd.uuid otestpointd8.xml 
+14:06:01.186467 INFO [otestpointd/application] uuid: 4aa1abff-9c17-4207-9514-6afe10669e2f
+14:06:01.188884 INFO [otestpointd] discovery service listening on tcp://10.99.0.8:8881
+14:06:01.652339 INFO [otestpoint-probe/node-8/0/manager] available probes: EMANE.PhysicalLayer.Counters.General EMANE.PhysicalLayer.Tables.Events EMANE.PhysicalLayer.Tables.Status
+14:06:01.653688 INFO [otestpoint-probe/node-8/1/manager] available probes: EMANE.RFPipe.Counters.General EMANE.RFPipe.Tables.Events EMANE.RFPipe.Tables.Neighbor EMANE.RFPipe.Tables.Status
+14:06:01.654997 INFO [otestpoint-probe/node-8/2/manager] available probes: EMANE.VirtualTransport.Counters.General EMANE.VirtualTransport.Tables.Events EMANE.VirtualTransport.Tables.Status
+14:06:01.655996 ERROR [otestpointd/node-8/0/container] Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 195, in start
+    raise ProbeException("unable to connect to %s:%d" % (self._address,self._port))
+
+ProbeException: unable to connect to localhost:47000
+
+14:06:01.656791 ERROR [otestpointd/node-8/1/container] Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 195, in start
+    raise ProbeException("unable to connect to %s:%d" % (self._address,self._port))
+
+ProbeException: unable to connect to localhost:47000
+
+14:06:01.657479 ERROR [otestpointd/node-8/2/container] Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 195, in start
+    raise ProbeException("unable to connect to %s:%d" % (self._address,self._port))
+
+ProbeException: unable to connect to localhost:47000
+

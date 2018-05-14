@@ -1,0 +1,25 @@
+# EMANE container
+FROM ubuntu
+RUN apt-get update --fix-missing
+RUN apt-get install net-tools
+RUN apt-get install iproute2 -y
+RUN apt-get -y install sudo
+# RUN apt-get -y install gcc-4.7 g++-4.7
+RUN apt-get install -y libboost-thread1.58-dev 
+RUN apt-get install -y libboost-system-dev 
+RUN apt-get install -y libboost-test-dev
+RUN apt-get install -y libxml2-dev 
+RUN apt-get install -y libxml2-utils 
+RUN apt-get install -y libreadline6-dev 
+RUN apt-get install -y libprotobuf-dev 
+RUN apt-get install -y protobuf-compiler 
+RUN apt-get install -y devscripts doxygen graphviz
+ADD LL-DLEP /home/LL-DLEP
+ADD LL-DLEP/libdlep.so.1 /usr/lib
+ADD LL-DLEP/config/protocol/dlep-draft-24.xml /etc/dlep/dlep-draft-24.xml
+ADD LL-DLEP/config/protocol/credit-windowing-03.xml /etc/dlep/credit-windowing-03.xml
+ADD LL-DLEP/config/protocol/protocol-config.xsd /etc/dlep/protocol-config.xsd  
+WORKDIR /home/LL-DLEP/
+#CMD make install
+CMD ./Dlep config-file config/modem_dest_advert.xml
+#CMD ./Dlep config-file config/modem.xml

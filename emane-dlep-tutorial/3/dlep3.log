@@ -1,0 +1,1108 @@
+13:05:29.860 INFO: Dlep.cpp:37:Dlep(): I am a Modem
+13:05:29.861 DEBUG: Dlep.cpp:61:initialize(): entered
+13:05:29.861 INFO: ProtocolConfigImpl.cpp:168:load_protocol_config(): schema=protocol-config.xsd config=dlep-rfc-8175.xml
+13:05:29.861 DEBUG: ProtocolConfigImpl.cpp:182:load_protocol_config(): parsing dlep-rfc-8175.xml
+13:05:29.862 DEBUG: ProtocolConfigImpl.cpp:206:load_protocol_config(): XInclude made 1 substitutions
+13:05:29.862 DEBUG: ProtocolConfigImpl.cpp:211:load_protocol_config(): loading schema protocol-config.xsd
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:234:load_protocol_config(): validating the config against the schema
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/signal_prefix/text = DLEP
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/signal_length = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/signal_id = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/data_item_length = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/data_item_id = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/extension_id = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/field_sizes/status_code = 1
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/name = core
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/draft = RFC8175
+13:05:29.863 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Status
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_string
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 1
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Status <--> 1
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv4_Connection_Point
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv4_u16
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv4_Connection_Point <--> 2
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv6_Connection_Point
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv6_u16
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 3
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv6_Connection_Point <--> 3
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Peer_Type
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_string
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 4
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Peer_Type <--> 4
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Heartbeat_Interval
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u32
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 5
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Heartbeat_Interval <--> 5
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = milliseconds
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Extensions_Supported
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = v_extid
+13:05:29.863 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 6
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Extensions_Supported <--> 6
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = MAC_Address
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = dlepmac
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 7
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: MAC_Address <--> 7
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv4_Address
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv4
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 8
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv4_Address <--> 8
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv6_Address
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv6
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 9
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv6_Address <--> 9
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv4_Attached_Subnet
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv4_u8
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 10
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv4_Attached_Subnet <--> 10
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = IPv6_Attached_Subnet
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8_ipv6_u8
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 11
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: IPv6_Attached_Subnet <--> 11
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 12
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Maximum_Data_Rate_Receive <--> 12
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = bits/second
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 13
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Maximum_Data_Rate_Transmit <--> 13
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = bits/second
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Current_Data_Rate_Receive
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 14
+13:05:29.864 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Current_Data_Rate_Receive <--> 14
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = bits/second
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Current_Data_Rate_Transmit
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 15
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Current_Data_Rate_Transmit <--> 15
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = bits/second
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Latency
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 16
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Latency <--> 16
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = microseconds
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Resources
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 17
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Resources <--> 17
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = percentage
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Resources_Receive
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 18
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Resources_Receive <--> 18
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = percentage
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Resources_Transmit
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 19
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Resources_Transmit <--> 19
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = percentage
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Relative_Link_Quality_Receive
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 20
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Relative_Link_Quality_Receive <--> 20
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.865 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = percentage
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u8
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 21
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Relative_Link_Quality_Transmit <--> 21
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = percentage
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Maximum_Transmission_Unit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u16
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 22
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Maximum_Transmission_Unit <--> 22
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = true
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = octets
+13:05:29.866 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Peer_Discovery
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = false
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = router
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Peer_Type
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): signal mapping: Peer_Discovery <--> 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Peer_Offer
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 2
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = false
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Peer_Type
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Connection_Point
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Connection_Point
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): signal mapping: Peer_Offer <--> 2
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Initialization_Response
+13:05:29.866 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 2
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Peer_Type
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Heartbeat_Interval
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.866 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Extensions_Supported
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Initialization_Response <--> 2
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Initialization
+13:05:29.867 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = router
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Session_Initialization_Response
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Heartbeat_Interval
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Peer_Type
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Extensions_Supported
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Initialization <--> 1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Update_Response
+13:05:29.867 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 4
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Update_Response <--> 4
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Update
+13:05:29.867 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 3
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Session_Update_Response
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.867 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Update <--> 3
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Termination_Response
+13:05:29.868 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 6
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Termination_Response <--> 6
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Session_Termination
+13:05:29.868 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 5
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Session_Termination_Response
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Session_Termination <--> 5
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Up_Response
+13:05:29.868 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 8
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = router
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Up_Response <--> 8
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Up
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 7
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Destination_Up_Response
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.868 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Up <--> 7
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Announce_Response
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 10
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.869 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Announce_Response <--> 10
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Announce
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 9
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = router
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Destination_Announce_Response
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Announce <--> 9
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Down_Response
+13:05:29.870 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 12
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Down_Response <--> 12
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Down
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 11
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Destination_Down_Response
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Down <--> 11
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Update
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 13
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.870 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Address
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Address
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv4_Attached_Subnet
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = IPv6_Attached_Subnet
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0+
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Destination_Update <--> 13
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Link_Characteristics_Response
+13:05:29.871 INFO: ProtocolConfigImpl.cpp:678:extract_module_signal(): ignoring unrecognized xml node comment
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 15
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = modem
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Data_Rate_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Resources_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Receive
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Relative_Link_Quality_Transmit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Maximum_Transmission_Unit
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Status
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Link_Characteristics_Response <--> 15
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Link_Characteristics_Request
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 14
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = router
+13:05:29.871 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/response = Link_Characteristics_Response
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = MAC_Address
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Receive
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Current_Data_Rate_Transmit
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Latency
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Link_Characteristics_Request <--> 14
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Heartbeat
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/id = 16
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/message = true
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): message mapping: Heartbeat <--> 16
+13:05:29.872 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Success
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 0
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Success <--> 0
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Not_Interested
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Not_Interested <--> 1
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Request_Denied
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 2
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Request_Denied <--> 2
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Inconsistent_Data
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 3
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Inconsistent_Data <--> 3
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Unknown_Message
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 128
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Unknown_Message <--> 128
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = terminate
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Unexpected_Message
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 129
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Unexpected_Message <--> 129
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = terminate
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Invalid_Data
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 130
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Invalid_Data <--> 130
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = terminate
+13:05:29.872 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Invalid_Destination
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 131
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Invalid_Destination <--> 131
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = terminate
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Timed_Out
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 132
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Timed_Out <--> 132
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = terminate
+13:05:29.873 INFO: ProtocolConfigImpl.cpp:354:extract_protocol_config(): ignoring unrecognized xml node comment
+13:05:29.873 INFO: ProtocolConfigImpl.cpp:354:extract_protocol_config(): ignoring unrecognized xml node include
+13:05:29.873 INFO: ProtocolConfigImpl.cpp:354:extract_protocol_config(): ignoring unrecognized xml node comment
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/name = Credit Windowing
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/draft = 3
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/extension_id = 1
+13:05:29.873 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Credit_Grant
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = u64
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 50
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Credit_Grant <--> 50
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = octets
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Credit_Window_Status
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = a2_u64
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 51
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Credit_Window_Status <--> 51
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/units = octets
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/name = Credit_Request
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/type = blank
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/id = 52
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): data_item mapping: Credit_Request <--> 52
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/data_item/metric = false
+13:05:29.873 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Up
+13:05:29.873 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Grant
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 1 data items to signal Destination_Up
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Up_Response
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Grant
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 1 data items to signal Destination_Up_Response
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Announce
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Grant
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 1 data items to signal Destination_Announce
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Announce_Response
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Grant
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 1 data items to signal Destination_Announce_Response
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Destination_Update
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Grant
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Window_Status
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Request
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 3 data items to signal Destination_Update
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Link_Characteristics_Request
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/name = Credit_Request
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/data_item/occurs = 0-1
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:796:extract_module_signal(): module Credit Windowing changed signal Link_Characteristics_Request flags from 5 to 7
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:813:extract_module_signal(): module Credit Windowing added 1 data items to signal Link_Characteristics_Request
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/name = Link_Characteristics_Response
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/signal/sender = both
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:796:extract_module_signal(): module Credit Windowing changed signal Link_Characteristics_Response flags from 3 to 7
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:547:extract_module(): ignoring unrecognized xml node comment
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Credit_Window_Out_Of_Sync
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 150
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Credit_Window_Out_Of_Sync <--> 150
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/name = Credit_Use_Rejected
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/id = 30
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:584:insert_id_name_mapping(): status_code mapping: Credit_Use_Rejected <--> 30
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:379:log_node_path_and_value(): dlep/module/status_code/failure_mode = continue
+13:05:29.874 INFO: ProtocolConfigImpl.cpp:354:extract_protocol_config(): ignoring unrecognized xml node include
+13:05:29.874 DEBUG: ProtocolConfigImpl.cpp:259:load_protocol_config(): cleaning up
+13:05:29.874 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=12(Maximum_Data_Rate_Receive) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=13(Maximum_Data_Rate_Transmit) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=14(Current_Data_Rate_Receive) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=15(Current_Data_Rate_Transmit) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=16(Latency) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=17(Resources) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=18(Resources_Receive) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=19(Resources_Transmit) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=20(Relative_Link_Quality_Receive) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=21(Relative_Link_Quality_Transmit) value=0
+13:05:29.875 DEBUG: Dlep.cpp:111:initialize(): add peer default data item id=22(Maximum_Transmission_Unit) value=0
+13:05:29.875 DEBUG: NetUtils.cpp:145:get_ip_addr_from_iface(): for interface=eth1, address family=2, address found=10.100.3.254
+13:05:29.875 INFO: PeriodicMcastSendRcv.cpp:98:start(): interface=eth1 address=10.100.3.254
+13:05:29.875 INFO: PeriodicMcastSendRcv.cpp:305:setup_receive(): receive endpoint=224.0.0.117:4854
+13:05:29.875 INFO: PeriodicMcastSendRcv.cpp:320:setup_receive(): Joining Multicast Group: 224.0.0.117:4854
+13:05:29.875 INFO: PeriodicMcastSendRcv.cpp:345:setup_receive(): Finished Setting Socket Options - Initiating receive
+13:05:29.876 DEBUG: NetUtils.cpp:145:get_ip_addr_from_iface(): for interface=eth0, address family=2, address found=10.99.0.3
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:98:start(): interface=eth0 address=10.99.0.3
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:305:setup_receive(): receive endpoint=225.0.0.118:5854
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:320:setup_receive(): Joining Multicast Group: 225.0.0.118:5854
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:345:setup_receive(): Finished Setting Socket Options - Initiating receive
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:173:setup_send(): send endpoint=225.0.0.118:5854
+13:05:29.876 DEBUG: PeriodicMcastSendRcv.cpp:180:setup_send(): Done assigning multicast address and port
+13:05:29.876 DEBUG: PeriodicMcastSendRcv.cpp:208:setup_send(): Done setting socket enable loopback and socket reuse option, bind to 0.0.0.0:0 local endpoint 0.0.0.0:55512
+13:05:29.876 DEBUG: PeriodicMcastSendRcv.cpp:211:setup_send(): Setting outbound interface to: 10.99.0.3
+13:05:29.876 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=0 seqnum=1 rfid=00:03 dests:
+13:05:29.876 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:29.876 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:31.778 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:31.778 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:31.778 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=5 seqnum=2 rfid=00:02 dests:
+13:05:31.778 INFO: DestAdvert.cpp:137:handle_message(): new destination advertisement entry!
+13:05:31.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:31.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:32.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:32.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:33.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:33.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:33.978 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:33.978 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:33.978 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=10 seqnum=3 rfid=00:01 dests:
+13:05:33.978 INFO: DestAdvert.cpp:137:handle_message(): new destination advertisement entry!
+13:05:34.878 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=5 seqnum=2 rfid=00:03 dests:
+13:05:34.878 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:34.878 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:34.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:34.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:35.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:35.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:36.778 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:36.778 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:36.778 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=10 seqnum=3 rfid=00:02 dests:
+13:05:36.778 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=5 seqnum=2 rfid=00:02 dests:
+13:05:36.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:36.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:37.880 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:37.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:38.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:38.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:38.979 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:38.979 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:38.979 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=15 seqnum=4 rfid=00:01 dests:
+13:05:38.979 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=10 seqnum=3 rfid=00:01 dests:
+13:05:39.879 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=10 seqnum=3 rfid=00:03 dests:
+13:05:39.879 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:39.879 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:39.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:39.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:40.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:40.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:41.780 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:41.780 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:41.780 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=15 seqnum=4 rfid=00:02 dests:
+13:05:41.780 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=10 seqnum=3 rfid=00:02 dests:
+13:05:41.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:41.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:42.886 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:42.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:43.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:43.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:43.981 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:43.981 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:43.981 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=20 seqnum=5 rfid=00:01 dests:
+13:05:43.981 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=15 seqnum=4 rfid=00:01 dests:
+13:05:44.880 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=15 seqnum=4 rfid=00:03 dests:
+13:05:44.880 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:44.881 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:44.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:44.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:45.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:45.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:46.780 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:46.780 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:46.780 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=20 seqnum=5 rfid=00:02 dests:
+13:05:46.780 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=15 seqnum=4 rfid=00:02 dests:
+13:05:46.880 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:46.880 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:47.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:47.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:48.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:48.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:48.981 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:48.981 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:48.981 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=25 seqnum=6 rfid=00:01 dests:
+13:05:48.981 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=20 seqnum=5 rfid=00:01 dests:
+13:05:49.881 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=20 seqnum=5 rfid=00:03 dests:
+13:05:49.881 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:49.882 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:49.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:49.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:50.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:50.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:51.781 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:51.781 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:51.781 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=25 seqnum=6 rfid=00:02 dests:
+13:05:51.781 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=20 seqnum=5 rfid=00:02 dests:
+13:05:51.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:51.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:52.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:52.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:53.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:53.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:53.983 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:53.983 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:53.983 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=30 seqnum=7 rfid=00:01 dests:
+13:05:53.983 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=25 seqnum=6 rfid=00:01 dests:
+13:05:54.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:54.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:54.882 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=25 seqnum=6 rfid=00:03 dests:
+13:05:54.882 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:54.882 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:05:55.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:55.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:56.781 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:05:56.781 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:05:56.782 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=30 seqnum=7 rfid=00:02 dests:
+13:05:56.782 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=25 seqnum=6 rfid=00:02 dests:
+13:05:56.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:56.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:57.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:57.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:58.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:58.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:58.984 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:05:58.984 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:05:58.984 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=35 seqnum=8 rfid=00:01 dests:
+13:05:58.984 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=30 seqnum=7 rfid=00:01 dests:
+13:05:59.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:05:59.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:05:59.883 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=30 seqnum=7 rfid=00:03 dests:
+13:05:59.883 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:05:59.883 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:00.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:00.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:01.783 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:01.783 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:01.783 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=35 seqnum=8 rfid=00:02 dests:
+13:06:01.783 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=30 seqnum=7 rfid=00:02 dests:
+13:06:01.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:01.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:02.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:02.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:03.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:03.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:03.986 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:03.986 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:03.986 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=40 seqnum=9 rfid=00:01 dests:
+13:06:03.986 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=35 seqnum=8 rfid=00:01 dests:
+13:06:04.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:04.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:04.883 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=35 seqnum=8 rfid=00:03 dests:
+13:06:04.883 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:04.883 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:05.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:05.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:06.785 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:06.785 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:06.785 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=40 seqnum=9 rfid=00:02 dests:
+13:06:06.785 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=35 seqnum=8 rfid=00:02 dests:
+13:06:06.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:06.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:07.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:07.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:08.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:08.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:08.987 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:08.987 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:08.987 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=45 seqnum=10 rfid=00:01 dests:
+13:06:08.987 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=40 seqnum=9 rfid=00:01 dests:
+13:06:09.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:09.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:09.884 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=40 seqnum=9 rfid=00:03 dests:
+13:06:09.884 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:09.885 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:10.882 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:10.882 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:11.785 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:11.785 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:11.785 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=45 seqnum=10 rfid=00:02 dests:
+13:06:11.785 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=0 placeholder=0 report interval=5 uptime=40 seqnum=9 rfid=00:02 dests:
+13:06:11.881 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:11.881 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:12.888 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:12.889 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:12.889 INFO: DlepServiceImpl.cpp:50:destination_up(): mac=00:01
+13:06:12.889 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:12.889 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:12.889 INFO: DestAdvert.cpp:425:update_advert_entry_state(): updating rfid=00:01 new state=1
+13:06:12.890 INFO: DlepServiceImpl.cpp:50:destination_up(): mac=00:02
+13:06:12.890 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:12.890 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:12.890 INFO: DestAdvert.cpp:425:update_advert_entry_state(): updating rfid=00:02 new state=1
+13:06:13.886 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:13.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:13.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:13.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:13.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:13.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:13.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:13.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:13.987 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:13.988 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:13.988 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=50 seqnum=11 rfid=00:01 dests:
+13:06:13.988 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=45 seqnum=10 rfid=00:01 dests:
+13:06:14.885 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=45 seqnum=10 rfid=00:03 dests:
+13:06:14.885 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:14.885 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:14.887 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:14.887 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:14.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:14.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:14.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:14.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:14.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:14.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:15.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:15.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:15.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:15.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:15.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:15.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:15.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:15.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:16.786 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:16.786 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:16.786 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=50 seqnum=11 rfid=00:02 dests:
+13:06:16.786 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=45 seqnum=10 rfid=00:02 dests:
+13:06:16.886 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:16.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:16.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:16.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:16.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:16.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:16.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:16.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:17.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:17.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:17.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:17.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:17.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:17.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:17.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:17.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:18.886 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:18.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:18.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:18.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:18.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:18.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:18.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:18.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:18.988 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:18.988 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:18.988 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=55 seqnum=12 rfid=00:01 dests:
+13:06:18.988 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=50 seqnum=11 rfid=00:01 dests:
+13:06:19.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:19.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:19.885 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=50 seqnum=11 rfid=00:03 dests:
+13:06:19.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:19.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:19.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:19.886 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:19.886 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:19.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:19.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:19.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:20.887 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:20.888 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:20.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:20.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:20.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:20.889 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:20.889 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:20.889 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:21.787 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:21.787 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:21.787 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=55 seqnum=12 rfid=00:02 dests:
+13:06:21.787 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=50 seqnum=11 rfid=00:02 dests:
+13:06:21.886 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:21.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:21.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:21.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:21.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:21.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:21.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:21.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:22.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:22.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:22.884 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:22.884 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:22.884 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:22.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:22.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:22.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:23.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:23.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:23.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:23.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:23.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:23.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:23.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:23.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:23.989 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:23.989 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:23.989 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=60 seqnum=13 rfid=00:01 dests:
+13:06:23.989 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=55 seqnum=12 rfid=00:01 dests:
+13:06:24.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:24.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:24.883 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:24.883 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:24.883 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:24.884 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:24.884 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:24.884 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:24.887 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=55 seqnum=12 rfid=00:03 dests:
+13:06:24.887 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:24.887 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:25.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:25.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:25.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:25.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:25.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:25.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:25.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:25.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:26.788 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:26.788 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:26.788 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=60 seqnum=13 rfid=00:02 dests:
+13:06:26.788 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=55 seqnum=12 rfid=00:02 dests:
+13:06:26.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:26.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:26.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:26.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:26.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:26.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:26.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:26.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:27.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:27.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:27.884 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:27.884 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:27.884 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:27.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:27.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:27.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:28.887 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:28.887 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:28.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:28.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:28.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:28.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:28.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:28.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:28.991 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:28.991 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:28.991 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=65 seqnum=14 rfid=00:01 dests:
+13:06:28.991 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=60 seqnum=13 rfid=00:01 dests:
+13:06:29.887 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=60 seqnum=13 rfid=00:03 dests:
+13:06:29.887 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:29.888 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:29.889 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:29.889 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:29.890 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:29.890 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:29.890 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:29.890 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:29.890 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:29.890 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:30.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:30.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:30.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:30.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:30.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:30.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:30.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:30.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:31.790 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:31.790 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:31.790 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=65 seqnum=14 rfid=00:02 dests:
+13:06:31.790 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=60 seqnum=13 rfid=00:02 dests:
+13:06:31.888 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:31.888 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:31.888 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:31.888 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:31.888 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:31.889 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:31.889 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:31.889 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:32.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:32.886 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:32.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:32.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:32.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:32.887 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:32.887 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:32.887 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:33.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:33.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:33.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:33.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:33.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:33.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:33.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:33.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:33.992 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:33.992 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:33.992 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=70 seqnum=15 rfid=00:01 dests:
+13:06:33.992 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=65 seqnum=14 rfid=00:01 dests:
+13:06:34.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:34.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:34.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:34.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:34.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:34.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:34.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:34.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:34.888 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=65 seqnum=14 rfid=00:03 dests:
+13:06:34.888 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:34.888 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:35.883 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:35.883 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:35.884 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:35.884 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:35.884 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:35.884 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:35.884 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:35.884 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:36.791 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:36.791 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:36.791 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=70 seqnum=15 rfid=00:02 dests:
+13:06:36.791 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=65 seqnum=14 rfid=00:02 dests:
+13:06:36.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:36.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:36.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:36.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:36.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:36.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:36.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:36.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:37.884 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:37.884 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:37.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:37.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:37.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:37.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:37.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:37.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:38.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:38.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:38.885 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:38.885 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:38.885 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:38.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:38.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:38.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:38.993 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.1:56094 size=10
+13:06:38.993 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.1:56094
+13:06:38.993 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=75 seqnum=16 rfid=00:01 dests:
+13:06:38.994 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=70 seqnum=15 rfid=00:01 dests:
+13:06:39.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:39.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:39.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:39.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:39.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:39.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:39.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:39.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:39.889 INFO: DestAdvert.cpp:82:get_message_to_send(): report interval=5 uptime=70 seqnum=15 rfid=00:03 dests:
+13:06:39.889 DEBUG: PeriodicMcastSendRcv.cpp:280:start_send(): sending packet with size=10 to 225.0.0.118:5854
+13:06:39.890 INFO: PeriodicMcastSendRcv.cpp:386:handle_receive(): Received Message from self 10.99.0.3:55512 size=10 drop
+13:06:40.885 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:40.885 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:40.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:40.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:40.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:40.886 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:40.886 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:40.886 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02
+13:06:41.791 INFO: PeriodicMcastSendRcv.cpp:392:handle_receive(): Received Message from 10.99.0.2:51965 size=10
+13:06:41.791 INFO: DestAdvert.cpp:105:handle_message(): received message length=10 from=10.99.0.2:51965
+13:06:41.791 INFO: DestAdvert.cpp:126:handle_message(): message content: report interval=5 uptime=75 seqnum=16 rfid=00:02 dests:
+13:06:41.791 INFO: DestAdvert.cpp:160:handle_message(): existing destination advertisement entry was  age=5 state=1 placeholder=0 report interval=5 uptime=70 seqnum=15 rfid=00:02 dests:
+13:06:41.894 INFO: DlepServiceImpl.cpp:264:peer_update(): entered
+13:06:41.894 INFO: DlepServiceImpl.cpp:268:peer_update(): Success
+13:06:41.895 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:01
+13:06:41.895 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:01 found in table
+13:06:41.895 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:01
+13:06:41.895 INFO: DlepServiceImpl.cpp:119:destination_update(): mac=00:02
+13:06:41.895 INFO: DestAdvert.cpp:350:find_advert_entry(): rfid 00:02 found in table
+13:06:41.895 INFO: DestAdvert.cpp:372:update_advert_entry_data_items(): updating rfid=00:02

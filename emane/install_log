@@ -1,0 +1,1274 @@
+Making install in src
+make[1]: Entering directory '/home/ubuntu/Source/emane/src'
+Making install in libemane
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/libemane'
+make  install-am
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/libemane'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/libemane'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   libemane.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libemane.so /usr/lib/libemane.so
+libtool: install: /usr/bin/install -c .libs/libemane.lai /usr/lib/libemane.la
+libtool: install: /usr/bin/install -c .libs/libemane.a /usr/lib/libemane.a
+libtool: install: chmod 644 /usr/lib/libemane.a
+libtool: install: ranlib /usr/lib/libemane.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libemane.pc '/usr/lib/pkgconfig'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/libemane'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/libemane'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/libemane'
+Making install in libemanexmlparser
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/libemanexmlparser'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/libemanexmlparser'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   libemanexmlparser.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libemanexmlparser.so /usr/lib/libemanexmlparser.so
+libtool: install: /usr/bin/install -c .libs/libemanexmlparser.lai /usr/lib/libemanexmlparser.la
+libtool: install: /usr/bin/install -c .libs/libemanexmlparser.a /usr/lib/libemanexmlparser.a
+libtool: install: chmod 644 /usr/lib/libemanexmlparser.a
+libtool: install: ranlib /usr/lib/libemanexmlparser.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/libemanexmlparser'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/libemanexmlparser'
+Making install in agents
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/agents'
+Making install in gpsdlocation
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   libgpsdlocationagent.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/agents/gpsdlocation; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libgpsdlocationagent.la -rpath /usr/lib libgpsdlocationagent_la-agent.lo -lutil ../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libgpsdlocationagent_la-agent.o   -lpthread -ldl -lutil -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libgpsdlocationagent.so -o .libs/libgpsdlocationagent.so
+libtool: install: /usr/bin/install -c .libs/libgpsdlocationagent.soT /usr/lib/libgpsdlocationagent.so
+libtool: install: /usr/bin/install -c .libs/libgpsdlocationagent.lai /usr/lib/libgpsdlocationagent.la
+libtool: install: /usr/bin/install -c .libs/libgpsdlocationagent.a /usr/lib/libgpsdlocationagent.a
+libtool: install: chmod 644 /usr/lib/libgpsdlocationagent.a
+libtool: install: ranlib /usr/lib/libgpsdlocationagent.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/agents/gpsdlocation
+cp -f gpsdlocationagent.xml  /usr/share/emane/xml/agents/gpsdlocation
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/agents/gpsdlocation'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/agents'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/agents'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/agents'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/agents'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/agents'
+Making install in applications
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/applications'
+Making install in emane
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications/emane'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications/emane'
+ /bin/mkdir -p '/usr/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c emane '/usr/bin'
+libtool: install: /usr/bin/install -c .libs/emane /usr/bin/emane
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emane'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emane'
+Making install in emaneeventd
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+ /bin/mkdir -p '/usr/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c emaneeventd '/usr/bin'
+libtool: install: /usr/bin/install -c .libs/emaneeventd /usr/bin/emaneeventd
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventd'
+Making install in emaneeventservice
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+ /bin/mkdir -p '/usr/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c emaneeventservice '/usr/bin'
+libtool: install: /usr/bin/install -c .libs/emaneeventservice /usr/bin/emaneeventservice
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneeventservice'
+Making install in emanetransportd
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+ /bin/mkdir -p '/usr/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c emanetransportd '/usr/bin'
+libtool: install: /usr/bin/install -c .libs/emanetransportd /usr/bin/emanetransportd
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emanetransportd'
+Making install in emaneinfo
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneinfo'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications/emaneinfo'
+ /bin/mkdir -p '/usr/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c emaneinfo '/usr/bin'
+libtool: install: /usr/bin/install -c .libs/emaneinfo /usr/bin/emaneinfo
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneinfo'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications/emaneinfo'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/applications'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/applications'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/applications'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/applications'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/applications'
+Making install in generators
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/generators'
+Making install in eel
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel'
+make  install-recursive
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel'
+Making install in loaders
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+Making install in location
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/location'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/location'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../../libtool   --mode=install /usr/bin/install -c   libeelloaderlocation.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/generators/eel/loaders/location; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libeelloaderlocation.la -rpath /usr/lib libeelloaderlocation_la-eelloaderlocation.lo ../../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libeelloaderlocation_la-eelloaderlocation.o   -lpthread -ldl -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libeelloaderlocation.so -o .libs/libeelloaderlocation.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderlocation.soT /usr/lib/libeelloaderlocation.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderlocation.lai /usr/lib/libeelloaderlocation.la
+libtool: install: /usr/bin/install -c .libs/libeelloaderlocation.a /usr/lib/libeelloaderlocation.a
+libtool: install: chmod 644 /usr/lib/libeelloaderlocation.a
+libtool: install: ranlib /usr/lib/libeelloaderlocation.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/location'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/location'
+Making install in pathloss
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/pathloss'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/pathloss'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../../libtool   --mode=install /usr/bin/install -c   libeelloaderpathloss.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/generators/eel/loaders/pathloss; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libeelloaderpathloss.la -rpath /usr/lib libeelloaderpathloss_la-eelloaderpathloss.lo ../../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libeelloaderpathloss_la-eelloaderpathloss.o   -lpthread -ldl -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libeelloaderpathloss.so -o .libs/libeelloaderpathloss.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderpathloss.soT /usr/lib/libeelloaderpathloss.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderpathloss.lai /usr/lib/libeelloaderpathloss.la
+libtool: install: /usr/bin/install -c .libs/libeelloaderpathloss.a /usr/lib/libeelloaderpathloss.a
+libtool: install: chmod 644 /usr/lib/libeelloaderpathloss.a
+libtool: install: ranlib /usr/lib/libeelloaderpathloss.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/pathloss'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/pathloss'
+Making install in antennaprofile
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/antennaprofile'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/antennaprofile'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../../libtool   --mode=install /usr/bin/install -c   libeelloaderantennaprofile.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/generators/eel/loaders/antennaprofile; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libeelloaderantennaprofile.la -rpath /usr/lib libeelloaderantennaprofile_la-eelloaderantennaprofile.lo ../../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libeelloaderantennaprofile_la-eelloaderantennaprofile.o   -lpthread -ldl -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libeelloaderantennaprofile.so -o .libs/libeelloaderantennaprofile.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderantennaprofile.soT /usr/lib/libeelloaderantennaprofile.so
+libtool: install: /usr/bin/install -c .libs/libeelloaderantennaprofile.lai /usr/lib/libeelloaderantennaprofile.la
+libtool: install: /usr/bin/install -c .libs/libeelloaderantennaprofile.a /usr/lib/libeelloaderantennaprofile.a
+libtool: install: chmod 644 /usr/lib/libeelloaderantennaprofile.a
+libtool: install: ranlib /usr/lib/libeelloaderantennaprofile.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/antennaprofile'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/antennaprofile'
+Making install in commeffect
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/commeffect'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/commeffect'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../../libtool   --mode=install /usr/bin/install -c   libeelloadercommeffect.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/generators/eel/loaders/commeffect; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libeelloadercommeffect.la -rpath /usr/lib libeelloadercommeffect_la-eelloadercommeffect.lo ../../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libeelloadercommeffect_la-eelloadercommeffect.o   -lpthread -ldl -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libeelloadercommeffect.so -o .libs/libeelloadercommeffect.so
+libtool: install: /usr/bin/install -c .libs/libeelloadercommeffect.soT /usr/lib/libeelloadercommeffect.so
+libtool: install: /usr/bin/install -c .libs/libeelloadercommeffect.lai /usr/lib/libeelloadercommeffect.la
+libtool: install: /usr/bin/install -c .libs/libeelloadercommeffect.a /usr/lib/libeelloadercommeffect.a
+libtool: install: chmod 644 /usr/lib/libeelloadercommeffect.a
+libtool: install: ranlib /usr/lib/libeelloadercommeffect.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/commeffect'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders/commeffect'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+make[7]: Nothing to be done for 'install-exec-am'.
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel/loaders'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   libeelgenerator.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/generators/eel; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libeelgenerator.la -rpath /usr/lib libeelgenerator_la-eeleventgenerator.lo libeelgenerator_la-eelinputparser.lo libeelgenerator_la-eelloaderpluginfactory.lo ../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libeelgenerator_la-eeleventgenerator.o .libs/libeelgenerator_la-eelinputparser.o .libs/libeelgenerator_la-eelloaderpluginfactory.o   -lpthread -ldl -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libeelgenerator.so -o .libs/libeelgenerator.so
+libtool: install: /usr/bin/install -c .libs/libeelgenerator.soT /usr/lib/libeelgenerator.so
+libtool: install: /usr/bin/install -c .libs/libeelgenerator.lai /usr/lib/libeelgenerator.la
+libtool: install: /usr/bin/install -c .libs/libeelgenerator.a /usr/lib/libeelgenerator.a
+libtool: install: chmod 644 /usr/lib/libeelgenerator.a
+libtool: install: ranlib /usr/lib/libeelgenerator.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/generators/eel'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/generators/eel
+cp -f eelgenerator.xml  /usr/share/emane/xml/generators/eel
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/generators/eel'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/generators'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/generators'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/generators'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/generators'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/generators'
+Making install in models
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/models'
+Making install in mac
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/models/mac'
+Making install in bypass
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libbypassmaclayer.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/mac/bypass; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libbypassmaclayer.la -rpath /usr/lib libbypassmaclayer_la-maclayer.lo -luuid ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libbypassmaclayer_la-maclayer.o   -lpthread -ldl -luuid -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libbypassmaclayer.so -o .libs/libbypassmaclayer.so
+libtool: install: /usr/bin/install -c .libs/libbypassmaclayer.soT /usr/lib/libbypassmaclayer.so
+libtool: install: /usr/bin/install -c .libs/libbypassmaclayer.lai /usr/lib/libbypassmaclayer.la
+libtool: install: /usr/bin/install -c .libs/libbypassmaclayer.a /usr/lib/libbypassmaclayer.a
+libtool: install: chmod 644 /usr/lib/libbypassmaclayer.a
+libtool: install: ranlib /usr/lib/libbypassmaclayer.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/mac/bypass
+cp -f bypassnem.xml  /usr/share/emane/xml/models/mac/bypass
+cp -f bypassmac.xml  /usr/share/emane/xml/models/mac/bypass
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/bypass'
+Making install in rfpipe
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   librfpipemaclayer.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/mac/rfpipe; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o librfpipemaclayer.la -rpath /usr/lib librfpipemaclayer_la-maclayer.lo librfpipemaclayer_la-downstreamqueue.lo librfpipemaclayer_la-pcrmanager.lo librfpipemaclayer_la-rfpipemacheadermessage.lo librfpipemaclayer_la-rfpipemacheader.pb.lo -luuid -lxml2 -lprotobuf -pthread -lpthread ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/librfpipemaclayer_la-maclayer.o .libs/librfpipemaclayer_la-downstreamqueue.o .libs/librfpipemaclayer_la-pcrmanager.o .libs/librfpipemaclayer_la-rfpipemacheadermessage.o .libs/librfpipemaclayer_la-rfpipemacheader.pb.o   -ldl -luuid -lxml2 -lprotobuf -lpthread -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og -pthread   -pthread -Wl,-soname -Wl,librfpipemaclayer.so -o .libs/librfpipemaclayer.so
+libtool: install: /usr/bin/install -c .libs/librfpipemaclayer.soT /usr/lib/librfpipemaclayer.so
+libtool: install: /usr/bin/install -c .libs/librfpipemaclayer.lai /usr/lib/librfpipemaclayer.la
+libtool: install: /usr/bin/install -c .libs/librfpipemaclayer.a /usr/lib/librfpipemaclayer.a
+libtool: install: chmod 644 /usr/lib/librfpipemaclayer.a
+libtool: install: ranlib /usr/lib/librfpipemaclayer.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/mac/rfpipe
+cp -f rfpipenem.xml  /usr/share/emane/xml/models/mac/rfpipe
+cp -f rfpipemac.xml  /usr/share/emane/xml/models/mac/rfpipe
+cp -f rfpipepcr.xml  /usr/share/emane/xml/models/mac/rfpipe
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/rfpipe'
+Making install in ieee80211abg
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libieee80211abgmaclayer.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/mac/ieee80211abg; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libieee80211abgmaclayer.la -rpath /usr/lib libieee80211abgmaclayer_la-maclayer.lo libieee80211abgmaclayer_la-modetimingparameters.lo libieee80211abgmaclayer_la-neighborentry.lo libieee80211abgmaclayer_la-neighbor2hopentry.lo libieee80211abgmaclayer_la-neighbormanager.lo libieee80211abgmaclayer_la-macconfig.lo libieee80211abgmaclayer_la-pcrmanager.lo libieee80211abgmaclayer_la-macstatistics.lo libieee80211abgmaclayer_la-downstreamqueue.lo libieee80211abgmaclayer_la-transmissiontxstate.lo libieee80211abgmaclayer_la-idletxstate.lo libieee80211abgmaclayer_la-broadcasttxstate.lo libieee80211abgmaclayer_la-broadcastpretxstate.lo libieee80211abgmaclayer_la-broadcastposttxstate.lo libieee80211abgmaclayer_la-unicasttxstate.lo libieee80211abgmaclayer_la-unicastpretxstate.lo libieee80211abgmaclayer_la-unicastposttxstate.lo libieee80211abgmaclayer_la-unicastrtsctstxstate.lo libieee80211abgmaclayer_la-unicastrtsctspretxstate.lo libieee80211abgmaclayer_la-unicastrtsctsposttxstate.lo libieee80211abgmaclayer_la-onehopneighborsevent.lo libieee80211abgmaclayer_la-collisiontable.lo libieee80211abgmaclayer_la-macheaderparams.lo libieee80211abgmaclayer_la-wmmmanager.lo libieee80211abgmaclayer_la-ieee80211abgmacheadermessage.lo libieee80211abgmaclayer_la-macheaderparamsformatter.lo libieee80211abgmaclayer_la-configurationvalidator.lo libieee80211abgmaclayer_la-ieee80211abgmacheader.pb.lo libieee80211abgmaclayer_la-onehopneighborsevent.pb.lo -luuid -lxml2 -lprotobuf -pthread -lpthread ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libieee80211abgmaclayer_la-maclayer.o .libs/libieee80211abgmaclayer_la-modetimingparameters.o .libs/libieee80211abgmaclayer_la-neighborentry.o .libs/libieee80211abgmaclayer_la-neighbor2hopentry.o .libs/libieee80211abgmaclayer_la-neighbormanager.o .libs/libieee80211abgmaclayer_la-macconfig.o .libs/libieee80211abgmaclayer_la-pcrmanager.o .libs/libieee80211abgmaclayer_la-macstatistics.o .libs/libieee80211abgmaclayer_la-downstreamqueue.o .libs/libieee80211abgmaclayer_la-transmissiontxstate.o .libs/libieee80211abgmaclayer_la-idletxstate.o .libs/libieee80211abgmaclayer_la-broadcasttxstate.o .libs/libieee80211abgmaclayer_la-broadcastpretxstate.o .libs/libieee80211abgmaclayer_la-broadcastposttxstate.o .libs/libieee80211abgmaclayer_la-unicasttxstate.o .libs/libieee80211abgmaclayer_la-unicastpretxstate.o .libs/libieee80211abgmaclayer_la-unicastposttxstate.o .libs/libieee80211abgmaclayer_la-unicastrtsctstxstate.o .libs/libieee80211abgmaclayer_la-unicastrtsctspretxstate.o .libs/libieee80211abgmaclayer_la-unicastrtsctsposttxstate.o .libs/libieee80211abgmaclayer_la-onehopneighborsevent.o .libs/libieee80211abgmaclayer_la-collisiontable.o .libs/libieee80211abgmaclayer_la-macheaderparams.o .libs/libieee80211abgmaclayer_la-wmmmanager.o .libs/libieee80211abgmaclayer_la-ieee80211abgmacheadermessage.o .libs/libieee80211abgmaclayer_la-macheaderparamsformatter.o .libs/libieee80211abgmaclayer_la-configurationvalidator.o .libs/libieee80211abgmaclayer_la-ieee80211abgmacheader.pb.o .libs/libieee80211abgmaclayer_la-onehopneighborsevent.pb.o   -ldl -luuid -lxml2 -lprotobuf -lpthread -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og -pthread   -pthread -Wl,-soname -Wl,libieee80211abgmaclayer.so -o .libs/libieee80211abgmaclayer.so
+libtool: install: /usr/bin/install -c .libs/libieee80211abgmaclayer.soT /usr/lib/libieee80211abgmaclayer.so
+libtool: install: /usr/bin/install -c .libs/libieee80211abgmaclayer.lai /usr/lib/libieee80211abgmaclayer.la
+libtool: install: /usr/bin/install -c .libs/libieee80211abgmaclayer.a /usr/lib/libieee80211abgmaclayer.a
+libtool: install: chmod 644 /usr/lib/libieee80211abgmaclayer.a
+libtool: install: ranlib /usr/lib/libieee80211abgmaclayer.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/mac/ieee80211abg
+cp -f ieee80211abgnem.xml  /usr/share/emane/xml/models/mac/ieee80211abg
+cp -f ieee80211abgmac.xml  /usr/share/emane/xml/models/mac/ieee80211abg
+cp -f ieee80211pcr.xml  /usr/share/emane/xml/models/mac/ieee80211abg
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/ieee80211abg'
+Making install in tdma
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+make  install-recursive
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+Making install in .
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libtdmabase.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/mac/tdma; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libtdmabase.la -rpath /usr/lib libtdmabase_la-aggregationstatuspublisher.lo libtdmabase_la-basemodel.lo libtdmabase_la-basemodelimpl.lo libtdmabase_la-basicqueuemanager.lo libtdmabase_la-packetstatuspublisherimpl.lo libtdmabase_la-pormanager.lo libtdmabase_la-queue.lo libtdmabase_la-queuestatuspublisher.lo libtdmabase_la-receivemanager.lo libtdmabase_la-slotstatustablepublisher.lo libtdmabase_la-txslotinfosformatter.lo libtdmabase_la-tdmabasemodelmessage.pb.lo -luuid -lxml2 -lprotobuf -pthread -lpthread ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libtdmabase_la-aggregationstatuspublisher.o .libs/libtdmabase_la-basemodel.o .libs/libtdmabase_la-basemodelimpl.o .libs/libtdmabase_la-basicqueuemanager.o .libs/libtdmabase_la-packetstatuspublisherimpl.o .libs/libtdmabase_la-pormanager.o .libs/libtdmabase_la-queue.o .libs/libtdmabase_la-queuestatuspublisher.o .libs/libtdmabase_la-receivemanager.o .libs/libtdmabase_la-slotstatustablepublisher.o .libs/libtdmabase_la-txslotinfosformatter.o .libs/libtdmabase_la-tdmabasemodelmessage.pb.o   -ldl -luuid -lxml2 -lprotobuf -lpthread -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og -pthread   -pthread -Wl,-soname -Wl,libtdmabase.so -o .libs/libtdmabase.so
+libtool: install: /usr/bin/install -c .libs/libtdmabase.soT /usr/lib/libtdmabase.so
+libtool: install: /usr/bin/install -c .libs/libtdmabase.lai /usr/lib/libtdmabase.la
+libtool: install: /usr/bin/install -c .libs/libtdmabase.a /usr/lib/libtdmabase.a
+libtool: install: chmod 644 /usr/lib/libtdmabase.a
+libtool: install: ranlib /usr/lib/libtdmabase.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[7]: Nothing to be done for 'install-data-am'.
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+Making install in eventscheduler
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make  install-am
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make[8]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../../libtool   --mode=install /usr/bin/install -c   libtdmaeventschedulerradiomodel.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libtdmaeventschedulerradiomodel.la -rpath /usr/lib libtdmaeventschedulerradiomodel_la-radiomodel.lo libtdmaeventschedulerradiomodel_la-eventscheduler.lo libtdmaeventschedulerradiomodel_la-eventtablepublisher.lo -luuid -lxml2 ../../../../../src/libemane/.libs/libemane.la ../.libs/libtdmabase.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libtdmaeventschedulerradiomodel_la-radiomodel.o .libs/libtdmaeventschedulerradiomodel_la-eventscheduler.o .libs/libtdmaeventschedulerradiomodel_la-eventtablepublisher.o   -lpthread -ldl -luuid -lxml2 -L/usr/lib -lemane -ltdmabase -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libtdmaeventschedulerradiomodel.so -o .libs/libtdmaeventschedulerradiomodel.so
+libtool: install: /usr/bin/install -c .libs/libtdmaeventschedulerradiomodel.soT /usr/lib/libtdmaeventschedulerradiomodel.so
+libtool: install: /usr/bin/install -c .libs/libtdmaeventschedulerradiomodel.lai /usr/lib/libtdmaeventschedulerradiomodel.la
+libtool: install: /usr/bin/install -c .libs/libtdmaeventschedulerradiomodel.a /usr/lib/libtdmaeventschedulerradiomodel.a
+libtool: install: chmod 644 /usr/lib/libtdmaeventschedulerradiomodel.a
+libtool: install: ranlib /usr/lib/libtdmaeventschedulerradiomodel.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[9]: Entering directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/mac/tdmaeventscheduler
+cp -f tdmanem.xml /usr/share/emane/xml/models/mac/tdmaeventscheduler
+cp -f tdmaradiomodel.xml /usr/share/emane/xml/models/mac/tdmaeventscheduler
+cp -f ../tdmabasemodelpcr.xml /usr/share/emane/xml/models/mac/tdmaeventscheduler
+make[9]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make[8]: Nothing to be done for 'install-data-am'.
+make[8]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma/eventscheduler'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac/tdma'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/mac'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/mac'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/models/mac'
+Making install in phy
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/models/phy'
+Making install in bypass
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libbypassphylayer.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/phy/bypass; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libbypassphylayer.la -rpath /usr/lib libbypassphylayer_la-phylayer.lo -luuid ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libbypassphylayer_la-phylayer.o   -lpthread -ldl -luuid -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libbypassphylayer.so -o .libs/libbypassphylayer.so
+libtool: install: /usr/bin/install -c .libs/libbypassphylayer.soT /usr/lib/libbypassphylayer.so
+libtool: install: /usr/bin/install -c .libs/libbypassphylayer.lai /usr/lib/libbypassphylayer.la
+libtool: install: /usr/bin/install -c .libs/libbypassphylayer.a /usr/lib/libbypassphylayer.a
+libtool: install: chmod 644 /usr/lib/libbypassphylayer.a
+libtool: install: ranlib /usr/lib/libbypassphylayer.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/phy/bypass
+cp -f bypassphy.xml  /usr/share/emane/xml/models/phy/bypass
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy/bypass'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/phy'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/phy'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/models/phy'
+Making install in shim
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/models/shim'
+Making install in phyapitest
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libphyapitestshim.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/shim/phyapitest; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libphyapitestshim.la -rpath /usr/lib libphyapitestshim_la-shimlayer.lo -luuid ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libphyapitestshim_la-shimlayer.o   -lpthread -ldl -luuid -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libphyapitestshim.so -o .libs/libphyapitestshim.so
+libtool: install: /usr/bin/install -c .libs/libphyapitestshim.soT /usr/lib/libphyapitestshim.so
+libtool: install: /usr/bin/install -c .libs/libphyapitestshim.lai /usr/lib/libphyapitestshim.la
+libtool: install: /usr/bin/install -c .libs/libphyapitestshim.a /usr/lib/libphyapitestshim.a
+libtool: install: chmod 644 /usr/lib/libphyapitestshim.a
+libtool: install: ranlib /usr/lib/libphyapitestshim.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/shim/phyapitest
+cp -f phyapitestshim.xml  /usr/share/emane/xml/models/shim/phyapitest
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/phyapitest'
+Making install in timinganalysis
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libtiminganalysisshim.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/shim/timinganalysis; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libtiminganalysisshim.la -rpath /usr/lib libtiminganalysisshim_la-shimlayer.lo libtiminganalysisshim_la-shimheadermessage.lo libtiminganalysisshim_la-shimheader.pb.lo -luuid -lprotobuf -pthread -lpthread ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libtiminganalysisshim_la-shimlayer.o .libs/libtiminganalysisshim_la-shimheadermessage.o .libs/libtiminganalysisshim_la-shimheader.pb.o   -ldl -luuid -lprotobuf -lpthread -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og -pthread   -pthread -Wl,-soname -Wl,libtiminganalysisshim.so -o .libs/libtiminganalysisshim.so
+libtool: install: /usr/bin/install -c .libs/libtiminganalysisshim.soT /usr/lib/libtiminganalysisshim.so
+libtool: install: /usr/bin/install -c .libs/libtiminganalysisshim.lai /usr/lib/libtiminganalysisshim.la
+libtool: install: /usr/bin/install -c .libs/libtiminganalysisshim.a /usr/lib/libtiminganalysisshim.a
+libtool: install: chmod 644 /usr/lib/libtiminganalysisshim.a
+libtool: install: ranlib /usr/lib/libtiminganalysisshim.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/shim/timinganalysis
+cp -f timinganalysisshim.xml  /usr/share/emane/xml/models/shim/timinganalysis
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/timinganalysis'
+Making install in commeffect
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make  install-am
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../../libtool   --mode=install /usr/bin/install -c   libcommeffectshim.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/models/shim/commeffect; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libcommeffectshim.la -rpath /usr/lib libcommeffectshim_la-ethernetprotocolipv4rule.lo libcommeffectshim_la-filter.lo libcommeffectshim_la-filterreader.lo libcommeffectshim_la-ipprotocolsimplerule.lo libcommeffectshim_la-ipprotocoludprule.lo libcommeffectshim_la-profilemanager.lo libcommeffectshim_la-shim.lo libcommeffectshim_la-shimheader.lo libcommeffectshim_la-target.lo libcommeffectshim_la-commeffectshimheader.pb.lo -luuid -lxml2 -lprotobuf -pthread -lpthread ../../../../src/libemane/.libs/libemane.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libcommeffectshim_la-ethernetprotocolipv4rule.o .libs/libcommeffectshim_la-filter.o .libs/libcommeffectshim_la-filterreader.o .libs/libcommeffectshim_la-ipprotocolsimplerule.o .libs/libcommeffectshim_la-ipprotocoludprule.o .libs/libcommeffectshim_la-profilemanager.o .libs/libcommeffectshim_la-shim.o .libs/libcommeffectshim_la-shimheader.o .libs/libcommeffectshim_la-target.o .libs/libcommeffectshim_la-commeffectshimheader.pb.o   -ldl -luuid -lxml2 -lprotobuf -lpthread -L/usr/lib -lemane -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og -pthread   -pthread -Wl,-soname -Wl,libcommeffectshim.so -o .libs/libcommeffectshim.so
+libtool: install: /usr/bin/install -c .libs/libcommeffectshim.soT /usr/lib/libcommeffectshim.so
+libtool: install: /usr/bin/install -c .libs/libcommeffectshim.lai /usr/lib/libcommeffectshim.la
+libtool: install: /usr/bin/install -c .libs/libcommeffectshim.a /usr/lib/libcommeffectshim.a
+libtool: install: chmod 644 /usr/lib/libcommeffectshim.a
+libtool: install: ranlib /usr/lib/libcommeffectshim.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[7]: Entering directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/models/shim/commeffect
+cp -f commeffectnem.xml  /usr/share/emane/xml/models/shim/commeffect
+cp -f commeffectshim.xml  /usr/share/emane/xml/models/shim/commeffect
+cp -f commeffectfilters.xml  /usr/share/emane/xml/models/shim/commeffect
+make[7]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim/commeffect'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models/shim'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/models/shim'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/models/shim'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/models'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/models'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/models'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/models'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/models'
+Making install in transports
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/transports'
+Making install in common
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/transports/common'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/transports/common'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   libcommontransport.la '/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libcommontransport.so /usr/lib/libcommontransport.so
+libtool: install: /usr/bin/install -c .libs/libcommontransport.lai /usr/lib/libcommontransport.la
+libtool: install: /usr/bin/install -c .libs/libcommontransport.a /usr/lib/libcommontransport.a
+libtool: install: chmod 644 /usr/lib/libcommontransport.a
+libtool: install: ranlib /usr/lib/libcommontransport.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/transports/common'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/transports/common'
+Making install in virtual
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/transports/virtual'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/transports/virtual'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/transports/virtual'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   libtransvirtual.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/transports/virtual; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libtransvirtual.la -rpath /usr/lib libtransvirtual_la-virtualtransport.lo libtransvirtual_la-tuntap.lo -luuid ../../../src/libemane/.libs/libemane.la ../common/.libs/libcommontransport.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libtransvirtual_la-virtualtransport.o .libs/libtransvirtual_la-tuntap.o   -lpthread -ldl -luuid -L/usr/lib -lemane -lcommontransport -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libtransvirtual.so -o .libs/libtransvirtual.so
+libtool: install: /usr/bin/install -c .libs/libtransvirtual.soT /usr/lib/libtransvirtual.so
+libtool: install: /usr/bin/install -c .libs/libtransvirtual.lai /usr/lib/libtransvirtual.la
+libtool: install: /usr/bin/install -c .libs/libtransvirtual.a /usr/lib/libtransvirtual.a
+libtool: install: chmod 644 /usr/lib/libtransvirtual.a
+libtool: install: ranlib /usr/lib/libtransvirtual.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/transports/virtual'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/transports/virtual
+cp -f transvirtual.xml  /usr/share/emane/xml/transports/virtual
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/transports/virtual'
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/transports/virtual'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/transports/virtual'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/transports/virtual'
+Making install in raw
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/transports/raw'
+make  install-am
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/transports/raw'
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/transports/raw'
+ /bin/mkdir -p '/usr/lib'
+ /bin/bash ../../../libtool   --mode=install /usr/bin/install -c   libtransraw.la '/usr/lib'
+libtool: install: (cd /home/ubuntu/Source/emane/src/transports/raw; /bin/bash "/home/ubuntu/Source/emane/libtool"  --tag CXX --mode=relink g++ -std=c++11 -g -O3 -Wall -Wextra -g -Og -avoid-version -lpthread -ldl -g -Og -o libtransraw.la -rpath /usr/lib libtransraw_la-rawtransport.lo -lpcap -luuid ../../../src/libemane/.libs/libemane.la ../common/.libs/libcommontransport.la )
+libtool: relink: g++ -std=c++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o  .libs/libtransraw_la-rawtransport.o   -lpthread -ldl -lpcap -luuid -L/usr/lib -lemane -lcommontransport -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o  -g -O3 -g -Og -g -Og   -pthread -Wl,-soname -Wl,libtransraw.so -o .libs/libtransraw.so
+libtool: install: /usr/bin/install -c .libs/libtransraw.soT /usr/lib/libtransraw.so
+libtool: install: /usr/bin/install -c .libs/libtransraw.lai /usr/lib/libtransraw.la
+libtool: install: /usr/bin/install -c .libs/libtransraw.a /usr/lib/libtransraw.a
+libtool: install: chmod 644 /usr/lib/libtransraw.a
+libtool: install: ranlib /usr/lib/libtransraw.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /usr/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[6]: Entering directory '/home/ubuntu/Source/emane/src/transports/raw'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/xml/transports/raw
+cp -f transraw.xml  /usr/share/emane/xml/transports/raw
+make[6]: Leaving directory '/home/ubuntu/Source/emane/src/transports/raw'
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/transports/raw'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/transports/raw'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/transports/raw'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/transports'
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/transports'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/transports'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/transports'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/transports'
+Making install in emanesh
+make[2]: Entering directory '/home/ubuntu/Source/emane/src/emanesh'
+make  install-am
+make[3]: Entering directory '/home/ubuntu/Source/emane/src/emanesh'
+/usr/bin/python setup.py build
+running build
+running build_py
+running build_scripts
+make[4]: Entering directory '/home/ubuntu/Source/emane/src/emanesh'
+make  install-exec-hook
+make[5]: Entering directory '/home/ubuntu/Source/emane/src/emanesh'
+/usr/bin/python setup.py install \
+    -O1 \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    
+running install
+running build
+running build_py
+running build_scripts
+running install_lib
+creating /usr/lib/python2.7/site-packages
+creating /usr/lib/python2.7/site-packages/emanesh
+creating /usr/lib/python2.7/site-packages/emanesh/schema
+copying build/lib.linux-x86_64-2.7/emanesh/schema/manifest.xsd -> /usr/lib/python2.7/site-packages/emanesh/schema
+copying build/lib.linux-x86_64-2.7/emanesh/schema/otapublisherscenario.xsd -> /usr/lib/python2.7/site-packages/emanesh/schema
+copying build/lib.linux-x86_64-2.7/emanesh/schema/tdmaschedule.xsd -> /usr/lib/python2.7/site-packages/emanesh/schema
+copying build/lib.linux-x86_64-2.7/emanesh/manifest.py -> /usr/lib/python2.7/site-packages/emanesh
+copying build/lib.linux-x86_64-2.7/emanesh/controlportclient.py -> /usr/lib/python2.7/site-packages/emanesh
+copying build/lib.linux-x86_64-2.7/emanesh/manifestexception.py -> /usr/lib/python2.7/site-packages/emanesh
+copying build/lib.linux-x86_64-2.7/emanesh/controlportexception.py -> /usr/lib/python2.7/site-packages/emanesh
+creating /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/event.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/tdmaschedule.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/commeffectevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/eventservice.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/locationevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/tdmascheduleevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/antennaprofileevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/pathlossevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/onehopneighborsevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/onehopneighborsevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/eventserviceexception.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/antennaprofileevent.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/event_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/pathlossevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/locationevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/commeffectevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/tdmascheduleevent_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/events/__init__.py -> /usr/lib/python2.7/site-packages/emanesh/events
+copying build/lib.linux-x86_64-2.7/emanesh/remotecontrolportapi_pb2.py -> /usr/lib/python2.7/site-packages/emanesh
+creating /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/otapublisherexception.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/otaheader_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/otamessage.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/commonphyheader_pb2.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/otapublisher.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/ota/__init__.py -> /usr/lib/python2.7/site-packages/emanesh/ota
+copying build/lib.linux-x86_64-2.7/emanesh/__init__.py -> /usr/lib/python2.7/site-packages/emanesh
+copying build/lib.linux-x86_64-2.7/emanesh/emaneshell.py -> /usr/lib/python2.7/site-packages/emanesh
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/manifest.py to manifest.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/controlportclient.py to controlportclient.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/manifestexception.py to manifestexception.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/controlportexception.py to controlportexception.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/event.py to event.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/tdmaschedule.py to tdmaschedule.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/commeffectevent.py to commeffectevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/eventservice.py to eventservice.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/locationevent.py to locationevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/tdmascheduleevent.py to tdmascheduleevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/antennaprofileevent_pb2.py to antennaprofileevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/pathlossevent.py to pathlossevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/onehopneighborsevent_pb2.py to onehopneighborsevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/onehopneighborsevent.py to onehopneighborsevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/eventserviceexception.py to eventserviceexception.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/antennaprofileevent.py to antennaprofileevent.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/event_pb2.py to event_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/pathlossevent_pb2.py to pathlossevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/locationevent_pb2.py to locationevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/commeffectevent_pb2.py to commeffectevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/tdmascheduleevent_pb2.py to tdmascheduleevent_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/events/__init__.py to __init__.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/remotecontrolportapi_pb2.py to remotecontrolportapi_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/otapublisherexception.py to otapublisherexception.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/otaheader_pb2.py to otaheader_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/otamessage.py to otamessage.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/commonphyheader_pb2.py to commonphyheader_pb2.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/otapublisher.py to otapublisher.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/ota/__init__.py to __init__.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/__init__.py to __init__.pyc
+byte-compiling /usr/lib/python2.7/site-packages/emanesh/emaneshell.py to emaneshell.pyc
+writing byte-compilation script '/tmp/tmp7K1uhL.py'
+/usr/bin/python -O /tmp/tmp7K1uhL.py
+removing /tmp/tmp7K1uhL.py
+running install_scripts
+copying build/scripts-2.7/emaneevent-commeffect -> /usr/bin
+copying build/scripts-2.7/emanesh -> /usr/bin
+copying build/scripts-2.7/emaneota-publisher -> /usr/bin
+copying build/scripts-2.7/emaneevent-location -> /usr/bin
+copying build/scripts-2.7/emanecommand-eel -> /usr/bin
+copying build/scripts-2.7/emaneevent-antennaprofile -> /usr/bin
+copying build/scripts-2.7/emaneevent-tdmaschedule -> /usr/bin
+copying build/scripts-2.7/emaneevent-dump -> /usr/bin
+copying build/scripts-2.7/emaneevent-pathloss -> /usr/bin
+changing mode of /usr/bin/emaneevent-commeffect to 775
+changing mode of /usr/bin/emanesh to 775
+changing mode of /usr/bin/emaneota-publisher to 775
+changing mode of /usr/bin/emaneevent-location to 775
+changing mode of /usr/bin/emanecommand-eel to 775
+changing mode of /usr/bin/emaneevent-antennaprofile to 775
+changing mode of /usr/bin/emaneevent-tdmaschedule to 775
+changing mode of /usr/bin/emaneevent-dump to 775
+changing mode of /usr/bin/emaneevent-pathloss to 775
+running install_egg_info
+Writing /usr/lib/python2.7/site-packages/emanesh-1.0.1-py2.7.egg-info
+make[5]: Leaving directory '/home/ubuntu/Source/emane/src/emanesh'
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/src/emanesh'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src/emanesh'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src/emanesh'
+make[2]: Entering directory '/home/ubuntu/Source/emane/src'
+make[3]: Entering directory '/home/ubuntu/Source/emane/src'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/ubuntu/Source/emane/src'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/src'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/src'
+Making install in include/emane
+make[1]: Entering directory '/home/ubuntu/Source/emane/include/emane'
+Making install in application
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/application'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/application'
+make  install-exec-hook
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/application'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/application/
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/application'
+ /bin/mkdir -p '/usr/include/emane/application/'
+ /usr/bin/install -c -m 644 configurationcontroller.h eventagentbuilder.h eventagentmanager.h eventgeneratorbuilder.h eventgeneratormanager.h libemane.h logger.h nembuilder.h nem.h nemmanager.h statisticcontroller.h transportadapter.h transportbuilder.h transportbuilder.inl transportmanager.h '/usr/include/emane/application/'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/application'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/application'
+Making install in controls
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/controls'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/controls'
+make  install-exec-hook
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/controls'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/controls
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/controls'
+ /bin/mkdir -p '/usr/include/emane/controls'
+ /usr/bin/install -c -m 644 antennaprofilecontrolmessage.h controlmessageids.h flowcontrolcontrolmessage.h frequencycontrolmessageformatter.h frequencycontrolmessage.h frequencyofinterestcontrolmessage.h frequencyofinterestcontrolmessageformatter.h otatransmittercontrolmessage.h r2rineighbormetriccontrolmessage.h r2rineighbormetriccontrolmessageformatter.h r2rineighbormetric.h r2rineighbormetric.inl r2riqueuemetriccontrolmessage.h r2riqueuemetriccontrolmessageformatter.h r2riqueuemetric.h r2riqueuemetric.inl r2riselfmetriccontrolmessage.h r2riselfmetriccontrolmessageformatter.h receivepropertiescontrolmessage.h receivepropertiescontrolmessageformatter.h serializedcontrolmessage.h timestampcontrolmessage.h transmittercontrolmessageformatter.h transmittercontrolmessage.h '/usr/include/emane/controls'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/controls'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/controls'
+Making install in events
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/events'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/events'
+make  install-exec-hook
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/events'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/events/
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/events'
+ /bin/mkdir -p '/usr/include/emane/events/'
+ /usr/bin/install -c -m 644 antennaprofileevent.h antennaprofileeventformatter.h antennaprofile.h antennaprofile.inl commeffectevent.h commeffecteventformatter.h commeffect.h commeffect.inl eventids.h locationevent.h locationeventformatter.h location.h location.inl pathlossevent.h pathlosseventformatter.h pathloss.h pathloss.inl slotinfo.h slotinfo.inl slotstructure.h slotstructure.inl tdmascheduleevent.h '/usr/include/emane/events/'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/events'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/events'
+Making install in generators
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators'
+Making install in eel
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+make  install-exec-hook
+make[5]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/generators/eel/
+make[5]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+ /bin/mkdir -p '/usr/include/emane/generators/eel/'
+ /usr/bin/install -c -m 644 eventinfo.h eventinfo.inl formatexception.h loaderplugin.h types.h '/usr/include/emane/generators/eel/'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators/eel'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators'
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/generators'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/generators'
+Making install in models
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/models'
+Making install in tdma
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+make  install-exec-hook
+make[5]: Entering directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/models/tdma/
+make[5]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+ /bin/mkdir -p '/usr/include/emane/models/tdma/'
+ /usr/bin/install -c -m 644 basemodel.h basicqueuemanager.h messagecomponent.h messagecomponent.inl packetstatuspublisher.h packetstatuspublisheruser.h queuemanager.h radiomodel.h scheduler.h scheduleruser.h types.h '/usr/include/emane/models/tdma/'
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models/tdma'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/models'
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/models'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/models'
+Making install in utils
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane/utils'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane/utils'
+make  install-exec-hook
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane/utils'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/utils/
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane/utils'
+ /bin/mkdir -p '/usr/include/emane/utils/'
+ /usr/bin/install -c -m 644 bitpool.h bitpool.inl conversionutils.h factoryexception.h netutils.h parameterconvert.h parameterconvert.inl randomnumberdistribution.h singleton.h spectrumwindowutils.h statistichistogramtable.h statistichistogramtable.inl threadutils.h timer.h timer.inl runningaverage.h commonlayerstatistics.h vectorio.h '/usr/include/emane/utils/'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane/utils'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane/utils'
+make[2]: Entering directory '/home/ubuntu/Source/emane/include/emane'
+make[3]: Entering directory '/home/ubuntu/Source/emane/include/emane'
+make  install-exec-hook
+make[4]: Entering directory '/home/ubuntu/Source/emane/include/emane'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/include/emane/
+make[4]: Leaving directory '/home/ubuntu/Source/emane/include/emane'
+ /bin/mkdir -p '/usr/include/emane/'
+ /usr/bin/install -c -m 644 antennamode.h anyexception.h any.h buildable.h buildable.inl buildexception.h cloneable.h commonmacheaderexception.h commonmacheader.h commonphyheader.h component.h componenttypes.h configurationexception.h configurationinfo.h configurationinfo.inl configurationproperties.h configurationregistrar.h configurationregistrar.inl configurationupdate.h configureexception.h constants.h controlmessage.h downstreamcontroltransport.h downstreampacket.h downstreamtransport.h downstreamtransport.inl eventagent.h eventgenerator.h event.h eventregistrar.h eventserviceprovider.h eventserviceuser.h exception.h filedescriptorserviceprovider.h filedescriptorserviceprovider.inl flowcontrolclient.h flowcontrolmanager.h frequencysegment.h frequencysegment.inl inetaddr.h '/usr/include/emane/'
+ /usr/bin/install -c -m 644 inetaddrexception.h logserviceprovider.h logserviceprovider.inl maclayerimpl.h maclayerimpl.inl mactypes.h neighbormetricmanager.h nemlayer.h net.h orientation.h orientation.inl orientationformatter.h packetinfo.h packetinfo.inl phylayerimpl.h phylayerimpl.inl phytypes.h platformexception.h platformserviceprovider.h platformserviceuser.h position.h position.inl positionformatter.h queuemetricmanager.h radioserviceprovider.h radioserviceuser.h registrarexception.h registrar.h runningstatemutable.h serializable.h serializationexception.h shimlayerimpl.h spectrumserviceexception.h spectrumserviceprovider.h startexception.h statistic.h statisticinfo.h statisticinfo.inl statisticmanifest.h statisticnonnumeric.h '/usr/include/emane/'
+ /usr/bin/install -c -m 644 statisticnonnumeric.inl statisticnumeric.h statisticnumeric.inl statisticproperties.h statisticregistrar.h statisticregistrar.inl statistictableexception.h statistictable.h statistictableinfo.h statistictableinfo.inl statistictable.inl statistictablepublisher.h timerserviceprovider.h timerserviceprovider.inl timerserviceuser.h transmitter.h transmitter.inl transport.h types.h upstreamcontroltransport.h upstreampacket.h upstreamtransport.h upstreamtransport.inl velocity.h velocity.inl velocityformatter.h '/usr/include/emane/'
+ /bin/mkdir -p '/usr/include/emane/'
+ /usr/bin/install -c -m 644 version.h '/usr/include/emane/'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/include/emane'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/include/emane'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/include/emane'
+Making install in scripts
+make[1]: Entering directory '/home/ubuntu/Source/emane/scripts'
+make[2]: Entering directory '/home/ubuntu/Source/emane/scripts'
+ /bin/mkdir -p '/usr/bin'
+ /usr/bin/install -c emanegentransportxml '/usr/bin'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/ubuntu/Source/emane/scripts'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/scripts'
+Making install in scripts/doc
+make[1]: Entering directory '/home/ubuntu/Source/emane/scripts/doc'
+make[2]: Entering directory '/home/ubuntu/Source/emane/scripts/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/share/man/man1'
+ /usr/bin/install -c -m 644 emanegentransportxml.1 '/usr/share/man/man1'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/scripts/doc'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/scripts/doc'
+Making install in dtd
+make[1]: Entering directory '/home/ubuntu/Source/emane/dtd'
+make[2]: Entering directory '/home/ubuntu/Source/emane/dtd'
+make  install-exec-hook
+make[3]: Entering directory '/home/ubuntu/Source/emane/dtd'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/dtd
+cp -f  attrs.ent eventagent.dtd eventdaemon.dtd eventgenerator.dtd eventservice.dtd mac.dtd nemcontents.dtd nem.dtd param.dtd phy.dtd platform.dtd shim.dtd transportdaemon.dtd transport.dtd rfpipepcr.dtd ieee80211pcr.dtd antennaprofile.dtd commeffectfilters.dtd /usr/share/emane/dtd
+make[3]: Leaving directory '/home/ubuntu/Source/emane/dtd'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/ubuntu/Source/emane/dtd'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/dtd'
+Making install in doc
+make[1]: Entering directory '/home/ubuntu/Source/emane/doc'
+make[2]: Entering directory '/home/ubuntu/Source/emane/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/share/man/man1'
+ /usr/bin/install -c -m 644 emane.1 emanetransportd.1 emaneeventd.1 emaneeventservice.1 '/usr/share/man/man1'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/doc'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/doc'
+Making install in schema
+make[1]: Entering directory '/home/ubuntu/Source/emane/schema'
+make[2]: Entering directory '/home/ubuntu/Source/emane/schema'
+make  install-exec-hook
+make[3]: Entering directory '/home/ubuntu/Source/emane/schema'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/schema/
+cp -f manifest.xsd tdmabasemodelpcr.xsd /usr/share/emane/schema
+make[3]: Leaving directory '/home/ubuntu/Source/emane/schema'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/ubuntu/Source/emane/schema'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/schema'
+Making install in test
+make[1]: Entering directory '/home/ubuntu/Source/emane/test'
+Making install in harness
+make[2]: Entering directory '/home/ubuntu/Source/emane/test/harness'
+Making install in gainscenario
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness/gainscenario'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness/gainscenario'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness/gainscenario'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness/gainscenario'
+Making install in noisescenario
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness/noisescenario'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness/noisescenario'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness/noisescenario'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness/noisescenario'
+Making install in phyupstreamscenario
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness/phyupstreamscenario'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness/phyupstreamscenario'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness/phyupstreamscenario'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness/phyupstreamscenario'
+Making install in profilescenario
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness/profilescenario'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness/profilescenario'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness/profilescenario'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness/profilescenario'
+Making install in propagationscenario
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness/propagationscenario'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness/propagationscenario'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness/propagationscenario'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness/propagationscenario'
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/harness'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/harness'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/harness'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/harness'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/test/harness'
+Making install in testcases
+make[2]: Entering directory '/home/ubuntu/Source/emane/test/testcases'
+make[3]: Entering directory '/home/ubuntu/Source/emane/test/testcases'
+make[4]: Entering directory '/home/ubuntu/Source/emane/test/testcases'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/ubuntu/Source/emane/test/testcases'
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test/testcases'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/test/testcases'
+make[2]: Entering directory '/home/ubuntu/Source/emane/test'
+make[3]: Entering directory '/home/ubuntu/Source/emane/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/ubuntu/Source/emane/test'
+make[2]: Leaving directory '/home/ubuntu/Source/emane/test'
+make[1]: Leaving directory '/home/ubuntu/Source/emane/test'
+make[1]: Entering directory '/home/ubuntu/Source/emane'
+make[2]: Entering directory '/home/ubuntu/Source/emane'
+make  install-exec-hook
+make[3]: Entering directory '/home/ubuntu/Source/emane'
+/bin/bash /home/ubuntu/Source/emane/install-sh -d /usr/share/emane/manifest
+./scripts/emanegenmanifests.sh /usr/share/emane/manifest
+make[3]: Leaving directory '/home/ubuntu/Source/emane'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/ubuntu/Source/emane'
+make[1]: Leaving directory '/home/ubuntu/Source/emane'

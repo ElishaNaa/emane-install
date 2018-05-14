@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
+sysconfdir=/etc/dlep
+
+Name: dlep
+Description: MIT Lincoln Laboratory Dynamic Link Exchange Protocol
+Version: 1.10
+Libs: -L${libdir} -ldlep
+Cflags: -I${includedir} \
+-DBOOST_MPL_CFG_NO_PREPROCESSED_HEADERS \
+-DBOOST_MPL_LIMIT_LIST_SIZE=30 \
+-DBOOST_MPL_LIMIT_VECTOR_SIZE=30 \
+-DDLEP_SYSCONFDIR=\"${sysconfdir}\"

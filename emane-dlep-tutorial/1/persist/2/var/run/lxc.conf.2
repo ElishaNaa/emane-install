@@ -1,0 +1,25 @@
+lxc.utsname=node-2
+lxc.network.type=veth
+lxc.network.name=eth1
+lxc.network.flags=up
+lxc.network.link=emanenode0
+lxc.network.hwaddr=02:00:02:01:00:01
+lxc.network.ipv4=10.99.0.2/24
+lxc.network.veth.pair=veth2.1
+
+lxc.network.type=veth
+lxc.network.name=eth2
+lxc.network.hwaddr=02:00:02:02:00:01
+lxc.network.veth.pair=veth2.2
+
+lxc.network.type = empty
+lxc.network.flags=up
+
+lxc.console = none
+lxc.tty = 1
+lxc.pts = 128
+lxc.cgroup.devices.allow = a
+
+lxc.autodev = 0
+
+lxc.aa_profile = unconfined

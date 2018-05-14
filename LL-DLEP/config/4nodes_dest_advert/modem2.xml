@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config>
+	<params>
+		<local-type>modem</local-type>
+                <destination-advert-enable>1</destination-advert-enable>
+                <destination-advert-rf-id>2</destination-advert-rf-id>
+                <destination-advert-iface>eth0</destination-advert-iface>
+		<discovery-enable>1</discovery-enable>
+		<discovery-iface>eth1</discovery-iface>
+		<discovery-port>4854</discovery-port>
+		<discovery-mcast-address>224.0.0.117</discovery-mcast-address>
+		<discovery-interval>60</discovery-interval>
+		<session-port>4854</session-port>
+		<heartbeat-interval>60</heartbeat-interval>
+		<heartbeat-threshold>2</heartbeat-threshold>
+		<peer-type>dest-advert-modem2</peer-type>
+                <log-file>dlep-modem2.log</log-file>
+	</params>
+</config>

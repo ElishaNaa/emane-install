@@ -1,0 +1,174 @@
+09:56:04.401351  INFO application: emane -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/1/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.uuid platform1.xml 
+09:56:04.401778  INFO application uuid: d3300899-34a1-43ec-b92f-c8e585e204ea
+09:56:04.405840  INFO TRANSPORTI 001 RawTransport configure device: eth1
+09:56:04.405882  INFO TRANSPORTI 001 RawTransport configure arpcacheenable: 1
+09:56:04.405894  INFO TRANSPORTI 001 Transports::Raw::RawTransport configure bitrate: 0
+09:56:04.405903  INFO TRANSPORTI 001 RawTransport configure broadcastmodeenable: 0
+09:56:04.425391 DEBUG SHIMI 001 DLEP::ShimLayer::initialize
+09:56:04.425543 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item ackprobability, default value 100, description ack probabilty percent 0-100
+09:56:04.425561 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item acktimeout, default value 3, description seconds to wait for ack signals
+09:56:04.425573 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item configfile, default value , description xml config file containing parameter settings
+09:56:04.425584 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertenable, default value 1, description dest advert enable/disable
+09:56:04.425594 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertexpirecount, default value 0, description dest advert expire count, 0 = hold
+09:56:04.425605 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertholdinterval, default value 0, description dest advert hold value, 0 = hold
+09:56:04.425615 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertiface, default value emane0, description dest advert interface
+09:56:04.425625 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertmcastaddress, default value 225.6.7.8, description dest advert multicast address
+09:56:04.425635 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertport, default value 33445, description dest advert port
+09:56:04.425647 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertrfid, default value 0,1, description dest advert mac id (NEMId)
+09:56:04.425657 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertsendinterval, default value 5, description dest advert tx interval
+09:56:04.425667 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryenable, default value 1, description should the router run the peerdiscovery protocol?
+09:56:04.425678 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryiface, default value eth0, description interface for the peerdiscovery protocol
+09:56:04.425688 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryinterval, default value 5, description time between sending peerdiscovery signals
+09:56:04.425698 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoverymcastaddress, default value 225.0.0.45, description address to send peerdiscovery signals to
+09:56:04.425709 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryport, default value 30002, description port to send peerdiscovery signals to
+09:56:04.425719 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item experimentname, default value rfpipe, description experimental definition data item value
+09:56:04.425729 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item extensions, default value , description list of extension ids to support
+09:56:04.425740 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item heartbeatinterval, default value 5, description time between sending heartbeat signals
+09:56:04.425750 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item heartbeatthreshold, default value 2, description number of missed heartbeats to tolerate
+09:56:04.425760 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item localtype, default value modem, description which dlep role to play, modem or router?
+09:56:04.425770 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item logfile, default value dlep.log, description file to write log messages to
+09:56:04.425780 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item loglevel, default value 1, description 1=most logging, 5=least
+09:56:04.425790 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item metricfile, default value metrics.xml, description xml file containing metrics definitions.
+09:56:04.425800 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item peertype, default value emane, description peer type data item value
+09:56:04.425810 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item protocolconfigfile, default value protocol-config.xml, description xml file containing dlep protocol config.
+09:56:04.425821 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item protocolconfigschema, default value protocol-config.xsd, description xml protocol config schema.
+09:56:04.425833 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item sendtries, default value 3, description number of times to send a signal before giving up
+09:56:04.425843 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item sessionport, default value 30003, description tcp port number session connections
+09:56:04.426072 DEBUG SHIMI 001 DLEP::ShimLayer::configure
+09:56:04.426090 DEBUG SHIMI 001 DLEP::ModemService::configure
+09:56:04.426102  INFO SHIMI 001 DLEP::ModemService::configure ackprobability = 100
+09:56:04.426111  INFO SHIMI 001 DLEP::ModemService::configure acktimeout = 3
+09:56:04.426120  INFO SHIMI 001 DLEP::ModemService::configure configfile = 
+09:56:04.426185  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertenable = 1
+09:56:04.426196  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertexpirecount = 0
+09:56:04.426205  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertholdinterval = 0
+09:56:04.426214  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertiface = eth0
+09:56:04.426223  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertmcastaddress = 225.6.7.8
+09:56:04.426233  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertport = 33445
+09:56:04.426241  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertsendinterval = 5
+09:56:04.426250  INFO SHIMI 001 DLEP::ModemService::configure discoveryenable = 1
+09:56:04.426258  INFO SHIMI 001 DLEP::ModemService::configure discoveryiface = eth1
+09:56:04.426267  INFO SHIMI 001 DLEP::ModemService::configure discoveryinterval = 5
+09:56:04.426276  INFO SHIMI 001 DLEP::ModemService::configure discoverymcastaddress = 225.0.0.45
+09:56:04.426285  INFO SHIMI 001 DLEP::ModemService::configure discoveryport = 30002
+09:56:04.426306  INFO SHIMI 001 DLEP::ModemService::configure etheraddroui = 00:00:01
+09:56:04.426316  INFO SHIMI 001 DLEP::ModemService::configure extensions = 
+09:56:04.426324  INFO SHIMI 001 DLEP::ModemService::configure heartbeatinterval = 5
+09:56:04.426332  INFO SHIMI 001 DLEP::ModemService::configure heartbeatthreshold = 2
+09:56:04.426341  INFO SHIMI 001 DLEP::ModemService::configure localtype = modem
+09:56:04.426350  INFO SHIMI 001 DLEP::ModemService::configure logfile = dlep1.log
+09:56:04.426358  INFO SHIMI 001 DLEP::ModemService::configure loglevel = 1
+09:56:04.426369  INFO SHIMI 001 DLEP::ModemService::configure macaddress = 01 0a:B2:C3:D4:00:01
+09:56:04.426378  INFO SHIMI 001 DLEP::ModemService::configure peertype = emane
+09:56:04.426386  INFO SHIMI 001 DLEP::ModemService::configure protocolconfigfile = dlep-draft-29.xml
+09:56:04.426395  INFO SHIMI 001 DLEP::ModemService::configure sendtries = 3
+09:56:04.426403  INFO SHIMI 001 DLEP::ModemService::configure sessionport = 30003
+09:56:04.426411  INFO SHIMI 001 DLEP::ModemService::configure sinrmax = 20.000000 dBm
+09:56:04.426429  INFO SHIMI 001 DLEP::ModemService::configure sinrmin = 0.000000 dBm
+09:56:04.426439  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertrfid = 0,1
+09:56:04.426448  INFO SHIMI 001 DLEP::ModemService::configure experimentname = rfpipe
+09:56:04.426456  INFO SHIMI 001 DLEP::ModemService::configure metricfile = metrics.xml
+09:56:04.426465  INFO SHIMI 001 DLEP::ModemService::configure protocolconfigschema = protocol-config.xsd
+09:56:04.427376 DEBUG MACI 001 RFPipeMACLayer::initialize
+09:56:04.427542 DEBUG MACI 001 RFPipeMACLayer::configure
+09:56:04.427557  INFO MACI 001 RFPipeMACLayer::configure datarate = 1000000
+09:56:04.427567  INFO MACI 001 RFPipeMACLayer::configure delay = 0.250000
+09:56:04.427577  INFO MACI 001 RFPipeMACLayer::configure enablepromiscuousmode = off
+09:56:04.427585  INFO MACI 001 RFPipeMACLayer::configure flowcontrolenable = off
+09:56:04.427594  INFO MACI 001 RFPipeMACLayer::configure flowcontroltokens = 10
+09:56:04.427602  INFO MACI 001 RFPipeMACLayer::configure jitter = 0.000000
+09:56:04.427612  INFO MACI 001 RFPipeMACLayer::configure pcrcurveuri = file:///usr/share/emane/xml/models/mac/rfpipe/rfpipepcr.xml
+09:56:04.427621  INFO MACI 001 RFPipeMACLayer::configure radiometricenable = on
+09:56:04.427629  INFO MACI 001 RFPipeMACLayer::configure neighbormetricdeletetime = 60.000000
+09:56:04.427640  INFO MACI 001 RFPipeMACLayer::configure radiometricreportinterval = 1.000000
+09:56:04.427776  INFO PHYI 001 FrameworkPHY::configure: bandwidth = 1000000 Hz
+09:56:04.428104  INFO PHYI 001 FrameworkPHY::configure: fixedantennagain = 0.00 dBi
+09:56:04.428119  INFO PHYI 001 FrameworkPHY::configure: fixedantennagainenable = on
+09:56:04.428129  INFO PHYI 001 FrameworkPHY::configure: noisemode = outofband
+09:56:04.428138  INFO PHYI 001 FrameworkPHY::configure: propagationmodel = precomputed
+09:56:04.428147  INFO PHYI 001 FrameworkPHY::configure: subid = 2
+09:56:04.428157  INFO PHYI 001 FrameworkPHY::configure: systemnoisefigure = 4.00 dB
+09:56:04.428166  INFO PHYI 001 FrameworkPHY::configure: txpower = 0.00 dBm
+09:56:04.428176  INFO PHYI 001 FrameworkPHY::configure: frequency = 2347000000 Hz
+09:56:04.428188  INFO PHYI 001 FrameworkPHY::configure: frequencyofinterest = 2347000000 Hz
+09:56:04.428197  INFO PHYI 001 FrameworkPHY::configure: noisebinsize = 20 usec
+09:56:04.428205  INFO PHYI 001 FrameworkPHY::configure: noisemaxclampenable = off
+09:56:04.428213  INFO PHYI 001 FrameworkPHY::configure: noisemaxmessagepropagation = 200000 usec
+09:56:04.428222  INFO PHYI 001 FrameworkPHY::configure: noisemaxsegmentduration = 1000000 usec
+09:56:04.428230  INFO PHYI 001 FrameworkPHY::configure: noisemaxsegmentoffset = 300000 usec
+09:56:04.428239  INFO PHYI 001 FrameworkPHY::configure: timesyncthreshold = 10000 usec
+09:56:04.428750  INFO NEMManagerImpl::configure controlportendpoint: 0.0.0.0:47000
+09:56:04.428774  INFO NEMManagerImpl::configure eventservicedevice: eth0
+09:56:04.428785  INFO NEMManagerImpl::configure eventservicegroup: 224.1.2.8:45703
+09:56:04.428794  INFO NEMManagerImpl::configure otamanagerchannelenable: on
+09:56:04.428802  INFO NEMManagerImpl::configure otamanagerdevice: eth0
+09:56:04.428811  INFO NEMManagerImpl::configure OTA Manager Channel Group: 224.1.2.8:45702
+09:56:04.428820  INFO NEMManagerImpl::configure eventservicettl: 1
+09:56:04.428828  INFO NEMManagerImpl::configure otamanagerloopback: off
+09:56:04.428836  INFO NEMManagerImpl::configure otamanagerttl: 1
+09:56:04.428846  INFO NEMManagerImpl::configure stats.event.maxeventcountrows: 0
+09:56:04.428856  INFO NEMManagerImpl::configure stats.ota.maxeventcountrows: 0
+09:56:04.429035  INFO NEMManagerImpl::configure stats.ota.maxpacketcountrows: 0
+09:56:04.429320 DEBUG EventService::processEventMessage
+09:56:04.528460 DEBUG TRANSPORTI 001 RawTransport start adapter eth1, hw addr 02:42:0A:64:01:FE
+09:56:04.544455 DEBUG SHIMI 001 DLEP::ShimLayer::start
+09:56:04.544482 DEBUG SHIMI 001 DLEP::ModemService::start
+09:56:04.544852 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name ack-probability
+09:56:04.544877 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name ack-timeout
+09:56:04.544894 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name config-file
+09:56:04.544909 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-enable
+09:56:04.544924 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-expire-count
+09:56:04.544938 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-hold-interval
+09:56:04.544951 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-iface
+09:56:04.544967 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-mcast-address
+09:56:04.544982 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-port
+09:56:04.544996 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-rf-id
+09:56:04.545010 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-send-interval
+09:56:04.545024 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-enable
+09:56:04.545038 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-iface
+09:56:04.545052 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-interval
+09:56:04.545066 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-mcast-address
+09:56:04.545090 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-port
+09:56:04.545104 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name experiment-name
+09:56:04.545118 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name extensions
+09:56:04.545132 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name heartbeat-interval
+09:56:04.545146 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name heartbeat-threshold
+09:56:04.545160 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name local-type
+09:56:04.545174 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name log-file
+09:56:04.545188 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name log-level
+09:56:04.545202 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name metric-file
+09:56:04.545216 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name peer-type
+09:56:04.545229 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name protocol-config-file
+09:56:04.545243 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name protocol-config-schema
+09:56:04.545257 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name send-tries
+09:56:04.545270 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name session-port
+09:56:05.182040 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for FF:FF:FF:FF:FF:FF, using broadcast mac address
+09:56:05.182068 DEBUG TRANSPORTI 001 RawTransport readDevice src 1, dst 65535, dscp 48, length 138
+09:56:05.182673 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+09:56:06.052063 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for FF:FF:FF:FF:FF:FF, using broadcast mac address
+09:56:06.052093 DEBUG TRANSPORTI 001 RawTransport readDevice src 1, dst 65535, dscp 48, length 138
+09:56:06.052145 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+09:56:07.068578 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for FF:FF:FF:FF:FF:FF, using broadcast mac address
+09:56:07.068607 DEBUG TRANSPORTI 001 RawTransport readDevice src 1, dst 65535, dscp 48, length 138
+09:56:07.068957 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+09:56:07.884745 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for FF:FF:FF:FF:FF:FF, using broadcast mac address
+09:56:07.884952 DEBUG TRANSPORTI 001 RawTransport readDevice src 1, dst 65535, dscp 48, length 138
+09:56:07.885984 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+09:56:08.800744 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for FF:FF:FF:FF:FF:FF, using broadcast mac address
+09:56:08.800768 DEBUG TRANSPORTI 001 RawTransport readDevice src 1, dst 65535, dscp 48, length 226
+09:56:08.801140 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+09:56:09.546627 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name log-file, result found, string value [dlep1.log]
+09:56:09.546900 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name log-level, result found, uint value [1]
+09:56:09.546919 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name local-type, result found, string value [modem]
+09:56:09.551521 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name protocol-config-schema, result found, string value [protocol-config.xsd]
+09:56:09.551549 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name protocol-config-file, result found, string value [dlep-draft-29.xml]
+09:56:09.578113 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-enable, result found, bool value [true]
+09:56:09.578238 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-iface, result found, string value [eth1]
+09:56:09.578259 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-port, result found, uint value [30002]
+09:56:09.578276 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-mcast-address, result found, ipaddress value 225.0.0.45
+09:56:09.578765 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-enable, result found, bool value [true]
+09:56:09.578850 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-iface, result found, string value [eth0]
+09:56:09.578869 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-port, result found, uint value [33445]
+09:56:09.578884 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-mcast-address, result found, ipaddress value 225.6.7.8
+09:56:09.578899 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-send-interval, result found, uint value [5]
+09:56:09.578915 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-rf-id, result found, vector 2

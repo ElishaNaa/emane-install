@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nem SYSTEM "file:///usr/share/emane/dtd/nem.dtd">
+<nem>
+  <transport definition="transvirtual.xml"/>
+  <shim definition="emanelayerdlep7.xml"/>
+  <mac definition="tdmactradiomodel.xml" />
+  <phy>
+    <param name="fixedantennagain"         value="1.0"/>
+    <param name="fixedantennagainenable"   value="on"/>
+    <param name="bandwidth"                value="1M"/>
+    <param name="noisemode"                value="none"/>
+    <param name="propagationmodel"         value="precomputed"/>
+    <param name="systemnoisefigure"        value="7.0"/>
+    <param name="subid"                    value="7"/>
+    <param name='frequency' value='222M'/>
+    <param name='frequencyofinterest' value='222M'/>
+  </phy>
+</nem>

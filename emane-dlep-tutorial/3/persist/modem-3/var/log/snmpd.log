@@ -1,0 +1,6 @@
+registered debug token ucd-snmp/pass, 1
+Created directory: /var/net-snmp
+Created directory: /var/net-snmp/mib_indexes
+Turning on AgentX master support.
+Created directory: /var/agentx
+NET-SNMP version 5.7.3

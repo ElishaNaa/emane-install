@@ -1,0 +1,4 @@
+SUBDIRS= \
+ common \
+ virtual \
+ raw       

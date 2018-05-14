@@ -1,0 +1,24 @@
+# EMANE container
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y \
+net-tools \
+iproute2 \
+iputils-ping \
+sudo \
+libboost-thread-dev \
+libboost-system-dev \
+libboost-test-dev \
+libxml2-dev \
+libxml2-utils \
+libreadline6-dev \
+libprotobuf-dev \
+protobuf-compiler \ 
+doxygen \
+graphviz \
+traceroute \
+nano 
+WORKDIR /home/LL-DLEP/
+RUN ln -s -f /home/LL-DLEP/libdlep.so.1.0 /usr/lib/libdlep.so.1
+RUN ln -s -f /home/LL-DLEP/libdlep.so.1.0 /usr/lib/libdlep.so
+#CMD make install
+CMD ./Dlep config-file config/modem_dest_advert.xml
