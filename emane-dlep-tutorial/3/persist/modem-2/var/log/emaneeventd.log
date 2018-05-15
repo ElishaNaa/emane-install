@@ -1,13 +1,13 @@
-13:05:26.391368  INFO application: emaneeventd -r -d -l 4 -f /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/log/emaneeventd.log --pidfile /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/run/emaneeventd.pid --uuidfile /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/run/emaneeventd.uuid eventdaemon2.xml 
-13:05:26.393331  INFO application uuid: d6b68a9f-0650-421c-8833-0a6ab0b3571a
-13:05:26.394618  INFO EventAgentManagerImpl::configure eventservicedevice: eth1
-13:05:26.394680  INFO EventAgentManagerImpl::configure eventservicegroup: 224.1.2.8:45703
-13:05:26.394701  INFO EventAgentManagerImpl::configure eventservicettl: 1
-13:05:26.395114 DEBUG EventService::processEventMessage
-13:05:26.398561 DEBUG Timer Scheduled
-13:06:06.190381 DEBUG EventService packet received len: 81
-13:06:06.192101 DEBUG EventService packet received len: 81
-13:06:06.193850 DEBUG EventService packet received len: 81
-13:06:11.958577 DEBUG EventService packet received len: 60
-13:06:11.960421 DEBUG EventService packet received len: 60
-13:06:11.962178 DEBUG EventService packet received len: 60
+16:23:05.260227  INFO application: emaneeventd -r -d -l 4 -f /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/log/emaneeventd.log --pidfile /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/run/emaneeventd.pid --uuidfile /home/user/emane-install/emane-dlep-tutorial/3/persist/modem-2/var/run/emaneeventd.uuid eventdaemon2.xml 
+16:23:05.264423  INFO application uuid: 6746a776-8fbc-45f4-bc32-f19dd68fca9e
+16:23:05.266031  INFO EventAgentManagerImpl::configure eventservicedevice: eth1
+16:23:05.266076  INFO EventAgentManagerImpl::configure eventservicegroup: 224.1.2.8:45703
+16:23:05.266089  INFO EventAgentManagerImpl::configure eventservicettl: 1
+16:23:05.267001 DEBUG EventService::processEventMessage
+16:23:05.270372 DEBUG Timer Scheduled
+16:24:56.967850 DEBUG EventService packet received len: 60
+16:24:56.969388 DEBUG EventService packet received len: 60
+16:24:56.971046 DEBUG EventService packet received len: 60
+16:25:14.402038 DEBUG EventService packet received len: 81
+16:25:14.405000 DEBUG EventService packet received len: 81
+16:25:14.407306 DEBUG EventService packet received len: 81

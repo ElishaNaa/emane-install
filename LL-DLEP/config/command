@@ -1,1 +1,16 @@
- peer update IPv4_Address 0;10.100.2.1
+peer update IPv4_Address 1;10.22.0.1
+peer update IPv4_Address 1;10.22.0.2
+peer update IPv4_Address 0;10.22.0.1
+peer update IPv4_Address 0;10.22.0.2
+
+
+peer update IPv4_Attached_Subnet 1;10.222.0.1;16
+peer update IPv4_Attached_Subnet 0;10.222.0.1;16
+
+
+peer update IPv6_Address 1;fe80::aaaa::bbbb::cccc::dddd
+peer update IPv6_Address 0;fe80::aaaa::bbbb::cccc::dddd
+
+
+peer update IPv6_Attached_Subnet 1;fe80::aaaa::bbbb::cccc::dddd;64
+peer update IPv6_Attached_Subnet 0;fe80::aaaa::bbbb::cccc::dddd;64
