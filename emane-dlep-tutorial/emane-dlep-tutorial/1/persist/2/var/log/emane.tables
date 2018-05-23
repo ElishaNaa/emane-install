@@ -1,0 +1,93 @@
+nem 2   transport BroadcastPacketAcceptTable
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 1   | 0           | 0            | 487         | 51554        |
+| 2   | 543         | 42434        | 0           | 0            |
+
+nem 2   transport BroadcastPacketDropTable
+| NEM | Write Error | Frame Error |
+
+nem 2   transport EventReceptionTable
+| Event | Total Rx |
+
+nem 2   transport UnicastPacketAcceptTable
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   transport UnicastPacketDropTable
+| NEM | Write Error | Frame Error |
+
+nem 2   shim0 EventReceptionTable
+| Event | Total Rx |
+
+nem 2   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 1   | 0           | 0            | 487         | 51554        |
+| 2   | 530         | 44680        | 0           | 0            |
+
+nem 2   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+| 1   | 26   | 0      | 0       | 0              | 0           | 0                  | 0            |
+
+nem 2   mac EventReceptionTable
+| Event | Total Rx |
+
+nem 2   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg | SINR Stdv | NF Avg | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 1     | 487     | 0       | 26          | 412420  | 1508515299.35 | 0.0           | 19.0     | 0.0       | -110.0 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 530     | 0           | 0       | 0.0           | 1508515299.23 | 0.0      | 0.0       | 0.0    | 0.0     | 0.0         | 1000000     |
+
+nem 2   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg | NF Avg | Rx Age          |
+| 1     | 2       | 0       | 0           | 0.00163186318241 | 19.0     | -110.0 | 0.0723001360893 |
+| 65535 | 0       | 1       | 0           | 0.0              | 0.0      | 0.0    | 0.0             |
+
+nem 2   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+
+nem 2   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 2   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 1   | 0           | 0            | 513         | 60789        |
+| 2   | 530         | 48262        | 0           | 0            |
+
+nem 2   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 18                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 966               | 0             | 0            | 0            | 0       | 0              |
+| 10  | 0           | 0              | 1393              | 0             | 0            | 0            | 0       | 0              |
+
+nem 2   phy EventReceptionTable
+| Event | Total Rx |
+| 101   | 1        |
+
+nem 2   phy LocationEventInfoTable
+| NEM | Latitude | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+
+nem 2   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 91.0             | 91.0             |
+| 2   | 91.0             | 91.0             |
+
+nem 2   phy ReceivePowerTable
+| NEM | Frequency  | Rx Power | Last Packet Time |
+| 1   | 2347000000 | -91.0    | 1508515299.35    |
+
+nem 2   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+
+emulator EventChannelEventCountTable
+| Src | Emulator UUID | Num Events Tx | Num Events Rx |
+
+emulator OTAChannelEventCountTable
+| Src | Emulator UUID | Num Events Tx | Num Events Rx |
+
+emulator OTAChannelPacketCountTable
+| Src | Emulator UUID | Num Pkts Tx | Num Pkts Rx |
+

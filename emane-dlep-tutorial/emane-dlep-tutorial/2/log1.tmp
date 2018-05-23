@@ -1,0 +1,445 @@
+10:15:21.334401  INFO application: emane -l 4 -f log1.tmp platform1.xml 
+10:15:21.334517  INFO application uuid: 6b1834d1-d33c-4b3e-93c7-4eea871b3b49
+10:15:21.334574 ERROR Please consider using the realtime scheduler to improve fidelity.
+10:15:21.335170  INFO TRANSPORTI 001 VirtualTransport::configure address: 10.100.0.1
+10:15:21.335222  INFO TRANSPORTI 001 VirtualTransport::configure mask: 255.255.255.0
+10:15:21.335235  INFO TRANSPORTI 001 VirtualTransport::configure arpcacheenable: 1
+10:15:21.335242  INFO TRANSPORTI 001 VirtualTransport::configure arpmodeenable: 1
+10:15:21.335249  INFO TRANSPORTI 001 VirtualTransport::configure bitrate: 0
+10:15:21.335255  INFO TRANSPORTI 001 VirtualTransport::configure broadcastmodeenable: 0
+10:15:21.335261  INFO TRANSPORTI 001 VirtualTransport::configure device: emane0
+10:15:21.335267  INFO TRANSPORTI 001 VirtualTransport::configure devicepath: /dev/net/tun
+10:15:21.335273  INFO TRANSPORTI 001 VirtualTransport::configure flowcontrolenable: 0
+10:15:21.353492 DEBUG SHIMI 001 DLEP::ShimLayer::initialize
+10:15:21.353628 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item ackprobability, default value 100, description ack probabilty percent 0-100
+10:15:21.353680 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item acktimeout, default value 3, description seconds to wait for ack signals
+10:15:21.353698 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item configfile, default value , description xml config file containing parameter settings
+10:15:21.353708 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertenable, default value 1, description dest advert enable/disable
+10:15:21.353719 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertexpirecount, default value 0, description dest advert expire count, 0 = hold
+10:15:21.353728 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertholdinterval, default value 0, description dest advert hold value, 0 = hold
+10:15:21.353736 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertiface, default value emane0, description dest advert interface
+10:15:21.353744 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertmcastaddress, default value 225.6.7.8, description dest advert multicast address
+10:15:21.353751 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertport, default value 33445, description dest advert port
+10:15:21.353761 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertrfid, default value 0,1, description dest advert mac id (NEMId)
+10:15:21.353769 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item destinationadvertsendinterval, default value 5, description dest advert tx interval
+10:15:21.353777 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryenable, default value 1, description should the router run the peerdiscovery protocol?
+10:15:21.353785 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryiface, default value eth0, description interface for the peerdiscovery protocol
+10:15:21.353792 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryinterval, default value 5, description time between sending peerdiscovery signals
+10:15:21.353800 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoverymcastaddress, default value 225.0.0.45, description address to send peerdiscovery signals to
+10:15:21.353809 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item discoveryport, default value 30002, description port to send peerdiscovery signals to
+10:15:21.353817 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item extensions, default value , description list of extension ids to support
+10:15:21.353845 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item heartbeatinterval, default value 5, description time between sending heartbeat signals
+10:15:21.353856 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item heartbeatthreshold, default value 2, description number of missed heartbeats to tolerate
+10:15:21.353864 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item localtype, default value modem, description which dlep role to play, modem or router?
+10:15:21.353871 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item logfile, default value dlep.log, description file to write log messages to
+10:15:21.353879 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item loglevel, default value 1, description 1=most logging, 5=least
+10:15:21.353886 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item peertype, default value emane, description peer type data item value
+10:15:21.353893 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item protocolconfigfile, default value protocol-config.xml, description xml file containing dlep protocol config.
+10:15:21.353902 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item protocolconfigschema, default value protocol-config.xsd, description xml protocol config schema.
+10:15:21.353910 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item sendtries, default value 3, description number of times to send a signal before giving up
+10:15:21.353931 DEBUG SHIMI 001 DLEP::ShimLayer::initialize item sessionport, default value 30003, description tcp port number session connections
+10:15:21.354037 DEBUG SHIMI 001 DLEP::ShimLayer::configure
+10:15:21.354072 DEBUG SHIMI 001 DLEP::ModemService::configure
+10:15:21.354087  INFO SHIMI 001 DLEP::ModemService::configure ackprobability = 100
+10:15:21.354093  INFO SHIMI 001 DLEP::ModemService::configure acktimeout = 3
+10:15:21.354099  INFO SHIMI 001 DLEP::ModemService::configure configfile = 
+10:15:21.354105  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertenable = 1
+10:15:21.354111  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertexpirecount = 0
+10:15:21.354117  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertholdinterval = 0
+10:15:21.354123  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertiface = eth0
+10:15:21.354129  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertmcastaddress = 225.6.7.8
+10:15:21.354135  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertport = 33445
+10:15:21.354140  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertsendinterval = 5
+10:15:21.354146  INFO SHIMI 001 DLEP::ModemService::configure discoveryenable = 1
+10:15:21.354152  INFO SHIMI 001 DLEP::ModemService::configure discoveryiface = emane0
+10:15:21.354158  INFO SHIMI 001 DLEP::ModemService::configure discoveryinterval = 5
+10:15:21.354163  INFO SHIMI 001 DLEP::ModemService::configure discoverymcastaddress = 225.0.0.45
+10:15:21.354172  INFO SHIMI 001 DLEP::ModemService::configure discoveryport = 30002
+10:15:21.354180  INFO SHIMI 001 DLEP::ModemService::configure etheraddroui = 00:00:01
+10:15:21.354198  INFO SHIMI 001 DLEP::ModemService::configure extensions = 
+10:15:21.354210  INFO SHIMI 001 DLEP::ModemService::configure heartbeatinterval = 5
+10:15:21.354215  INFO SHIMI 001 DLEP::ModemService::configure heartbeatthreshold = 2
+10:15:21.354221  INFO SHIMI 001 DLEP::ModemService::configure localtype = modem
+10:15:21.354227  INFO SHIMI 001 DLEP::ModemService::configure logfile = dlep1.log
+10:15:21.354234  INFO SHIMI 001 DLEP::ModemService::configure loglevel = 1
+10:15:21.354242  INFO SHIMI 001 DLEP::ModemService::configure macaddress = 01 0a:B2:C3:D4:00:01
+10:15:21.354250  INFO SHIMI 001 DLEP::ModemService::configure peertype = emane
+10:15:21.354256  INFO SHIMI 001 DLEP::ModemService::configure protocolconfigfile = dlep-draft-29.xml
+10:15:21.354262  INFO SHIMI 001 DLEP::ModemService::configure sendtries = 3
+10:15:21.354267  INFO SHIMI 001 DLEP::ModemService::configure sessionport = 30003
+10:15:21.354273  INFO SHIMI 001 DLEP::ModemService::configure sinrmax = 20.000000 dBm
+10:15:21.354282  INFO SHIMI 001 DLEP::ModemService::configure sinrmin = 0.000000 dBm
+10:15:21.354289  INFO SHIMI 001 DLEP::ModemService::configure destinationadvertrfid = 0,1
+10:15:21.354296  INFO SHIMI 001 DLEP::ModemService::configure protocolconfigschema = protocol-config.xsd
+10:15:21.354783 DEBUG MACI 001 RFPipeMACLayer::initialize
+10:15:21.354931 DEBUG MACI 001 RFPipeMACLayer::configure
+10:15:21.354966  INFO MACI 001 RFPipeMACLayer::configure datarate = 1000000
+10:15:21.354979  INFO MACI 001 RFPipeMACLayer::configure delay = 0.250000
+10:15:21.354988  INFO MACI 001 RFPipeMACLayer::configure enablepromiscuousmode = off
+10:15:21.354994  INFO MACI 001 RFPipeMACLayer::configure flowcontrolenable = off
+10:15:21.354999  INFO MACI 001 RFPipeMACLayer::configure flowcontroltokens = 10
+10:15:21.355005  INFO MACI 001 RFPipeMACLayer::configure jitter = 0.000000
+10:15:21.355011  INFO MACI 001 RFPipeMACLayer::configure pcrcurveuri = file:///usr/share/emane/xml/models/mac/rfpipe/rfpipepcr.xml
+10:15:21.355018  INFO MACI 001 RFPipeMACLayer::configure radiometricenable = on
+10:15:21.355024  INFO MACI 001 RFPipeMACLayer::configure neighbormetricdeletetime = 60.000000
+10:15:21.355032  INFO MACI 001 RFPipeMACLayer::configure radiometricreportinterval = 1.000000
+10:15:21.355201  INFO PHYI 001 FrameworkPHY::configure: bandwidth = 1000000 Hz
+10:15:21.355216  INFO PHYI 001 FrameworkPHY::configure: fixedantennagain = 0.00 dBi
+10:15:21.355225  INFO PHYI 001 FrameworkPHY::configure: fixedantennagainenable = on
+10:15:21.355231  INFO PHYI 001 FrameworkPHY::configure: noisemode = outofband
+10:15:21.355237  INFO PHYI 001 FrameworkPHY::configure: propagationmodel = precomputed
+10:15:21.355244  INFO PHYI 001 FrameworkPHY::configure: subid = 2
+10:15:21.355251  INFO PHYI 001 FrameworkPHY::configure: systemnoisefigure = 4.00 dB
+10:15:21.355257  INFO PHYI 001 FrameworkPHY::configure: txpower = 0.00 dBm
+10:15:21.355264  INFO PHYI 001 FrameworkPHY::configure: frequency = 2347000000 Hz
+10:15:21.355272  INFO PHYI 001 FrameworkPHY::configure: frequencyofinterest = 2347000000 Hz
+10:15:21.355278  INFO PHYI 001 FrameworkPHY::configure: noisebinsize = 20 usec
+10:15:21.355283  INFO PHYI 001 FrameworkPHY::configure: noisemaxclampenable = off
+10:15:21.355289  INFO PHYI 001 FrameworkPHY::configure: noisemaxmessagepropagation = 200000 usec
+10:15:21.355295  INFO PHYI 001 FrameworkPHY::configure: noisemaxsegmentduration = 1000000 usec
+10:15:21.355300  INFO PHYI 001 FrameworkPHY::configure: noisemaxsegmentoffset = 300000 usec
+10:15:21.355306  INFO PHYI 001 FrameworkPHY::configure: timesyncthreshold = 10000 usec
+10:15:21.356073  INFO NEMManagerImpl::configure controlportendpoint: 0.0.0.0:47000
+10:15:21.356110  INFO NEMManagerImpl::configure eventservicedevice: eth0
+10:15:21.356121  INFO NEMManagerImpl::configure eventservicegroup: 224.1.2.8:45703
+10:15:21.356127  INFO NEMManagerImpl::configure otamanagerchannelenable: on
+10:15:21.356132  INFO NEMManagerImpl::configure otamanagerdevice: eth0
+10:15:21.356139  INFO NEMManagerImpl::configure OTA Manager Channel Group: 224.1.2.8:45702
+10:15:21.356146  INFO NEMManagerImpl::configure eventservicettl: 1
+10:15:21.356152  INFO NEMManagerImpl::configure otamanagerloopback: off
+10:15:21.356157  INFO NEMManagerImpl::configure otamanagerttl: 1
+10:15:21.356164  INFO NEMManagerImpl::configure stats.event.maxeventcountrows: 0
+10:15:21.356172  INFO NEMManagerImpl::configure stats.ota.maxeventcountrows: 0
+10:15:21.356194  INFO NEMManagerImpl::configure stats.ota.maxpacketcountrows: 0
+10:15:21.356413 ERROR OTAManager::open: Unable to set Real Time Priority
+10:15:21.356481 ERROR EventService::open: Unable to set Real Time Priority
+10:15:21.356566 ERROR NEMOTAAdapter::NEMOTAAdapter: Unable to set Priority
+10:15:21.357002 DEBUG TunTap::open, path /dev/net/tun, name emane0, guid n/a, index 6
+10:15:21.357031 DEBUG TunTap::set_ethaddr:02:02:00:00:00:01
+10:15:21.357148 DEBUG TunTap::set_addr, type ipv4, addr 10.100.0.1:0, mask 255.255.255.0:0
+10:15:21.357583 DEBUG EventService::processEventMessage
+10:15:21.357920 DEBUG SHIMI 001 DLEP::ShimLayer::start
+10:15:21.357956 DEBUG SHIMI 001 DLEP::ModemService::start
+10:15:21.358051 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name ack-probability
+10:15:21.358062 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name ack-timeout
+10:15:21.358069 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name config-file
+10:15:21.358074 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-enable
+10:15:21.358080 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-expire-count
+10:15:21.358086 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-hold-interval
+10:15:21.358093 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-iface
+10:15:21.358099 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-mcast-address
+10:15:21.358105 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-port
+10:15:21.358111 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-rf-id
+10:15:21.358118 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name destination-advert-send-interval
+10:15:21.358124 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-enable
+10:15:21.358130 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-iface
+10:15:21.358136 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-interval
+10:15:21.358142 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-mcast-address
+10:15:21.358149 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name discovery-port
+10:15:21.358156 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name extensions
+10:15:21.358161 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name heartbeat-interval
+10:15:21.358167 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name heartbeat-threshold
+10:15:21.358174 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name local-type
+10:15:21.358179 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name log-file
+10:15:21.358186 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name log-level
+10:15:21.358191 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name peer-type
+10:15:21.358197 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name protocol-config-file
+10:15:21.358203 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name protocol-config-schema
+10:15:21.358209 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name send-tries
+10:15:21.358214 DEBUG SHIMI 001 DLEPClientImpl::print_config_i parameter name session-port
+10:15:21.358389 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name log-file, result found, string value [dlep1.log]
+10:15:21.358549 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name log-level, result found, uint value [1]
+10:15:21.358572 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name local-type, result found, string value [modem]
+10:15:21.359069 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name protocol-config-schema, result found, string value [protocol-config.xsd]
+10:15:21.359119 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name protocol-config-file, result found, string value [dlep-draft-29.xml]
+10:15:21.369614 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-enable, result found, bool value [true]
+10:15:21.369798 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-iface, result found, string value [emane0]
+10:15:21.369838 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-port, result found, uint value [30002]
+10:15:21.369856 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name discovery-mcast-address, result found, ipaddress value 225.0.0.45
+10:15:21.370665 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-enable, result found, bool value [true]
+10:15:21.370716 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-iface, result found, string value [eth0]
+10:15:21.370731 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-port, result found, uint value [33445]
+10:15:21.370741 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-mcast-address, result found, ipaddress value 225.6.7.8
+10:15:21.370748 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-send-interval, result found, uint value [5]
+10:15:21.370756 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-rf-id, result found, vector 2
+10:15:21.371253 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name session-port, result found, uint value [30003]
+10:15:21.380970 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for 01:00:5E:00:00:16, using broadcast mac address
+10:15:21.381095 DEBUG TRANSPORTI 001 VirtualTransport::readDevice src 1, dst 65535, dscp 48, length 54
+10:15:21.381131 DEBUG dlep address is 754974945 dst address is 369098976
+10:15:21.381351 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+10:15:21.973091 DEBUG TRANSPORTI 001 EthernetTransport::lookupArpCache no nem found for 01:00:5E:00:00:16, using broadcast mac address
+10:15:21.973217 DEBUG TRANSPORTI 001 VirtualTransport::readDevice src 1, dst 65535, dscp 48, length 54
+10:15:21.973250 DEBUG dlep address is 754974945 dst address is 369098976
+10:15:21.973381 ERROR NEMLayer processDownstreamPacket not valid in CONFIGURED state
+10:15:22.371710 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:22.371845 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:23.372118 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:23.372214 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:24.373380 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:24.373534 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:25.373769 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:25.373903 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:26.372618 DEBUG MACI 001 RFPipeMACLayer::start
+10:15:26.373262 DEBUG PHYI 001 FrameworkPHY::start
+10:15:26.373304 DEBUG MACI 001 RFPipeMACLayer::postStart
+10:15:26.373418 DEBUG MACI 001 RFPipeMACLayer::postStart: added radio metric timed eventId 1
+10:15:26.374689 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:26.374831 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:27.374012 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:27.374233 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:27.374306 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:27.374339 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:27.374376 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:27.374389 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:27.374397 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:27.374486 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:27.374556 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:27.374610 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:27.374679 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:27.374717 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:27.374864 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:27.374916 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:27.374960 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:27.375015 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:27.375118 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:27.375162 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:28.374414 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:28.374631 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:28.374699 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:28.374720 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:28.374740 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:28.374778 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:28.374812 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:28.374935 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:28.374993 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:28.375018 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:28.375060 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:28.375096 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:28.375240 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:28.375295 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:28.375319 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:28.375337 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:28.375419 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:28.375433 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:29.374545 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:29.374745 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:29.374813 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:29.374835 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:29.374879 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:29.374902 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:29.374912 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:29.375001 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:29.375052 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:29.375077 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:29.375119 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:29.375137 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:29.375269 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:29.375328 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:29.375352 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:29.375392 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:29.375615 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:29.375669 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:30.373994 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:30.374188 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:30.374255 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:30.374276 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:30.374297 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:30.374328 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:30.374345 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:30.374435 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:30.374486 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:30.374537 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:30.374584 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:30.374602 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:30.374778 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:30.374822 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:30.374845 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:30.374863 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:30.375926 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:30.376044 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:31.373844 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:31.374357 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:31.374393 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:31.374405 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:31.374425 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:31.374437 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:31.374446 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:31.374509 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:31.374532 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:31.374548 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:31.374606 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:31.374628 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:31.374717 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:31.374734 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:31.374748 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:31.374765 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:31.376794 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:31.376923 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:32.373692 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:32.373845 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:32.373861 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:32.373869 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:32.373884 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:32.373893 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:32.373899 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:32.373975 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:32.373992 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:32.374004 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:32.374015 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:32.374022 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:32.374097 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:32.374109 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:32.374119 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:32.374131 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:32.377621 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:32.377672 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:33.374354 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:33.374687 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:33.374736 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:33.374748 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:33.374769 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:33.374782 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:33.374791 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:33.374879 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:33.374945 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:33.374972 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:33.374988 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:33.374998 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:33.377136 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:33.377285 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:33.377325 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:33.377349 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:33.377913 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:33.377977 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:34.374169 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:34.374377 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:34.374416 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:34.374428 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:34.374449 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:34.374462 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:34.374470 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:34.374560 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:34.374585 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:34.374601 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:34.374616 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:34.374626 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:34.374741 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:34.374758 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:34.374772 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:34.374789 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:34.378182 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:34.378271 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:35.374352 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:35.374574 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:35.374642 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:35.374663 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:35.374684 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:35.374696 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:35.374705 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:35.374794 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:35.374848 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:35.374873 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:35.374889 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:35.374899 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:35.375089 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:35.375132 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:35.375218 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:35.375265 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:35.378432 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:35.378521 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:36.374283 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:36.374505 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:36.374551 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:36.374563 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:36.374585 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:36.374598 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:36.374606 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:36.374677 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:36.374701 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:36.374716 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:36.374731 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:36.374740 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:36.374827 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:36.374844 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:36.374859 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:36.374876 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:36.379368 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:36.379460 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:37.374377 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:37.374564 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:37.374631 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:37.374666 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:37.374695 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:37.374774 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:37.374824 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:37.374963 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:37.375023 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:37.375048 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:37.375091 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:37.375127 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:37.375312 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:37.375354 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:37.375377 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:37.375394 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:37.380450 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:37.380551 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:38.374340 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:38.374529 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:38.374616 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:38.374637 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:38.374661 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:38.374673 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:38.374681 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:38.374771 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:38.374795 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:38.374811 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:38.374826 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:38.374835 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:38.376828 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:38.376915 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:38.376936 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:38.376957 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:38.381359 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:38.381446 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:39.373901 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:39.374266 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:39.374365 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:39.374388 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:39.374409 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:39.374421 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:39.374431 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:39.374521 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:39.374544 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:39.374559 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:39.374574 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:39.374584 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:39.374687 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:39.374703 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:39.374740 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:39.374779 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:39.381931 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:39.382018 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:40.373887 DEBUG MACI 37344 operator()::®O€WN sending metrics control message self, neighbor, queue
+10:15:40.374079 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl
+10:15:40.374162 DEBUG SHIMI 001 DLEP::ShimLayer::processUpstreamControl entering dlepModemService handlecontrolmessage
+10:15:40.374182 DEBUG SHIMI 001 DLEP::ModemService::handleControlMessages
+10:15:40.374203 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RISelfMetricControlMessage broadcast data rate: 1000000 max data rate: 1000000 report interval: 1.000000 
+10:15:40.374233 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i
+10:15:40.374250 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i
+10:15:40.374339 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=12(Maximum_Data_Rate_Receive) value=1000000]
+10:15:40.374390 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=13(Maximum_Data_Rate_Transmit) value=1000000]
+10:15:40.374415 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=14(Current_Data_Rate_Receive) value=1000000]
+10:15:40.374455 DEBUG SHIMI 001 DLEP::ModemService::load_datarate_metrics_i item metric [data item id=15(Current_Data_Rate_Transmit) value=1000000]
+10:15:40.374474 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update
+10:15:40.374583 DEBUG SHIMI 001 DLEPClientImpl::send_peer_update status OK
+10:15:40.374622 DEBUG SHIMI 001 DLEP::ModemService::send_peer_update_i send peer update entries 4, result success
+10:15:40.374647 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RINeighborMetricControlMessage 
+10:15:40.374694 DEBUG SHIMI 001 DLEP::ModemService::handleMetricMessage_i R2RIQueueMetricControlMessage queue: 0 max size: 255 current size: 0 num discards size: 0 avg delay: 0.000000 
+10:15:40.382863 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-hold-interval, result found, uint value [0]
+10:15:40.382949 DEBUG SHIMI 001 DLEPClientImpl::get_config_parameter parameter name destination-advert-expire-count, result found, uint value [0]
+10:15:40.837574 DEBUG SHIMI 001 DLEP::ShimLayer::stop
+10:15:40.837725 DEBUG MACI 001 RFPipeMACLayer::stop
+10:15:40.837858 DEBUG PHYI 001 FrameworkPHY::stop
+10:15:40.837987 DEBUG SHIMI 001 DLEP::ShimLayer::destroy
+10:15:40.838013 DEBUG MACI 001 RFPipeMACLayer::destroy
+10:15:40.838022 DEBUG PHYI 001 FrameworkPHY::destroy

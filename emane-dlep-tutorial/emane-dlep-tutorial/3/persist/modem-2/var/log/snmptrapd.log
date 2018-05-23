@@ -1,0 +1,12 @@
+registered debug token ucd-snmp/pass, 1
+Created directory: /var/net-snmp
+Created directory: /var/net-snmp/mib_indexes
+NET-SNMP version 5.7.3
+2018-05-22 09:57:22 modem-2 [10.99.0.2] (via UDP: [127.0.0.1]:42073->[127.0.0.1]:162) TRAP, SNMP v1, community public
+	NET-SNMP-MIB::netSnmpAgentOIDs.10 Cold Start Trap (0) Uptime: 0:00:00.12
+
+2018-05-22 09:57:22 localhost [UDP: [127.0.0.1]:35218->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (12) 0:00:00.12	SNMPv2-MIB::snmpTrapOID.0 = OID: SNMPv2-MIB::coldStart	SNMPv2-MIB::snmpTrapEnterprise.0 = OID: NET-SNMP-MIB::netSnmpAgentOIDs.10
+2018-05-22 09:57:22 localhost [UDP: [127.0.0.1]:45967->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (12) 0:00:00.12	SNMPv2-MIB::snmpTrapOID.0 = OID: SNMPv2-MIB::coldStart	SNMPv2-MIB::snmpTrapEnterprise.0 = OID: NET-SNMP-MIB::netSnmpAgentOIDs.10
+NET-SNMP version 5.7.3 AgentX subagent connected

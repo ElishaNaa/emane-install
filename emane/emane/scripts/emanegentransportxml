@@ -1,0 +1,285 @@
+#!/usr/bin/env python
+#
+# Copyright (c) 2014 - Adjacent Link LLC, Bridgewater, New Jersey
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# * Redistributions of source code must retain the above copyright
+#   notice, this list of conditions and the following disclaimer.
+# * Redistributions in binary form must reproduce the above copyright
+#   notice, this list of conditions and the following disclaimer in
+#   the documentation and/or other materials provided with the
+#   distribution.
+# * Neither the name of Adjacent Link LLC nor the names of its
+#   contributors may be used to endorse or promote products derived
+#   from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+
+from lxml import etree
+from optparse import OptionParser
+import sys
+import os.path
+from urlparse import urljoin
+
+usage = "%prog [OPTION].. PLATFORMXML..."
+
+optionParser =  OptionParser(usage=usage)
+
+optionParser.add_option("-v", 
+                        "--verbose",
+                        action="store_true",
+                        dest="verbose",
+                        help="Verbose output mode")
+
+optionParser.add_option("", 
+                        "--dtd",
+                        action="store",
+                        type="string",
+                        dest="dtd",
+                        default='file:///usr/share/emane/dtd/transportdaemon.dtd',
+                        help="Transport Daemon XML DTD [default: %default]")  
+
+optionParser.add_option("-o", 
+                        "--outpath",
+                        action="store",
+                        type="string",
+                        dest="outpath",
+                        default=".",
+                        help="Transport Daemon XML output directory [default: %default]")
+
+(options, args) = optionParser.parse_args()
+
+if options.outpath:
+    if not os.path.isdir(options.outpath):
+        print >>sys.stderr, "error output directory does not exist:",options.outpath
+        exit(1)
+
+
+metas = {}
+instances = {}
+groups = {}
+
+try:
+    # process all platform XML files present on the command line
+    for platform in args:
+        if options.verbose:
+            print "processing XML:",platform
+
+        parser = etree.XMLParser(dtd_validation=True)
+
+        # parse and validate
+        try:
+            tree = etree.parse(platform, parser)
+        except etree.XMLSyntaxError, exp:
+            print >>sys.stderr, "error %s:" %platform,exp
+            exit(1)
+
+        root = tree.getroot()
+
+        # verify the XML is platform file
+        if root.tag != 'platform':
+            print >>sys.stderr,  "error %s:" % platform,"wrong document type"
+
+        for nem in root.xpath('nem'):
+            nemId = int(nem.get('id'))
+            nemDefinition = nem.get('definition')
+            nemTransportLocation = nem.get('transport')
+
+            if nemTransportLocation == "internal":
+                continue
+            
+            if nemId not in instances:
+                instances[nemId] = {}
+
+            platformendpoint = nem.find("param/[@name='platformendpoint']")
+            transportendpoint = nem.find("param/[@name='transportendpoint']")
+
+            if platformendpoint is None:
+                print >>sys.stderr, "error %s:" % platform," missing 'platformendpoint' for NEM",nemId
+                exit(1) 
+
+            if transportendpoint is None:
+                print >>sys.stderr, "error %s:" % platform," missing 'transportendpoint' for NEM",nemId
+                exit(1) 
+            
+            # store platform and transport endpoints
+            metas[nemId] = {
+                'platformendpoint' : platformendpoint.get('value'),
+                'transportendpoint' : transportendpoint.get('value')
+            }
+            
+            # load nem XML
+            try:
+                if options.verbose:
+                    print "processing XML:",nemDefinition
+
+                nemTree = etree.parse(urljoin(platform,nemDefinition),parser)
+
+                for transport in nemTree.xpath('/nem/transport'):
+                    transportDefinition = transport.get('definition')
+
+                    if 'definition' not in metas[nemId]:
+                        metas[nemId]['definition'] = transportDefinition
+                    elif metas[nemId]['definition'] != transportDefinition:
+                        print >>sys.stderr, "error %s:" % nemDefinition," inconsistent transport selected for NEM",nemId
+                        exit(1) 
+
+                    # load transport XML
+                    try:
+                        if options.verbose:
+                            print "processing XML:",transportDefinition
+
+                        transportTree = etree.parse(urljoin(platform,transportDefinition),parser)
+
+                        # process transport XML parameters
+                        for param in transportTree.xpath('/transport/param'):
+                            instances[nemId][param.get('name')] = [param.get('value')]
+
+                        # process transport XML parameter lists
+                        for paramlist in transportTree.xpath('/transport/paramlist'):
+
+                            instances[nemId][paramlist.get('name')] = []
+                            
+                            for item in paramlist.xpath('item'):
+                                instances[nemId][paramlist.get('name')].append(item.get('value'))
+
+                    except etree.XMLSyntaxError, exp:
+                        print >>sys.stderr, "error %s:" % transportDefinition,exp
+                        exit(1)        
+                    
+                    # process nem XML parameters
+                    for param in nemTree.xpath('/nem/transport/param'):
+                        instances[nemId][param.get('name')] = [param.get('value')]
+
+                    # process nem XML parameter lists
+                    for paramlist in nemTree.xpath('/nem/transport/paramlist'):
+
+                        instances[nemId][paramlist.get('name')] = []
+                            
+                        for item in paramlist.xpath('item'):
+                            instances[nemId][paramlist.get('name')].append(item.get('value'))
+
+            except etree.XMLSyntaxError, exp:
+                print >>sys.stderr, "error %s:" % nemDefinition,exp
+                exit(1)
+
+            transport = nem.find('transport')
+
+            # unless specified use the nemId as the group tag
+            group = str(nemId)
+
+            if transport is not None:
+                transportDefinition = transport.get('definition')
+
+                group = transport.get("group")
+                
+                if group is None:
+                    group = str(nemId)
+
+                if 'definition' not in metas[nemId]:
+                    metas[nemId]['definition'] = transportDefinition
+                elif metas[nemId]['definition'] != transportDefinition:
+                    print >>sys.stderr, "error %s:" % platform," inconsistent transport selected for NEM",nemId
+                    exit(1) 
+
+                # process platform XML nem element transport parameters
+                for param in transport.xpath('param'):
+                    instances[nemId][param.get('name')] = [param.get('value')]
+
+                # process nem XML parameter lists
+                for paramlist in transport.xpath('paramlist'):
+                    
+                    instances[nemId][paramlist.get('name')] = []
+                            
+                    for item in paramlist.xpath('item'):
+                        instances[nemId][paramlist.get('name')].append(item.get('value'))
+
+            if group not in groups:
+                groups[group] = []
+
+            # add the nem to a group
+            groups[group].append(nemId)
+                    
+
+except IOError,exp:
+    print >>sys.stderr, "error:",exp
+    exit(1)
+    
+# create the transport daemon files
+for members in sorted(groups.values()):
+    output="transportdaemon%d.xml" % min(members)
+
+    root = etree.Element('transportdaemon')
+
+    for nemId in members:
+        params = instances[nemId]
+
+        instanceElement = etree.SubElement(root,'instance', nemid=str(nemId))
+
+        etree.SubElement(instanceElement,
+                         'param',
+                         name='platformendpoint',
+                         value=metas[nemId]['platformendpoint'])
+
+        etree.SubElement(instanceElement,
+                         'param',
+                         name='transportendpoint',
+                         value=metas[nemId]['transportendpoint'])
+
+        transportElement = etree.SubElement(instanceElement,'transport', definition=metas[nemId]['definition'])
+
+
+        for name,value in params.items():
+            if len(value) == 1:
+                etree.SubElement(transportElement,'param', name=name,value=value[0])
+            else:
+                paramlist = etree.SubElement(transportElement,'paramlist', name=name) 
+
+                for item in value:
+                    etree.SubElement(paramlist,'item', value=item) 
+
+
+    target = "transportdaemon%d.xml" % min(members)
+
+    try:
+        xml = etree.tostring(root,
+                             pretty_print=True,
+                            encoding="UTF-8",
+                             xml_declaration=True,
+                             doctype="<!DOCTYPE transportdaemon SYSTEM \"%s\">" % options.dtd)
+
+        # kludge DTD validation with external entity loading
+        etree.XML(xml,parser)
+
+        if options.verbose:
+            print "generating XML:",target
+        
+        output=open(os.path.join(options.outpath,target),'w')
+        
+        print >>output,xml
+
+        output.close()
+
+    except etree.XMLSyntaxError, exp:
+        print >>sys.stderr, "error %s:" % target, "unable to validate target xml"
+        print >>sys.stderr, exp
+        exit(1)
+
+
+

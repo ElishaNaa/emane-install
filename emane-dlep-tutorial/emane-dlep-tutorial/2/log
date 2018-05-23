@@ -1,0 +1,2268 @@
+Creating bridge: emanenode0
+8aa8da9cc9875fb5e88d37306f39b0dbf98709a7e5b8439d4a418844fe38bae5
+waiting for emanenode0...found
+Done creating bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Creating bridge: rt-bridge-1
+69fcfafeacf641e36c750e54d26ae625abc82f8532a498fcca29898885343ec2
+waiting for rt-bridge-1...found
+Done creating bridge: rt-bridge-1
+Starting docker instance: modem-1
+5fabe1493e085be384a074ff412d6fee3e0e9db226e70f3448f4883204666995
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform1.xml
+emane platform1.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/1/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.uuid
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Creating bridge: rt-bridge-2
+2e1ad9cd819f44805833233b7249774ed08da175bf37dc22ae3232ec0790b604
+waiting for rt-bridge-2...found
+Done creating bridge: rt-bridge-2
+Starting docker instance: modem-2
+4d9009f652bad8fd420bdbfbe9cd5eb971c9b33df2cc947542ef6e551afb781f
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform2.xml
+emane platform2.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/2/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.uuid
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Creating bridge: rt-bridge-3
+e7e054c7ac5f583061c412f46b422e36b5c0de63690e695ef4a5ca6f7ce97047
+waiting for rt-bridge-3...found
+Done creating bridge: rt-bridge-3
+Starting docker instance: modem-3
+2c641bf33e083c7e92a6de3eacc31c7ebbd0550ab13294648f838d55c8e78e64
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform3.xml
+emane platform3.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/3/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.uuid
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Creating bridge: rt-bridge-4
+524f64b5d411fcec213d0620300a7eef337045efe64defa6b65bacfe19d3113c
+waiting for rt-bridge-4...found
+Done creating bridge: rt-bridge-4
+Starting docker instance: modem-4
+62fa6a6c068f0a894a3c2f8cea069c9f2d984d2814ad4bd8b84f307d18d789fd
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform4.xml
+emane platform4.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/4/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.uuid
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Creating bridge: rt-bridge-5
+6883aab37a94ab8f62ba112f4903bdcc8174c36e40bd6c3d618774f539e67aca
+waiting for rt-bridge-5...found
+Done creating bridge: rt-bridge-5
+Starting docker instance: modem-5
+9fd8d27ff73e87130b4e42d5f14711cc3d3cde5ce661e407632966cba6930aae
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform5.xml
+emane platform5.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/5/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.uuid
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Creating bridge: rt-bridge-6
+ca5a66ccb26ad89e3c0f1a5bc0c12f3c29040bba6c67ee26f5954d1692447890
+waiting for rt-bridge-6...found
+Done creating bridge: rt-bridge-6
+Starting docker instance: modem-6
+36cac774553dd6b3e04dba00f9fabc6a0186b1e397a5f0e22df56b1c21acc501
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform6.xml
+emane platform6.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/6/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.uuid
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Creating bridge: rt-bridge-7
+014478940c0c835699bd2dfed15cebc6b7445b35192b4308520f098f44b85b69
+waiting for rt-bridge-7...found
+Done creating bridge: rt-bridge-7
+Starting docker instance: modem-7
+3369b00e256685fbcddc4f916b75d091ebe1f856fdbe182fd3ae04d7395a7c92
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform7.xml
+emane platform7.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/7/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.uuid
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Creating bridge: rt-bridge-8
+06a045e86de1a6a392784645076af00e69b2fec38ed7e233cd26bedb078e51d3
+waiting for rt-bridge-8...found
+Done creating bridge: rt-bridge-8
+Starting docker instance: modem-8
+f947cc166f0ebd3c22d22b1dc798d571ef3dcf532636127222ffcfbee9f32b60
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform8.xml
+emane platform8.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/8/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.uuid
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Creating bridge: rt-bridge-9
+2679bb1d254eab22329862f68156f6d110878a26194df6a1acf1ee01c54b04fb
+waiting for rt-bridge-9...found
+Done creating bridge: rt-bridge-9
+Starting docker instance: modem-9
+51380808cdcfee221bb03a56c821dd4bed482e18e430fb963e388a2cc0219cbf
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform9.xml
+emane platform9.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/9/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.uuid
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Creating bridge: rt-bridge-10
+d86ee57040329bcfbc41ea65a05169d44d7f092ccd7178e8efebd90581a023d0
+waiting for rt-bridge-10...found
+Done creating bridge: rt-bridge-10
+Starting docker instance: modem-10
+cd8d60ce2b174cd71d41df3d666c8b4ffa524b663cc06c7f7e9bfe4751ed34ea
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform10.xml
+emane platform10.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/10/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.uuid
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Found bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Found bridge: rt-bridge-1
+Starting docker instance: rt-1
+c3d07574a896041e592fd902eeab4d8244d924929dcd12d00005f087b77e3064
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/1/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Found bridge: rt-bridge-2
+Starting docker instance: rt-2
+3c25965f57b87ae1390eeb3bdd19393d9a17f5deacb34321e6906b96d4418c9d
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/2/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Found bridge: rt-bridge-3
+Starting docker instance: rt-3
+fa6a2a14cc0b2e9a20750ed833cc842acbd34248f1b2b1c5d42592cf78666b0f
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/3/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Found bridge: rt-bridge-4
+Starting docker instance: rt-4
+e0aa2cbff6927dca771f63149dbb57138d74224de672b706dfb62dbe56d2294e
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/4/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Found bridge: rt-bridge-5
+Starting docker instance: rt-5
+4bdb59c20d3d4d3716e4cda0497194a27dec19fc9509f72265377abcd1770a90
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/5/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Found bridge: rt-bridge-6
+Starting docker instance: rt-6
+ce7b2d7d560463f47d1f64a74fe193300f8039b310f1bdc0d7d92e626a2bcc50
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/6/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Found bridge: rt-bridge-7
+Starting docker instance: rt-7
+be861e895d1fb30f04bdbf0080518cefb2cdcec68fb06fcd044d52f03a5b8c0e
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/7/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Found bridge: rt-bridge-8
+Starting docker instance: rt-8
+2e6b9186268811dbe8e5744507ea574d675d72e72a8965ef746cd9d8a696ae2d
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/8/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Found bridge: rt-bridge-9
+Starting docker instance: rt-9
+ea55c83775fdcc30dc32ea59723c6c8c344307c499eae8df1abe5a72ffa9b21d
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/9/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Found bridge: rt-bridge-10
+Starting docker instance: rt-10
+ceded591eb4658b4cca726294ea366e40d3a69ff952dbf1085ad8b9c00ba3df4
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/10/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "yes"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "yes"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Creating bridge: emanenode0
+91a76a691cec012e6c78b7d8ef742a2ad617cb706c24f3760f6ee8365c38c3d8
+waiting for emanenode0...found
+Done creating bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Creating bridge: rt-bridge-1
+1c3aa0c8608cb3386b6e17bb94324071e1ca7bd36e7b082c336559e587c5f17e
+waiting for rt-bridge-1...found
+Done creating bridge: rt-bridge-1
+Starting docker instance: modem-1
+741b27a277775c0a9749e2c6da44830539f339707b27b2ec5a582876c557e8d0
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform1.xml
+emane platform1.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/1/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.uuid
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Creating bridge: rt-bridge-2
+8db86a5a6bd800c743d0179a457a19db512523bb9603c632892494618aa4f623
+waiting for rt-bridge-2...found
+Done creating bridge: rt-bridge-2
+Starting docker instance: modem-2
+95dd4e22a034d3b39216f9e397e11d704874a3d6b072ae6fa0ca25b4bdf13b1d
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform2.xml
+emane platform2.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/2/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.uuid
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Creating bridge: rt-bridge-3
+b1bb468bb4913325248edcfe0aff22233abc3a19addf69282b80e6375e2c3db0
+waiting for rt-bridge-3...found
+Done creating bridge: rt-bridge-3
+Starting docker instance: modem-3
+8048cce62666ecb5db3ae42c5e0f83b90d14836fdb5e00b555ea4e532907e573
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform3.xml
+emane platform3.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/3/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.uuid
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Creating bridge: rt-bridge-4
+caa037f7635df3d00de0a446e2bfbf87f031052c1c4263fdf08751a84627e776
+waiting for rt-bridge-4...found
+Done creating bridge: rt-bridge-4
+Starting docker instance: modem-4
+18f9b203ac6aaea3eea3f695db8aa99bf63050fda1f0438259428d4fbf3f45f5
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform4.xml
+emane platform4.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/4/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.uuid
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Creating bridge: rt-bridge-5
+47a3c29065e40006086f07d3e92f17967f2bf50491d316d1c4ecda24934d4dc9
+waiting for rt-bridge-5...found
+Done creating bridge: rt-bridge-5
+Starting docker instance: modem-5
+a836500fc57e64d70944dedd73e83bf74c042843fe6b10700226e2daa660626b
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform5.xml
+emane platform5.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/5/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.uuid
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Creating bridge: rt-bridge-6
+79cd427b366649b827d5b177ca06ee886d035890cce6f8198eb8155578aa5f50
+waiting for rt-bridge-6...found
+Done creating bridge: rt-bridge-6
+Starting docker instance: modem-6
+b3e04e1767c72282a2fa280cfcc6b300f07d24cfb386fb23128a11beee76e4b3
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform6.xml
+emane platform6.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/6/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.uuid
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Creating bridge: rt-bridge-7
+e6d6506d664f9c72e0e6a78cb14acb07f6688ed7d9c0f2f09a9334355fd470ca
+waiting for rt-bridge-7...found
+Done creating bridge: rt-bridge-7
+Starting docker instance: modem-7
+cac3905d7726cbf3be43f87585ca9f181c7880a6bd86076f0ff53e6d9244a06c
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform7.xml
+emane platform7.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/7/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.uuid
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Creating bridge: rt-bridge-8
+e87c76023a0603b4cc9482f1cbbef62fe77d825bbd0f7d6b6fce6b936f9c647a
+waiting for rt-bridge-8...found
+Done creating bridge: rt-bridge-8
+Starting docker instance: modem-8
+30200b2b922ba6f5bf7444f78cdd9a61e175b138e3389810438b594ec772847d
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform8.xml
+emane platform8.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/8/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.uuid
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Creating bridge: rt-bridge-9
+164e5551d03e52bc5ce47e20a0d69f067bc2fadcd7feb607b85d929ad8e84881
+waiting for rt-bridge-9...found
+Done creating bridge: rt-bridge-9
+Starting docker instance: modem-9
+0f6fc6b3c154e921b6ce96495f1073b01acac728fde0d96ee970743cbc612adb
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform9.xml
+emane platform9.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/9/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.uuid
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Creating bridge: rt-bridge-10
+e10a79793fa5474e14adb1dd7550edd2947c2ed16e4cf4d8e560fadca8ae6c06
+waiting for rt-bridge-10...found
+Done creating bridge: rt-bridge-10
+Starting docker instance: modem-10
+a345c0a5025e6d2c4c99b12c4a737ff5f403122d36338dda5975c082983e6122
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform10.xml
+emane platform10.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/10/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.uuid
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Found bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Found bridge: rt-bridge-1
+Starting docker instance: rt-1
+e7a6b45d06a2f9e09a19fc57ce50dbcd2790581f431630e7ae3a7e4b6370b6e4
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/1/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Found bridge: rt-bridge-2
+Starting docker instance: rt-2
+68c554bf5f5aaa69ef83391d250765250cfb59b8765eed4bca8f1765498ae275
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/2/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Found bridge: rt-bridge-3
+Starting docker instance: rt-3
+0dd4fed779c64e301e2bc7d17f0db936e564d29e1e85b2b54b15da90dfe44c04
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/3/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Found bridge: rt-bridge-4
+Starting docker instance: rt-4
+4e2cd2b6acbecebba03c8c41e934221586a2a089d2895620473c3e054a179176
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/4/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Found bridge: rt-bridge-5
+Starting docker instance: rt-5
+964799fb73af9737b809653739cd4dbd3e3bbe6ea081f5b32ef9f408950e3fa4
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/5/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Found bridge: rt-bridge-6
+Starting docker instance: rt-6
+fc0ae41a69d6dc92779ef54b79102d87ffe9fac2a999d2f3fdcdbfae72063d65
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/6/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Found bridge: rt-bridge-7
+Starting docker instance: rt-7
+f8f96b63063cc57748759009b80bec4bcab9a62996ac71b3bff7715e5ac49da2
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/7/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Found bridge: rt-bridge-8
+Starting docker instance: rt-8
+1348344aa937ae299fda205afdb13fb93e149fd75bda955336801ef8bca73650
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/1/persist/8/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Found bridge: rt-bridge-9
+Starting docker instance: rt-9
+59473587ed95a036ad85815a8fc8724bad26b0db1dc8591b47ca01fa1ba522ef
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/9/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "no"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "no"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Found bridge: rt-bridge-10
+Starting docker instance: rt-10
+76b52d03b64f4e7cd3ef1844e6272533a4381e241fe665a4ccbae7c497a4a4e8
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/10/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+Plugin: olsrd_bmf.so.1.7.0
+Plugin param key:"DoLocalBroadcast" val: "yes"
+Plugin param key:"CapturePacketsOnOlsrInterfaces" val: "yes"
+Plugin param key:"BmfMechanism" val: "Broadcast"
+Plugin param key:"NonOlsrIf" val: "eth2"
+Plugin param key:"FanOutLimit" val: "0"
+Plugin param key:"BroadcastRetransmitCount" val: "1"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Creating bridge: emanenode0
+24004be06e0d2ef2278021541f601b4706e40d2e8ffd4fe7edd9c34eccac358d
+waiting for emanenode0...found
+Done creating bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Creating bridge: rt-bridge-1
+cb393ed86b0b295d33b978f28dae094e620d3b228dac98559817a2a5c2909254
+waiting for rt-bridge-1...found
+Done creating bridge: rt-bridge-1
+Starting docker instance: modem-1
+c87dac458b1ca4ee15e84a47a4556befbb0e9ff15b4a1a72f350b7940bed656e
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform1.xml
+emane platform1.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/1/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.uuid
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Creating bridge: rt-bridge-2
+4dc42b0555a34bffa6c786f9f4fc0b8f641d6bc826e1376624465f74696d5bff
+waiting for rt-bridge-2...found
+Done creating bridge: rt-bridge-2
+Starting docker instance: modem-2
+c8ef22c43dffdc97b71cc792da7dbf502ff08f51d472c00978216164655cc246
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform2.xml
+emane platform2.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/2/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.uuid
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Creating bridge: rt-bridge-3
+434367523f5f17b4d00742a7e1ad8ba99446b481d8855ddd6affa27bc89a12e2
+waiting for rt-bridge-3...found
+Done creating bridge: rt-bridge-3
+Starting docker instance: modem-3
+6fca3380b84f7dd3def68e74a93d88b5777a5c9b1af7c25b02f6008e8f9c0265
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform3.xml
+emane platform3.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/3/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.uuid
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Creating bridge: rt-bridge-4
+17cb46347bbd6e8133171ed910585170119554597a0d4a71fe2986f22f3f11ea
+waiting for rt-bridge-4...found
+Done creating bridge: rt-bridge-4
+Starting docker instance: modem-4
+c15f8afb512d9b35e726df1a5d28bbf0a97c01699a34a64592df068eeebeaa44
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform4.xml
+emane platform4.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/4/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.uuid
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Creating bridge: rt-bridge-5
+cd85a4f5da80eb08212fecbf1dd423aa44889784b6009ad17878f0d8fe8e230f
+waiting for rt-bridge-5...found
+Done creating bridge: rt-bridge-5
+Starting docker instance: modem-5
+24c8633aa093ef79d64766761e860dca0d21de4988754a3403e3776d2bf319d6
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform5.xml
+emane platform5.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/5/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.uuid
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Creating bridge: rt-bridge-6
+4f23bf6b754a116c238b426e3059258afac8aadb6f5324589c6f955d9440196d
+waiting for rt-bridge-6...found
+Done creating bridge: rt-bridge-6
+Starting docker instance: modem-6
+7418efb23c7831c9f1e573fdf7d6f3db4ef9c5880cfa97b57b58048912280d65
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform6.xml
+emane platform6.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/6/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.uuid
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Creating bridge: rt-bridge-7
+e64be6230f923af7bc13d2b5194ded98db65ade892d3520c8766a7ee47e89d1f
+waiting for rt-bridge-7...found
+Done creating bridge: rt-bridge-7
+Starting docker instance: modem-7
+7450096ea9c365f52a655829ac298b2e69aa5317ac67173347a0cb13508798b1
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform7.xml
+emane platform7.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/7/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.uuid
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Creating bridge: rt-bridge-8
+060ddcfa332d20bc28458e1c3b1013de47bbd67e89075523c3cf1fbe3a78a269
+waiting for rt-bridge-8...found
+Done creating bridge: rt-bridge-8
+Starting docker instance: modem-8
+0446c109cfafa64e3b7042a80dfc8bc069200dc18bdcdf764bce281634c0c3af
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform8.xml
+emane platform8.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/8/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.uuid
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Creating bridge: rt-bridge-9
+e79fe88463ac0137617246aad0c332bca797c40de6f32536ee42917df9a10ad5
+waiting for rt-bridge-9...found
+Done creating bridge: rt-bridge-9
+Starting docker instance: modem-9
+f65e757068c178057b025f856ee4ab0cfd74aac32efc1f026f29e3304a48c722
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform9.xml
+emane platform9.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/9/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.uuid
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Creating bridge: rt-bridge-10
+4b2c5048203934ff030b93a4f97d1d755654ca8727237159f1e6957ccbece616
+waiting for rt-bridge-10...found
+Done creating bridge: rt-bridge-10
+Starting docker instance: modem-10
+073f5c00965c5dce305cc20e9490d69de7feb8c2b45ca6dafb64f1c54a7f801b
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform10.xml
+emane platform10.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/10/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.uuid
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Found bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Found bridge: rt-bridge-1
+Starting docker instance: rt-1
+32ff522d05a3b3201379eff95a4edf407739072d8b7bcc8368260def32c89b03
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/1/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Found bridge: rt-bridge-2
+Starting docker instance: rt-2
+137b94d8e48b9174287842429f6cefb7ffd19dda4d4fd25b24f946262c060ab3
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/2/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Found bridge: rt-bridge-3
+Starting docker instance: rt-3
+1fbc1607ee46a142973a80aba45aae2aafe94bdc70402a8430f4722977f72fba
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/3/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Found bridge: rt-bridge-4
+Starting docker instance: rt-4
+e8abcf6d2c9de3c141eee9e1d9e010941bdcd06e730fba28d62ef50c7101ccd9
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/4/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Found bridge: rt-bridge-5
+Starting docker instance: rt-5
+5bf50eb918dc4bb548243e7d680727189bbc7f6ea9df13fa6bcd60221b73762c
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/5/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Found bridge: rt-bridge-6
+Starting docker instance: rt-6
+88e5959507f0f1b1ceb0ff9c00746782b5cf1f85d82f54c54353d439de7224cd
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/6/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Found bridge: rt-bridge-7
+Starting docker instance: rt-7
+fe6c81e1cd772403d9ca62f2381911b036e80a1647184f012badcc8d1de235d0
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/7/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Found bridge: rt-bridge-8
+Starting docker instance: rt-8
+ebb8b53a58608a633096bb340b21c4b3a0002fa82844a92e5be714e07a800e2f
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/8/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Found bridge: rt-bridge-9
+Starting docker instance: rt-9
+1151cd5d8f76c771d841b06ca86ce050cc12598f16dcb048591ba09ad16ca660
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/9/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Found bridge: rt-bridge-10
+Starting docker instance: rt-10
+e97210c2f30348456b546c3bc967283c8ab838f216bb02dc92c116a4a673f806
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/10/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Creating bridge: emanenode0
+fe464f7b4257a966446a648b356269451e2c89dd743018c163aebe656fe31752
+waiting for emanenode0...found
+Done creating bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Creating bridge: rt-bridge-1
+827955e38559a72d76fd2cc7efac8826ae46c7c8a1a353cca047a923f690721c
+waiting for rt-bridge-1...found
+Done creating bridge: rt-bridge-1
+Starting docker instance: modem-1
+124a83db987a232f0c6f30528e2579aa773b6708aee1f49fb930450d53c8d0e0
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform1.xml
+emane platform1.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/1/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/1/var/run/emane.uuid
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Creating bridge: rt-bridge-2
+1020e0624ee22fa14825d2a41c0238c9ac31663fb29fada41affce7fa57d36ed
+waiting for rt-bridge-2...found
+Done creating bridge: rt-bridge-2
+Starting docker instance: modem-2
+4d559f51d32c6274fcf43fe5fd05ee56f938b792d339475a3a708f02b2bf9475
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform2.xml
+emane platform2.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/2/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emane.uuid
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Creating bridge: rt-bridge-3
+0a49bd0437559775cef3805ab3d37b0cf2971b5e3b030051bfcc6b0e72eb717f
+waiting for rt-bridge-3...found
+Done creating bridge: rt-bridge-3
+Starting docker instance: modem-3
+3c7d4f93ceaf0e5fe730a0f900558bc18d537e22bb7d47c86f24b59bb68e2d96
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform3.xml
+emane platform3.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/3/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/3/var/run/emane.uuid
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Creating bridge: rt-bridge-4
+6317a33491eda4cedfa02256050548d4edf5bf108fa69530b08715ae525417aa
+waiting for rt-bridge-4...found
+Done creating bridge: rt-bridge-4
+Starting docker instance: modem-4
+2c29dcee6acc11299b38e09c06ac5f8f973303c352c6a025b4ed184c87eae3ce
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform4.xml
+emane platform4.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/4/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/4/var/run/emane.uuid
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Creating bridge: rt-bridge-5
+57d7906b1365c36ae3659271c55af996e1d576f8726ad3c0e01b2e8bb20fed13
+waiting for rt-bridge-5...found
+Done creating bridge: rt-bridge-5
+Starting docker instance: modem-5
+aa73d41afbc890a6c7ea4c629660a01221896118eb854ab7d0602e42b4629f65
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform5.xml
+emane platform5.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/5/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/5/var/run/emane.uuid
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Creating bridge: rt-bridge-6
+2c6a6342deed55407fe91abec2671d133897caa2dfb8d68681e7182bfe773766
+waiting for rt-bridge-6...found
+Done creating bridge: rt-bridge-6
+Starting docker instance: modem-6
+5815aa2c0a2e7939a8e537335f989acf2bba52e3f6a108bd5807c098bcc15f60
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform6.xml
+emane platform6.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/6/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/6/var/run/emane.uuid
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Creating bridge: rt-bridge-7
+4d5da89f305ab377ac7a66f3f5bcdc3e8122305012241c82e84f9a034851d6be
+waiting for rt-bridge-7...found
+Done creating bridge: rt-bridge-7
+Starting docker instance: modem-7
+d86365d8ad29879dcd10a00f188820cbf560e72bfd504b0dce7b0b39010759ac
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform7.xml
+emane platform7.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/7/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/7/var/run/emane.uuid
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Creating bridge: rt-bridge-8
+f89bb80d2b0a967489d2ba3344fb18eb9c137ff914bbbf3ce44e6cfdce1997e9
+waiting for rt-bridge-8...found
+Done creating bridge: rt-bridge-8
+Starting docker instance: modem-8
+0314006e071f0fcaa46bac73d20a4edb2e917da9faead6e7bceae3558d4ab30c
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform8.xml
+emane platform8.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/8/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/8/var/run/emane.uuid
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Creating bridge: rt-bridge-9
+e48fe4f5e97b0c8086682fb3c5907b9eed772a66053dfca7794ce49f60475005
+waiting for rt-bridge-9...found
+Done creating bridge: rt-bridge-9
+Starting docker instance: modem-9
+78628015b40f3a40d74bbc6c0e7a511793a014c821bdbf537d0d58324883a31e
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform9.xml
+emane platform9.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/9/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/9/var/run/emane.uuid
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Creating bridge: rt-bridge-10
+81d03185102458bdb6f1e49f6cdd55db2156a71f7fff9f1357035cc2df5ca9c4
+waiting for rt-bridge-10...found
+Done creating bridge: rt-bridge-10
+Starting docker instance: modem-10
+1a7d559cc08378f9b93c03a7b3462524420ccd8b8ba9a3d22bbcd1c18abba087
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emane: platform10.xml
+emane platform10.xml -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/10/var/log/emane.log --pidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/10/var/run/emane.uuid
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml
+Found bridge: emanenode0
+kernel.sched_rt_runtime_us = -1
+Found bridge: rt-bridge-1
+Starting docker instance: rt-1
+2e18980f307958501c24a37f342a191adc8fb6ebe7943d8ef174be6d2a5f135b
+demo-init start
+1
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon1.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/1/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder1.xml
+Starting otestpointd: otestpointd1.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/1/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/1/var/log/mgen.out now
+Found bridge: rt-bridge-2
+Starting docker instance: rt-2
+a88087926ec7353960977318716174117fc938c8463018ec5cb02c1a09f7a107
+demo-init start
+2
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon2.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/2/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder2.xml
+Starting otestpointd: otestpointd2.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/2/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/2/var/log/mgen.out now
+Found bridge: rt-bridge-3
+Starting docker instance: rt-3
+29eb95d2b96b9cf1ac3dd62d22ee21e089139cb4aadbededbf15cb29d70ab4c3
+demo-init start
+3
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon3.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/3/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder3.xml
+Starting otestpointd: otestpointd3.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/3/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/3/var/log/mgen.out now
+Found bridge: rt-bridge-4
+Starting docker instance: rt-4
+a8af736b5dacefce6f02b27a5bc24b7308564852457a9bc087b62b6e0dd60bdc
+demo-init start
+4
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon4.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/4/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder4.xml
+Starting otestpointd: otestpointd4.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/4/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/4/var/log/mgen.out now
+Found bridge: rt-bridge-5
+Starting docker instance: rt-5
+f2999e80c7d98079caaa5a6fda38428fa9e3eec053b46da802c29014b86aae29
+demo-init start
+5
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon5.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/5/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder5.xml
+Starting otestpointd: otestpointd5.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/5/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/5/var/log/mgen.out now
+Found bridge: rt-bridge-6
+Starting docker instance: rt-6
+f384dd68edc2b6b501ffe36a97a51d09d7682cb8bb5aaea4b44f89a9e2dbac2f
+demo-init start
+6
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon6.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/6/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder6.xml
+Starting otestpointd: otestpointd6.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/6/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/6/var/log/mgen.out now
+Found bridge: rt-bridge-7
+Starting docker instance: rt-7
+09e0d1fc207987bb9954282b7499bf09e3280bb73a7cbe90e3988634ed2ac27a
+demo-init start
+7
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon7.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/7/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder7.xml
+Starting otestpointd: otestpointd7.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/7/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/7/var/log/mgen.out now
+Found bridge: rt-bridge-8
+Starting docker instance: rt-8
+82c33ec49236393471b17f9fac6390db5695623b5dde1b626e3c622d42289236
+demo-init start
+8
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon8.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/8/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder8.xml
+Starting otestpointd: otestpointd8.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/8/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/8/var/log/mgen.out now
+Found bridge: rt-bridge-9
+Starting docker instance: rt-9
+63f4874e21f8f6a64df2e6f9e923caa203fff4afcf5d1e318dc5530ba4a0eced
+demo-init start
+9
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon9.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/9/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder9.xml
+Starting otestpointd: otestpointd9.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/9/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/9/var/log/mgen.out now
+Found bridge: rt-bridge-10
+Starting docker instance: rt-10
+b7ea847814d19481f3a80ce6e406ada2d575b921f738063d8fc5f97114a64af0
+demo-init start
+10
+/home/user/emane-dlep-tutorial/2
+Starting emaneeventd: eventdaemon10.xml
+Waiting for GPS Locatopn PTY: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting gpsd: /home/user/emane-dlep-tutorial/2/persist/10/var/run/gps.pty
+Starting otestpoint-recorder: otestpoint-recorder10.xml
+Starting otestpointd: otestpointd10.xml
+
+ *** olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 ***
+ Build date: 2013-10-26 05:10:52 on toyol
+ http://www.olsr.org
+
+Debug level: 0
+IpVersion: 4
+Lock file /home/user/emane-dlep-tutorial/2/persist/10/var/run/olsrd.lock
+Clear screen enabled
+Link quality aging factor 0.200000
+setting ifs_in_curr_cfg = 0
+	HELLO interval: 1.00
+	HELLO validity: 5.00
+Plugin: olsrd_txtinfo.so.0.1
+Plugin param key:"accept" val: "0.0.0.0"
+	IPv4 broadcast/multicast : AUTO
+	Mode           : mesh
+	IPv6 multicast           : ::
+	HELLO emission/validity  : 1.00 (d)/5.00 (d)
+	TC emission/validity     : 0.00/0.00
+	MID emission/validity    : 0.00/0.00
+	HNA emission/validity    : 0.00/0.00
+	Autodetect changes       : no
+olsr.org -  0.6.6.1-git_0000000-hash_41d32a614ae55e881b7c0456c8e3ed54 detaching from the current process...
+Starting mgen: input mgen output /home/user/emane-dlep-tutorial/2/persist/10/var/log/mgen.out now
+Starting otestpoint-broker: otestpoint-broker.xml

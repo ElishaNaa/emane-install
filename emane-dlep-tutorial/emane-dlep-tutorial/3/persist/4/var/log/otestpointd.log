@@ -1,0 +1,27 @@
+14:05:56.043206 INFO [otestpointd/application] commandline: otestpointd -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/4/var/log/otestpointd.log --pidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/4/var/run/otestpointd.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/4/var/run/otestpointd.uuid otestpointd4.xml 
+14:05:56.043353 INFO [otestpointd/application] uuid: 16bc860c-6ba5-4910-8cc1-59a0069222c8
+14:05:56.045908 INFO [otestpointd] discovery service listening on tcp://10.99.0.4:8881
+14:05:56.512950 INFO [otestpoint-probe/node-4/0/manager] available probes: EMANE.PhysicalLayer.Counters.General EMANE.PhysicalLayer.Tables.Events EMANE.PhysicalLayer.Tables.Status
+14:05:56.514144 INFO [otestpoint-probe/node-4/1/manager] available probes: EMANE.RFPipe.Counters.General EMANE.RFPipe.Tables.Events EMANE.RFPipe.Tables.Neighbor EMANE.RFPipe.Tables.Status
+14:05:56.515253 INFO [otestpoint-probe/node-4/2/manager] available probes: EMANE.VirtualTransport.Counters.General EMANE.VirtualTransport.Tables.Events EMANE.VirtualTransport.Tables.Status
+14:06:00.000658 ERROR [otestpoint-probe/node-4/1/manager] probe error: Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 244, in probe
+    if response.type == remotecontrolportapi_pb2.Response.TYPE_RESPONSE_QUERY:
+
+AttributeError: 'NoneType' object has no attribute 'type'
+
+14:06:00.000633 ERROR [otestpoint-probe/node-4/0/manager] probe error: Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 244, in probe
+    if response.type == remotecontrolportapi_pb2.Response.TYPE_RESPONSE_QUERY:
+
+AttributeError: 'NoneType' object has no attribute 'type'
+
+14:06:00.001650 ERROR [otestpoint-probe/node-4/2/manager] probe error: Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 244, in probe
+    if response.type == remotecontrolportapi_pb2.Response.TYPE_RESPONSE_QUERY:
+
+AttributeError: 'NoneType' object has no attribute 'type'
+
