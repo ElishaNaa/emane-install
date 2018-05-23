@@ -398,9 +398,7 @@ EOF
             cat <<EOF > persist/modem-$nodeid/var/run/docker.conf.$nodeid
 --detach \
 --tty \
---volume /home/user/emane-install/emane-dlep-tutorial:/home/user/emane-install/emane-dlep-tutorial \
---volume /home/user/emane-install/emane-dlep-tutorial/3/scripts:/home/user/emane-install/emane-dlep-tutorial/3/scripts \
---volume /home/user:/home/user \
+--volume /home:/home \
 --volume /usr:/usr \
 --volume /etc:/etc \
 --volume /bin:/bin \
@@ -409,7 +407,6 @@ EOF
 --volume /sbin:/sbin \
 --volume /run:/run \
 --volume /sys:/sys \
---volume /home/user/emane-install:/home/user/emane-install \
 --name=$name \
 --hostname=$name \
 --network=$bridge \

@@ -1,3 +1,0 @@
-SUBDIRS= phyapitest \
-         timinganalysis \
-         commeffect 

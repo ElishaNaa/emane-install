@@ -1,5 +1,0 @@
-14:06:00.172690  INFO application: emaneeventd -r -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/log/emaneeventd.log --pidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/run/emaneeventd.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/8/var/run/emaneeventd.uuid eventdaemon8.xml 
-14:06:00.172780  INFO application uuid: 6705903b-e27a-427e-8f36-094a879a5000
-14:06:00.174182  INFO EventAgentManagerImpl::configure eventservicedevice: eth1
-14:06:00.174209  INFO EventAgentManagerImpl::configure eventservicegroup: 224.1.2.8:45703
-14:06:00.174214  INFO EventAgentManagerImpl::configure eventservicettl: 1

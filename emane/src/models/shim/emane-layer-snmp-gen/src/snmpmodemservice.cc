@@ -142,10 +142,10 @@ EMANE::ModemService::~ModemService()
 
 
 
-// const EMANE::ConfigParameterMapType & EMANE::ModemService::getConfigItems() const
-// {
-//   return snmpConfiguration_;
-// }
+ //const EMANE::ConfigParameterMapType & EMANE::ModemService::getConfigItems() const
+ //{
+ //  return snmpConfiguration_;
+ //}
 
 
 
@@ -272,31 +272,31 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
           //  auto iter = snmpConfiguration_.find(item.first);
 
           //  if(iter != snmpConfiguration_.end())
-          //    {
-          //       iter->second.value = item.second[0].asString();
+             // {
+                const std::string str{item.second[0].asString()};
 
-          //       if(item.first == "destinationadvertenable")
-          //         {
-          //            destinationAdvertisementEnable_ = iter->second.value != "0";
-          //         }
+                // if(item.first == "destinationadvertenable")
+                //   {
+                //      destinationAdvertisementEnable_ = iter->second.value != "0";
+                //   }
 
-          //       LOGGER_STANDARD_LOGGING(pPlatformService_->logService(), 
-          //                               INFO_LEVEL,
-          //                               "SHIMI %03hu %s::%s %s = %s",
-          //                               id_, 
-          //                               __MODULE__, 
-          //                               __func__, 
-          //                               item.first.c_str(),
-          //                               iter->second.value.c_str());
-          //    }
-          //  else
-          //    { 
-          //      throw makeException<ConfigureException>(__MODULE__,
-          //                                              "Unexpected configuration item %s",
-          //                                              item.first.c_str());
-          //    }
-         }
-    }
+                 LOGGER_STANDARD_LOGGING(pPlatformService_->logService(), 
+                                         INFO_LEVEL,
+                                         "SHIMI@123@ %03hu %s::%s %s = %s",
+                                         id_, 
+                                         __MODULE__, 
+                                         __func__, 
+                                         item.first.c_str(),
+                                         str.c_str());
+             // }
+            /*else
+              { 
+                throw makeException<ConfigureException>(__MODULE__,
+                                                        "Unexpected configuration item %s",
+                                                        item.first.c_str());
+              }*/
+          }
+      } 
 }
 
 

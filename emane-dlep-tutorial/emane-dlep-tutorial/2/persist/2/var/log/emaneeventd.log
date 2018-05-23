@@ -1,7 +1,0 @@
-09:07:03.968871  INFO application: emaneeventd -r -d -l 4 -f /home/user/emane-dlep-tutorial/2/persist/2/var/log/emaneeventd.log --pidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emaneeventd.pid --uuidfile /home/user/emane-dlep-tutorial/2/persist/2/var/run/emaneeventd.uuid eventdaemon2.xml 
-09:07:03.969987  INFO application uuid: e3e99f05-dcd5-44d5-bfc3-f4b6cca4f65b
-09:07:03.972419  INFO EventAgentManagerImpl::configure eventservicedevice: eth0
-09:07:03.972665  INFO EventAgentManagerImpl::configure eventservicegroup: 224.1.2.8:45703
-09:07:03.972677  INFO EventAgentManagerImpl::configure eventservicettl: 1
-09:07:03.972760 DEBUG EventService::processEventMessage
-09:07:03.973793 DEBUG Timer Scheduled

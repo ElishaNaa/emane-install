@@ -1,7 +1,0 @@
-mgen: version 5.02
-mgen: starting now ...
-Proto Error: ProtoSocket::JoinGroup() invalid interface name
-MgenUdpTransport::JoinGroup() Error: socket join error
-Mgen::ProcessDrecEvent(JOIN) Warning: error joining group
-Proto Error: ProtoSocket::SetMulticastInterface() invalid interface name: bmf0
-MgenFlow::Update() error setting socket multicast interface

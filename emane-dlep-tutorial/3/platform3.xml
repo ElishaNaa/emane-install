@@ -12,5 +12,20 @@
     <transport definition="transraw.xml">
       <param name="device" value="eth1"/>
     </transport>
+
+    <!--<shim definition="emanelayerdlep3.xml">
+     <paramlist name="macaddress">
+      <item value="03 0a:B2:C3:D4:00:03"/>
+     </paramlist>
+
+     <param name="etheraddroui" value="00:00:03"/>
+
+     <param name="logfile" value="dlep3.log"/>
+    </shim>-->
+
+    <shim definition="emanelayerfilter.xml">
+    <param name="address" value="10.100.3.254"/>
+    </shim>
+
     </nem>
 </platform>

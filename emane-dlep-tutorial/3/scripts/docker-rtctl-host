@@ -384,11 +384,8 @@ EOF
             cat <<EOF > persist/$nodeid/var/run/docker.conf.$nodeid
 --detach \
 --tty \
---volume /home/user/emane-install/emane-dlep-tutorial:/home/user/emane-install/emane-dlep-tutorial \
---volume /home/user/emane-install/emane-dlep-tutorial/3/scripts:/home/user/emane-install/emane-dlep-tutorial/3/scripts \
---volume /home/user:/home/user \
+--volume /home:/home \
 --volume /usr:/usr \
---volume /sbin/iptables:/sbin/iptables \
 --volume /etc:/etc \
 --volume /bin:/bin \
 --volume /lib:/lib \

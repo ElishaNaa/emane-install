@@ -1,2 +1,0 @@
-14:05:59.090469 INFO [otestpoint-recorder/application] commandline: otestpoint-recorder -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/6/var/log/otestpoint-recorder.log --pidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/6/var/run/otestpoint-recorder.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/dlepmaban/persist/6/var/run/otestpoint-recorder.uuid otestpoint-recorder6.xml 
-14:05:59.090506 INFO [otestpoint-recorder/application] uuid: 25bc56b4-73b4-4c55-b4bb-6ab965479e83

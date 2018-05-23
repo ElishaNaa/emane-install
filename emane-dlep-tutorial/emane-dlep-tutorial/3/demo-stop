@@ -1,6 +1,0 @@
-#!/bin/bash -
-
-PREFIX=$(pwd | awk -F '/3' '{print $1}')
-
-scripts/docker-democtl-host stop "$@" "$PREFIX" 3 3
-scripts/docker-rtctl-host stop "$@" "$PREFIX" 3 3
