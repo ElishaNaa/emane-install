@@ -25,5 +25,5 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-sudo apt-get install docker-ce=17.09.0~ce-0~ubuntu
+sudo apt-get install docker-ce=17.05.0~ce-0~ubuntu
 sudo docker build -f emane-dlep-tutorial/docker/DockerSimulation -t simdoc .
