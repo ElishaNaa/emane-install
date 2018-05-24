@@ -22,8 +22,7 @@ emaneinc_HEADERS =                       \
  slotinfo.inl                            \
  slotstructure.h                         \
  slotstructure.inl                       \
- tdmascheduleevent.h                     \
- tdmactscheduleevent.h
+ tdmascheduleevent.h
 
 install-exec-hook:
 	$(mkinstalldirs) $(DESTDIR)$(emaneincdir)

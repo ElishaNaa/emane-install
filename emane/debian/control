@@ -80,12 +80,6 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, emane (= ${binary:Version})
 Description: EMANE TDMA radio model
 
-Package: emane-model-tdmacteventscheduler
-Section: libs
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, emane (= ${binary:Version})
-Description: EMANE TDMACT radio model
-
 Package: emane-agent-gpsdlocation
 Section: libs
 Architecture: any

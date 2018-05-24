@@ -40,5 +40,3 @@ from antennaprofileevent import AntennaProfileEvent
 from onehopneighborsevent import OneHopNeighborsEvent
 from tdmascheduleevent import TDMAScheduleEvent
 from tdmaschedule import TDMASchedule
-from tdmactscheduleevent import TDMACTScheduleEvent
-from tdmactschedule import TDMACTSchedule

@@ -13,8 +13,6 @@ EXTRA_DIST=                      \
  emanesh/events/pathlossevent.py \
  emanesh/events/tdmascheduleevent.py \
  emanesh/events/tdmaschedule.py \
- emanesh/events/tdmactscheduleevent.py \
- emanesh/events/tdmactschedule.py \
  emanesh/controlportclient.py    \
  emanesh/controlportexception.py \
  emanesh/ota/__init__.py         \
@@ -27,7 +25,6 @@ EXTRA_DIST=                      \
  emanesh/manifestexception.py    \
  emanesh/schema/otapublisherscenario.xsd \
  emanesh/schema/tdmaschedule.xsd \
- emanesh/schema/tdmactschedule.xsd \
  scripts/emanesh                 \
  scripts/emaneevent-dump         \
  scripts/emaneevent-pathloss     \
@@ -35,7 +32,6 @@ EXTRA_DIST=                      \
  scripts/emaneevent-location     \
  scripts/emaneevent-antennaprofile \
  scripts/emaneevent-tdmaschedule \
- scripts/emaneevent-tdmactschedule \
  scripts/emaneota-publisher      \
  scripts/emanecommand-eel        \
  setup.py.in                     
@@ -47,7 +43,6 @@ BUILT_SOURCES =                  \
  emanesh/events/locationevent_pb2.py    \
  emanesh/events/pathlossevent_pb2.py    \
  emanesh/events/tdmascheduleevent_pb2.py \
- emanesh/events/tdmactscheduleevent_pb2.py \
  emanesh/remotecontrolportapi_pb2.py \
  emanesh/events/onehopneighborsevent_pb2.py \
  emanesh/ota/otaheader_pb2.py \
@@ -100,8 +95,6 @@ emanesh/events/onehopneighborsevent_pb2.py: ../models/mac/ieee80211abg/onehopnei
 emanesh/events/tdmascheduleevent_pb2.py: ../libemane/tdmascheduleevent.proto
 	protoc -I../libemane --python_out=emanesh/events  $<
 
-emanesh/events/tdmactscheduleevent_pb2.py: ../libemane/tdmactscheduleevent.proto
-	protoc -I../libemane --python_out=emanesh/events  $<
 
 emanesh/schema/manifest.xsd: @top_srcdir@/schema/manifest.xsd	emanesh/schema
 	cp $< $@

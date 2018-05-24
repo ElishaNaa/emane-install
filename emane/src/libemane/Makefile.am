@@ -47,9 +47,7 @@ nodist_libemane_la_SOURCES =             \
  remotecontrolportapi.pb.cc              \
  remotecontrolportapi.pb.h               \
  tdmascheduleevent.pb.cc                 \
- tdmascheduleevent.pb.h					 \
- tdmactscheduleevent.pb.cc                 \
- tdmactscheduleevent.pb.h
+ tdmascheduleevent.pb.h
 
 libemane_la_SOURCES =                         \
  antennapattern.cc                            \
@@ -172,7 +170,6 @@ libemane_la_SOURCES =                         \
  statistictableclearupdatehandler.cc          \
  statistictablequeryhandler.cc                \
  tdmascheduleevent.cc                         \
- tdmactscheduleevent.cc                         \
  timer.cc                                     \
  timerservice.cc                              \
  timerserviceproxy.cc                         \
@@ -322,8 +319,7 @@ EXTRA_DIST =                                  \
  pathlossevent.proto                          \
  radiotorouter.proto                          \
  remotecontrolportapi.proto                   \
- tdmascheduleevent.proto                      \
- tdmactscheduleevent.proto
+ tdmascheduleevent.proto
 
 flowcontrol.pb.cc flowcontrol.pb.h: flowcontrol.proto
 	protoc -I=. --cpp_out=. $<
@@ -367,8 +363,6 @@ remotecontrolportapi.pb.cc remotecontrolportapi.pb.h: remotecontrolportapi.proto
 tdmascheduleevent.pb.cc tdmascheduleevent.pb.h: tdmascheduleevent.proto
 	protoc -I=. --cpp_out=. $<
 
-tdmactscheduleevent.pb.cc tdmactscheduleevent.pb.h: tdmactscheduleevent.proto
-	protoc -I=. --cpp_out=. $<
 
 clean-local:
 	rm -f $(BUILT_SOURCES)

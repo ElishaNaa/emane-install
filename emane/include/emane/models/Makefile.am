@@ -1,3 +1,2 @@
 SUBDIRS=\
- tdma  \
- tdmact
+ tdma  

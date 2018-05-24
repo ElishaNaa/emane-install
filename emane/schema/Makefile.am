@@ -1,7 +1,6 @@
 SCHEMAS=              \
  manifest.xsd         \
- tdmabasemodelpcr.xsd \
- tdmactbasemodelpcr.xsd
+ tdmabasemodelpcr.xsd
 
 EXTRA_DIST  = \
  $(SCHEMAS)
