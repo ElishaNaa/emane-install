@@ -384,11 +384,7 @@ EOF
             cat <<EOF > persist/$nodeid/var/run/docker.conf.$nodeid
 --detach \
 --tty \
---volume /home:/home \
---volume /usr:/usr \
---volume /etc:/etc \
---volume /bin:/bin \
---volume /lib:/lib \
+--volume /home/user/emane-install/emane-dlep-tutorial/3:/home/user/emane-install/emane-dlep-tutorial/3 \
 --name=$name \
 --hostname=$name \
 --security-opt seccomp=unconfined \
@@ -397,7 +393,7 @@ EOF
 --privileged=true \
 --env-file persist/$nodeid/var/run/docker.env.$nodeid \
 --entrypoint /bin/bash \
-simdoc \
+fullsimdoc \
 
 EOF
 

@@ -398,15 +398,7 @@ EOF
             cat <<EOF > persist/modem-$nodeid/var/run/docker.conf.$nodeid
 --detach \
 --tty \
---volume /home:/home \
---volume /usr:/usr \
---volume /etc:/etc \
---volume /bin:/bin \
---volume /dev:/dev \
---volume /lib:/lib \
---volume /sbin:/sbin \
---volume /run:/run \
---volume /sys:/sys \
+--volume /home/user/emane-install/emane-dlep-tutorial/3:/home/user/emane-install/emane-dlep-tutorial/3 \
 --name=$name \
 --hostname=$name \
 --network=$bridge \
@@ -418,7 +410,7 @@ EOF
 --privileged=true \
 --env-file persist/modem-$nodeid/var/run/docker.env.$nodeid \
 --entrypoint /bin/bash \
-simdoc \
+fullsimdoc \
 
 EOF
 
@@ -433,7 +425,7 @@ EOF
 
             echo "Starting docker instance: $name"
 
-            docker run $(cat "persist/modem-$nodeid/var/run/docker.conf.$nodeid") 
+            docker run --entrypoint /bin/bash $(cat "persist/modem-$nodeid/var/run/docker.conf.$nodeid") 
 
 	    docker logs $name >& persist/modem-$nodeid/var/log/docker-execute.log.modem-$nodeid 
 
@@ -580,7 +572,9 @@ EOF
 
 		        ip link set $routerbridge down
 
-			docker network rm $routerbridge
+                docker network disconnect -f $routerbridge $prefix$nodeid
+
+			    docker network rm $routerbridge
 
 		        #brctl delbr $routerbridge
 
@@ -598,7 +592,9 @@ EOF
 
 		        ip link set $routerbridge down
 
-			docker network rm $routerbridge
+                docker network disconnect -f $routerbridge $prefix$nodeid
+
+			    docker network rm $routerbridge
 
 		        #brctl delbr $routerbridge
 

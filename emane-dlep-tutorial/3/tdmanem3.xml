@@ -2,7 +2,13 @@
 <!DOCTYPE nem SYSTEM "file:///usr/share/emane/dtd/nem.dtd">
 <nem>
   <transport definition="transraw.xml"/>
-  <shim definition="emanelayerdlep3.xml"/>
+  <shim definition="emanelayerdlep.xml">
+  	<paramlist name="macaddress">
+	  <item value="03 0a:B2:C3:D4:00:03"/>
+	</paramlist>
+	<param name="etheraddroui" value="00:00:03"/>
+	<param name="logfile"               value="dlep3.log"/>
+  </shim>
   <shim definition="emanelayersnmp.xml"/>
   <shim definition="emanelayerfilter.xml">
     <param name="address" value="10.100.3.254"/>
