@@ -1,0 +1,55 @@
+#!/bin/bash -
+
+echo -n "Start MGEN statistics collector..."
+
+
+echo -n "Waiting for demonstration completion.."
+
+while (! grep -q STOP persist/7/var/log/mgen.out)
+do 
+    echo -n "."
+    sleep 1;
+done
+
+echo "done MGENing."
+
+node7_flow1_sent=$(grep 'SEND proto>UDP flow>1' persist/7/var/log/mgen.out  | wc -l)
+
+node7_flow2_sent=$(grep 'SEND proto>UDP flow>2' persist/7/var/log/mgen.out  | wc -l)
+
+
+
+node1_flow1_recv=$(grep 'RECV proto>UDP flow>1' persist/1/var/log/mgen.out  | wc -l)
+
+node1_flow2_recv=$(grep 'RECV proto>UDP flow>2' persist/1/var/log/mgen.out  | wc -l)
+
+node2_flow3_recv=$(grep 'RECV proto>UDP flow>3' persist/2/var/log/mgen.out  | wc -l)
+
+node2_flow4_recv=$(grep 'RECV proto>UDP flow>4' persist/2/var/log/mgen.out  | wc -l)
+
+node3_flow5_recv=$(grep 'RECV proto>UDP flow>5' persist/3/var/log/mgen.out  | wc -l)
+
+node3_flow6_recv=$(grep 'RECV proto>UDP flow>6' persist/3/var/log/mgen.out  | wc -l)
+
+echo
+
+printf "Tx 7    %-6s %-6s\n" \
+    $node7_flow1_sent $node7_flow2_sent 
+    
+
+printf "Rx 1    %-6s %-6s\n" \
+    $node1_flow1_recv $node1_flow2_recv
+printf "Rx 2    %-6s %-6s\n" \
+    $node2_flow3_recv $node2_flow4_recv
+printf "Rx 3    %-6s %-6s\n" \
+    $node3_flow5_recv $node3_flow6_recv 
+    
+
+printf -- "-----   %-6s %-6s\n" \
+    "------" "------"
+
+printf "Comp%%   %-6.2f %-6.2f\n" \
+    $(echo "scale=9; ($node1_flow1_recv+$node2_flow3_recv+$node3_flow5_recv)/(3 * ($node7_flow1_sent)) * 100.0;" | bc 2> /dev/null) \
+    $(echo "scale=9; ($node1_flow2_recv+$node2_flow4_recv+$node3_flow5_recv)/(3 * ($node7_flow2_sent)) * 100.0;" | bc 2> /dev/null) 
+
+echo

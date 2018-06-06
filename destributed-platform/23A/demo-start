@@ -1,0 +1,3 @@
+#!/bin/bash -
+
+../scripts/democtl-host start "$@" "/home/ubuntu/Desktop/emane-tutorial" 23aliakim 9

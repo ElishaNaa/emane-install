@@ -1,0 +1,124 @@
+!
+hostname TR-M4-5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging buffered 5000000
+enable password cisco
+!
+!
+!
+!
+
+
+!
+ip vrf MGMT
+!
+ip multicast-routing 
+!
+!
+!
+no ip domain lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+no virtual-template subinterface
+!
+!
+!
+redundancy
+!
+no cdp run
+!
+!
+policy-map MAX_BW
+ class class-default
+  shape average percent 100   
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description *** Lo for Process 4 ***
+ ip address 1.1.4.5 255.255.255.255
+ ipv6 enable
+ ip ospf 4 area 0
+!
+interface Ethernet0/0
+ description *** MANET 4 ***
+ ip address 1.0.14.5 255.255.255.0
+ no ip proxy-arp
+ duplex auto
+ speed auto
+ ipv6 enable
+ ip ospf 4 area 0
+ no shut
+!
+!
+interface Ethernet0/1
+ description *** MANET 4 ***
+ ip address 1.0.34.5 255.255.255.0
+ no ip proxy-arp
+ duplex auto
+ speed auto
+ ipv6 enable
+ ip ospf 4 area 0
+ no shut
+!
+router ospf 4
+!
+ip forward-protocol nd
+no ip pim autorp
+!
+!
+no ip http server
+no ip http secure-server
+ip route vrf MGMT 0.0.0.0 0.0.0.0 10.0.16.1
+!
+!
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 60 0
+ exec prompt timestamp
+ transport input telnet
+!
+ntp update-calendar
+ntp peer vrf MGMT 10.0.16.254
+!
+end

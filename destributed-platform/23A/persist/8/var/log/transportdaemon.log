@@ -1,0 +1,13 @@
+09:45:55.905811  INFO application: emanetransportd -r -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/8/var/log/transportdaemon.log --pidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/8/var/run/transportdaemon.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/8/var/run/transportdaemon.uuid transportdaemon8.xml 
+09:45:55.905901  INFO application uuid: e9ce3924-ab5b-47bd-9eb4-9226c0c1e9b7
+09:45:55.906470  INFO TRANSPORTI 011 VirtualTransport::configure address: 10.101.0.11
+09:45:55.906489  INFO TRANSPORTI 011 VirtualTransport::configure device: emane0
+09:45:55.906494  INFO TRANSPORTI 011 VirtualTransport::configure mask: 255.255.255.0
+09:45:55.906498  INFO TRANSPORTI 011 VirtualTransport::configure arpcacheenable: 1
+09:45:55.906501  INFO TRANSPORTI 011 VirtualTransport::configure arpmodeenable: 1
+09:45:55.906503  INFO TRANSPORTI 011 VirtualTransport::configure bitrate: 0
+09:45:55.906507  INFO TRANSPORTI 011 VirtualTransport::configure broadcastmodeenable: 0
+09:45:55.906510  INFO TRANSPORTI 011 VirtualTransport::configure devicepath: /dev/net/tun
+09:45:55.906513  INFO TRANSPORTI 011 VirtualTransport::configure flowcontrolenable: 0
+09:45:55.906535  INFO TRANS 011 TransportAdapterImpl::configure platformendpoint: 10.99.0.100:8211
+09:45:55.906540  INFO TRANS 011 TransportAdapterImpl::configure Transport endpoint: 10.99.0.8:8311

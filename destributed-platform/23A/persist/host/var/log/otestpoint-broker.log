@@ -1,0 +1,3 @@
+09:45:58.205170 INFO [otestpoint-broker/application] commandline: otestpoint-broker -d -l 3 -f persist/host/var/log/otestpoint-broker.log --pidfile persist/host/var/run/otestpoint-broker.pid --uuidfile persist/host/var/run/otestpoint-broker.uuid otestpoint-broker.xml 
+09:45:58.205204 INFO [otestpoint-broker/application] uuid: 3aaaa6af-bc17-4b32-a368-9a6fd3038cd3
+09:55:48.290110 INFO [otestpoint-broker/application] shutdown

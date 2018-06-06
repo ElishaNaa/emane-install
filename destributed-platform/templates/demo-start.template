@@ -1,0 +1,19 @@
+#!/bin/bash -
+TOPDIR=$(pwd | awk -F '/@DEMOID@' '{print $1}')
+
+IFS=$'\r\n' GLOBIGNORE='*' command eval  'XYZ=($(cat ServerIPNodeID))'
+IFS=$',' GLOBIGNORE='*' command eval  'NodesID=($(echo "${XYZ[1]}"))'
+for j in $(seq 2 ${#NodesID[@]})
+  do
+  	nodeid="${NodesID[j-1]}"
+    MyFile=routing$nodeid.conf
+
+    PREFIX=$(printf "%s" "$TOPDIR" | sed 's/\//\\\//g')
+    sed -i -e 's/@TOPDIR@/'"${PREFIX}/" ${MyFile}
+
+    sed -i -e 's/@NODEID@/'"${nodeid}/g" ${MyFile}
+
+done
+
+scripts/docker-democtl-host start "$@" "$TOPDIR" "@DEMOID@"
+scripts/docker-rtctl-host start "$@" "$TOPDIR" "@DEMOID@"

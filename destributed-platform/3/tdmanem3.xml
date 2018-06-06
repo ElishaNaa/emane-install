@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nem SYSTEM "file:///usr/share/emane/dtd/nem.dtd">
+<nem>
+  <transport definition="transraw.xml"/>
+  <shim definition="emanelayerdlep.xml">
+  	<paramlist name="macaddress">
+      <item value="03 0a:B2:C3:D4:00:03"/>
+    </paramlist>
+    <param name="etheraddroui" value="00:00:03"/>
+    <param name="logfile"               value="dlep3.log"/>
+  </shim>
+  <shim definition="emanelayersnmp.xml">
+    <param name="addressRedis" value="10.99.1.1"/>
+  </shim>
+  <shim definition="emanelayerfilter.xml">
+  	<param name="address" value="10.100.3.254"/>
+  </shim>
+
+  <mac definition="tdmamac.xml"/>
+	<phy>
+		<param name="fixedantennagain" value="1.0"/>
+		<param name="fixedantennagainenable" value="on"/>
+		<param name="bandwidth" value="1M"/>
+		<param name="noisemode" value="none"/>
+		<param name="propagationmodel" value="precomputed"/>
+		<param name="systemnoisefigure" value="7.0"/>
+		<param name="subid" value="7"/>
+		<param name="frequency" value="222M"/>
+		<param name="frequencyofinterest" value="222M"/>
+	</phy>
+</nem>

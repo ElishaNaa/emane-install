@@ -1,0 +1,42 @@
+
+		--==[ Path Profile Analysis ]==--
+
+Transmitter site: Tx
+Site location: 31.1630, 34.5338
+Ground elevation: 178.00 meters AMSL
+Antenna height: 1.50 meters AGL / 179.50 meters AMSL
+Distance to Rx: 0.05 kilometers
+Azimuth to Rx: 311.23 degrees grid
+Downtilt angle to Rx: -4.5331 degrees
+
+Receiver site: Rx
+Site location: 31.1633, 34.5334
+Ground elevation: 174.00 meters AMSL
+Antenna height: 1.50 meters AGL / 175.50 meters AMSL
+Distance to Tx: 0.05 kilometers
+Azimuth to Tx: 131.23 degrees grid
+Downtilt angle to Tx: +4.5327 degrees
+
+
+Propagation model: Irregular Terrain Model
+Model sub-type: City / Conservative
+Earth's Dielectric Constant: 15.000
+Earth's Conductivity: 0.005 Siemens/meter
+Atmospheric Bending Constant (N-units): 301.000 ppm
+Frequency: 5000.000 MHz
+Radio Climate: 5 (Continental Temperate)
+Polarisation: 1 (Vertical)
+Fraction of Situations: 50.0%
+Fraction of Time: 50.0%
+
+Receiver gain: 0.0 dBd / 2.1 dBi
+Transmitter ERP plus Receiver gain: 4.0 Watts (+36.02 dBm)
+Transmitter ERP minus Receiver gain: 36.02 dBm
+Transmitter EIRP plus Receiver gain: 6.5 Watts (+38.16 dBm)
+Transmitter EIRP minus Receiver gain: 38.16 dBm
+
+Summary for the link between Tx and Rx:
+
+Free space path loss: 80.53 dB
+Computed path loss: 0.00 dB
+Model error! Computed loss of 0.0dB is greater than free space loss of 80.5dB. Check your inuts for model 1

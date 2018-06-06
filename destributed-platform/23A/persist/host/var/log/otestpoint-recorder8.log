@@ -1,0 +1,3 @@
+09:45:58.310010 INFO [otestpoint-recorder/application] commandline: otestpoint-recorder -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/log/otestpoint-recorder8.log --pidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/run/otestpoint-recorder8.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/run/otestpoint-recorder8.uuid host-otestpoint-recorder8.xml 
+09:45:58.310023 INFO [otestpoint-recorder/application] uuid: ec088399-49a9-44aa-9d1f-172c9b222243
+09:55:46.710448 INFO [otestpoint-recorder/application] shutdown

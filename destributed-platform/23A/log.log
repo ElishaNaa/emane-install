@@ -1,0 +1,69 @@
++ echo dsfg
++ getopts :s:e:h opt
++ case $opt in
++ starttime='Mon, 26 Jun 2017 10:02:15 +0000'
++ getopts :s:e:h opt
++ echo hi
++ shift 2
++ '[' 2 -ne 2 ']'
++ '[' -d /home/ubuntu/Desktop/emane-tutorial/22 ']'
++ cd /home/ubuntu/Desktop/emane-tutorial/22
++ nodeId=9
++ mount /dev/pts -o remount,rw,mode=620,ptmxmode=666,gid=5
++ '[' -x ./node-prestart ']'
++ '[' -x node-prestart9 ']'
++ start_sshd /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/ssh.pid
++ local pidfile=/home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/ssh.pid
++ /usr/sbin/sshd -o PidFile=/home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/ssh.pid
++ '[' -f transportdaemon9.xml ']'
++ '[' '!' -f NO-node-emanetransportd9 ']'
++ '[' '!' -f NO-node-emanetransportd ']'
++ start_emanetransportd transportdaemon9.xml /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/log/transportdaemon.log /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.pid /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.uuid
++ local xml=transportdaemon9.xml
++ local logfile=/home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/log/transportdaemon.log
++ local pidfile=/home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.pid
++ local uuidfile=/home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.uuid
++ '[' -f transportdaemon9.xml ']'
++ echo 'Starting emanetransport: transportdaemon9.xml'
++ emanetransportd -r -d transportdaemon9.xml -l 3 -f /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/log/transportdaemon.log --pidfile /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.uuid
++ retval=0
++ return 0
++ wait_for_device emane0 10
++ local device=emane0
++ local timeout=10
++ local waited=0
++ echo -n 'waiting for emane0...'
++ grep -q emane0
++ route -n
++ echo found
++ return 0
++ '[' -f platform9.xml ']'
++ '[' -f eventdaemon9.xml ']'
++ '[' -f otestpoint-recorder9.xml ']'
++ '[' -f otestpoint-broker9.xml ']'
++ '[' -f otestpointd9.xml ']'
++ '[' -x ./node-preapplication ']'
++ '[' -x node-preapplication9 ']'
++ '[' -f routing9.conf ']'
++ '[' '!' -f NO-node-routing9 ']'
++ '[' '!' -f NO-node-routing ']'
++ '[' -f /home/ubuntu/Desktop/emane-tutorial/22/persist/9/var/run/transportdaemon.pid ']'
++ wait_for_device emane0 10
++ local device=emane0
++ local timeout=10
++ local waited=0
++ echo -n 'waiting for emane0...'
++ grep -q emane0
++ route -n
++ echo found
++ return 0
++ start_routing routing9.conf 9
++ local routingconf=routing9.conf
++ olsrd -f routing9.conf
+Parsing file: "routing9.conf"
++ '[' -f mgen9 ']'
++ '[' -f mgen ']'
++ '[' -f iperf9 ']'
++ '[' -f iperf ']'
++ '[' -x ./node-poststart ']'
++ '[' -x node-poststart9 ']'

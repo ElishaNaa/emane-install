@@ -1,0 +1,6 @@
+#!/bin/bash -
+
+TOPDIR=$(pwd | awk -F '/3' '{print $1}')
+
+scripts/docker-democtl-host stop "$@" "$TOPDIR" "3"
+scripts/docker-rtctl-host stop "$@" "$TOPDIR" "3"

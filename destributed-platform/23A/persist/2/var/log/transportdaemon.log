@@ -1,0 +1,24 @@
+09:45:49.675944  INFO application: emanetransportd -r -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/2/var/log/transportdaemon.log --pidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/2/var/run/transportdaemon.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/2/var/run/transportdaemon.uuid transportdaemon2.xml 
+09:45:49.676065  INFO application uuid: 333b2c2d-3254-4b13-ac82-e9e6df2bdd60
+09:45:49.676934  INFO TRANSPORTI 002 VirtualTransport::configure address: 10.100.0.2
+09:45:49.676997  INFO TRANSPORTI 002 VirtualTransport::configure mask: 255.255.255.0
+09:45:49.677010  INFO TRANSPORTI 002 VirtualTransport::configure arpcacheenable: 1
+09:45:49.677017  INFO TRANSPORTI 002 VirtualTransport::configure arpmodeenable: 1
+09:45:49.677056  INFO TRANSPORTI 002 VirtualTransport::configure bitrate: 0
+09:45:49.677067  INFO TRANSPORTI 002 VirtualTransport::configure broadcastmodeenable: 0
+09:45:49.677074  INFO TRANSPORTI 002 VirtualTransport::configure device: emane0
+09:45:49.677080  INFO TRANSPORTI 002 VirtualTransport::configure devicepath: /dev/net/tun
+09:45:49.677086  INFO TRANSPORTI 002 VirtualTransport::configure flowcontrolenable: 0
+09:45:49.677139  INFO TRANS 002 TransportAdapterImpl::configure platformendpoint: 10.99.0.100:8202
+09:45:49.677155  INFO TRANS 002 TransportAdapterImpl::configure Transport endpoint: 10.99.0.2:8302
+09:45:49.677280  INFO TRANSPORTI 014 VirtualTransport::configure address: 10.101.0.14
+09:45:49.677303  INFO TRANSPORTI 014 VirtualTransport::configure device: emane1
+09:45:49.677311  INFO TRANSPORTI 014 VirtualTransport::configure mask: 255.255.255.0
+09:45:49.677316  INFO TRANSPORTI 014 VirtualTransport::configure arpcacheenable: 1
+09:45:49.677320  INFO TRANSPORTI 014 VirtualTransport::configure arpmodeenable: 1
+09:45:49.677324  INFO TRANSPORTI 014 VirtualTransport::configure bitrate: 0
+09:45:49.677329  INFO TRANSPORTI 014 VirtualTransport::configure broadcastmodeenable: 0
+09:45:49.677333  INFO TRANSPORTI 014 VirtualTransport::configure devicepath: /dev/net/tun
+09:45:49.677337  INFO TRANSPORTI 014 VirtualTransport::configure flowcontrolenable: 0
+09:45:49.677357  INFO TRANS 014 TransportAdapterImpl::configure platformendpoint: 10.99.0.100:8214
+09:45:49.677364  INFO TRANS 014 TransportAdapterImpl::configure Transport endpoint: 10.99.0.2:8314

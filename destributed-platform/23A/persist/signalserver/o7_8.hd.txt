@@ -1,0 +1,42 @@
+
+		--==[ Path Profile Analysis ]==--
+
+Transmitter site: Tx
+Site location: 31.2286, 34.6637
+Ground elevation: 219.00 meters AMSL
+Antenna height: 1500.00 meters AGL / 1719.00 meters AMSL
+Distance to Rx: 14.45 kilometers
+Azimuth to Rx: 240.18 degrees grid
+Downtilt angle to Rx: -6.2007 degrees
+
+Receiver site: Rx
+Site location: 31.1639, 34.5320
+Ground elevation: 173.00 meters AMSL
+Antenna height: 1.50 meters AGL / 174.50 meters AMSL
+Distance to Tx: 14.45 kilometers
+Azimuth to Tx: 60.12 degrees grid
+Downtilt angle to Tx: +6.0715 degrees
+
+
+Propagation model: Line of sight
+Model sub-type: City / Conservative
+Earth's Dielectric Constant: 15.000
+Earth's Conductivity: 0.005 Siemens/meter
+Atmospheric Bending Constant (N-units): 301.000 ppm
+Frequency: 2500.000 MHz
+Radio Climate: 5 (Continental Temperate)
+Polarisation: 1 (Vertical)
+Fraction of Situations: 50.0%
+Fraction of Time: 50.0%
+
+Summary for the link between Tx and Rx:
+
+Free space path loss: 123.62 dB
+Computed path loss: 123.58 dB
+Attenuation due to terrain shielding: -0.04 dB
+
+No obstructions to LOS path due to terrain were detected
+
+The first Fresnel zone is clear.
+
+60% of the first Fresnel zone is clear.

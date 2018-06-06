@@ -1,0 +1,56 @@
+
+		--==[ Path Profile Analysis ]==--
+
+Transmitter site: Tx
+Site location: 31.1643, 34.5324
+Ground elevation: 171.00 meters AMSL
+Antenna height: 1.50 meters AGL / 172.50 meters AMSL
+Distance to Rx: 0.20 kilometers
+Azimuth to Rx: 137.34 degrees grid
+Downtilt angle to Rx: +2.0398 degrees
+
+Receiver site: Rx
+Site location: 31.1630, 34.5338
+Ground elevation: 178.00 meters AMSL
+Antenna height: 1.50 meters AGL / 179.50 meters AMSL
+Distance to Tx: 0.20 kilometers
+Azimuth to Tx: 317.34 degrees grid
+Downtilt angle to Tx: -2.0415 degrees
+
+
+Propagation model: Irregular Terrain Model
+Model sub-type: City / Conservative
+Earth's Dielectric Constant: 15.000
+Earth's Conductivity: 0.005 Siemens/meter
+Atmospheric Bending Constant (N-units): 301.000 ppm
+Frequency: 5000.000 MHz
+Radio Climate: 5 (Continental Temperate)
+Polarisation: 1 (Vertical)
+Fraction of Situations: 50.0%
+Fraction of Time: 50.0%
+
+Receiver gain: 0.0 dBd / 2.1 dBi
+Transmitter ERP plus Receiver gain: 4.0 Watts (+36.02 dBm)
+Transmitter ERP minus Receiver gain: 36.02 dBm
+Transmitter EIRP plus Receiver gain: 6.5 Watts (+38.16 dBm)
+Transmitter EIRP minus Receiver gain: 38.16 dBm
+
+Summary for the link between Tx and Rx:
+
+Free space path loss: 92.32 dB
+Computed path loss: 93.28 dB
+Attenuation due to terrain shielding: 0.97 dB
+Field strength at Rx: 96.12 dBuV/meter
+Signal power level at Rx: -55.12 dBm
+Signal power density at Rx: -49.67 dBW per square meter
+Voltage across 50 ohm dipole at Rx: 501.60 uV (54.01 dBuV)
+Voltage across 75 ohm dipole at Rx: 614.33 uV (55.77 dBuV)
+Longley-Rice model error number: 4
+  Warning: Some parameters are out of range for this model.
+  Results should be used with caution.
+
+No obstructions to LOS path due to terrain were detected
+
+The first Fresnel zone is clear.
+
+60% of the first Fresnel zone is clear.

@@ -1,0 +1,13 @@
+09:45:58.302721 INFO [otestpointd/application] commandline: otestpointd -d -l 3 -f /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/log/otestpointd7.log --pidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/run/otestpointd7.pid --uuidfile /home/ubuntu/Desktop/emane-tutorial/23aliakim/persist/host/var/run/otestpointd7.uuid host-otestpointd7.xml 
+09:45:58.302761 INFO [otestpointd/application] uuid: 82fb1ff7-e159-4457-b10a-34daa6bcd8f1
+09:45:58.330362 INFO [otestpointd] discovery service listening on tcp://127.0.0.1:8887
+09:45:59.617874 INFO [otestpoint-probe/node-7/0/manager] available probes: EMANE.PhysicalLayer.Counters.General EMANE.PhysicalLayer.Tables.Events EMANE.PhysicalLayer.Tables.Status
+09:45:59.619557 INFO [otestpoint-probe/node-7/1/manager] available probes: EMANE.RFPipe.Counters.General EMANE.RFPipe.Tables.Events EMANE.RFPipe.Tables.Neighbor EMANE.RFPipe.Tables.Status
+09:45:59.622367 ERROR [otestpointd/node-7/1/container] Traceback (most recent call last):
+
+  File "/usr/lib/python2.7/dist-packages/otestpoint/emane/probebase.py", line 222, in start
+    raise ProbeException("unable to determine build id")
+
+ProbeException: unable to determine build id
+
+09:55:46.644952 INFO [otestpointd/application] shutdown

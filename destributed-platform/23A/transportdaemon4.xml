@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE transportdaemon SYSTEM "file:///usr/share/emane/dtd/transportdaemon.dtd">
+<transportdaemon>
+  <instance nemid="4">
+    <param name="platformendpoint" value="10.99.0.100:8204"/>
+    <param name="transportendpoint" value="10.99.0.4:8304"/>
+    <transport definition="transvirtual.xml">
+      <param name="mask" value="255.255.255.0"/>
+      <param name="address" value="10.100.0.4"/>
+    </transport>
+  </instance>
+  <instance nemid="15">
+    <param name="platformendpoint" value="10.99.0.100:8215"/>
+    <param name="transportendpoint" value="10.99.0.4:8315"/>
+    <transport definition="transvirtual.xml">
+      <param name="device" value="emane1"/>
+      <param name="mask" value="255.255.255.0"/>
+      <param name="address" value="10.101.0.15"/>
+    </transport>
+  </instance>
+</transportdaemon>
+

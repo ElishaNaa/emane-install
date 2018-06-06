@@ -1,0 +1,3 @@
+#!/bin/bash -
+
+/home/ubuntu/Software/scripts/expctl-host stop "$@" "/home/ubuntu/Desktop/emane-tutorial/22" 22 9

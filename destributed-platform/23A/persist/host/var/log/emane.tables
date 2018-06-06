@@ -1,0 +1,2455 @@
+nem 1   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 1   | 661         | 68326        | 0           | 0            |
+| 3   | 0           | 0            | 633         | 87502        |
+
+nem 1   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 21       |
+
+nem 1   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg       | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 3     | 633     | 0       | 28          | 993401  | 1527144945.96 | 0.0           | 0.739693403244 | 0.0       | -96.9891281128 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 661     | 0           | 0       | 0.0           | 1527144945.97 | 0.0            | 0.0       | 0.0            | 0.0     | 0.0         | 1000000     |
+
+nem 1   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age          |
+| 3     | 2       | 0       | 0           | 0.00320133799687 | 0.73970001936 | -96.9897003174 | 0.0637987330556 |
+| 65535 | 0       | 2       | 0           | 0.0              | 0.0           | 0.0            | 0.0             |
+
+nem 1   mac OneHopNeighborTable
+| NEM Id |
+| 1      |
+| 3      |
+
+nem 1   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 1   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 1   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 1   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 1   | 661         | 72825        | 0           | 0            |
+| 3   | 0           | 0            | 633         | 104395       |
+
+nem 1   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 2   | 0           | 630            | 29                | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 29                | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 630            | 30                | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 629            | 32                | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 629            | 31                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 1   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 1   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 1   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 2   | 139.960006714    | 139.960006714    |
+| 3   | 106.25           | 106.25           |
+| 4   | 125.690002441    | 125.690002441    |
+| 5   | 155.940002441    | 155.940002441    |
+| 6   | 150.979995728    | 150.979995728    |
+
+nem 1   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 2   | 600000000 | -129.960006714 | 1527144945.91    |
+| 3   | 600000000 | -96.25         | 1527144945.96    |
+| 4   | 600000000 | -115.690002441 | 1527144945.37    |
+| 5   | 600000000 | -145.940002441 | 1527144945.75    |
+| 6   | 600000000 | -140.979995728 | 1527144945.78    |
+
+nem 1   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 1   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 2   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 659         | 98062        | 0           | 0            |
+| 3   | 0           | 0            | 629         | 87238        |
+| 4   | 0           | 0            | 627         | 57078        |
+| 5   | 0           | 0            | 626         | 71544        |
+| 6   | 0           | 0            | 626         | 103576       |
+
+nem 2   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 18       |
+
+nem 2   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 3     | 629     | 0       | 32          | 989436  | 1527144945.96 | 0.0           | 31.3898181915 | 0.0       | -96.9891357422 | 0.0     | 1000000     | 0.0         |
+| 4     | 627     | 0       | 32          | 747413  | 1527144945.37 | 0.0           | 10.0497655869 | 0.0       | -96.9891357422 | 0.0     | 1000000     | 0.0         |
+| 5     | 626     | 0       | 34          | 862310  | 1527144945.75 | 0.0           | 11.0196485519 | 0.0       | -96.9891357422 | 0.0     | 1000000     | 0.0         |
+| 6     | 626     | 0       | 33          | 1118765 | 1527144945.78 | 0.0           | 13.7096099854 | 0.0       | -96.9891357422 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 659     | 0           | 0       | 0.0           | 1527144945.91 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 1000000     |
+
+nem 2   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age          |
+| 3     | 2       | 0       | 0           | 0.00320105114952 | 31.3897018433 | -96.9897003174 | 0.0639652535319 |
+| 4     | 1       | 0       | 0           | 0.00140846252907 | 10.049697876  | -96.9897003174 | 0.657918214798  |
+| 5     | 1       | 0       | 0           | 0.00131143059116 | 11.0196990967 | -96.9897003174 | 0.279008865356  |
+| 6     | 1       | 0       | 0           | 0.0015995252179  | 13.7097015381 | -96.9897003174 | 0.250172615051  |
+| 65535 | 0       | 2       | 0           | 0.0              | 0.0           | 0.0            | 0.0             |
+
+nem 2   mac OneHopNeighborTable
+| NEM Id |
+| 2      |
+| 3      |
+| 4      |
+| 5      |
+| 6      |
+
+nem 2   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 2   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 2   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 2   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 659         | 102547       | 0           | 0            |
+| 3   | 0           | 0            | 629         | 104031       |
+| 4   | 0           | 0            | 627         | 73817        |
+| 5   | 0           | 0            | 626         | 88260        |
+| 6   | 0           | 0            | 626         | 120290       |
+
+nem 2   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 628            | 33                | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 33                | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 33                | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 35                | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 34                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 2   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 2   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 2   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 133.919998169    | 133.919998169    |
+| 3   | 75.5999984741    | 75.5999984741    |
+| 4   | 96.9400024414    | 96.9400024414    |
+| 5   | 95.9700012207    | 95.9700012207    |
+| 6   | 93.2799987793    | 93.2799987793    |
+
+nem 2   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 1   | 600000000 | -123.919998169 | 1527144945.97    |
+| 3   | 600000000 | -65.5999984741 | 1527144945.96    |
+| 4   | 600000000 | -86.9400024414 | 1527144945.37    |
+| 5   | 600000000 | -85.9700012207 | 1527144945.75    |
+| 6   | 600000000 | -83.2799987793 | 1527144945.78    |
+
+nem 2   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 2   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 3   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 623         | 82530        |
+| 3   | 662         | 102524       | 0           | 0            |
+| 4   | 0           | 0            | 623         | 56814        |
+| 5   | 0           | 0            | 623         | 71358        |
+| 6   | 0           | 0            | 622         | 103312       |
+
+nem 3   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 18       |
+
+nem 3   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg       | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 2     | 623     | 0       | 35          | 949003  | 1527144945.91 | 0.0           | 31.3898105621  | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 4     | 623     | 0       | 36          | 743448  | 1527144945.37 | 0.0           | 0.529696524143 | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 5     | 623     | 0       | 37          | 859433  | 1527144945.75 | 0.0           | 13.4897260666  | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 6     | 622     | 0       | 37          | 1114800 | 1527144945.78 | 0.0           | 13.9996480942  | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 662     | 0           | 0       | 0.0           | 1527144945.96 | 0.0            | 0.0       | 0.0            | 0.0     | 0.0         | 1000000     |
+
+nem 3   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg       | NF Avg         | Rx Age         |
+| 2     | 2       | 0       | 0           | 0.00281733134761 | 31.3897018433  | -96.9897003174 | 0.114004462957 |
+| 4     | 1       | 0       | 0           | 0.00140866567381 | 0.529700934887 | -96.9897003174 | 0.658036589622 |
+| 5     | 1       | 0       | 0           | 0.00131161988247 | 13.4897003174  | -96.9897003174 | 0.278927624226 |
+| 6     | 1       | 0       | 0           | 0.00159975595307 | 13.9997024536  | -96.9897003174 | 0.250146478415 |
+| 65535 | 0       | 2       | 0           | 0.0              | 0.0            | 0.0            | 0.0            |
+
+nem 3   mac OneHopNeighborTable
+| NEM Id |
+| 2      |
+| 3      |
+| 4      |
+| 5      |
+| 6      |
+
+nem 3   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 3   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 3   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 3   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 623         | 99167        |
+| 3   | 662         | 107030       | 0           | 0            |
+| 4   | 0           | 0            | 623         | 73453        |
+| 5   | 0           | 0            | 623         | 87999        |
+| 6   | 0           | 0            | 622         | 119926       |
+
+nem 3   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 624            | 37                | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 36                | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 37                | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 38                | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 38                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 3   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 3   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 3   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 138.839996338    | 138.839996338    |
+| 2   | 75.5999984741    | 75.5999984741    |
+| 4   | 106.459999084    | 106.459999084    |
+| 5   | 93.5             | 93.5             |
+| 6   | 92.9899978638    | 92.9899978638    |
+
+nem 3   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 1   | 600000000 | -128.839996338 | 1527144945.97    |
+| 2   | 600000000 | -65.5999984741 | 1527144945.91    |
+| 4   | 600000000 | -96.4599990845 | 1527144945.37    |
+| 5   | 600000000 | -83.5          | 1527144945.75    |
+| 6   | 600000000 | -82.9899978638 | 1527144945.78    |
+
+nem 3   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 3   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 4   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 4   | 660         | 72308        | 0           | 0            |
+| 6   | 0           | 0            | 619         | 103110       |
+
+nem 4   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 21       |
+
+nem 4   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg     | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 6     | 619     | 0       | 40          | 1111794 | 1527144945.78 | 0.0           | 12.919798851 | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 660     | 0           | 0       | 0.0           | 1527144945.37 | 0.0          | 0.0       | 0.0            | 0.0     | 0.0         | 1000000     |
+
+nem 4   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age         |
+| 6     | 1       | 0       | 0           | 0.00159950810485 | 12.9197006226 | -96.9897003174 | 0.250061392784 |
+| 65535 | 0       | 1       | 0           | 0.0              | 0.0           | 0.0            | 0.0            |
+
+nem 4   mac OneHopNeighborTable
+| NEM Id |
+| 4      |
+| 6      |
+
+nem 4   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 4   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 4   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 4   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 4   | 660         | 76800        | 0           | 0            |
+| 6   | 0           | 0            | 619         | 119649       |
+
+nem 4   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 620            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 620            | 39                | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 622            | 40                | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 620            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 41                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 4   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 4   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 4   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 123.61000061     | 123.61000061     |
+| 2   | 125.209999084    | 125.209999084    |
+| 3   | 137.789993286    | 137.789993286    |
+| 5   | 129.729995728    | 129.729995728    |
+| 6   | 94.0699996948    | 94.0699996948    |
+
+nem 4   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 1   | 600000000 | -113.61000061  | 1527144945.97    |
+| 2   | 600000000 | -115.209999084 | 1527144945.91    |
+| 3   | 600000000 | -127.789993286 | 1527144945.96    |
+| 5   | 600000000 | -119.729995728 | 1527144945.75    |
+| 6   | 600000000 | -84.0699996948 | 1527144945.78    |
+
+nem 4   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 4   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 5   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 617         | 81906        |
+| 3   | 0           | 0            | 619         | 86362        |
+| 5   | 661         | 86942        | 0           | 0            |
+| 6   | 0           | 0            | 615         | 102862       |
+
+nem 5   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 19       |
+
+nem 5   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 2     | 617     | 0       | 41          | 941232  | 1527144945.91 | 0.0           | 15.7396631241 | 0.0       | -96.989151001  | 0.0     | 1000000     | 0.0         |
+| 3     | 619     | 0       | 42          | 977797  | 1527144945.96 | 0.0           | 19.8397808075 | 0.0       | -96.9891433716 | 0.0     | 1000000     | 0.0         |
+| 6     | 615     | 0       | 44          | 1107958 | 1527144945.78 | 0.0           | 106.989089966 | 0.0       | -96.989151001  | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 661     | 0           | 0       | 0.0           | 1527144945.75 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 1000000     |
+
+nem 5   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age          |
+| 2     | 2       | 0       | 0           | 0.00281740073115 | 15.7397003174 | -96.9897003174 | 0.113978177309  |
+| 3     | 2       | 0       | 0           | 0.00320159178227 | 19.8396987915 | -96.9897003174 | 0.0638842210174 |
+| 6     | 1       | 0       | 0           | 0.00159979541786 | 106.989700317 | -96.9897003174 | 0.250101596117  |
+| 65535 | 0       | 1       | 0           | 0.0              | 0.0           | 0.0            | 0.0             |
+
+nem 5   mac OneHopNeighborTable
+| NEM Id |
+| 2      |
+| 3      |
+| 5      |
+| 6      |
+
+nem 5   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 5   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 5   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 5   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 617         | 98393        |
+| 3   | 0           | 0            | 619         | 102905       |
+| 5   | 661         | 91441        | 0           | 0            |
+| 6   | 0           | 0            | 615         | 119301       |
+
+nem 5   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 617            | 44                | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 42                | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 43                | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 617            | 43                | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 45                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 5   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 5   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 5   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 152.080001831    | 152.080001831    |
+| 2   | 91.25            | 91.25            |
+| 3   | 87.1500015259    | 87.1500015259    |
+| 4   | 109.470001221    | 109.470001221    |
+| 6   | 0.0              | 0.0              |
+
+nem 5   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 1   | 600000000 | -142.080001831 | 1527144945.97    |
+| 2   | 600000000 | -81.25         | 1527144945.91    |
+| 3   | 600000000 | -77.1500015259 | 1527144945.96    |
+| 4   | 600000000 | -99.4700012207 | 1527144945.37    |
+| 6   | 600000000 | 10.0           | 1527144945.78    |
+
+nem 5   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 5   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 6   mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 613         | 81458        |
+| 3   | 0           | 0            | 616         | 86016        |
+| 4   | 0           | 0            | 613         | 56078        |
+| 5   | 0           | 0            | 613         | 70610        |
+| 6   | 660         | 118876       | 0           | 0            |
+
+nem 6   mac BroadcastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac BroadcastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac BroadcastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac BroadcastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac BroadcastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac BroadcastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac EventReceptionTable
+| Event | Total Rx |
+| 104   | 18       |
+
+nem 6   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg      | SINR Stdv | NF Avg        | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 2     | 613     | 0       | 45          | 935794  | 1527144945.91 | 0.0           | 14.1796894073 | 0.0       | -96.989151001 | 0.0     | 1000000     | 0.0         |
+| 3     | 616     | 0       | 45          | 973640  | 1527144945.96 | 0.0           | 7.90967130661 | 0.0       | -96.989151001 | 0.0     | 1000000     | 0.0         |
+| 4     | 613     | 0       | 46          | 732923  | 1527144945.37 | 0.0           | 12.6697950363 | 0.0       | -96.989151001 | 0.0     | 1000000     | 0.0         |
+| 5     | 613     | 0       | 47          | 848817  | 1527144945.75 | 0.0           | 106.989074707 | 0.0       | -96.989151001 | 0.0     | 1000000     | 0.0         |
+| 65535 | 0       | 660     | 0           | 0       | 0.0           | 1527144945.78 | 0.0           | 0.0       | 0.0           | 0.0     | 0.0         | 1000000     |
+
+nem 6   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age          |
+| 2     | 2       | 0       | 0           | 0.00281724333763 | 14.1797027588 | -96.9897003174 | 0.114059172571  |
+| 3     | 2       | 0       | 0           | 0.00320141296834 | 7.90969800949 | -96.9897003174 | 0.0639879181981 |
+| 4     | 1       | 0       | 0           | 0.00140862166882 | 12.6697006226 | -96.9897003174 | 0.658016264439  |
+| 5     | 1       | 0       | 0           | 0.00131157890428 | 106.989700317 | -96.9897003174 | 0.278942257166  |
+| 65535 | 0       | 1       | 0           | 0.0              | 0.0           | 0.0            | 0.0             |
+
+nem 6   mac OneHopNeighborTable
+| NEM Id |
+| 2      |
+| 3      |
+| 4      |
+| 5      |
+| 6      |
+
+nem 6   mac TwoHopNeighborTable
+| NEM Id |
+
+nem 6   mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac UnicastPacketAcceptTable1
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac UnicastPacketAcceptTable2
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac UnicastPacketAcceptTable3
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac UnicastPacketDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac UnicastPacketDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   mac UnicastPacketDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Duplicate | Rx During Tx | Hidden Busy |
+
+nem 6   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 6   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 2   | 0           | 0            | 613         | 97845        |
+| 3   | 0           | 0            | 616         | 102484       |
+| 4   | 0           | 0            | 613         | 72467        |
+| 5   | 0           | 0            | 613         | 87001        |
+| 6   | 660         | 123368       | 0           | 0            |
+
+nem 6   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 614            | 47                | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 46                | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 46                | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 47                | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 48                | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 6   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 1        |
+
+nem 6   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 6   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 1   | 153.149993896    | 153.149993896    |
+| 2   | 92.8099975586    | 92.8099975586    |
+| 3   | 99.0800018311    | 99.0800018311    |
+| 4   | 94.3199996948    | 94.3199996948    |
+| 5   | 0.0              | 0.0              |
+
+nem 6   phy ReceivePowerTable
+| NEM | Frequency | Rx Power       | Last Packet Time |
+| 1   | 600000000 | -143.149993896 | 1527144945.97    |
+| 2   | 600000000 | -82.8099975586 | 1527144945.91    |
+| 3   | 600000000 | -89.0800018311 | 1527144945.96    |
+| 4   | 600000000 | -84.3199996948 | 1527144945.37    |
+| 5   | 600000000 | 10.0           | 1527144945.75    |
+
+nem 6   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 6   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 647               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 7   mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 490          | 0            |
+| 8   | 0            | 70           |
+| 15  | 0            | 70           |
+| 16  | 0            | 70           |
+
+nem 7   mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 103172       | 0            |
+| 8   | 0            | 36072        |
+| 9   | 0            | 39820        |
+| 13  | 0            | 19830        |
+| 14  | 0            | 30994        |
+| 15  | 0            | 20814        |
+| 16  | 0            | 25106        |
+
+nem 7   mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 9   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 13  | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 14  | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 7   mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 0     | 0      | 0       | 768            | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 8   | 17110 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 9   | 20676 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 13  | 10322 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 14  | 17796 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 15  | 12862 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+| 16  | 15892 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 7   mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 7   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 8     | 208     | 0       | 427         | 7934    | 1527144946.02 | 0.0           | 22.2413158417 | 0.0       | -93.9793243408 | 0.0     | 36000000    | 0.0         |
+| 9     | 210     | 0       | 426         | 8757    | 1527144944.98 | 0.0           | 28.27277565   | 0.0       | -93.9793167114 | 0.0     | 36000000    | 0.0         |
+| 13    | 223     | 647     | 420         | 4427    | 1527144945.76 | 1527144945.98 | 20.5652580261 | 0.0       | -93.9792709351 | 0.0     | 36000000    | 36000000    |
+| 14    | 207     | 0       | 427         | 6793    | 1527144946.06 | 0.0           | 22.4142608643 | 0.0       | -93.9793243408 | 0.0     | 36000000    | 0.0         |
+| 15    | 214     | 0       | 419         | 4582    | 1527144945.86 | 0.0           | 21.7824745178 | 0.0       | -93.9793014526 | 0.0     | 36000000    | 0.0         |
+| 16    | 211     | 0       | 424         | 5486    | 1527144946.18 | 0.0           | 29.8881721497 | 0.0       | -93.979309082  | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 816     | 0           | 0       | 0.0           | 1527144945.7  | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 7   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg      | NF Avg         | Rx Age         |
+| 8     | 1       | 0       | 0           | 2.90088173642e-05 | 15.39939785   | -93.9794006348 | 0.568110942841 |
+| 9     | 0       | 0       | 0           | 0.0               | 0.0           | 0.0            | 1.04811096191  |
+| 13    | 2       | 3       | 0           | 2.80085132545e-05 | 15.2394018173 | -93.9794006348 | 0.268110960722 |
+| 14    | 1       | 0       | 0           | 2.90088173642e-05 | 15.4393987656 | -93.9794006348 | 0.928110957146 |
+| 15    | 2       | 0       | 0           | 3.80115525331e-05 | 15.3293981552 | -93.9794006348 | 0.168110951781 |
+| 16    | 1       | 0       | 0           | 2.30069927056e-05 | 15.459403038  | -93.9794006348 | 0.688110947609 |
+| 65535 | 0       | 1       | 0           | 0.0               | 0.0           | 0.0            | 0.0            |
+
+nem 7   mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 539   |
+| 2          | 281   |
+| 3          | 238   |
+| 4          | 165   |
+| 5          | 93    |
+| 6          | 66    |
+| 7          | 24    |
+| 8          | 21    |
+| 9          | 16    |
+| 10         | 10    |
+| 11         | 2     |
+| 12         | 3     |
+| 13         | 2     |
+| 15         | 1     |
+| 32         | 1     |
+| 66         | 1     |
+
+nem 7   mac QueueFragmentHistogram
+| Queue | 1    | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 3151 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 962  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 7   mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3    | 4 |
+| 0     | 3153     | 3151     | 0        | 0       | 0 | 0 | 0 | 3151 | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0    | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0    | 0 |
+| 3     | 978      | 962      | 16       | 0       | 0 | 0 | 0 | 962  | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0    | 0 |
+
+nem 7   mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25 | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 0     | 0     | 0    | 54    | 0      | 0    | 0  | 0    | 0    | 54  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 1     | 0     | 1    | 142   | 0      | 0    | 0  | 0    | 0    | 142 | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 2     | 0     | 2    | 42    | 0      | 0    | 0  | 0    | 0    | 42  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 3     | 0     | 3    | 335   | 0      | 0    | 0  | 0    | 0    | 333 | 2   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 4     | 0     | 4    | 49    | 0      | 0    | 0  | 0    | 0    | 49  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 5     | 0     | 5    | 341   | 0      | 0    | 0  | 0    | 0    | 340 | 1   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 6     | 0     | 6    | 55    | 0      | 0    | 0  | 0    | 0    | 55  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 7     | 0     | 7    | 331   | 0      | 0    | 0  | 0    | 0    | 328 | 2   | 1   | 0   | 0    | 0    | 0    | 0     |
+| 8     | 0     | 8    | 35    | 0      | 0    | 0  | 0    | 0    | 35  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 9     | 0     | 9    | 192   | 0      | 0    | 0  | 0    | 0    | 192 | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 10    | 0     | 10   | 61    | 0      | 0    | 0  | 0    | 0    | 61  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 12    | 0     | 12   | 47    | 0      | 0    | 0  | 0    | 0    | 47  | 0   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 13    | 0     | 13   | 335   | 0      | 0    | 0  | 0    | 0    | 332 | 2   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 7   mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 2025  | 0      | 0   | 2016 | 7   | 2   | 0   | 0    | 0    | 0    | 0     |
+
+nem 7   mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 4269552      | 0            |
+
+nem 7   mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 756          | 0            |
+| 13  | 0            | 378          |
+
+nem 7   mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 7   mac UnicastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 13  | 126  | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 7   mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 7   mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 7   mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 7   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 7   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 816         | 1467273      | 0           | 0            |
+| 8   | 0           | 0            | 335         | 64808        |
+| 9   | 0           | 0            | 335         | 72191        |
+| 13  | 0           | 0            | 333         | 41325        |
+| 14  | 0           | 0            | 334         | 60358        |
+| 15  | 0           | 0            | 341         | 45106        |
+| 16  | 0           | 0            | 331         | 52240        |
+
+nem 7   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 259            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 259            | 44                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 257            | 44                | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 256            | 45                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 248            | 45                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 259            | 46                | 0             | 0            | 0            | 0       | 0              |
+
+nem 7   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 450      |
+
+nem 7   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 7   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 8   | 123.580001831    | 123.580001831    |
+| 9   | 123.529998779    | 123.529998779    |
+| 13  | 123.739997864    | 123.739997864    |
+| 14  | 123.540000916    | 123.540000916    |
+| 15  | 123.650001526    | 123.650001526    |
+| 16  | 123.519996643    | 123.519996643    |
+
+nem 7   phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 8   | 2500000000 | -78.5800018311 | 1527144946.02    |
+| 9   | 2500000000 | -78.5299987793 | 1527144945.82    |
+| 13  | 2500000000 | -78.7399978638 | 1527144945.76    |
+| 14  | 2500000000 | -78.5400009155 | 1527144946.06    |
+| 15  | 2500000000 | -78.6500015259 | 1527144945.86    |
+| 16  | 2500000000 | -78.5199966431 | 1527144946.18    |
+
+nem 7   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 647         | 2987215      | 0           | 0            |
+| 13  | 0           | 0            | 10          | 730          |
+
+nem 7   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+
+nem 8   mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 8   | 420          | 0            |
+
+nem 8   mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 38186        |
+| 8   | 88982        | 0            |
+
+nem 8   mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 8   mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 28922 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 8   mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 8   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 510     | 0       | 951         | 466653  | 1527144945.7 | 0.0           | 24.1628818512 | 0.0       | -93.9794616699 | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 636     | 0           | 0       | 0.0          | 1527144946.02 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 8   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg    | NF Avg         | Rx Age        |
+| 7     | 2       | 0       | 10          | 0.00128840014804 | 15.39939785 | -93.9794006348 | 0.32809895277 |
+| 65535 | 0       | 2       | 0           | 0.0              | 0.0         | 0.0            | 0.0           |
+
+nem 8   mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 632   |
+| 2          | 3     |
+| 23         | 1     |
+
+nem 8   mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 6   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 655 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 8   mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 6        | 6        | 0        | 0       | 0 | 0 | 0 | 6   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 655      | 655      | 0        | 0       | 0 | 0 | 0 | 655 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 8   mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1010  | 0      | 0    | 0  | 0    | 0    | 1004 | 5   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 8   mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 13    | 0     | 13   | 2025  | 0      | 0   | 2016 | 7   | 2   | 0   | 0    | 0    | 0    | 0     |
+
+nem 8   mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 8   mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2206750 | 0      | 2062802 | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 8   mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 630  | 0      | 126     | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 8   mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 8   mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+
+nem 8   mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 8   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 8   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 363         | 1414516      |
+| 8   | 636         | 111214       | 0           | 0            |
+
+nem 8   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 412            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 596            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 593            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 593            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 594            | 40                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 596            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 8   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 8   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 8   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.580001831    | 123.580001831    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+| 16  | 9999.0           | 9999.0           |
+
+nem 8   phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.5800018311 | 1527144945.98    |
+| 9   | 2500000000 | -9954.0        | 1527144945.82    |
+| 13  | 2500000000 | -9954.0        | 1527144945.76    |
+| 14  | 2500000000 | -9954.0        | 1527144946.06    |
+| 15  | 2500000000 | -9954.0        | 1527144945.86    |
+| 16  | 2500000000 | -9954.0        | 1527144946.18    |
+
+nem 8   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 647         | 2987215      |
+
+nem 8   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 13  | 0           | 10             | 0                 | 0             | 0            | 0            | 0       | 0              |
+
+nem 9   mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 9   | 490          | 0            |
+
+nem 9   mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 37730        |
+| 9   | 105774       | 0            |
+
+nem 9   mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 9   mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 29246 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 9   mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 9   mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 503     | 0       | 958         | 467770  | 1527144945.7 | 0.0           | 33.8929672241 | 0.0       | -93.9794540405 | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 638     | 0           | 0       | 0.0          | 1527144945.82 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 9   mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg      | NF Avg         | Rx Age         |
+| 7     | 1       | 0       | 4           | 8.10315832496e-05 | 15.4494009018 | -93.9794006348 | 0.328026652336 |
+| 65535 | 0       | 1       | 0           | 0.0               | 0.0           | 0.0            | 0.0            |
+
+nem 9   mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 636   |
+| 2          | 1     |
+| 26         | 1     |
+
+nem 9   mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 7   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 657 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 9   mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 7        | 7        | 0        | 0       | 0 | 0 | 0 | 7   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 657      | 657      | 0        | 0       | 0 | 0 | 0 | 657 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 9   mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1008  | 0      | 0    | 0  | 0    | 0    | 1005 | 2   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 9   mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 3     | 0     | 3    | 2026  | 0      | 0   | 2017 | 8   | 0   | 1   | 0    | 0    | 0    | 0     |
+
+nem 9   mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 9   mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2201318 | 0      | 2068234 | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 9   mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 588  | 0      | 168     | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 9   mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 9   mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 9   mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 9   phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 9   phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 361         | 1414318      |
+| 9   | 638         | 128492       | 0           | 0            |
+
+nem 9   phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 413            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 595            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 593            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 593            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 594            | 40                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 596            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 9   phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 9   phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 9   phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.529998779    | 123.529998779    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+| 16  | 9999.0           | 9999.0           |
+
+nem 9   phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.5299987793 | 1527144945.98    |
+| 8   | 2500000000 | -9954.0        | 1527144946.02    |
+| 13  | 2500000000 | -9954.0        | 1527144945.76    |
+| 14  | 2500000000 | -9954.0        | 1527144946.06    |
+| 15  | 2500000000 | -9954.0        | 1527144945.86    |
+| 16  | 2500000000 | -9954.0        | 1527144946.18    |
+
+nem 9   phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 647         | 2987215      |
+
+nem 9   phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 13  | 0           | 10             | 0                 | 0             | 0            | 0            | 0       | 0              |
+
+nem 11  mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 11  | 660         | 63080        | 0           | 0            |
+| 12  | 0           | 0            | 1276        | 129364       |
+
+nem 11  mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+
+nem 11  mac EventReceptionTable
+| Event | Total Rx |
+
+nem 11  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 12    | 1276    | 0       | 53          | 689116  | 1527144946.0 | 0.0           | 29.1475830078 | 0.0       | -100.009407043 | 0.0     | 1500000     | 0.0         |
+| 65535 | 0       | 660     | 0           | 0       | 0.0          | 1527144946.11 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 1500000     |
+
+nem 11  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio    | SINR Avg      | NF Avg         | Rx Age          |
+| 12    | 3       | 0       | 0           | 0.00303918798454 | 29.9349575043 | -100.010292053 | 0.0294591132551 |
+| 65535 | 0       | 1       | 0           | 0.0              | 0.0           | 0.0            | 0.0             |
+
+nem 11  mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 11  mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+
+nem 11  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 11  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 11  | 660         | 67572        | 0           | 0            |
+| 12  | 0           | 0            | 1276        | 145878       |
+
+nem 11  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 54                | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 11  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+
+nem 11  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 11  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+
+nem 11  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 12  | 2347000000 | -70.0753418394 | 1527144946.0     |
+
+nem 11  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 11  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 648               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 12  mac BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 11  | 0           | 0            | 636         | 57616        |
+| 12  | 1330        | 140868       | 0           | 0            |
+
+nem 12  mac BroadcastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+
+nem 12  mac EventReceptionTable
+| Event | Total Rx |
+
+nem 12  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx      | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 11    | 636     | 0       | 23          | 306863  | 1527144946.11 | 0.0          | 29.1371574402 | 0.0       | -100.010902405 | 0.0     | 1500000     | 0.0         |
+| 65535 | 0       | 1330    | 0           | 0       | 0.0           | 1527144946.0 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 1500000     |
+
+nem 12  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg      | NF Avg         | Rx Age         |
+| 11    | 1       | 0       | 0           | 0.000586253474467 | 29.9349575043 | -100.010299683 | 0.878189384937 |
+| 65535 | 0       | 3       | 0           | 0.0               | 0.0           | 0.0            | 0.0            |
+
+nem 12  mac UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 12  mac UnicastPacketDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control |
+
+nem 12  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 12  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 11  | 0           | 0            | 636         | 65780        |
+| 12  | 1330        | 150050       | 0           | 0            |
+
+nem 12  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 0              | 816               | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 0              | 638               | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 24                | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 0              | 635               | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 0              | 634               | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 0              | 636               | 0             | 0            | 0            | 0       | 0              |
+
+nem 12  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+
+nem 12  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 12  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+
+nem 12  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 11  | 2347000000 | -70.0753418394 | 1527144946.11    |
+
+nem 12  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+
+nem 12  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 0              | 648               | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 0              | 10                | 0             | 0            | 0            | 0       | 0              |
+
+nem 13  mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 13  | 420          | 0            |
+
+nem 13  mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 37564        |
+| 13  | 54610        | 0            |
+
+nem 13  mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 13  mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 29412 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 13  mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 13  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 505     | 10      | 956         | 471044  | 1527144945.7 | 1527144945.76 | 23.0234889984 | 0.0       | -93.9794540405 | 0.0     | 36000000    | 36000000    |
+| 65535 | 0       | 634     | 0           | 0       | 0.0          | 1527144945.48 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 13  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg      | NF Avg         | Rx Age         |
+| 7     | 1       | 1       | 6           | 8.10304482002e-05 | 15.2394018173 | -93.9794006348 | 0.327975362539 |
+| 65535 | 0       | 1       | 0           | 0.0               | 0.0           | 0.0            | 0.0            |
+
+nem 13  mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 640   |
+| 2          | 3     |
+| 25         | 1     |
+
+nem 13  mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 6   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 665 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 13  mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 6        | 6        | 0        | 0       | 0 | 0 | 0 | 6   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 665      | 665      | 0        | 0       | 0 | 0 | 0 | 665 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 13  mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1009  | 0      | 0    | 0  | 0    | 0    | 1003 | 5   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 13  mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 0     | 0     | 0    | 2025  | 1      | 0   | 2017 | 7   | 1   | 0   | 0    | 0    | 1    | 0     |
+| 2     | 0     | 2    | 2026  | 0      | 0   | 2017 | 8   | 1   | 0   | 0    | 0    | 0    | 0     |
+| 4     | 0     | 4    | 2026  | 0      | 0   | 2018 | 7   | 1   | 0   | 0    | 0    | 0    | 0     |
+| 6     | 0     | 6    | 2025  | 1      | 0   | 2010 | 15  | 0   | 0   | 0    | 0    | 0    | 1     |
+| 8     | 0     | 8    | 2026  | 0      | 0   | 2017 | 9   | 0   | 0   | 0    | 0    | 0    | 0     |
+| 10    | 0     | 10   | 2026  | 0      | 0   | 2016 | 10  | 0   | 0   | 0    | 0    | 0    | 0     |
+| 12    | 0     | 12   | 2025  | 0      | 0   | 2010 | 13  | 2   | 0   | 0    | 0    | 0    | 0     |
+
+nem 13  mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 2083172      |
+
+nem 13  mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 126          |
+| 13  | 504          | 0            |
+
+nem 13  mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 13  mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2186380 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 13  mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 630  | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 13  mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 13  mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 13  mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 13  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 13  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 361         | 1414318      |
+| 13  | 634         | 76238        | 0           | 0            |
+
+nem 13  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 412            | 43                | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 595            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 596            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 593            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 594            | 40                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 596            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 13  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 13  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 13  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.739997864    | 123.739997864    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+| 16  | 9999.0           | 9999.0           |
+
+nem 13  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.7399978638 | 1527144946.26    |
+| 8   | 2500000000 | -9954.0        | 1527144946.02    |
+| 9   | 2500000000 | -9954.0        | 1527144945.82    |
+| 14  | 2500000000 | -9954.0        | 1527144946.06    |
+| 15  | 2500000000 | -9954.0        | 1527144945.86    |
+| 16  | 2500000000 | -9954.0        | 1527144946.18    |
+
+nem 13  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 648         | 2989976      |
+| 13  | 10          | 730          | 0           | 0            |
+
+nem 13  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+
+nem 14  mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 14  | 420          | 0            |
+
+nem 14  mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 38978        |
+| 14  | 84508        | 0            |
+
+nem 14  mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 14  mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 27870 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 14  mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 14  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 509     | 0       | 952         | 470158  | 1527144945.7 | 0.0           | 24.6240634918 | 0.0       | -93.9794616699 | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 635     | 0           | 0       | 0.0          | 1527144946.06 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 14  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg      | NF Avg         | Rx Age         |
+| 7     | 1       | 0       | 6           | 8.10385899968e-05 | 15.4393987656 | -93.9794006348 | 0.327980726957 |
+| 65535 | 0       | 1       | 0           | 0.0               | 0.0           | 0.0            | 0.0            |
+
+nem 14  mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 634   |
+| 24         | 1     |
+
+nem 14  mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 6   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 652 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 14  mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 6        | 6        | 0        | 0       | 0 | 0 | 0 | 6   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 652      | 652      | 0        | 0       | 0 | 0 | 0 | 652 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 14  mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1007  | 0      | 0    | 0  | 0    | 0    | 1001 | 5   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 14  mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 1     | 0     | 1    | 2026  | 0      | 0   | 2017 | 6   | 3   | 0   | 0    | 0    | 0    | 0     |
+| 9     | 0     | 9    | 2026  | 0      | 0   | 2010 | 14  | 2   | 0   | 0    | 0    | 0    | 0     |
+
+nem 14  mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 14  mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2182306 | 0      | 2077740 | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 14  mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 588  | 0      | 168     | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 14  mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 14  mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 14  mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 14  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 14  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 360         | 1414145      |
+| 14  | 635         | 106674       | 0           | 0            |
+
+nem 14  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 412            | 44                | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 595            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 596            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 593            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 594            | 40                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 596            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 14  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 14  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 14  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.540000916    | 123.540000916    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+| 16  | 9999.0           | 9999.0           |
+
+nem 14  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.5400009155 | 1527144946.26    |
+| 8   | 2500000000 | -9954.0        | 1527144946.02    |
+| 9   | 2500000000 | -9954.0        | 1527144945.82    |
+| 13  | 2500000000 | -9954.0        | 1527144945.76    |
+| 15  | 2500000000 | -9954.0        | 1527144945.86    |
+| 16  | 2500000000 | -9954.0        | 1527144946.18    |
+
+nem 14  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 647         | 2977625      |
+
+nem 14  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 1              | 0                 | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 10             | 0                 | 0             | 0            | 0            | 0       | 0              |
+
+nem 15  mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 15  | 420          | 0            |
+
+nem 15  mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 37792        |
+| 15  | 58808        | 0            |
+
+nem 15  mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 15  mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 29762 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 15  mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 15  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx       | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 502     | 0       | 961         | 462657  | 1527144946.26 | 0.0           | 24.1663036346 | 0.0       | -93.9794464111 | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 634     | 0           | 0       | 0.0           | 1527144945.86 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 15  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio | SINR Avg | NF Avg | Rx Age        |
+| 7     | 0       | 0       | 0           | 0.0           | 0.0      | 0.0    | 3.40807461739 |
+| 65535 | 0       | 1       | 0           | 0.0           | 0.0      | 0.0    | 0.0           |
+
+nem 15  mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 631   |
+| 2          | 2     |
+| 25         | 1     |
+
+nem 15  mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 6   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 654 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 15  mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 6        | 6        | 0        | 0       | 0 | 0 | 0 | 6   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 654      | 654      | 0        | 0       | 0 | 0 | 0 | 654 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 15  mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1018  | 0      | 0    | 0  | 0    | 0    | 1012 | 5   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 15  mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 5     | 0     | 5    | 2025  | 1      | 0   | 2016 | 9   | 0   | 0   | 0    | 0    | 0    | 1     |
+
+nem 15  mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 15  mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2227120 | 0      | 2045148 | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 15  mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 588  | 0      | 168     | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 15  mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 15  mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | RX   | 2500000000 |           |       |       |             |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 15  mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 15  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 15  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 370         | 1415193      |
+| 15  | 634         | 80441        | 0           | 0            |
+
+nem 15  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 402            | 44                | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 595            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 596            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 593            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 593            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 16  | 0           | 596            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 15  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 15  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 15  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.650001526    | 123.650001526    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+| 16  | 9999.0           | 9999.0           |
+
+nem 15  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.6500015259 | 1527144946.26    |
+| 8   | 2500000000 | -9954.0        | 1527144946.02    |
+| 9   | 2500000000 | -9954.0        | 1527144945.82    |
+| 13  | 2500000000 | -9954.0        | 1527144945.76    |
+| 14  | 2500000000 | -9954.0        | 1527144946.06    |
+| 16  | 2500000000 | -9954.0        | 1527144946.18    |
+
+nem 15  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 648         | 2989976      |
+
+nem 15  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 13  | 0           | 10             | 0                 | 0             | 0            | 0            | 0       | 0              |
+
+nem 16  mac BroadcastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 16  | 420          | 0            |
+
+nem 16  mac BroadcastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac BroadcastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac BroadcastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+| 7   | 0            | 39354        |
+| 16  | 73434        | 0            |
+
+nem 16  mac BroadcastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac BroadcastByteDropTable0
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 70   | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 16  mac BroadcastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac BroadcastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac BroadcastByteDropTable3
+| NEM | SINR  | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 27234 | 0      | 0       | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 16  mac BroadcastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac EventReceptionTable
+| Event | Total Rx |
+| 105   | 1        |
+
+nem 16  mac NeighborMetricTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util | Last Rx      | Last Tx       | SINR Avg      | SINR Stdv | NF Avg         | NF Stdv | Rx Rate Avg | Tx Rate Avg |
+| 7     | 515     | 0       | 946         | 482303  | 1527144945.7 | 0.0           | 34.1851882935 | 0.0       | -93.9794769287 | 0.0     | 36000000    | 0.0         |
+| 65535 | 0       | 636     | 0           | 0       | 0.0          | 1527144946.18 | 0.0           | 0.0       | 0.0            | 0.0     | 0.0         | 36000000    |
+
+nem 16  mac NeighborStatusTable
+| NEM   | Rx Pkts | Tx Pkts | Missed Pkts | BW Util Ratio     | SINR Avg     | NF Avg         | Rx Age         |
+| 7     | 1       | 0       | 2           | 8.10235214885e-05 | 15.459403038 | -93.9794006348 | 0.328104138374 |
+| 65535 | 0       | 1       | 0           | 0.0               | 0.0          | 0.0            | 0.0            |
+
+nem 16  mac PacketComponentAggregationHistogram
+| Components | Count |
+| 1          | 634   |
+| 2          | 1     |
+| 25         | 1     |
+
+nem 16  mac QueueFragmentHistogram
+| Queue | 1   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | >9 |
+| 0     | 6   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 1     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 2     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 3     | 655 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+| 4     | 0   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+
+nem 16  mac QueueStatusTable
+| Queue | Enqueued | Dequeued | Overflow | Too Big | 0 | 1 | 2 | 3   | 4 |
+| 0     | 6        | 6        | 0        | 0       | 0 | 0 | 0 | 6   | 0 |
+| 1     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 2     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+| 3     | 655      | 655      | 0        | 0       | 0 | 0 | 0 | 655 | 0 |
+| 4     | 0        | 0        | 0        | 0       | 0 | 0 | 0 | 0   | 0 |
+
+nem 16  mac RxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Idle | Tx | Long | Freq | .25 | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 11    | 0     | 11   | 1002  | 0      | 0    | 0  | 0    | 0    | 999 | 2   | 1   | 0   | 0    | 0    | 0    | 0     |
+
+nem 16  mac TxSlotStatusTable
+| Index | Frame | Slot | Valid | Missed | Big | .25  | .50 | .75 | 1.0 | 1.25 | 1.50 | 1.75 | >1.75 |
+| 7     | 0     | 7    | 2026  | 0      | 0   | 2011 | 10  | 3   | 2   | 0    | 0    | 0    | 0     |
+
+nem 16  mac UnicastByteAcceptTable0
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac UnicastByteAcceptTable1
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac UnicastByteAcceptTable2
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac UnicastByteAcceptTable3
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac UnicastByteAcceptTable4
+| NEM | Num Bytes Tx | Num Bytes Rx |
+
+nem 16  mac UnicastByteDropTable0
+| NEM | SINR    | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 2103542 | 0      | 2132060 | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 16  mac UnicastByteDropTable1
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac UnicastByteDropTable2
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac UnicastByteDropTable3
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+| 7   | 630  | 0      | 126     | 0              | 0           | 0                  | 0            | 0   | 0    | 0    | 0          | 0             |
+
+nem 16  mac UnicastByteDropTable4
+| NEM | SINR | Reg Id | Dst MAC | Queue Overflow | Bad Control | Bad Spectrum Query | Flow Control | Big | Long | Freq | Slot Error | Miss Fragment |
+
+nem 16  mac scheduler.ScheduleInfoTable
+| Index | Frame | Slot | Type | Frequency  | Data Rate | Power | Class | Destination |
+| 0     | 0     | 0    | RX   | 2500000000 |           |       |       |             |
+| 1     | 0     | 1    | RX   | 2500000000 |           |       |       |             |
+| 2     | 0     | 2    | RX   | 2500000000 |           |       |       |             |
+| 3     | 0     | 3    | RX   | 2500000000 |           |       |       |             |
+| 4     | 0     | 4    | RX   | 2500000000 |           |       |       |             |
+| 5     | 0     | 5    | RX   | 2500000000 |           |       |       |             |
+| 6     | 0     | 6    | RX   | 2500000000 |           |       |       |             |
+| 7     | 0     | 7    | TX   | 2500000000 | 36000000  | 45.0  | 3     | 0           |
+| 8     | 0     | 8    | RX   | 2500000000 |           |       |       |             |
+| 9     | 0     | 9    | RX   | 2500000000 |           |       |       |             |
+| 10    | 0     | 10   | RX   | 2500000000 |           |       |       |             |
+| 11    | 0     | 11   | RX   | 2500000000 |           |       |       |             |
+| 12    | 0     | 12   | RX   | 2500000000 |           |       |       |             |
+| 13    | 0     | 13   | RX   | 2500000000 |           |       |       |             |
+
+nem 16  mac scheduler.StructureInfoTable
+| Name         | Value    |
+| bandwidth    | 40000000 |
+| frames       | 1        |
+| slotduration | 20000    |
+| slotoverhead | 0        |
+| slots        | 14       |
+
+nem 16  phy AntennaProfileEventInfoTable
+| NEM | Antenna Profile | Antenna Azimuth | Antenna Elevation |
+
+nem 16  phy BroadcastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 358         | 1409707      |
+| 16  | 636         | 95365        | 0           | 0            |
+
+nem 16  phy BroadcastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 1   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 2   | 0           | 0              | 659               | 0             | 0            | 0            | 0       | 0              |
+| 3   | 0           | 0              | 662               | 0             | 0            | 0            | 0       | 0              |
+| 4   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 5   | 0           | 0              | 661               | 0             | 0            | 0            | 0       | 0              |
+| 6   | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 7   | 0           | 413            | 45                | 0             | 0            | 0            | 0       | 0              |
+| 8   | 0           | 595            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 9   | 0           | 596            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 11  | 0           | 0              | 660               | 0             | 0            | 0            | 0       | 0              |
+| 12  | 0           | 0              | 1330              | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 593            | 41                | 0             | 0            | 0            | 0       | 0              |
+| 14  | 0           | 593            | 42                | 0             | 0            | 0            | 0       | 0              |
+| 15  | 0           | 594            | 40                | 0             | 0            | 0            | 0       | 0              |
+
+nem 16  phy EventReceptionTable
+| Event | Total Rx |
+| 100   | 76       |
+| 101   | 80       |
+
+nem 16  phy LocationEventInfoTable
+| NEM | Latitude  | Longitude | Altitude | Pitch | Roll | Yaw | Azimuth | Elevation | Magnitude |
+| 11  | 31.2414   | 34.7572   | 15.0     | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+| 12  | 31.228575 | 34.66375  | 1500.0   | 0.0   | 0.0  | 0.0 | 0.0     | 0.0       | 0.0       |
+
+nem 16  phy PathlossEventInfoTable
+| NEM | Forward Pathloss | Reverse Pathloss |
+| 7   | 123.519996643    | 123.519996643    |
+| 8   | 9999.0           | 9999.0           |
+| 9   | 9999.0           | 9999.0           |
+| 13  | 9999.0           | 9999.0           |
+| 14  | 9999.0           | 9999.0           |
+| 15  | 9999.0           | 9999.0           |
+
+nem 16  phy ReceivePowerTable
+| NEM | Frequency  | Rx Power       | Last Packet Time |
+| 7   | 2500000000 | -78.5199966431 | 1527144946.26    |
+| 8   | 2500000000 | -9954.0        | 1527144946.02    |
+| 9   | 2500000000 | -9954.0        | 1527144945.82    |
+| 13  | 2500000000 | -9954.0        | 1527144945.76    |
+| 14  | 2500000000 | -9954.0        | 1527144946.06    |
+| 15  | 2500000000 | -9954.0        | 1527144945.86    |
+
+nem 16  phy UnicastPacketAcceptTable0
+| NEM | Num Pkts Tx | Num Bytes Tx | Num Pkts Rx | Num Bytes Rx |
+| 7   | 0           | 0            | 644         | 2957012      |
+
+nem 16  phy UnicastPacketDropTable0
+| NEM | Out-of-Band | Rx Sensitivity | Propagation Model | Gain Location | Gain Horizon | Gain Profile | Not FOI | Spectrum Clamp |
+| 7   | 0           | 4              | 0                 | 0             | 0            | 0            | 0       | 0              |
+| 13  | 0           | 10             | 0                 | 0             | 0            | 0            | 0       | 0              |
+
+emulator EventChannelEventCountTable
+| Src | Emulator UUID | Num Events Tx | Num Events Rx |
+
+emulator OTAChannelEventCountTable
+| Src | Emulator UUID | Num Events Tx | Num Events Rx |
+
+emulator OTAChannelPacketCountTable
+| Src | Emulator UUID | Num Pkts Tx | Num Pkts Rx |
+
