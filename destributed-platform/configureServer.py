@@ -4,6 +4,7 @@ import sys
 import os
 from os import listdir
 from os.path import isfile, join
+import shutil, errno
 
 NODES_DIRECTORY_PATH_HOST_TDMA = '/tmp/3/'
 NODES_DIRECTORY_PATH_SERVER = '/tmp/' #work with Emane Servers
@@ -145,20 +146,21 @@ class spreadToServers():
         :param i_IpPath:
         :return:
         '''
-        if i_TransmissionType == '3':
-            nodesDirPathHost = NODES_DIRECTORY_PATH_HOST_TDMA
-        elif i_TransmissionType == 'tdmact':
-            nodesDirPathHost = NODES_DIRECTORY_PATH_HOST_TDMACT
         for server in i_IpPath:
+            if i_TransmissionType == '3':
+                nodesDirPathHost = NODES_DIRECTORY_PATH_HOST_TDMA
+            elif i_TransmissionType == 'tdmact':
+                nodesDirPathHost = NODES_DIRECTORY_PATH_HOST_TDMACT
+        
             nodeID = []
             serverAddr = server[0]
             session = ftplib.FTP(serverAddr)
             session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
             session.cwd(NODES_DIRECTORY_PATH_SERVER)
             # start of ugly code - be sure that the i_TransmissionType was deleted
-            SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh -p 22 " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
+            '''SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh -p 22 " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
             bridgeCmd = SSHCmd +  "echo " + PASSWORD_TO_SERVERS + " | sudo -S " + 'rm -Rf ' + NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + " &"
-            os.system(bridgeCmd)
+            os.system(bridgeCmd)'''
             # end of ugly code
             try:
                 self.ftpRemoveTree(session, i_TransmissionType)  # delete the exist folder, if it is.
@@ -192,7 +194,20 @@ class spreadToServers():
                         if flag == 0:
                             session.delete(testFile)
                 flag = 0
-                            
+
+            session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)
+            session.mkd('scripts')  # make folder
+            session.sendcmd('SITE CHMOD 777 scripts')  # chahnge mode of this folder to 777
+            session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/scripts/')  # enter to this folder
+            nodesDirPathHost = NODES_DIRECTORY_PATH_HOST_TDMA + 'scripts/'
+            hostFiles = [f for f in listdir(nodesDirPathHost) if isfile(join(nodesDirPathHost, f))]
+            # list all files that in host's folder
+            for fileName in hostFiles:
+                file = open(nodesDirPathHost + fileName)
+                session.storbinary('STOR ' + fileName, file)  # copy all files from host to server
+                session.sendcmd('SITE CHMOD 777 ' + fileName)  # chmod the files
+                file.close()
+
             session.quit()
 
     def isdir(self, ftp, name):
@@ -247,6 +262,7 @@ class hatchNodes():
         self.hatchTDMAPlatform(i_TransmiionType, i_NumberOfNodes)
         self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
         self.hatchFileAlways(i_TransmiionType)
+        self.copyanything(EMANE_TEMPLATES_PATH_HOST + 'scripts', EMANE_HOST_PATH + i_TransmiionType + '/scripts')
         if i_TransmiionType == 'tdmact':
             self.hatchTDMACTNem(i_NumberOfNodes)
 
@@ -344,10 +360,22 @@ class hatchNodes():
             outfile.write(content)
 
     def removeFile(self, i_Path, i_NameOfFile):
-        for file in os.listdir(i_Path):
-            if file.startswith(i_NameOfFile):
-                file = i_Path + '/' + file
-                os.remove(file)
+    	exists = os.path.exists(i_Path)
+    	if exists:
+    		for file in os.listdir(i_Path):
+    			if file.startswith(i_NameOfFile):
+    				file = i_Path + '/' + file
+    				os.remove(file)
+    	else:
+    		os.makedirs(i_Path)
+
+    def copyanything(self, src, dst):
+    	try:
+    		shutil.copytree(src, dst)
+    	except OSError as exc: # python >2.5
+    	    if exc.errno == errno.ENOTDIR:
+    	    	shutil.copy(src, dst)
+    	    else: raise
 
 def usage():
     print'To create nodes run: '
@@ -368,9 +396,10 @@ if __name__ == '__main__':
             listSrvNodes = work.readFile()
             #listPath = work.getPlatformPath(listSrvPlat)
             addrPath = work.matchAddresses(listSrvNodes)
+            '''
             SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh -p 22 " + USER_NAME_TO_SERVERS + "@" + "192.168.43.172" + " "
             bridgeCmd = SSHCmd +  "echo " + PASSWORD_TO_SERVERS + " | sudo -S " + 'rm -Rf ' + NODES_DIRECTORY_PATH_SERVER + '3' + " &"
-            print bridgeCmd
+            print bridgeCmd'''
             work.spreadPlatforms(addrPath, transmissionType)
             work.spreadServersIP(addrPath, transmissionType)
 
