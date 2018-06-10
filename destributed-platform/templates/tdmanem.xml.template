@@ -10,7 +10,7 @@
     <param name="logfile"               value="dlep@NEMID@.log"/>
   </shim>
   <shim definition="emanelayersnmp.xml">
-    <param name="addressRedis" value="@ipAdressRedis@"/>
+    <param name="addressRedis" value="@ipAddressRedis@"/>
   </shim>
   <shim definition="emanelayerfilter.xml">
   	<param name="address" value="10.100.@NEMID@.254"/>

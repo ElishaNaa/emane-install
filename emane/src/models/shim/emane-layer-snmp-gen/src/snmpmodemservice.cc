@@ -267,6 +267,19 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
                                     item.first.c_str(),
                                     fSINRMax_);
          }
+       else if(item.first == "addressRedis")
+       {
+        addressRedis_ = item.second[0].asINETAddr();
+
+          LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+                                  INFO_LEVEL,
+                                  "SHIMI %03hu %s::%s %s=%s",
+                                  id_,
+                                  __MODULE__,
+                                  __func__,
+                                  item.first.c_str(),
+                                  addressRedis_.str(false).c_str());
+       }
        else
          {
           //  auto iter = snmpConfiguration_.find(item.first);
@@ -282,7 +295,7 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
 
                  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(), 
                                          INFO_LEVEL,
-                                         "SHIMI@123@ %03hu %s::%s %s = %s",
+                                         "SHIMI %03hu %s::%s %s = %s",
                                          id_, 
                                          __MODULE__, 
                                          __func__, 
@@ -466,7 +479,17 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RISelfM
 
   redisContext *c;
   redisReply *reply;
-  const char *hostname = "10.99.0.100";
+  std::string str_address = addressRedis_.str(false).c_str();
+  std::uint32_t myaddress = inet_addr(str_address.c_str());
+  const int NBYTES = 4;
+  std::uint8_t octet[NBYTES];
+  char ipAddressFinal[16];
+  for(int i = 0 ; i < NBYTES ; i++)
+  {
+      octet[i] = myaddress >> (i * 8);
+  }
+  sprintf(ipAddressFinal, "%d.%d.%d.%d", octet[0], octet[1], octet[2], octet[3]);
+  const char *hostname = ipAddressFinal;
   int port = 6379;
   struct timeval timeout = { 1, 500000 }; // 1.5 seconds
   c = redisConnectWithTimeout(hostname, port, timeout);
@@ -547,7 +570,17 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
       redisContext *c;
       redisReply *reply;
-      const char *hostname = "10.99.0.100";
+      std::string str_address = addressRedis_.str(false).c_str();
+      std::uint32_t myaddress = inet_addr(str_address.c_str());
+      const int NBYTES = 4;
+      std::uint8_t octet[NBYTES];
+      char ipAddressFinal[16];
+      for(int i = 0 ; i < NBYTES ; i++)
+      {
+        octet[i] = myaddress >> (i * 8);
+      }
+      sprintf(ipAddressFinal, "%d.%d.%d.%d", octet[0], octet[1], octet[2], octet[3]);
+      const char *hostname = ipAddressFinal;
       int port = 6379;
       struct timeval timeout = { 1, 500000 }; // 1.5 seconds
       c = redisConnectWithTimeout(hostname, port, timeout);
@@ -711,7 +744,17 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
   redisContext *c;
   redisReply *reply;
-  const char *hostname = "10.99.0.100";
+  std::string str_address = addressRedis_.str(false).c_str();
+  std::uint32_t myaddress = inet_addr(str_address.c_str());
+  const int NBYTES = 4;
+  std::uint8_t octet[NBYTES];
+  char ipAddressFinal[16];
+  for(int i = 0 ; i < NBYTES ; i++)
+  {
+      octet[i] = myaddress >> (i * 8);
+  }
+  sprintf(ipAddressFinal, "%d.%d.%d.%d", octet[0], octet[1], octet[2], octet[3]);
+  const char *hostname = ipAddressFinal;
   int port = 6379;
   struct timeval timeout = { 1, 500000 }; // 1.5 seconds
   c = redisConnectWithTimeout(hostname, port, timeout);
@@ -1035,7 +1078,17 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 
     redisContext *c;
     redisReply *reply;
-    const char *hostname = "10.99.0.100";
+    std::string str_address = addressRedis_.str(false).c_str();
+    std::uint32_t myaddress = inet_addr(str_address.c_str());
+    const int NBYTES = 4;
+    std::uint8_t octet[NBYTES];
+    char ipAddressFinal[16];
+    for(int i = 0 ; i < NBYTES ; i++)
+    {
+      octet[i] = myaddress >> (i * 8);
+    }
+    sprintf(ipAddressFinal, "%d.%d.%d.%d", octet[0], octet[1], octet[2], octet[3]);
+    const char *hostname = ipAddressFinal;
     int port = 6379;
     struct timeval timeout = { 1, 500000 }; // 1.5 seconds
     c = redisConnectWithTimeout(hostname, port, timeout);

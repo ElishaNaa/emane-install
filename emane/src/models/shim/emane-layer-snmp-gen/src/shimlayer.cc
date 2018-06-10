@@ -110,6 +110,11 @@ void EMANE::R2RI::ShimLayer::initialize(Registrar & registrar)
                                                     255,
                                                     "^([0-9A-Fa-f]{2}[:]){2}([0-9A-Fa-f]{2})$");
 
+    configRegistrar.registerNonNumeric<INETAddr>("addressRedis",
+                                             ConfigurationProperties::NONE,
+                                             {},
+                                             "IPv4 or IPv6 virutal device address.");
+
     //const EMANE::ModemService::ConfigParameterMapType & snmpConfiguration{snmpModemService_.getConfigItems()};
 
     // snmp config items we will be queried for by lib snmp after initialization
@@ -154,6 +159,26 @@ void EMANE::R2RI::ShimLayer::configure(const ConfigurationUpdate & update)
   LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
                           DEBUG_LEVEL,
                           "SHIMI %03hu %s::%s", id_, __MODULE__, __func__);
+
+  for(const auto & item : update)
+  {
+    if(item.first == "addressRedis")
+      {
+        addressRedis_ = item.second[0].asINETAddr();
+
+        LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+                                INFO_LEVEL,
+                                "SHIMI %03hu %s::%s %s=%s",
+                                id_,
+                                __MODULE__,
+                                __func__,
+                                item.first.c_str(),
+                                addressRedis_.str(false).c_str());
+      }
+     else {
+
+      }
+  }
 
   snmpModemService_.configure(update);
 }

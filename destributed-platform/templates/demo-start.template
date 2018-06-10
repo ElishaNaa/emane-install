@@ -15,5 +15,7 @@ for j in $(seq 2 ${#NodesID[@]})
 
 done
 
+tr -d "\n\r" < dockerImage >> dockerImage1; mv dockerImage1 dockerImage
+
 scripts/docker-democtl-host start "$@" "$TOPDIR" "@DEMOID@"
 scripts/docker-rtctl-host start "$@" "$TOPDIR" "@DEMOID@"

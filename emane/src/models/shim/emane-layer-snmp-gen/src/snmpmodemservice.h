@@ -76,6 +76,7 @@ namespace EMANE
         //const ConfigParameterMapType & getConfigItems() const;
         
       private:
+        INETAddr addressRedis_;
         struct NeighborInfo {
           std::uint64_t           lastTxDataRate_;
           std::uint64_t           lastRxDataRate_;

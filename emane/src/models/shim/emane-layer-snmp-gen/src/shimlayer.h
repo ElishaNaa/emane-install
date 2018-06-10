@@ -81,6 +81,7 @@ namespace EMANE
 
       private:
         ModemService snmpModemService_;
+        INETAddr addressRedis_;
       };
     // }
   }

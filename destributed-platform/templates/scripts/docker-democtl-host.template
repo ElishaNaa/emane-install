@@ -30,7 +30,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-ipaddressredis=10.99.1.1
+ipaddressredis=@ipAddressRedis@
 OpenVSwich=br1
 my_IP=$(hostname -I | awk -F ' ' '{print $1}')
 prefix=modem-
@@ -355,7 +355,7 @@ case "$1" in
 
 #***************define DTABASE_IP********************************
 
-        cp /etc/redis/redis.EXAMPLE /etc/redis/redis.conf
+        cp $topdir/$demoid/redis.EXAMPLE /etc/redis/redis.conf
         sed -i -e 's/DTABASE_IP/'"$ipaddressredis/" /etc/redis/redis.conf
 #****************************************************************
 
@@ -382,9 +382,12 @@ case "$1" in
                 chown -R $SUDO_USER:`id -gn $SUDO_USER` persist/modem-$nodeid
             fi
 
+            IFS=$',' GLOBIGNORE='*' command eval  'list=($(cat $topdir/$demoid/dockerImage))'
+            modemImage=$(echo "${list[0]}" | awk -F 'modem=' '{print $2}')
+
             name=$prefix$nodeid
             hex=$(printf "%02x" $nodeid)
-        routerbridge=$routerbridgeprefix$nodeid
+            routerbridge=$routerbridgeprefix$nodeid
 
 
         if (check_bridge $routerbridge)
@@ -437,7 +440,7 @@ EOF
 --privileged=true \
 --env-file persist/modem-$nodeid/var/run/docker.env.$nodeid \
 --entrypoint /bin/bash \
-fullsimdoc \
+$modemImage \
 
 EOF
 

@@ -18,6 +18,9 @@ EMANE_TEMPLATES_PATH_HOST = '/tmp/templates/'
 EMANE_HOST_PATH = '/tmp/'
 
 ServerIPNodeID = 'ServerIPNodeID'
+dockerImage = 'dockerImage'
+
+ipAddressRedis = '10.99.1.1'
 
 class spreadToServers():
     def __init__(self):
@@ -83,14 +86,12 @@ class spreadToServers():
             session = ftplib.FTP(serverAddr)
             session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
             session.cwd(NODES_DIRECTORY_PATH_SERVER)
-
+            '''
             # start of ugly code - be sure that the i_TransmissionType was deleted
             SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
-            os.system(SSHCmd)
+            os.system(SSHCmd)'''
             # end of ugly code
             session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)  # enter to this folder
-
-
             file = open(EMANE_HOST_PATH + ServerIPNodeID)
             session.storbinary('STOR ' + ServerIPNodeID, file)  # copy file from host to server
             session.sendcmd('SITE CHMOD 777 ' + ServerIPNodeID)  # chmod the file
@@ -98,6 +99,40 @@ class spreadToServers():
             os.remove(EMANE_HOST_PATH + ServerIPNodeID)
             session.quit()
             id+=1
+
+    def spreadServersImages(self, i_TransmissionType):
+        with open(dockerImage, 'r') as dockerIm:
+            images = dockerIm.readlines()
+        table = []
+        for line in images:
+            eachLine = line.split(";")
+            table.append(eachLine)
+        i_IpPath = self.matchAddresses(table)
+        for server in i_IpPath:
+            serverAddr = server[0]
+            content = server[1]
+            
+            with open(EMANE_HOST_PATH + 'Images', 'w+') as outfile:
+                outfile.write(content)
+
+            session = ftplib.FTP(serverAddr)
+            session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
+            session.cwd(NODES_DIRECTORY_PATH_SERVER)
+
+            # start of ugly code - be sure that the i_TransmissionType was deleted
+            '''
+            SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
+            os.system(SSHCmd)'''
+            # end of ugly code
+            session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)  # enter to this folder
+
+
+            file = open(EMANE_HOST_PATH + 'Images')
+            session.storbinary('STOR ' + dockerImage, file)  # copy file from host to server
+            session.sendcmd('SITE CHMOD 777 ' + dockerImage)  # chmod the file
+            file.close()
+            os.remove(EMANE_HOST_PATH + 'Images')
+            session.quit()
 
     def getPlatformPath(self, i_ServerPlatformArrey, i_Suffix):
         """
@@ -140,7 +175,6 @@ class spreadToServers():
 
     def spreadPlatforms(self, i_IpPath, i_TransmissionType):
         '''
-        The method can't spread folders.
         The method spread all the folder from the host to all the servers.
         Then on every server deletes the files that should not be there (only by the node ID).
         :param i_IpPath:
@@ -177,7 +211,7 @@ class spreadToServers():
                 session.sendcmd('SITE CHMOD 777 ' + fileName)  # chmod the files
                 file.close()
 
-            listfile = ['demo-start', 'demo-stop', 'protocol-config.xsd', 'emanelayerdlep.xml', 'emanelayersnmp.xml', 'emanelayerfilter.xml', 'eventservice.xml', 'eventdaemon.xml', 'transraw.xml', 'tdmamac.xml', 'credit-windowing-03.xml', 'dlep-draft-24.xml', 'dlep-rfc-8175.xml', 'schedule.xml']
+            listfile = ['redis.EXAMPLE', 'demo-start', 'demo-stop', 'protocol-config.xsd', 'emanelayerdlep.xml', 'emanelayersnmp.xml', 'emanelayerfilter.xml', 'eventservice.xml', 'eventdaemon.xml', 'transraw.xml', 'tdmamac.xml', 'credit-windowing-03.xml', 'dlep-draft-24.xml', 'dlep-rfc-8175.xml', 'schedule.xml']
             flag = 0
             for i in server[1]:  # make list with all the nodes ID's
                 n = re.findall('\d+', str(i))[-1]
@@ -262,9 +296,26 @@ class hatchNodes():
         self.hatchTDMAPlatform(i_TransmiionType, i_NumberOfNodes)
         self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
         self.hatchFileAlways(i_TransmiionType)
-        self.copyanything(EMANE_TEMPLATES_PATH_HOST + 'scripts', EMANE_HOST_PATH + i_TransmiionType + '/scripts')
+        self.hatchScripts(i_TransmiionType)
+        #self.copyanything(EMANE_TEMPLATES_PATH_HOST + 'scripts', EMANE_HOST_PATH + i_TransmiionType + '/scripts')
         if i_TransmiionType == 'tdmact':
             self.hatchTDMACTNem(i_NumberOfNodes)
+
+    def hatchScripts(self, i_TransmiionType):
+        pathWhereFind = None
+        listfile = []
+        listfile = ['docker-democtl-host', 'docker-demo-init', 'docker-rtctl-host', 'docker-rtdemo-init', 'run-snmpd.sh', 'snmpflushallDB.sh', 'snmpsetDB.sh']
+        if i_TransmiionType == '3':
+            pathWhereFind = EMANE_HOST_PATH + '3/scripts/'
+        exists = os.path.exists(pathWhereFind)
+        if exists:
+        	shutil.rmtree(pathWhereFind)
+        os.makedirs(pathWhereFind)
+        replacements = [["ipAddressRedis", ipAddressRedis]]
+        for file in listfile:
+            template = EMANE_TEMPLATES_PATH_HOST + 'scripts/' + file + '.template'
+            pathToNewFiles = pathWhereFind + file
+            self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchFileAlways(self, i_TransmiionType):
         pathWhereFind = None
@@ -289,6 +340,10 @@ class hatchNodes():
         replacements = [["DEMOID", i_TransmiionType]]
         template = EMANE_TEMPLATES_PATH_HOST + 'demo-stop.template'
         pathToNewFiles = pathWhereFind + 'demo-stop'
+        self.preprocess(replacements, template, pathToNewFiles)
+        replacements = []
+        template = EMANE_TEMPLATES_PATH_HOST + 'redis.EXAMPLE.template'
+        pathToNewFiles = pathWhereFind + 'redis.EXAMPLE'
         self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchTDMAPlatform(self, i_TransmissionType, i_NumberOfNodes):
@@ -323,9 +378,9 @@ class hatchNodes():
                pathWhereFind = EMANE_HOST_PATH + '3/'
                hexa = '{:X}'.format(index)
            if index <= 15:
-                replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)], ["ipAdressRedis", "10.99.1.1"]]
+                replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)], ["ipAddressRedis", ipAddressRedis]]
            else:
-                replacements = [["NEMID", str(index)], ["HEX", str(hexa)], ["ipAdressRedis", "10.99.1.1"]]
+                replacements = [["NEMID", str(index)], ["HEX", str(hexa)], ["ipAddressRedis", ipAddressRedis]]
            template = EMANE_TEMPLATES_PATH_HOST + 'tdmanem.xml.template'
            pathToNewFiles = pathWhereFind + 'tdmanem' + str(index) + '.xml'
            self.preprocess(replacements, template, pathToNewFiles)
@@ -402,6 +457,7 @@ if __name__ == '__main__':
             print bridgeCmd'''
             work.spreadPlatforms(addrPath, transmissionType)
             work.spreadServersIP(addrPath, transmissionType)
+            work.spreadServersImages(transmissionType)
 
             work.txtFile.close()
     else:

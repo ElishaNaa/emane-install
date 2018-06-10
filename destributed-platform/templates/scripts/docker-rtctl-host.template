@@ -368,6 +368,16 @@ case "$1" in
                 chown -R $SUDO_USER:`id -gn $SUDO_USER` persist/$nodeid
             fi
 
+            IFS=$',' GLOBIGNORE='*' command eval  'list=($(cat $topdir/$demoid/dockerImage))'
+            for i in $(seq 1 ${#list[@]})
+            do
+                rtImage=$(echo "${list[$i]}" | awk -F 'rt-'$nodeid'=' '{print $2}')
+                if [[ !  -z $rtImage ]]
+                then
+                    break
+                fi
+            done
+
             name=$prefix$nodeid
             hex=$(printf "%02x" $nodeid)
         routerbridge=$routerbridgeprefix$nodeid
@@ -418,7 +428,7 @@ EOF
 --privileged=true \
 --env-file persist/$nodeid/var/run/docker.env.$nodeid \
 --entrypoint /bin/bash \
-fullsimdoc \
+$rtImage \
 
 EOF
 
