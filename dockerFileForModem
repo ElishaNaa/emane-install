@@ -1,0 +1,101 @@
+# EMANE container
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y \
+net-tools \
+iproute2 \
+iputils-ping \
+sudo \
+libboost-thread-dev \
+libboost-system-dev \
+libboost-test-dev \
+libxml2-dev \
+libxml2-utils \
+libreadline6-dev \
+libprotobuf-dev \
+protobuf-compiler \ 
+doxygen \
+graphviz \
+traceroute \
+nano \
+gcc \
+g++ \
+autoconf \
+automake \
+libtool \
+libxml2 \
+libprotobuf-dev \
+python-protobuf \
+libpcap-dev \
+libpcre3-dev \
+uuid-dev \
+debhelper \
+pkg-config \
+python-setuptools \
+protobuf-compiler \
+git \
+dh-python \
+lxc \
+bridge-utils \
+mgen \
+fping \
+gpsd \
+gpsd-clients \
+iperf \
+multitail \
+olsrd \
+openssh-server \
+python-tk \
+python-pmw \
+python-lxml \
+python-stdeb \
+build-essential \
+cmake \
+autotools-dev \
+autoconf \
+libtool \
+uuid-dev \
+libace-dev \
+redis-server \
+libperl-dev \
+tcpdump
+ENTRYPOINT ["/bin/bash"]
+RUN sudo mv /usr/sbin/tcpdump /usr/bin/tcpdump
+COPY emane-install /home/user/emane-install
+RUN cd /home/user; \
+	chmod -R 777 emane-install/
+WORKDIR /home/user/emane-install/emane
+	RUN /home/user/emane-install/emane/autogen.sh
+    RUN /home/user/emane-install/emane/configure --prefix=/usr
+	RUN sudo make; \
+		sudo make install
+WORKDIR /home/user/emane-install/emane/src/emanesh
+	RUN sudo python setup.py install
+WORKDIR /home/user/emane-install/LL-DLEP
+	RUN sudo make install
+WORKDIR /home/user/emane-install/SNMP-gen/net-snmp-5.7.3
+	RUN sudo /home/user/emane-install/SNMP-gen/net-snmp-5.7.3/commands-for-installation
+	RUN /home/user/emane-install/SNMP-gen/net-snmp-5.7.3/commands-for-installation
+RUN cd /home/user/emane-install/SNMP-gen/c++_redis_cli/hiredis/hiredis-master \
+	make; \
+	sudo cp libhiredis.* /usr/local/lib/
+WORKDIR /home/user/emane-install/emane/src/models/shim/emane-layer-snmp-gen
+	RUN /home/user/emane-install/emane/src/models/shim/emane-layer-snmp-gen/autogen.sh
+    RUN /home/user/emane-install/emane/src/models/shim/emane-layer-snmp-gen/configure --prefix=/usr
+	RUN	sudo make; \
+		sudo make install
+WORKDIR /home/user/emane-install/emane/src/models/shim/emane-layer-filter
+	RUN /home/user/emane-install/emane/src/models/shim/emane-layer-filter/autogen.sh
+    RUN /home/user/emane-install/emane/src/models/shim/emane-layer-filter/configure --prefix=/usr
+	RUN	sudo make; \
+		sudo make install
+WORKDIR /home/user/emane-install/emane/src/models/shim/emane-layer-dlep
+	RUN /home/user/emane-install/emane/src/models/shim/emane-layer-dlep/autogen.sh
+    RUN /home/user/emane-install/emane/src/models/shim/emane-layer-dlep/configure --prefix=/usr
+	RUN	sudo make; \
+		sudo make install
+WORKDIR /usr/local/lib
+RUN sudo mv libhiredis.so libhiredis.so.0.13
+RUN sudo cp /usr/local/lib/libhiredis.so.0.13 /usr/lib
+WORKDIR /home/user/emane-install/
+RUN sudo rm -rf /home/user/emane-install/emane-dlep-tutorial
+VOLUME /tmp/
