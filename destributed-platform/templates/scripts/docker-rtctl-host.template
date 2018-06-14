@@ -371,7 +371,7 @@ case "$1" in
             IFS=$',' GLOBIGNORE='*' command eval  'list=($(cat $topdir/$demoid/dockerImage))'
             for i in $(seq 1 ${#list[@]})
             do
-                rtImage=$(echo "${list[$i]}" | awk -F 'rt-'$nodeid'=' '{print $2}')
+                rtImage=$(echo "${list[$i]}" | awk -F ''$nodeid'=' '{print $2}')
                 if [[ !  -z $rtImage ]]
                 then
                     break

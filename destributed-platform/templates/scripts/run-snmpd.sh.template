@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREFIX=$(pwd | awk -F '/emane-dlep-tutorial/3' '{print $1}')
-
+#PREFIX=$(pwd | awk -F '/emane-dlep-tutorial/3' '{print $1}')
+PREFIX=/home/user/emane-install
 cp /etc/snmp/snmpd.EXAMPLE /etc/snmp/snmpd$1.conf
 
 cp $PREFIX/SNMP-gen/net-snmp-5.7.3/local/passtest.EXAMPLE $PREFIX/SNMP-gen/net-snmp-5.7.3/local/passtest$1.sh
@@ -28,10 +28,10 @@ sed -i -e 's/@flag for ipAddressRedis@/'"${ipAddressRedis}/" $PREFIX/SNMP-gen/ne
 /sbin/iptables -A OUTPUT -p udp -d 10.100.$1.254 --dport 161 -j ACCEPT
 /sbin/iptables -A OUTPUT -p udp --dport 161 -j DROP
 
-sudo snmpd -f -Lf $PREFIX/emane-dlep-tutorial/3/persist/modem-$1/var/log/snmpd.log -Ducd-snmp/pass -C -c /etc/snmp/snmpd$1.conf  &
+sudo snmpd -f -Lf /tmp/3/persist/modem-$1/var/log/snmpd.log -Ducd-snmp/pass -C -c /etc/snmp/snmpd$1.conf  &
 
 
-sudo snmptrapd -f -Lf $PREFIX/emane-dlep-tutorial/3/persist/modem-$1/var/log/snmptrapd.log -Ducd-snmp/pass -C -c /etc/snmp/snmptrapd.conf  &
+sudo snmptrapd -f -Lf /tmp/3/persist/modem-$1/var/log/snmptrapd.log -Ducd-snmp/pass -C -c /etc/snmp/snmptrapd.conf  &
 
 
 exit 0

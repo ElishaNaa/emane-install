@@ -5,6 +5,9 @@ import os
 from os import listdir
 from os.path import isfile, join
 import shutil, errno
+import re
+import subprocess
+import pipes
 
 NODES_DIRECTORY_PATH_HOST_TDMA = '/tmp/3/'
 NODES_DIRECTORY_PATH_SERVER = '/tmp/' #work with Emane Servers
@@ -14,7 +17,7 @@ PASSWORD_TO_SERVERS = 'cisco'
 PLATFORMS_TO_SERVER_FILE = "nodes2s.txt"
 ADDRESS_OF_SERVERS = "serverIP.txt"
 
-EMANE_TEMPLATES_PATH_HOST = '/tmp/templates/'
+EMANE_TEMPLATES_PATH_HOST = os.path.dirname(os.path.realpath(__file__)) + '/templates/'
 EMANE_HOST_PATH = '/tmp/'
 
 ServerIPNodeID = 'ServerIPNodeID'
@@ -86,11 +89,7 @@ class spreadToServers():
             session = ftplib.FTP(serverAddr)
             session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
             session.cwd(NODES_DIRECTORY_PATH_SERVER)
-            '''
-            # start of ugly code - be sure that the i_TransmissionType was deleted
-            SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
-            os.system(SSHCmd)'''
-            # end of ugly code
+
             session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)  # enter to this folder
             file = open(EMANE_HOST_PATH + ServerIPNodeID)
             session.storbinary('STOR ' + ServerIPNodeID, file)  # copy file from host to server
@@ -100,18 +99,45 @@ class spreadToServers():
             session.quit()
             id+=1
 
-    def spreadServersImages(self, i_TransmissionType):
+    def matchID(self, i_nodes, imgID):
+    	ipAddrImageId = i_nodes
+    	for line in ipAddrImageId:
+            ID = line[1]
+            for image in imgID:
+                if image[0] == ID:
+                    imgFound = image[1]
+                    pass
+            line[1] = imgFound
+            imgFound = None
+        return ipAddrImageId
+
+    def spreadServersImages(self, i_IpPath, i_TransmissionType):
         with open(dockerImage, 'r') as dockerIm:
             images = dockerIm.readlines()
-        table = []
+        nodeID = []
         for line in images:
-            eachLine = line.split(";")
-            table.append(eachLine)
-        i_IpPath = self.matchAddresses(table)
+            numbers = re.findall('[0-9]+=', line)
+            result = []
+            
+            if not numbers:
+            	continue
+            else:
+            	for number in numbers:
+            		numArry = number.split("=")
+            		result.append(int(numArry[0]))
+            	nodeID.append([result, line])
+        i_IpPath = self.matchID(i_IpPath, nodeID)
         for server in i_IpPath:
             serverAddr = server[0]
             content = server[1]
-            
+            if content == None:
+            	print 'something happen, check please the files ''nodes2s'', ''serverIP'' and ''dockerimage'''
+            	for ip in i_IpPath:
+            		serverAddr = ip[0]
+            		if serverAddr != None:
+            			subprocess.call(
+            				['sshpass', '-p', PASSWORD_TO_SERVERS, 'ssh', USER_NAME_TO_SERVERS + '@' + serverAddr, 'cd ' + NODES_DIRECTORY_PATH_SERVER + '; rm -Rf ' + i_TransmissionType + '/'])
+            	return
             with open(EMANE_HOST_PATH + 'Images', 'w+') as outfile:
                 outfile.write(content)
 
@@ -119,11 +145,6 @@ class spreadToServers():
             session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
             session.cwd(NODES_DIRECTORY_PATH_SERVER)
 
-            # start of ugly code - be sure that the i_TransmissionType was deleted
-            '''
-            SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
-            os.system(SSHCmd)'''
-            # end of ugly code
             session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)  # enter to this folder
 
 
@@ -191,11 +212,6 @@ class spreadToServers():
             session = ftplib.FTP(serverAddr)
             session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
             session.cwd(NODES_DIRECTORY_PATH_SERVER)
-            # start of ugly code - be sure that the i_TransmissionType was deleted
-            '''SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh -p 22 " + USER_NAME_TO_SERVERS + "@" + serverAddr + " "
-            bridgeCmd = SSHCmd +  "echo " + PASSWORD_TO_SERVERS + " | sudo -S " + 'rm -Rf ' + NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + " &"
-            os.system(bridgeCmd)'''
-            # end of ugly code
             try:
                 self.ftpRemoveTree(session, i_TransmissionType)  # delete the exist folder, if it is.
             finally:
@@ -451,13 +467,10 @@ if __name__ == '__main__':
             listSrvNodes = work.readFile()
             #listPath = work.getPlatformPath(listSrvPlat)
             addrPath = work.matchAddresses(listSrvNodes)
-            '''
-            SSHCmd = "sshpass -p " + PASSWORD_TO_SERVERS + " ssh -p 22 " + USER_NAME_TO_SERVERS + "@" + "192.168.43.172" + " "
-            bridgeCmd = SSHCmd +  "echo " + PASSWORD_TO_SERVERS + " | sudo -S " + 'rm -Rf ' + NODES_DIRECTORY_PATH_SERVER + '3' + " &"
-            print bridgeCmd'''
+
             work.spreadPlatforms(addrPath, transmissionType)
             work.spreadServersIP(addrPath, transmissionType)
-            work.spreadServersImages(transmissionType)
+            work.spreadServersImages(addrPath, transmissionType)
 
             work.txtFile.close()
     else:

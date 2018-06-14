@@ -10,9 +10,7 @@ import pipes
 USER = 'user'
 PASSWORD = 'cisco'
 SERVERS_IP_PATH = '/home/user/destributed platform/serverIP.txt'
-SERVERS_EMANE_PATH = '/tmp/3/'
-SERVERS_EMANE_ON_CLEAR = '/tmp/'
-SERVERS_EMANE_ON_CLEAR_SENARIO = '3/'
+SERVERS_EMANE_TOP_DIR = '/tmp/'
 
 def getServersAddrs(i_ServerList):
     """
@@ -33,30 +31,32 @@ def getServersAddrs(i_ServerList):
                 serverAddrList.append(serverDetails[1])
     return serverAddrList
 
-def run(i_cmd, i_ServerList): #get servers name to run
+def run(i_cmd, i_ServerList, senario): #get servers name to run
     """
     every server requires its own thread for running the commands.
     :param i_cmd: [start/stop] (the input was checked)
            i_serverList: names of servers to execute
+           senario: name of directoy senario
     :return:
     """
     threads = []
     serverAddrList = getServersAddrs(i_ServerList)
     for server in serverAddrList:
-        t = threading.Thread(target=doCMD, args=(i_cmd, server,))
+        t = threading.Thread(target=doCMD, args=(i_cmd, server, senario,))
         threads.append(t)
         t.start()
 
-def doCMD(i_cmd, i_addr):
+def doCMD(i_cmd, i_addr, senario):
     """
     uses ssh to send the start/stop commands. (if the command is start, addif to the emanenode0 bridge)
     //TODO: normal comunication protocol !!!
     :param i_cmd: start/stop command
     :param i_addr: the addr of the server that connected to the thread
+    :param senario: name of directoy senario
     :return:
     """
     SSHCmd = "sshpass -p " + PASSWORD + " ssh -p 22 " + USER + "@" + i_addr + " "
-    statopCmd = SSHCmd + "\"cd " + SERVERS_EMANE_PATH + "; echo " + PASSWORD + " | sudo -S ./" + 'demo-' + i_cmd + "\" "
+    statopCmd = SSHCmd + "\"cd " + SERVERS_EMANE_TOP_DIR + senario + "/; echo " + PASSWORD + " | sudo -S ./" + 'demo-' + i_cmd + "\" "
     os.system(statopCmd)
     if i_cmd == 'start':
         sleep(2)
@@ -96,44 +96,45 @@ def exists_remote(host, path):
         return False
     raise Exception('SSH failed')
 
-def clear (ip):
+def clear (ip, senario):
     subprocess.call(
-        ['sshpass', '-p', PASSWORD, 'ssh', USER + '@' + ip, 'cd ' + SERVERS_EMANE_ON_CLEAR + '; rm -Rf ' + SERVERS_EMANE_ON_CLEAR_SENARIO])
+        ['sshpass', '-p', PASSWORD, 'ssh', USER + '@' + ip, 'cd ' + SERVERS_EMANE_TOP_DIR + '; rm -Rf ' + senario + '/'])
 
 def usage():
     print 'To start/stop the simulation, the command should be like that:'
-    print 'python simulation start/stop (optional - servers to run, if empty; all servers will run)'
+    print 'python simulation.py start/stop SenarioNameDir (optional - servers to run, if empty; all servers will run)'
     print 'The servers need to be written like that: Name of server1,Name of server2'
     print ''
     print 'To clear the files, the command should be like that:'
-    print 'python simulation clear (optional - servers to run, if empty; all servers will run)'
+    print 'python simulation.py clear SenarioNameDir (optional - servers to run, if empty; all servers will run)'
     print 'The servers need to be written like that: Name of server1,Name of server2'
 
 if __name__ == '__main__':
     numbOfSysArg = len(sys.argv)
-    if numbOfSysArg == 2 or numbOfSysArg == 3:
+    if numbOfSysArg == 3 or numbOfSysArg == 4:
         cmd = sys.argv[1]
-        if numbOfSysArg == 3:
-            serverNames = sys.argv[2]
+        senario = sys.argv[2]
+        if numbOfSysArg == 4:
+            serverNames = sys.argv[3]
             serversExist = checkIfServerExist(serverNames)
         else:
             serversExist = True
         if(serversExist != False):
             if cmd == 'start' or cmd == 'stop':
-                if numbOfSysArg == 3:
-                    run(cmd, serverNames)
+                if numbOfSysArg == 4:
+                    run(cmd, serverNames, senario)
                 else:
-                    run(cmd, serversExist)
+                    run(cmd, serversExist, senario)
             elif cmd == 'clear':
-                if numbOfSysArg == 3:
+                if numbOfSysArg == 4:
                      serverAddrList = getServersAddrs(serverNames)
                 else:
                     serverAddrList = getServersAddrs(serversExist)
                 for ip in serverAddrList:
-                    if exists_remote(USER + '@' + ip, '/var/run/demo.lock'):
+                    if exists_remote(USER + '@' + ip, '/var/run/demo.lock') or exists_remote(USER + '@' + ip, '/var/run/demo-rt.lock'):
                         print "Run 'python simulation stop' first"
                     else:
-                        clear(ip)
+                        clear(ip, senario)
             else:
                 print "Illegal command."
                 usage()
