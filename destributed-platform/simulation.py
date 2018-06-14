@@ -9,7 +9,7 @@ import pipes
 
 USER = 'user'
 PASSWORD = 'cisco'
-SERVERS_IP_PATH = '/home/user/destributed platform/serverIP.txt'
+SERVERS_IP_PATH = '/home/user/destributed-platform/serverIP'
 SERVERS_EMANE_TOP_DIR = '/tmp/'
 
 def getServersAddrs(i_ServerList):
@@ -23,6 +23,8 @@ def getServersAddrs(i_ServerList):
     with open(SERVERS_IP_PATH) as serversFile:
         serversFileLines = serversFile.readlines()
         for line in serversFileLines:
+            if line[-1:] == '\n':
+                line = line[:-1]
             serverDetails = line.split(",")
             if (i_ServerList != True):
                 if(serverDetails[0] in i_ServerList):
@@ -75,6 +77,8 @@ def checkIfServerExist(i_servers):
     serversNameList = []
     with open(SERVERS_IP_PATH) as serversFile:
         serversFileLines = serversFile.readlines()
+        if serversFileLines[-1:] == '\n':
+                serversFileLines = serversFileLines[:-1]
         for server in serversFileLines:
             serverNames = server.split(",")
             serversNameList.append(serverNames[0])

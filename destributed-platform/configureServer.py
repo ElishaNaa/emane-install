@@ -14,8 +14,8 @@ NODES_DIRECTORY_PATH_SERVER = '/tmp/' #work with Emane Servers
 
 USER_NAME_TO_SERVERS = 'user'
 PASSWORD_TO_SERVERS = 'cisco'
-PLATFORMS_TO_SERVER_FILE = "nodes2s.txt"
-ADDRESS_OF_SERVERS = "serverIP.txt"
+PLATFORMS_TO_SERVER_FILE = "nodes2s"
+ADDRESS_OF_SERVERS = "serverIP"
 
 EMANE_TEMPLATES_PATH_HOST = os.path.dirname(os.path.realpath(__file__)) + '/templates/'
 EMANE_HOST_PATH = '/tmp/'

@@ -1,2 +1,2 @@
-Emane02;1:4
-Emane03;5:8
+Emane02;1:2
+Emane03;3:4
