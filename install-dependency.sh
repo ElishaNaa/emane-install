@@ -1,4 +1,4 @@
-#!/bin/bash
+9#!/bin/bash
 
 sudo apt-get install gcc g++ autoconf automake libtool libxml2-dev libprotobuf-dev \
 python-protobuf libpcap-dev libpcre3-dev uuid-dev debhelper pkg-config \
@@ -25,5 +25,5 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-sudo apt-get install docker-ce=17.05.0~ce-0~ubuntu
+sudo apt-get install docker-ce=17.09.0~ce-0~ubuntu
 sudo docker build -f emane-dlep-tutorial/docker/DockerSimulation -t simdoc .
