@@ -1,6 +1,2 @@
-modem=fullsimdoc,rt-1=fullsimdoc,rt-2=fullsimdoc,rt-3=fullsimdoc,rt-4=fullsimdoc
-<<<<<<< HEAD
-modem=fullsimdoc,rt-5=fullsimdoc,rt-6=fullsimdoc,rt-7=fullsimdoc,rt-8=fullsimdoc
-=======
-modem=fullsimdoc,rt-5=fullsimdoc,rt-6=fullsimdoc,rt-7=fullsimdoc,rt-8=fullsimdoc
->>>>>>> 3e0f076a29ad68ca64a2ab24d5ebe48b322f3885
+modem=fullsimdoc,rt-1=fullsimdoc,rt-2=fullsimdoc
+modem=fullsimdoc,rt-3=fullsimdoc,rt-4=fullsimdoc
