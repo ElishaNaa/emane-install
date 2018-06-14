@@ -9,7 +9,7 @@ import pipes
 
 USER = 'user'
 PASSWORD = 'cisco'
-SERVERS_IP_PATH = '/home/user/destributed platform/serverIP.txt'
+SERVERS_IP_PATH = '/home/user/destributed-platform/serverIP'
 SERVERS_EMANE_TOP_DIR = '/tmp/'
 
 def getServersAddrs(i_ServerList):
