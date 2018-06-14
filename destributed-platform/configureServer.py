@@ -75,11 +75,15 @@ class spreadToServers():
         id = 1
         for server in i_IpPath:
             serverAddr = server[0]
+            if serverAddr[-1:] == '\n':
+                serverAddr = serverAddr[:-1]
             content = 'hostID=' + str(id) + '\n'
             content += serverAddr
             for i in server[1]:
                 content += ',' + str(i)
             for IP in i_IpPath:
+                if IP[0][-1:] == '\n':
+                    IP[0] = IP[0][:-1]
             	if serverAddr != IP[0]:
             		content += '\n' + str(IP[0])
             
