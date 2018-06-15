@@ -112,7 +112,7 @@ $ sudo python simulation.py clear 3
 If you do not want to run / stop / clear all the machines that you defined in the nodes2s file, you can write a command from the following configuration:
 
 ```
-sudo python simulation.py start/stop/clear 3 Emane02,Emane04
+$ sudo python simulation.py start/stop/clear 3 Emane02,Emane04
 (So 3 is the name of the scenario and Emane02 and Emane04 are the names of the machines you want to run and defined in the files you were asked to prepare above).
 ```
 
