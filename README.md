@@ -81,39 +81,39 @@ To create the number of node (s) you want to run in senario, write the following
 
 ```
 $ sudo python configureServer.py create 3 4
-(So 3 is the name of the scenario)
+(so that 3 is the name of the scenario)
 ```
 
 To distribute the scenario to the files defined in the files that you have been asked to prepare in advance, you should type the following command:
 
 ```
 $ sudo python configureServer.py spread 3 
-(So 3 is the name of the scenario)
+(so that 3 is the name of the scenario)
 ```
 To start the scenario write the following command:
 
 ```
 $ sudo python simulation.py start 3  
-(So 3 is the name of the scenario)
+(so that 3 is the name of the scenario)
 ```
 To finish running the scenario, write the following command:
 
 ```
 $ sudo python simulation.py stop 3  
-(So 3 is the name of the scenario)
+(so that 3 is the name of the scenario)
 ```
 To clear the scenario from the machines, write the following command:
 
 ```
 $ sudo python simulation.py clear 3  
-(So 3 is the name of the scenario)
+(so that 3 is the name of the scenario)
 ```
 
 If you do not want to run / stop / clear all the machines that you defined in the nodes2s file, you can write a command from the following configuration:
 
 ```
 $ sudo python simulation.py start/stop/clear 3 Emane02,Emane04
-(So 3 is the name of the scenario and Emane02 and Emane04 are the names of the machines you want to run and defined in the files you were asked to prepare above).
+(so that 3 is the name of the scenario and Emane02 and Emane04 are the names of the machines you want to run and defined in the files you were asked to prepare above).
 ```
 
 #### If you want to change the scenario information, you need to access the destributed-platform/template folder
