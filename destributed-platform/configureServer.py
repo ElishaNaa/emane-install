@@ -75,11 +75,15 @@ class spreadToServers():
         id = 1
         for server in i_IpPath:
             serverAddr = server[0]
+            if serverAddr[-1:] == '\n':
+                serverAddr = serverAddr[:-1]
             content = 'hostID=' + str(id) + '\n'
             content += serverAddr
             for i in server[1]:
                 content += ',' + str(i)
             for IP in i_IpPath:
+                if IP[0][-1:] == '\n':
+                    IP[0] = IP[0][:-1]
             	if serverAddr != IP[0]:
             		content += '\n' + str(IP[0])
             
@@ -301,28 +305,116 @@ class spreadToServers():
             None
 
 class hatchNodes():
-    def __init__(self, i_TransmissionType, i_NumberOfNodes):
+    def __init__(self, i_TransmissionType, i_NumberOfNodes, i_Base):
         self.transmissionType = i_TransmissionType
         self.numberOfNodes = i_NumberOfNodes
+        self.i_Base = i_Base
+        self.txtFile = open(PLATFORMS_TO_SERVER_FILE, "r")
         #self.outputPath = i_OutputPath
-        self.StartHatching(self.transmissionType, self.numberOfNodes)
+        self.StartHatching(self.transmissionType, self.numberOfNodes, i_Base)
 
-    def StartHatching(self, i_TransmiionType, i_NumberOfNodes):
+    def StartHatching(self, i_TransmiionType, i_NumberOfNodes, i_Base):
         self.hatchRouting(i_TransmiionType, i_NumberOfNodes)
         self.hatchTDMAPlatform(i_TransmiionType, i_NumberOfNodes)
         self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
         self.hatchFileAlways(i_TransmiionType)
         self.hatchScripts(i_TransmiionType)
+        self.hatchRouters(i_TransmiionType, i_NumberOfNodes, i_Base)
         #self.copyanything(EMANE_TEMPLATES_PATH_HOST + 'scripts', EMANE_HOST_PATH + i_TransmiionType + '/scripts')
         if i_TransmiionType == 'tdmact':
             self.hatchTDMACTNem(i_NumberOfNodes)
 
+    def scanNumbers(self, i_NumbersString):
+        '''
+        convert the list of the numbers to normal list of numbers.
+        :param i_NumbersString:
+        :return: digitsArrey- arrey of numbers
+        '''
+        digitsArrey = []
+        platNames = i_NumbersString.split(",")
+        for index in range(0, len(platNames)):
+            testName = platNames[index]
+            if testName[-1:] == '\n':
+                testName = testName[:-1]
+            if ":" in testName:
+                testRange = testName.split(":")
+                for j in range(int(testRange[0]), int(testRange[1])+1):
+                    if j not in digitsArrey:
+                        digitsArrey.append(j)
+            else:
+                if testName not in digitsArrey:
+                    digitsArrey.append(testName)
+        return digitsArrey
+
+    def readFile(self):
+        """
+        converts the input lines to list of lists;
+        on every list, the first element is the server name, the second element is list of nodes id.
+        on 'readFile' it separates the server name from the id's.
+        then sends the id's to 'scanNumbers' to get a regular list of numbers.
+        :return: list of lists; sever name with their nodes id.
+        """
+        data = self.txtFile.readlines()
+        table = []
+        filteredTable = []
+        for line in data:
+            eachLine = line.split(";")
+            table.append(eachLine)
+            filteredTable.append([])
+        for element in range(0, len(table)):
+            filteredTable[element].append(table[element][0])
+            filteredTable[element].append(self.scanNumbers(table[element][1]))
+
+        ipAddrPlatformsPath = filteredTable
+        addrArrey = []
+        addrFound = None
+        with open(ADDRESS_OF_SERVERS, 'r') as addressFile:
+            dataAddr = addressFile.readlines()
+            for line in dataAddr:
+                eachLine = line.split(",")
+                addrArrey.append([eachLine[0], eachLine[1]])
+        for line in ipAddrPlatformsPath:
+            nameOfServer = line[0]
+            for addr in addrArrey:
+                if addr[0] == nameOfServer:
+                    addrFound = addr[1]
+                    pass
+            line[0] = addrFound
+            addrFound = None
+        return ipAddrPlatformsPath
+
+    def hatchRouters(self, i_TransmiionType, i_NumberOfNodes, i_Base):
+        pathWhereFind = None
+        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
+
+        if i_Base == None:
+            i_Base = 0
+        else:
+            i_Base = int(i_Base)
+
+        self.removeFile(pathWhereFind, 'OLSR')
+        addrPath = self.readFile()
+        
+        for index in range(1, i_NumberOfNodes):
+           pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
+           rid = i_Base + index
+           for addr in addrPath:
+        	for ID in addr[1]:
+        		if index == ID:
+        			ip = addr[0]
+        			if ip[-1:] == '\n':
+        				ip = ip[:-1]
+        			replacements = [["NEMID", str(index)], ["NETTYPE", '1'], ["RID", str(rid)], ["SERVERIP", str(ip)]]
+        			template = EMANE_TEMPLATES_PATH_HOST + 'OLSR.json.template'
+        			pathToNewFiles = pathWhereFind + 'OLSR' + str(index) + '.json'
+        			self.preprocess(replacements, template, pathToNewFiles)
+        			i_Base = i_Base + 1
+
     def hatchScripts(self, i_TransmiionType):
         pathWhereFind = None
         listfile = []
-        listfile = ['docker-democtl-host', 'docker-demo-init', 'docker-rtctl-host', 'docker-rtdemo-init', 'run-snmpd.sh', 'snmpflushallDB.sh', 'snmpsetDB.sh']
-        if i_TransmiionType == '3':
-            pathWhereFind = EMANE_HOST_PATH + '3/scripts/'
+        listfile = ['docker-democtl-host', 'docker-demo-init', 'docker-rtctl-host', 'docker-rtdemo-init', 'run-snmpd.sh', 'snmpflushallDB.sh', 'snmpsetDB.sh', 'readJson.py']
+        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/scripts/'
         exists = os.path.exists(pathWhereFind)
         if exists:
         	shutil.rmtree(pathWhereFind)
@@ -337,8 +429,7 @@ class hatchNodes():
         pathWhereFind = None
         listfile = []
         listfile = ['emanelayerdlep', 'emanelayersnmp', 'emanelayerfilter', 'eventservice', 'eventdaemon', 'transraw', 'tdmamac', 'credit-windowing-03', 'dlep-draft-24', 'dlep-rfc-8175', 'schedule']
-        if i_TransmiionType == '3':
-            pathWhereFind = EMANE_HOST_PATH + '3/'
+        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
             #self.removeFile(pathWhereFind, 'emanelayerdlep')
         #pathWhereFind = EMANE_HOST_PATH + '3/'
         replacements = []
@@ -365,19 +456,11 @@ class hatchNodes():
     def hatchTDMAPlatform(self, i_TransmissionType, i_NumberOfNodes):
         pathWhereFind = None
         nemxmlChangeTo = None
-        if i_TransmissionType == '3':
-            pathWhereFind = EMANE_HOST_PATH + '3/'
-            self.removeFile(pathWhereFind, 'platform')
-        elif i_TransmissionType == 'tdmact':
-            pathWhereFind = EMANE_HOST_PATH + 'tdmact_scenario/'
-            self.removeFile(pathWhereFind, 'platform')
+        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        self.removeFile(pathWhereFind, 'platform')
         for index in range(1, i_NumberOfNodes):
-           if i_TransmissionType == '3':
-               nemxmlChangeTo = 'tdmanem' + str(index) + '.xml'
-               pathWhereFind = EMANE_HOST_PATH + '3/'
-           elif i_TransmissionType == 'tdmact':
-               pathWhereFind = EMANE_HOST_PATH + 'tdmact_scenario/'
-               nemxmlChangeTo = 'tdmactnem' + str(index) + '.xml'
+           nemxmlChangeTo = 'tdmanem' + str(index) + '.xml'
+           pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
            replacements = [["NEMID", str(index)], ["NEMXML", nemxmlChangeTo]]
            template = EMANE_TEMPLATES_PATH_HOST + 'platform.xml.template'
            pathToNewFiles = pathWhereFind + 'platform' + str(index) + '.xml'
@@ -386,13 +469,11 @@ class hatchNodes():
     def hatchTDMANEM(self, i_TransmissionType, i_NumberOfNodes):
         pathWhereFind = None
         nemxmlChangeTo = None
-        if i_TransmissionType == '3':
-            pathWhereFind = EMANE_HOST_PATH + '3/'
-            self.removeFile(pathWhereFind, 'tdmanem')
+        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        self.removeFile(pathWhereFind, 'tdmanem')
         for index in range(1, i_NumberOfNodes):
-           if i_TransmissionType == '3':
-               pathWhereFind = EMANE_HOST_PATH + '3/'
-               hexa = '{:X}'.format(index)
+           pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+           hexa = '{:X}'.format(index)
            if index <= 15:
                 replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)], ["ipAddressRedis", ipAddressRedis]]
            else:
@@ -413,8 +494,7 @@ class hatchNodes():
     def hatchRouting(self, i_TransmissionType, i_NumberOfNodes):
         pathWhereFind = None
         fileName = 'routing'
-        if i_TransmissionType == '3':
-            pathWhereFind = EMANE_HOST_PATH + '3/'
+        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, fileName)
         for index in range(1, i_NumberOfNodes):
             replacements = [["NODEID", str(index)], ["DEMOID", i_TransmissionType]]
@@ -450,17 +530,21 @@ class hatchNodes():
 
 def usage():
     print'To create nodes run: '
-    print'   python configureServer.py create [3/tdmact] number_of_nodes'
+    print'   python configureServer.py create [3/tdmact] number_of_nodes (optional - base)'
     print'To spread the nodes to the servers:'
     print'   First, write correct ''nodes2s.txt'' file, then run:'
     print'   python configureServer.py spread [3/tdmact (which nodes to spread)]'
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3 or len(sys.argv) == 4:
+    numbOfSysArg = len(sys.argv)
+    if len(sys.argv) == 3 or len(sys.argv) == 4 or len(sys.argv) == 5:
         if sys.argv[1] == 'create':
             transmissionType = sys.argv[2]
             numberOfNodes = sys.argv[3]
-            hatchNodes(transmissionType, int(numberOfNodes)+1)
+            base = None
+            if numbOfSysArg == 5:
+                base = sys.argv[4]
+            hatchNodes(transmissionType, int(numberOfNodes)+1, base)
         elif sys.argv[1] == 'spread':
             transmissionType = sys.argv[2]
             work = spreadToServers()

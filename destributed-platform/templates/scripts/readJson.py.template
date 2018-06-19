@@ -1,0 +1,38 @@
+import json
+import os
+import sys
+'''
+listFile = []
+dirname = os.path.dirname(os.path.realpath(__file__))
+for filename in os.listdir(dirname):
+	root, ext = os.path.splitext(filename)
+	if root.startswith('OLSR') and ext == '.json':
+		listFile.append(filename)
+'''
+
+def readJson(filename):
+	with open(filename, 'r') as f:
+		data = json.load(f)
+		res = ''
+		name = ''
+		for param in data['externalList']:
+			temp = json.dumps(param)
+			temp = json.loads(temp)
+			temp_name = temp['name']
+			temp_val = temp['val']
+			if temp_name == 'image':
+				image = temp_val
+		for param in data['internalList']:
+			temp = json.dumps(param)
+			temp = json.loads(temp)
+			temp_name = temp['name']
+			temp_val = temp['val']
+			if temp_name == 'containernametemplete':
+				name = temp_val
+			elif  temp_name != 'nettype':
+				res = res + "-e '" + temp_name + '=' + temp_val + "' "				
+		print '-it --name' + name + ' ' + res + 'image=' + image
+
+if __name__ == '__main__':
+	filename = sys.argv[1]
+	readJson(filename)
