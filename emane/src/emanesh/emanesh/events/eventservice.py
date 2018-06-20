@@ -334,8 +334,7 @@ if __name__ == "__main__":
     from emanesh.events import AntennaProfileEvent
     from emanesh.events import OneHopNeighborsEvent
     from emanesh.events import TDMAScheduleEvent
-    from emanesh.events import TDMACTScheduleEvent
-
+    
     usage = "emaneeventdump [OPTION]..."
 
     optionParser = OptionParser(usage=usage)
@@ -461,21 +460,12 @@ if __name__ == "__main__":
             pprint.pprint(i)
             
 
-    def handleTDMACTSchedule(nemId,eventId,data,uuid,sequence):
-        e = TDMACTScheduleEvent()
-        e.restore(data)
-        header(nemId,eventId,data,'TDMACTSchedule',uuid,sequence)
-        print e.structure()
-        for i in e:
-            pprint.pprint(i)
-
     service.subscribe(PathlossEvent.IDENTIFIER,handlePathloss)
     service.subscribe(LocationEvent.IDENTIFIER,handleLocation)
     service.subscribe(CommEffectEvent.IDENTIFIER,handleCommEffect)
     service.subscribe(AntennaProfileEvent.IDENTIFIER,handleAntennaProfile)
     service.subscribe(OneHopNeighborsEvent.IDENTIFIER,handleOneHopNeighbors)
     service.subscribe(TDMAScheduleEvent.IDENTIFIER,handleTDMASchedule)
-    service.subscribe(TDMACTScheduleEvent.IDENTIFIER,handleTDMACTSchedule)
 
     if options.next_only:
         data = service.nextEvent()
