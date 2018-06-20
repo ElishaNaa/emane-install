@@ -41,9 +41,11 @@ class spreadToServers():
         table = []
         filteredTable = []
         for line in data:
-            eachLine = line.split(";")
-            table.append(eachLine)
-            filteredTable.append([])
+        	if line.startswith("#"):
+        		continue
+        	eachLine = line.split(";")
+        	table.append(eachLine)
+        	filteredTable.append([])
         for element in range(0, len(table)):
             filteredTable[element].append(table[element][0])
             filteredTable[element].append(self.scanNumbers(table[element][1]))
@@ -186,6 +188,8 @@ class spreadToServers():
         with open(ADDRESS_OF_SERVERS, 'r') as addressFile:
             dataAddr = addressFile.readlines()
             for line in dataAddr:
+            	#if line.startswith("#"):
+            	#	continue
                 eachLine = line.split(",")
                 addrArrey.append([eachLine[0], eachLine[1]])
         for line in ipAddrPlatformsPath:
@@ -358,9 +362,11 @@ class hatchNodes():
         table = []
         filteredTable = []
         for line in data:
-            eachLine = line.split(";")
-            table.append(eachLine)
-            filteredTable.append([])
+        	if line.startswith("#"):
+        		continue
+        	eachLine = line.split(";")
+        	table.append(eachLine)
+        	filteredTable.append([])
         for element in range(0, len(table)):
             filteredTable[element].append(table[element][0])
             filteredTable[element].append(self.scanNumbers(table[element][1]))
@@ -371,6 +377,8 @@ class hatchNodes():
         with open(ADDRESS_OF_SERVERS, 'r') as addressFile:
             dataAddr = addressFile.readlines()
             for line in dataAddr:
+            	#if line.startswith("#"):
+            	#	continue
                 eachLine = line.split(",")
                 addrArrey.append([eachLine[0], eachLine[1]])
         for line in ipAddrPlatformsPath:
