@@ -57,7 +57,12 @@ uuid-dev \
 libace-dev \
 redis-server \
 libperl-dev \
-tcpdump
+tcpdump \
+libxml2-dev \
+python-dev \
+libzmq3-dev \
+libsqlite3-dev \
+python-pip
 ENTRYPOINT ["/bin/bash"]
 RUN sudo mv /usr/sbin/tcpdump /usr/bin/tcpdump
 COPY emane-install /home/user/emane-install
@@ -74,7 +79,6 @@ WORKDIR /home/user/emane-install/LL-DLEP
 	RUN sudo make install
 WORKDIR /home/user/emane-install/SNMP-gen/net-snmp-5.7.3
 	RUN sudo /home/user/emane-install/SNMP-gen/net-snmp-5.7.3/commands-for-installation
-	RUN /home/user/emane-install/SNMP-gen/net-snmp-5.7.3/commands-for-installation
 RUN cd /home/user/emane-install/SNMP-gen/c++_redis_cli/hiredis/hiredis-master \
 	make; \
 	sudo cp libhiredis.* /usr/local/lib/
@@ -96,6 +100,27 @@ WORKDIR /home/user/emane-install/emane/src/models/shim/emane-layer-dlep
 WORKDIR /usr/local/lib
 RUN sudo mv libhiredis.so libhiredis.so.0.13
 RUN sudo cp /usr/local/lib/libhiredis.so.0.13 /usr/lib
+RUN sudo pip install pyzmq
+WORKDIR /home/user
+RUN git clone https://github.com/adjacentlink/opentestpoint.git
+RUN git clone -b feature/issue3 https://github.com/adjacentlink/opentestpoint-probe-emane.git
+RUN git clone -b feature/issue3 https://github.com/adjacentlink/opentestpoint-probe-system.git
+WORKDIR /home/user/opentestpoint
+	RUN /home/user/opentestpoint/autogen.sh
+    RUN /home/user/opentestpoint/configure --prefix=/usr
+	RUN sudo make; \
+		sudo make install
+WORKDIR /home/user/opentestpoint-probe-emane
+	RUN /home/user/opentestpoint-probe-emane/autogen.sh
+    RUN /home/user/opentestpoint-probe-emane/configure --prefix=/usr
+	RUN sudo make; \
+		sudo make install
+WORKDIR /home/user/opentestpoint-probe-system
+	RUN /home/user/opentestpoint-probe-system/autogen.sh
+    RUN /home/user/opentestpoint-probe-system/configure --prefix=/usr
+	RUN sudo make; \
+		sudo make install
 WORKDIR /home/user/emane-install/
 RUN sudo rm -rf /home/user/emane-install/emane-dlep-tutorial
+RUN sudo rm -rf /home/user/emane-install/destributed-platform
 VOLUME /tmp/

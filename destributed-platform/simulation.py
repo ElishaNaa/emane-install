@@ -2,15 +2,24 @@ import os
 import sys
 import threading
 from time import sleep
-import paramiko
 import ftplib
-import subprocess
 import pipes
+import paramiko
+import pysftp
+
+import base64
+import getpass
+import socket
+import traceback
+import re
+
 
 USER = 'user'
 PASSWORD = 'cisco'
 SERVERS_IP_PATH = '/home/user/emane-install/destributed-platform/serverIP'
 SERVERS_EMANE_TOP_DIR = '/tmp/'
+
+port = 22
 
 def getServersAddrs(i_ServerList):
     """
@@ -48,23 +57,86 @@ def run(i_cmd, i_ServerList, senario): #get servers name to run
         threads.append(t)
         t.start()
 
+def execute_ssh_command(host, port, username, password, keyfilepath, keyfiletype, command):
+    """
+    execute_ssh_command(host, port, username, password, keyfilepath, keyfiletype, command) -> tuple
+
+    Executes the supplied command by opening a SSH connection to the supplied host
+    on the supplied port authenticating as the user with supplied username and supplied password or with
+    the private key in a file with the supplied path.
+    If a private key is used for authentication, the type of the keyfile needs to be specified as DSA or RSA.
+    :rtype: tuple consisting of the output to standard out and the output to standard err as produced by the command
+    """
+    # setup logging
+    paramiko.util.log_to_file("connect1.log")
+    ssh = None
+    key = None
+    try:
+        if keyfilepath is not None:
+            # Get private key used to authenticate user.
+            if keyfiletype == 'DSA':
+                # The private key is a DSA type key.
+                key = paramiko.DSSKey.from_private_key_file(keyfilepath)
+            else:
+                # The private key is a RSA type key.
+                key = paramiko.RSAKey.from_private_key(keyfilepath)
+
+        # Create the SSH client.
+        ssh = paramiko.SSHClient()
+
+        # Setting the missing host key policy to AutoAddPolicy will silently add any missing host keys.
+        # Using WarningPolicy, a warning message will be logged if the host key is not previously known
+        # but all host keys will still be accepted.
+        # Finally, RejectPolicy will reject all hosts which key is not previously known.
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+        # Connect to the host.
+        if key is not None:
+            # Authenticate with a username and a private key located in a file.
+            ssh.connect(host, port, username, None, key)
+        else:
+            # Authenticate with a username and a password.
+            ssh.connect(host, port, username, password)
+
+        # Send the command (non-blocking)
+        stdin, stdout, stderr = ssh.exec_command(command)
+
+        # Wait for the command to terminate
+        while not stdout.channel.exit_status_ready() and not stdout.channel.recv_ready():
+            sleep(1)
+
+        stdoutstring = stdout.readlines()
+        stderrstring = stderr.readlines()
+        return stdoutstring, stderrstring
+    finally:
+        if ssh is not None:
+            # Close client connection.
+            ssh.close()
+
+
 def doCMD(i_cmd, i_addr, senario):
     """
-    uses ssh to send the start/stop commands. (if the command is start, addif to the emanenode0 bridge)
-    //TODO: normal comunication protocol !!!
+    uses ssh to send the start/stop commands.
     :param i_cmd: start/stop command
     :param i_addr: the addr of the server that connected to the thread
     :param senario: name of directoy senario
     :return:
     """
-    SSHCmd = "sshpass -p " + PASSWORD + " ssh -p 22 " + USER + "@" + i_addr + " "
-    statopCmd = SSHCmd + "\"cd " + SERVERS_EMANE_TOP_DIR + senario + "/; echo " + PASSWORD + " | sudo -S ./" + 'demo-' + i_cmd + "\" "
-    os.system(statopCmd)
+    command = "cd " + SERVERS_EMANE_TOP_DIR + senario + "/; echo " + PASSWORD + " | sudo -S ./" + 'demo-' + i_cmd
+    (stdoutstring, stderrstring) = execute_ssh_command(i_addr, port, USER, PASSWORD, None, None, command)
+    for stdoutrow in stdoutstring:
+        print stdoutrow
+
+    with open('/tmp/log-' + i_cmd, 'w+') as outfile:
+        for line in stderrstring:
+            outfile.write(line)
+
     if i_cmd == 'start':
         sleep(2)
     else:
         #commands to do when stop
         pass
+
 def checkIfServerExist(i_servers):
     """
     check if the list of servers exsit in 'serverIP.txt'
@@ -92,17 +164,18 @@ def checkIfServerExist(i_servers):
 
 def exists_remote(host, path):
     """Test if a file exists at path on a host accessible with SSH."""
-    status = subprocess.call(
-        ['sshpass', '-p', PASSWORD, 'ssh', host, 'test -e ' + pipes.quote(path)])
-    if status == 0:
-        return True
-    if status == 1:
-        return False
-    raise Exception('SSH failed')
+    command = "test -e " + pipes.quote(path) + " && echo 0 || echo 1"
+    (stdoutstring, stderrstring) = execute_ssh_command(host, port, USER, PASSWORD, None, None, command)
 
-def clear (ip, senario):
-    subprocess.call(
-        ['sshpass', '-p', PASSWORD, 'ssh', USER + '@' + ip, 'cd ' + SERVERS_EMANE_TOP_DIR + '; rm -Rf ' + senario + '/'])
+    for status in stdoutstring:
+        if re.search('0', status):
+            return True
+        if re.search('1', status):
+            return False
+
+def clear (host, senario):
+    command = 'cd ' + SERVERS_EMANE_TOP_DIR + '; rm -Rf ' + senario + '/'
+    (stdoutstring, stderrstring) = execute_ssh_command(host, port, USER, PASSWORD, None, None, command)
 
 def usage():
     print 'To start/stop the simulation, the command should be like that:'
@@ -134,11 +207,11 @@ if __name__ == '__main__':
                      serverAddrList = getServersAddrs(serverNames)
                 else:
                     serverAddrList = getServersAddrs(serversExist)
-                for ip in serverAddrList:
-                    if exists_remote(USER + '@' + ip, '/var/run/demo.lock') or exists_remote(USER + '@' + ip, '/var/run/demo-rt.lock'):
+                for host in serverAddrList:
+                    if exists_remote(host, '/var/run/demo.lock') or exists_remote(host, '/var/run/demo-rt.lock'):
                         print "Run 'python simulation stop' first"
                     else:
-                        clear(ip, senario)
+                        clear(host, senario)
             else:
                 print "Illegal command."
                 usage()

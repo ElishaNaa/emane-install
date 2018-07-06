@@ -28,6 +28,10 @@ sed -i -e 's/@flag for ipAddressRedis@/'"${ipAddressRedis}/" $PREFIX/SNMP-gen/ne
 /sbin/iptables -A OUTPUT -p udp -d 10.100.$1.254 --dport 161 -j ACCEPT
 /sbin/iptables -A OUTPUT -p udp --dport 161 -j DROP
 
+/sbin/iptables -I INPUT -j ACCEPT
+/sbin/iptables -I OUTPUT -j ACCEPT
+/sbin/iptables -I FORWARD -j ACCEPT
+
 sudo snmpd -f -Lf /tmp/3/persist/modem-$1/var/log/snmpd.log -Ducd-snmp/pass -C -c /etc/snmp/snmpd$1.conf  &
 
 

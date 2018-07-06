@@ -363,6 +363,12 @@ case "$1" in
         redis-server /etc/redis/redis.conf
 #***********************************************************
 
+
+/sbin/iptables -I INPUT -j ACCEPT
+/sbin/iptables -I OUTPUT -j ACCEPT
+/sbin/iptables -I FORWARD -j ACCEPT
+
+
         # disable realtime scheduling contraints
         sysctl kernel.sched_rt_runtime_us=-1
         IFS=$'\r\n' GLOBIGNORE='*' command eval  'list=($(cat $topdir/$demoid/ServerIPNodeID))'
@@ -669,6 +675,11 @@ EOF
     #for flush all
         scripts/snmpflushallDB.sh $ipaddressredis
 #*****************************************************************
+
+/sbin/iptables -D INPUT -j ACCEPT
+/sbin/iptables -D OUTPUT -j ACCEPT
+/sbin/iptables -D FORWARD -j ACCEPT
+
 
         if [[ $bridgecontrol -ne 0 ]]
         then

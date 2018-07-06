@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<otestpoint-broker discovery="localhost:9001" publish="localhost:9002">
+  <testpoint discovery="modem-@NEMID@:8881" publish="modem-@NEMID@:8882"/>
+</otestpoint-broker>
