@@ -45,7 +45,10 @@ After this extricate the image
 $ sudo docker load -i fullsimdocTar
 ```
 
-You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server on which ntp is installed.
+
+
+
+#### You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server on which ntp is installed.
 
 On the other machines we will also install ntp and we will also write the following command:
 ```
@@ -73,7 +76,7 @@ There are 3 files that need to be prepared in advance, in which you will specify
 
 1) nodes2s - in each row you define the name of the machine and the nodeID you want to run on it (Emane02; 1:2 -----> A machine called Emane02 will run the containers with IDs 1 and 2. It is important to keep the name The nodeID will be the character ``` ; ``` ).
 
-2) In each line you define the name of the machine and its IP (eg Emane02,X.X.X.X It is important to keep the name of the machine to the IP, the character ``` , ```).
+2) serverIP - in each line you define the name of the machine and its IP (eg Emane02,X.X.X.X It is important to keep the name of the machine to the IP, the character ``` , ```).
 
 3) dockerImage - In each line you define the images of the modem and the router running on the machine (eg modem=fullsimdoc,1=fullsimdoc,2=fullsimdoc).
 
