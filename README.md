@@ -45,15 +45,13 @@ After this extricate the image
 $ sudo docker load -i fullsimdocTar
 ```
 
+#### You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server.
 
-
-
-#### You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server on which ntp is installed.
-
-On the other machines we will also install ntp and we will also write the following command:
+On the all machines we will install ntp and we will also write the following command:
 ```
-$ sudo uptitude install ntpt
+$ sudo apt-get install ntp
 ```
+
 The file /etc/ntp.conf on server should contain the following lines:
 ```
 server 127.127.1.0
