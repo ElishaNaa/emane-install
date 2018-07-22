@@ -4,15 +4,23 @@
 
 On all the machines you need to install this dependency:
 ```
-ftp
-ftplib-dev
-sshpass
 redis-server
 bridge-utils
 openvswitch-switch
 openvswitch-controller
 ```
-On machines that you want to distribute the files you need also to install ``` ftpd  ```
+On machine that you want to be a command center you need also to install 
+```
+bcrypt
+cffi
+cryptography
+enum34
+paramiko
+py2-ipaddress
+pysftp
+setuptools
+testresources
+```
 
 ##### Remind you need to allow port 22
 
@@ -88,7 +96,7 @@ $ sudo python configureServer.py create 3 4
 To distribute the scenario to the files defined in the files that you have been asked to prepare in advance, you should type the following command:
 
 ```
-$ sudo python configureServer.py spread 3 
+$ sudo python configureServer.py distrib 3 
 (so that 3 is the name of the scenario)
 ```
 To start the scenario write the following command:
