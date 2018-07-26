@@ -1,3 +1,0 @@
-# EMANE container
-FROM scratch
-RUN echo 'hello'

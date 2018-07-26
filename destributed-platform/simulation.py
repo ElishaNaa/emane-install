@@ -5,14 +5,13 @@ from time import sleep
 import ftplib
 import pipes
 import paramiko
-import pysftp
 
 import base64
 import getpass
 import socket
 import traceback
 import re
-
+import time
 
 USER = 'user'
 PASSWORD = 'cisco'
@@ -21,6 +20,10 @@ SERVERS_EMANE_TOP_DIR = '/tmp/'
 
 port = 22
 
+timeout = 100
+
+PLATFORMS_TO_SERVER_FILE = "nodes2s"
+
 def getServersAddrs(i_ServerList):
     """
     match the addresses to the servers name.
@@ -28,7 +31,20 @@ def getServersAddrs(i_ServerList):
     :return:
     """
     serverAddrList =[]
-    
+
+    with open(PLATFORMS_TO_SERVER_FILE, "r") as txtFile:
+        data = txtFile.readlines()
+        table = []
+        filteredTable = []
+        for line in data:
+            if line.startswith("#"):
+                continue
+            eachLine = line.split(";")
+            table.append(eachLine)
+            filteredTable.append([])
+        for element in range(0, len(table)):
+            filteredTable.append(table[element][0])
+
     with open(SERVERS_IP_PATH) as serversFile:
         serversFileLines = serversFile.readlines()
         for line in serversFileLines:
@@ -36,10 +52,12 @@ def getServersAddrs(i_ServerList):
                 line = line[:-1]
             serverDetails = line.split(",")
             if (i_ServerList != True):
-                if(serverDetails[0] in i_ServerList):
+                if(serverDetails[0] in i_ServerList and serverDetails[0] in filteredTable):
                     serverAddrList.append(serverDetails[1])
             else:
-                serverAddrList.append(serverDetails[1])
+                if(serverDetails[0] in filteredTable):
+                    serverAddrList.append(serverDetails[1])
+                
     return serverAddrList
 
 def run(i_cmd, i_ServerList, senario): #get servers name to run
@@ -68,9 +86,10 @@ def execute_ssh_command(host, port, username, password, keyfilepath, keyfiletype
     :rtype: tuple consisting of the output to standard out and the output to standard err as produced by the command
     """
     # setup logging
-    paramiko.util.log_to_file("connect1.log")
+    paramiko.util.log_to_file("logging_start&stop.log")
     ssh = None
     key = None
+    endtime = time.time() + timeout
     try:
         if keyfilepath is not None:
             # Get private key used to authenticate user.
@@ -104,6 +123,12 @@ def execute_ssh_command(host, port, username, password, keyfilepath, keyfiletype
         # Wait for the command to terminate
         while not stdout.channel.exit_status_ready() and not stdout.channel.recv_ready():
             sleep(1)
+
+        while not stdout.channel.eof_received:
+            sleep(1)
+            if time.time() > endtime:
+                stdout.channel.close()
+                break
 
         stdoutstring = stdout.readlines()
         stderrstring = stderr.readlines()

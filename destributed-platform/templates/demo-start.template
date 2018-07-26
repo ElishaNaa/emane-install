@@ -3,6 +3,10 @@ TOPDIR=$(pwd | awk -F '/@DEMOID@' '{print $1}')
 
 IFS=$'\r\n' GLOBIGNORE='*' command eval  'XYZ=($(cat ServerIPNodeID))'
 IFS=$',' GLOBIGNORE='*' command eval  'NodesID=($(echo "${XYZ[1]}"))'
+
+FileList=(scripts/docker-democtl-host scripts/docker-demo-init scripts/docker-rtctl-host scripts/docker-rtdemo-init scripts/run-snmpd.sh scripts/snmpflushallDB.sh scripts/snmpsetDB.sh scripts/readJson.py)
+
+
 for j in $(seq 2 ${#NodesID[@]})
   do
   	nodeid="${NodesID[j-1]}"
@@ -13,6 +17,18 @@ for j in $(seq 2 ${#NodesID[@]})
 
     sed -i -e 's/@NODEID@/'"${nodeid}/g" ${MyFile}
 
+    FileList+=(tdmanem$nodeid.xml)
+
+done
+
+
+IFS=$'\r\n' GLOBIGNORE='*' command eval  'XYZ=($(cat ServerIPNodeID))'
+IFS=$'=' GLOBIGNORE='*' command eval  'HostID=($(echo "${XYZ[0]}"))'
+
+
+
+for MyFile in ${FileList[@]}; do
+        sed -i -e 's/@ipAddressRedis@/'"10.99.1.${HostID[1]}/g" ${MyFile}
 done
 
 tr -d "\n\r" < dockerImage >> dockerImage1; mv dockerImage1 dockerImage

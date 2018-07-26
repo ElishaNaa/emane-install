@@ -9,7 +9,6 @@ import re
 import subprocess
 import pipes
 import paramiko
-#import pysftp
 
 import base64
 import getpass
@@ -29,17 +28,15 @@ EMANE_HOST_PATH = '/tmp/'
 ServerIPNodeID = 'ServerIPNodeID'
 dockerImage = 'dockerImage'
 
-ipAddressRedis = '10.100.102.81'
-
 port = 22
 
-class spreadToServers():
+class distribToServers():
     def __init__(self):
         self.txtFile = open(PLATFORMS_TO_SERVER_FILE, "r")
 
     def connect(self, hostname):
         # setup logging
-        paramiko.util.log_to_file("connect.log")
+        paramiko.util.log_to_file("logging_destrib.log")
         # Paramiko client configuration
         UseGSSAPI = True  # enable GSS-API / SSPI authentication
         DoGSSAPIKeyExchange = True
@@ -124,7 +121,7 @@ class spreadToServers():
                     digitsArrey.append(testName)
         return digitsArrey
 
-    def spreadServersIP(self, i_IpPath, i_TransmissionType):
+    def distribServersIP(self, i_IpPath, i_TransmissionType):
         id = 1
         for server in i_IpPath:
             serverAddr = server[0]
@@ -144,8 +141,6 @@ class spreadToServers():
                 outfile.write(content)
             
             transport = self.connect(serverAddr)
-            #cnopts = pysftp.CnOpts()
-            #cnopts.hostkeys = None
 
             sftp = paramiko.SFTPClient.from_transport(transport)
             sftp.chdir(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)
@@ -166,7 +161,7 @@ class spreadToServers():
             imgFound = None
         return ipAddrImageId
 
-    def spreadServersImages(self, i_IpPath, i_TransmissionType):
+    def distribServersImages(self, i_IpPath, i_TransmissionType):
         with open(dockerImage, 'r') as dockerIm:
             images = dockerIm.readlines()
         nodeID = []
@@ -196,15 +191,7 @@ class spreadToServers():
             with open(EMANE_HOST_PATH + 'Images', 'w+') as outfile:
                 outfile.write(content)
 
-            #session = ftplib.FTP(serverAddr)
-            #session.login(USER_NAME_TO_SERVERS, PASSWORD_TO_SERVERS)
-            #session.cwd(NODES_DIRECTORY_PATH_SERVER)
-
-            #session.cwd(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)  # enter to this folder
-
             transport = self.connect(serverAddr)
-            #cnopts = pysftp.CnOpts()
-            #cnopts.hostkeys = None
 
             sftp = paramiko.SFTPClient.from_transport(transport)
             sftp.chdir(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)
@@ -212,14 +199,7 @@ class spreadToServers():
             sftp.chmod(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/' + dockerImage, 0777)  # chmod the files
             os.remove(EMANE_HOST_PATH + 'Images')
 
-
-            #file = open(EMANE_HOST_PATH + 'Images')
-            #session.storbinary('STOR ' + dockerImage, file)  # copy file from host to server
-            #session.sendcmd('SITE CHMOD 777 ' + dockerImage)  # chmod the file
-            #file.close()
-            #os.remove(EMANE_HOST_PATH + 'Images')
-            #session.quit()
-
+    '''      
     def getPlatformPath(self, i_ServerPlatformArrey, i_Suffix):
         """
         add to the node number, all the path
@@ -234,7 +214,7 @@ class spreadToServers():
                 path = nodesDirPathHost + '/' + i_Suffix + numberOfPlatform + '.xml'
                 platformsPath[server][1][platform] = path
         return platformsPath
-
+    '''
     def matchAddresses(self, i_nodes):
         """
         open the file with the addresses of the servers, and replace between them.
@@ -261,24 +241,21 @@ class spreadToServers():
             addrFound = None
         return ipAddrPlatformsPath
 
-    def spreadPlatforms(self, i_IpPath, i_TransmissionType):
+    def distribPlatforms(self, i_IpPath, i_TransmissionType):
         '''
-        The method spread all the folder from the host to all the servers.
+        The method distrib all the folder from the host to all the servers.
         Then on every server deletes the files that should not be there (only by the node ID).
         :param i_IpPath:
         :return:
         '''
-        #IpParam = i_IpPath
         for server in i_IpPath:
 
-            nodesDirPathHost = EMANE_HOST_PATH + i_TransmissionType + '/'
+            nodesDirPathHost = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
             nodesDirPathServer = NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/'
         
             nodeID = []
             serverAddr = server[0]
             transport = self.connect(serverAddr)
-            #cnopts = pysftp.CnOpts()
-            #cnopts.hostkeys = None
             sftp = paramiko.SFTPClient.from_transport(transport)
             sftp.chdir(NODES_DIRECTORY_PATH_SERVER)
             sftp.mkdir(i_TransmissionType)
@@ -290,7 +267,7 @@ class spreadToServers():
                 sftp.put(nodesDirPathHost + fileName, nodesDirPathServer + fileName)  # copy all files from host to server
                 sftp.chmod(nodesDirPathServer + fileName, 0777)  # chmod the files
                 file.close()
-            listfile = ['redis.EXAMPLE', 'demo-start', 'demo-stop', 'protocol-config.xsd', 'emanelayerdlep.xml', 'emanelayersnmp.xml', 'emanelayerfilter.xml', 'eventservice.xml', 'eventdaemon.xml', 'transraw.xml', 'tdmamac.xml', 'credit-windowing-03.xml', 'dlep-draft-24.xml', 'dlep-rfc-8175.xml', 'schedule.xml']
+            listfile = ['NO-host-emaneeventservice', 'node-prestop', 'redis.EXAMPLE', 'demo-start', 'demo-stop', 'protocol-config.xsd', 'emanelayerdlep.xml', 'emanelayersnmp.xml', 'emanelayerfilter.xml', 'eventservice.xml', 'eventdaemon.xml', 'transraw.xml', 'tdmamac.xml', 'credit-windowing-03.xml', 'dlep-draft-24.xml', 'dlep-rfc-8175.xml', 'schedule.xml']
             flag = 0
             for i in server[1]:  # make list with all the nodes ID's
                 n = re.findall('\d+', str(i))[-1]
@@ -312,17 +289,15 @@ class spreadToServers():
             sftp.mkdir('scripts')  # make folder
             sftp.chmod(nodesDirPathServer + '/scripts/', 0777)  # chahnge mode of this folder to 777
             sftp.chdir(nodesDirPathServer + '/scripts/')  # enter to this folder
-            nodesDirPathHost = EMANE_HOST_PATH + i_TransmissionType + '/scripts/'
+            nodesDirPathHost = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/scripts/'
             hostFiles = [f for f in listdir(nodesDirPathHost) if isfile(join(nodesDirPathHost, f))]
+
             # list all files that in host's folder
             for fileName in hostFiles:
                 file = open(nodesDirPathHost + fileName)
                 sftp.put(nodesDirPathHost + fileName, nodesDirPathServer + '/scripts/' + fileName)  # copy all files from host to server
                 sftp.chmod(nodesDirPathServer + '/scripts/' + fileName, 0777)  # chmod the files
                 file.close()
-
-        #self.spreadServersIP(transport, IpParam, i_TransmissionType)
-        #self.spreadServersImages(transport, IpParam, i_TransmissionType)
 
             transport.close()
 
@@ -372,7 +347,6 @@ class hatchNodes():
         self.numberOfNodes = i_NumberOfNodes
         self.i_Base = i_Base
         self.txtFile = open(PLATFORMS_TO_SERVER_FILE, "r")
-        #self.outputPath = i_OutputPath
         self.StartHatching(self.transmissionType, self.numberOfNodes, i_Base)
 
     def StartHatching(self, i_TransmiionType, i_NumberOfNodes, i_Base):
@@ -451,20 +425,18 @@ class hatchNodes():
         return ipAddrPlatformsPath
 
     def hatchRouters(self, i_TransmiionType, i_NumberOfNodes, i_Base):
-        pathWhereFind = None
-        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmiionType + '/'
 
         if i_Base == None:
             i_Base = 0
         else:
             i_Base = int(i_Base)
 
-        self.removeFile(pathWhereFind, 'OLSR')
+        self.removeFile(pathWhereFind, 'RA')
         addrPath = self.readFile()
         
         for index in range(1, i_NumberOfNodes):
-           pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
-           rid = i_Base + index
+           rid = i_Base + 1
            for addr in addrPath:
         	for ID in addr[1]:
         		if index == ID:
@@ -472,33 +444,27 @@ class hatchNodes():
         			if ip[-1:] == '\n':
         				ip = ip[:-1]
         			replacements = [["NEMID", str(index)], ["NETTYPE", '1'], ["RID", str(rid)], ["SERVERIP", str(ip)]]
-        			template = EMANE_TEMPLATES_PATH_HOST + 'OLSR.json.template'
-        			pathToNewFiles = pathWhereFind + 'OLSR' + str(index) + '.json'
+        			template = EMANE_TEMPLATES_PATH_HOST + 'RA.json.template'
+        			pathToNewFiles = pathWhereFind + 'RA' + str(index) + '.json'
         			self.preprocess(replacements, template, pathToNewFiles)
         			i_Base = i_Base + 1
 
     def hatchScripts(self, i_TransmiionType):
-        pathWhereFind = None
-        listfile = []
         listfile = ['docker-democtl-host', 'docker-demo-init', 'docker-rtctl-host', 'docker-rtdemo-init', 'run-snmpd.sh', 'snmpflushallDB.sh', 'snmpsetDB.sh', 'readJson.py']
-        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/scripts/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmiionType + '/scripts/'
         exists = os.path.exists(pathWhereFind)
         if exists:
         	shutil.rmtree(pathWhereFind)
         os.makedirs(pathWhereFind)
-        replacements = [["ipAddressRedis", ipAddressRedis]]
+        replacements = []
         for file in listfile:
             template = EMANE_TEMPLATES_PATH_HOST + 'scripts/' + file + '.template'
             pathToNewFiles = pathWhereFind + file
             self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchFileAlways(self, i_TransmiionType):
-        pathWhereFind = None
-        listfile = []
         listfile = ['eventservice', 'eelgenerator', 'emanelayerdlep', 'emanelayersnmp', 'emanelayerfilter', 'eventservice', 'eventdaemon', 'transraw', 'tdmamac', 'credit-windowing-03', 'dlep-draft-24', 'dlep-rfc-8175', 'schedule']
-        pathWhereFind = EMANE_HOST_PATH + i_TransmiionType + '/'
-            #self.removeFile(pathWhereFind, 'emanelayerdlep')
-        #pathWhereFind = EMANE_HOST_PATH + '3/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmiionType + '/'
         replacements = []
         for file in listfile:
             template = EMANE_TEMPLATES_PATH_HOST + file + '.xml.template'
@@ -523,24 +489,27 @@ class hatchNodes():
         template = EMANE_TEMPLATES_PATH_HOST + 'scenario.eel.template'
         pathToNewFiles = pathWhereFind + 'scenario.eel'
         self.preprocess(replacements, template, pathToNewFiles)
+        replacements = []
+        template = EMANE_TEMPLATES_PATH_HOST + 'node-prestop.template'
+        pathToNewFiles = pathWhereFind + 'node-prestop'
+        self.preprocess(replacements, template, pathToNewFiles)
+        replacements = []
+        template = EMANE_TEMPLATES_PATH_HOST + 'NO-host-emaneeventservice.template'
+        pathToNewFiles = pathWhereFind + 'NO-host-emaneeventservice'
+        self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchTDMAPlatform(self, i_TransmissionType, i_NumberOfNodes):
-        pathWhereFind = None
-        nemxmlChangeTo = None
-        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, 'platform')
         for index in range(1, i_NumberOfNodes):
            nemxmlChangeTo = 'tdmanem' + str(index) + '.xml'
-           pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
            replacements = [["NEMID", str(index)], ["NEMXML", nemxmlChangeTo]]
            template = EMANE_TEMPLATES_PATH_HOST + 'platform.xml.template'
            pathToNewFiles = pathWhereFind + 'platform' + str(index) + '.xml'
            self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchOtestPoint(self, i_TransmissionType, i_NumberOfNodes):
-        pathWhereFind = None
-        nemxmlChangeTo = None
-        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, 'otestpoint')
         for index in range(1, i_NumberOfNodes):
            replacements = [["NEMID", str(index)]]
@@ -563,17 +532,14 @@ class hatchNodes():
             self.preprocess(replacements, template, pathToNewFiles)
 
     def hatchTDMANEM(self, i_TransmissionType, i_NumberOfNodes):
-        pathWhereFind = None
-        nemxmlChangeTo = None
-        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, 'tdmanem')
         for index in range(1, i_NumberOfNodes):
-           pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
            hexa = '{:X}'.format(index)
            if index <= 15:
-                replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)], ["ipAddressRedis", ipAddressRedis]]
+                replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)]]
            else:
-                replacements = [["NEMID", str(index)], ["HEX", str(hexa)], ["ipAddressRedis", ipAddressRedis]]
+                replacements = [["NEMID", str(index)], ["HEX", str(hexa)]]
            template = EMANE_TEMPLATES_PATH_HOST + 'tdmanem.xml.template'
            pathToNewFiles = pathWhereFind + 'tdmanem' + str(index) + '.xml'
            self.preprocess(replacements, template, pathToNewFiles)
@@ -588,9 +554,8 @@ class hatchNodes():
             self.preprocess(replacements, template, i_PathToNewFiles)
 
     def hatchRouting(self, i_TransmissionType, i_NumberOfNodes):
-        pathWhereFind = None
         fileName = 'routing'
-        pathWhereFind = EMANE_HOST_PATH + i_TransmissionType + '/'
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, fileName)
         for index in range(1, i_NumberOfNodes):
             replacements = [["NODEID", str(index)], ["DEMOID", i_TransmissionType]]
@@ -615,7 +580,7 @@ class hatchNodes():
     				os.remove(file)
     	else:
     		os.makedirs(i_Path)
-
+    '''
     def copyanything(self, src, dst):
     	try:
     		shutil.copytree(src, dst)
@@ -623,13 +588,14 @@ class hatchNodes():
     	    if exc.errno == errno.ENOTDIR:
     	    	shutil.copy(src, dst)
     	    else: raise
+    '''
 
 def usage():
     print'To create nodes run: '
-    print'   python configureServer.py create [3/tdmact] number_of_nodes (optional - base)'
-    print'To spread the nodes to the servers:'
+    print'   python configureServer.py create [tdma-1/tdma] number_of_nodes (optional - base)'
+    print'To distrib the nodes to the servers:'
     print'   First, write correct ''nodes2s.txt'' file, then run:'
-    print'   python configureServer.py spread [3/tdmact (which nodes to spread)]'
+    print'   python configureServer.py distrib [tdma-1/tdma (which nodes to distrib)]'
 
 if __name__ == '__main__':
     numbOfSysArg = len(sys.argv)
@@ -641,18 +607,21 @@ if __name__ == '__main__':
             if numbOfSysArg == 5:
                 base = sys.argv[4]
             hatchNodes(transmissionType, int(numberOfNodes)+1, base)
-        elif sys.argv[1] == 'spread':
+        elif sys.argv[1] == 'distrib':
             transmissionType = sys.argv[2]
-            work = spreadToServers()
+            work = distribToServers()
             listSrvNodes = work.readFile()
             #listPath = work.getPlatformPath(listSrvPlat)
             addrPath = work.matchAddresses(listSrvNodes)
 
-            work.spreadPlatforms(addrPath, transmissionType)
-            work.spreadServersIP(addrPath, transmissionType)
-            work.spreadServersImages(addrPath, transmissionType)
+            work.distribPlatforms(addrPath, transmissionType)
+            work.distribServersIP(addrPath, transmissionType)
+            work.distribServersImages(addrPath, transmissionType)
 
             work.txtFile.close()
+        else:
+            print "Illegal command."
+            usage()
     else:
         print "Illegal number of parameters."
         usage()

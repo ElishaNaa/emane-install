@@ -22,6 +22,8 @@ def readJson(filename):
 			temp_val = temp['val']
 			if temp_name == 'image':
 				image = temp_val
+				if temp_name == 'net':
+					net = temp_val
 		for param in data['internalList']:
 			temp = json.dumps(param)
 			temp = json.loads(temp)
@@ -30,8 +32,11 @@ def readJson(filename):
 			if temp_name == 'containernametemplete':
 				name = temp_val
 			elif  temp_name != 'nettype':
-				res = res + "-e '" + temp_name + '=' + temp_val + "' "				
-		print '-it --name' + name + ' ' + res + 'image=' + image
+			    if temp_name == 'volume':
+			        res = res + "--volume " + temp_val + " "
+			    else:
+				    res = res + "-e " + temp_name + '=' + temp_val + " "				
+		print res + 'image=' + image
 
 if __name__ == '__main__':
 	filename = sys.argv[1]

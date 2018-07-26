@@ -32,10 +32,12 @@ sed -i -e 's/@flag for ipAddressRedis@/'"${ipAddressRedis}/" $PREFIX/SNMP-gen/ne
 /sbin/iptables -I OUTPUT -j ACCEPT
 /sbin/iptables -I FORWARD -j ACCEPT
 
-sudo snmpd -f -Lf /tmp/3/persist/modem-$1/var/log/snmpd.log -Ducd-snmp/pass -C -c /etc/snmp/snmpd$1.conf  &
+
+topdir="$3"
+sudo snmpd -f -Lf $topdir/persist/modem-$1/var/log/snmpd.log -Ducd-snmp/pass -C -c /etc/snmp/snmpd$1.conf  &
 
 
-sudo snmptrapd -f -Lf /tmp/3/persist/modem-$1/var/log/snmptrapd.log -Ducd-snmp/pass -C -c /etc/snmp/snmptrapd.conf  &
+sudo snmptrapd -f -Lf $topdir/persist/modem-$1/var/log/snmptrapd.log -Ducd-snmp/pass -C -c /etc/snmp/snmptrapd.conf  &
 
 
 exit 0

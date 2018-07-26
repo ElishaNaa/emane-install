@@ -2,5 +2,5 @@
 
 TOPDIR=$(pwd | awk -F '/@DEMOID@' '{print $1}')
 
-scripts/docker-democtl-host stop "$@" "$TOPDIR" "@DEMOID@"
 scripts/docker-rtctl-host stop "$@" "$TOPDIR" "@DEMOID@"
+scripts/docker-democtl-host stop "$@" "$TOPDIR" "@DEMOID@"

@@ -1,0 +1,25 @@
+{
+	"externalList": 
+	[
+		{
+			"name": "serverip",
+			"val": "@SERVERIP@"
+		},
+        {
+			"name": "id",
+			"val": "@NEMID@"
+		},
+		{
+			"name": "net",
+			"val": "host"
+		},
+        {
+			"name": "image",
+			"val": "fullsimdoc"
+		}
+	],
+	"internalList":
+	[
+
+	]
+}

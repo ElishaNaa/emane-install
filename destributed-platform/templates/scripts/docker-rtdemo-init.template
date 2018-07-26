@@ -366,7 +366,7 @@ nodeId=$nodeid
 # fix devpts
 mount /dev/pts -o remount,rw,mode=620,ptmxmode=666,gid=5
 #docker will create interface with broadcast address 0.0.0.0 which kills all the routing
-ifconfig eth1 10.100.$nodeId.1/16 broadcast 10.100.255.255
+ifconfig eth0 10.100.$nodeId.1/16 broadcast 10.100.255.255
 
 if [ -x ./node-prestart ]
 then

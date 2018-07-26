@@ -12,8 +12,5 @@
     <transport definition="transraw.xml">
       <param name="device" value="eth1"/>
     </transport>
-    <shim definition="emanelayerfilter.xml">
-      <param name="address" value="10.100.@NEMID@.254"/>
-    </shim>
     </nem>
 </platform>

@@ -194,8 +194,8 @@ wait_for_device()
 usage()
 {
     echo
-    echo " usage: democtl-host start [START OPTIONS]... TOPDIR DEMOID NUMBER_NODES"
-    echo "        democtl-host stop  [STOP OPTIONS]... TOPDIR DEMOID NUMBER_NODES"
+    echo " usage: democtl-host start [START OPTIONS]... TOPDIR DEMOID"
+    echo "        democtl-host stop  [STOP OPTIONS]... TOPDIR DEMOID"
     echo "        democtl-host help"
     echo
     echo " start options:"
@@ -257,11 +257,11 @@ case "$1" in
         demoid=$2
         #nodecount=$3
 
-        if [[ $demoid != +([0-9]) ]]
-        then
-            echo "Invalid demo id: $demoid" >&2
-            exit 1
-        fi
+        #if [[ $demoid != +([0-9]) ]]
+        #then
+        #    echo "Invalid demo id: $demoid" >&2
+        #    exit 1
+        #fi
 
         #if [[ $nodecount != +([0-9]) ]]
         #then
@@ -332,6 +332,7 @@ case "$1" in
                 echo "Done creating bridge: $bridge"
 
                 sudo ovs-vsctl add-br $OpenVSwich
+
                 #listIP is a list of ip address that belongs to servers that take part of scenario 
                 IFS=$'\r\n' GLOBIGNORE='*' command eval  'listIP=($(cat $topdir/$demoid/ServerIPNodeID))'
                 j=1
@@ -346,6 +347,8 @@ case "$1" in
                 sudo ifconfig veth2 up
                 sudo brctl addif $bridge veth1
                 sudo ovs-vsctl add-port $OpenVSwich veth2
+                sudo ovs-vsctl set bridge $OpenVSwich stp_enable=true
+                #sudo ovs-ofctl add-flow $OpenVSwich "in_port=gre$i,action=output:veth2"
 
                 echo "Done creating OpenVSwich: $OpenVSwich"
             else
@@ -440,8 +443,6 @@ EOF
 --network=$bridge \
 --mac-address=02:00:$hex:01:00:01 \
 --ip=10.99.0.$nodeid \
---security-opt seccomp=unconfined \
---security-opt no-new-privileges:false \
 --cap-add=ALL \
 --privileged=true \
 --env-file persist/modem-$nodeid/var/run/docker.env.$nodeid \
@@ -513,15 +514,15 @@ EOF
             echo "Found an emaneeventservice pid file: unable to start" >&2
         fi
 
-        if [ -f otestpoint-broker.xml ] &&
-               [ ! -f NO-host-otestpoint-broker ]
-        then
-            start_otestpoint_broker \
-                otestpoint-broker.xml \
-                persist/host/var/log/otestpoint-broker.log \
-                persist/host/var/run/otestpoint-broker.pid \
-                persist/host/var/run/otestpoint-broker.uuid
-        fi
+        #if [ -f otestpoint-broker.xml ] &&
+        #       [ ! -f NO-host-otestpoint-broker ]
+        #then
+        #    start_otestpoint_broker \
+        #        otestpoint-broker.xml \
+        #        persist/host/var/log/otestpoint-broker.log \
+        #        persist/host/var/run/otestpoint-broker.pid \
+        #        persist/host/var/run/otestpoint-broker.uuid
+        #fi
 
         if [ -x host-poststart ]
         then
@@ -561,11 +562,11 @@ EOF
         topdir=$1
         demoid=$2
 
-        if [[ $demoid != +([0-9]) ]]
-        then
-            echo "Invalid demo id: $demoid" >&2
-            exit 1
-        fi
+        #if [[ $demoid != +([0-9]) ]]
+        #then
+        #    echo "Invalid demo id: $demoid" >&2
+        #    exit 1
+        #fi
 
         #if [[ $nodecount != +([0-9]) ]]
         #then
@@ -600,7 +601,7 @@ EOF
             #then
                 #lxc-stop -n $prefix$nodeid -k
         docker stop $prefix$nodeid 
-        docker rm $prefix$nodeid
+        #docker rm $prefix$nodeid
             if (! check_bridge $routerbridge)
             then
                 echo "Removing bridge: $routerbridge"

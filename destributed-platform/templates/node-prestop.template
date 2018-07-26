@@ -1,0 +1,19 @@
+#!/bin/bash -
+if [ $# -ne 2 ]
+   then
+    "node-prestop: invalid number of arguments" >&2 
+    exit 1
+fi
+
+nodeid=$1
+topdir=$2
+
+echo "Running node-prestop $nodeid"
+
+
+name=modem-$nodeid
+echo "Collecting statistics and configuration from $name"
+emanesh localhost show >  $topdir/persist/$name/var/log/emane.show
+emanesh localhost get stat '*' all >  $topdir/persist/$name/var/log/emane.stats
+emanesh localhost get table '*' all >  $topdir/persist/$name/var/log/emane.tables
+emanesh localhost get config '*' all >  $topdir/persist/$name/var/log/emane.config

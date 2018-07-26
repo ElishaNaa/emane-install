@@ -1,4 +1,0 @@
-#!/bin/bash -
-
-../scripts/docker-democtl-host start "$@" "/home/user/emane-dlep-tutorial" 2 10
-../scripts/docker-rtctl-host start "$@" "/home/user/emane-dlep-tutorial" 2 10

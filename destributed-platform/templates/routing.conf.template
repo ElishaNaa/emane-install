@@ -25,7 +25,7 @@ ClearScreen     yes
 
 LinkQualityAging 0.2
 
-Interface "eth1"
+Interface "eth0"
 {
  HelloInterval 1.0
  HelloValidityTime 5.0

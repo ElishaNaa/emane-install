@@ -384,7 +384,7 @@ scripts/snmpsetDB.sh $ipaddressredis
 #######################################################################
 
 ##########################run the daemons snmp#########################
-scripts/run-snmpd.sh $nodeId $ipaddressredis
+scripts/run-snmpd.sh $nodeId $ipaddressredis $topdir
 #######################################################################
 
 if [ -f transportdaemon$nodeId.xml ] &&
@@ -429,40 +429,40 @@ then
         $PWD/persist/modem-$nodeid/var/run/gps.pty \
         $PWD/persist/modem-$nodeid/var/run/gpsd.pid
 fi
+#######################################################################
+#if [ -f otestpoint-recorder$nodeId.xml ] &&
+#       [ ! -f NO-node-otestpoint-recorder$nodeId ] &&
+#       [ ! -f NO-node-otestpoint-recorder ]
+#then
+#    start_otestpoint_recorder \
+#        otestpoint-recorder$nodeId.xml \
+#        $PWD/persist/modem-$nodeid/var/log/otestpoint-recorder.log \
+#        $PWD/persist/modem-$nodeid/var/run/otestpoint-recorder.pid \
+#        $PWD/persist/modem-$nodeid/var/run/otestpoint-recorder.uuid
+#fi
 
-if [ -f otestpoint-recorder$nodeId.xml ] &&
-       [ ! -f NO-node-otestpoint-recorder$nodeId ] &&
-       [ ! -f NO-node-otestpoint-recorder ]
-then
-    start_otestpoint_recorder \
-        otestpoint-recorder$nodeId.xml \
-        $PWD/persist/modem-$nodeid/var/log/otestpoint-recorder.log \
-        $PWD/persist/modem-$nodeid/var/run/otestpoint-recorder.pid \
-        $PWD/persist/modem-$nodeid/var/run/otestpoint-recorder.uuid
-fi
+#if [ -f otestpoint-broker$nodeId.xml ] &&
+#       [ ! -f NO-node-otestpoint-broker$nodeId ] &&
+#       [ ! -f NO-node-otestpoint-broker ]
+#then
+#    start_otestpoint_broker \
+#        otestpoint-broker$nodeId.xml \
+#        $PWD/persist/modem-$nodeid/var/log/otestpoint-broker.log \
+#        $PWD/persist/modem-$nodeid/var/run/otestpoint-broker.pid \
+#        $PWD/persist/modem-$nodeid/var/run/otestpoint-broker.uuid
+#fi
 
-if [ -f otestpoint-broker$nodeId.xml ] &&
-       [ ! -f NO-node-otestpoint-broker$nodeId ] &&
-       [ ! -f NO-node-otestpoint-broker ]
-then
-    start_otestpoint_broker \
-        otestpoint-broker$nodeId.xml \
-        $PWD/persist/modem-$nodeid/var/log/otestpoint-broker.log \
-        $PWD/persist/modem-$nodeid/var/run/otestpoint-broker.pid \
-        $PWD/persist/modem-$nodeid/var/run/otestpoint-broker.uuid
-fi
-
-if [ -f otestpointd$nodeId.xml ] &&
-       [ ! -f NO-node-otestpointd$nodeId ] &&
-       [ ! -f NO-node-otestpointd ]
-then
-    start_otestpointd \
-        otestpointd$nodeId.xml \
-        $PWD/persist/modem-$nodeid/var/log/otestpointd.log \
-        $PWD/persist/modem-$nodeid/var/run/otestpointd.pid \
-        $PWD/persist/modem-$nodeid/var/run/otestpointd.uuid
-fi
-
+#if [ -f otestpointd$nodeId.xml ] &&
+#       [ ! -f NO-node-otestpointd$nodeId ] &&
+#       [ ! -f NO-node-otestpointd ]
+#then
+#    start_otestpointd \
+#        otestpointd$nodeId.xml \
+#        $PWD/persist/modem-$nodeid/var/log/otestpointd.log \
+#        $PWD/persist/modem-$nodeid/var/run/otestpointd.pid \
+#        $PWD/persist/modem-$nodeid/var/run/otestpointd.uuid
+#fi
+#######################################################################
 if [ -x ./node-preapplication ]
 then
 
@@ -583,4 +583,11 @@ then
 elif [ -x node-poststart$nodeId ]
 then
     ./node-poststart$nodeId $nodeId
+fi
+if [ -x ./node-prestop ]
+then
+    nodeId=$nodeid
+    topDir=$topdir
+    ./node-prestop $nodeId $topDir
+echo "node-prestop"
 fi

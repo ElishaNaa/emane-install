@@ -191,8 +191,8 @@ wait_for_device()
 usage()
 {
     echo
-    echo " usage: democtl-host start [START OPTIONS]... TOPDIR DEMOID NUMBER_NODES"
-    echo "        democtl-host stop  [STOP OPTIONS]... TOPDIR DEMOID NUMBER_NODES"
+    echo " usage: democtl-host start [START OPTIONS]... TOPDIR DEMOID"
+    echo "        democtl-host stop  [STOP OPTIONS]... TOPDIR DEMOID"
     echo "        democtl-host help"
     echo
     echo " start options:"
@@ -253,11 +253,11 @@ case "$1" in
         topdir=$1
         demoid=$2
 
-        if [[ $demoid != +([0-9]) ]]
-        then
-            echo "Invalid demo id: $demoid" >&2
-            exit 1
-        fi
+        #if [[ $demoid != +([0-9]) ]]
+        #then
+        #    echo "Invalid demo id: $demoid" >&2
+        #    exit 1
+        #fi
 
         #if [[ $nodecount != +([0-9]) ]]
         #then
@@ -378,9 +378,10 @@ case "$1" in
                 fi
             done
 
-            filename='OLSR'$nodeid'.json'
+            filename='RA'$nodeid'.json'
             line=$(python scripts/readJson.py $filename)
             img=$(echo $line | awk -F 'image=' '{print $2}')
+            param=$(echo $line | awk -F 'image=' '{print $1}')
 
             name=$prefix$nodeid
             hex=$(printf "%02x" $nodeid)
@@ -426,12 +427,13 @@ EOF
 --volume $topdir/$demoid:$topdir/$demoid \
 --name=$name \
 --hostname=$name \
---security-opt seccomp=unconfined \
---security-opt no-new-privileges:false \
+--network=$routerbridge \
+--mac-address=02:$hex:00:01:00:01 \
+--ip=10.100.$nodeid.1 \
 --cap-add=ALL \
 --privileged=true \
 --env-file persist/$nodeid/var/run/docker.env.$nodeid \
---entrypoint /bin/bash \
+$param \
 $img \
 
 EOF
@@ -453,7 +455,7 @@ EOF
 
         docker logs $name >& persist/$nodeid/var/log/docker-execute.log.$nodeid
 
-        docker network connect --ip 10.100.$nodeid.1 $routerbridge $name 
+        #docker network connect --ip 10.100.$nodeid.1 $routerbridge $name 
 
             while (! test -f persist/$nodeid/var/log/docker-execute.log.$nodeid)
             do
@@ -549,11 +551,11 @@ EOF
         topdir=$1
         demoid=$2
 
-        if [[ $demoid != +([0-9]) ]]
-        then
-            echo "Invalid demo id: $demoid" >&2
-            exit 1
-        fi
+        #if [[ $demoid != +([0-9]) ]]
+        #then
+        #    echo "Invalid demo id: $demoid" >&2
+        #    exit 1
+        #fi
 
         #if [[ $nodecount != +([0-9]) ]]
         #then
