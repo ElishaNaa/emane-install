@@ -4,15 +4,23 @@
 
 On all the machines you need to install this dependency:
 ```
-ftp
-ftplib-dev
-sshpass
 redis-server
 bridge-utils
 openvswitch-switch
 openvswitch-controller
 ```
-On machines that you want to distribute the files you need also to install ``` ftpd  ```
+On machine that you want to be a command center you need also to install 
+```
+bcrypt
+cffi
+cryptography
+enum34
+paramiko
+py2-ipaddress
+pysftp
+setuptools
+testresources
+```
 
 ##### Remind you need to allow port 22
 
@@ -45,12 +53,13 @@ After this extricate the image
 $ sudo docker load -i fullsimdocTar
 ```
 
-You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server on which ntp is installed.
+#### You need to make sure that the machines are synchronized, so you have to choose between machines a machine that will be an ntp server.
 
-On the other machines we will also install ntp and we will also write the following command:
+On the all machines we will install ntp and we will also write the following command:
 ```
-$ sudo uptitude install ntpt
+$ sudo apt-get install ntp
 ```
+
 The file /etc/ntp.conf on server should contain the following lines:
 ```
 server 127.127.1.0
@@ -73,7 +82,7 @@ There are 3 files that need to be prepared in advance, in which you will specify
 
 1) nodes2s - in each row you define the name of the machine and the nodeID you want to run on it (Emane02; 1:2 -----> A machine called Emane02 will run the containers with IDs 1 and 2. It is important to keep the name The nodeID will be the character ``` ; ``` ).
 
-2) In each line you define the name of the machine and its IP (eg Emane02,X.X.X.X It is important to keep the name of the machine to the IP, the character ``` , ```).
+2) serverIP - in each line you define the name of the machine and its IP (eg Emane02,X.X.X.X It is important to keep the name of the machine to the IP, the character ``` , ```).
 
 3) dockerImage - In each line you define the images of the modem and the router running on the machine (eg modem=fullsimdoc,1=fullsimdoc,2=fullsimdoc).
 
@@ -87,7 +96,7 @@ $ sudo python configureServer.py create 3 4
 To distribute the scenario to the files defined in the files that you have been asked to prepare in advance, you should type the following command:
 
 ```
-$ sudo python configureServer.py spread 3 
+$ sudo python configureServer.py distrib 3 
 (so that 3 is the name of the scenario)
 ```
 To start the scenario write the following command:
