@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ipaddressredis=$1
-PLACE=".1.3.6.1.4.1.16215.1.24.1.4"
+_PLACE_="_WAVE_FROM_ROOT_";
+
 getId()
 {
 	id=$(tr -d "modem-" <<< $(hostname))
@@ -10,103 +10,133 @@ getId()
 
 listen=$1
 id=$(getId)
-
-for (( i=8; i<=14; i++ ))
-do
-        
-#Frequency
-  if [ $id$PLACE.1.$i = $id$PLACE.1.8 ]; then
-      VALUE=225300  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)   
-  fi
-#Power
-  if [ $id$PLACE.1.$i = $id$PLACE.1.9 ]; then
-      VALUE=1  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)   
-  fi
-#BlackStopTx
-  if [ $id$PLACE.1.$i = $id$PLACE.1.10 ]; then
-      VALUE=0  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)
-  fi
-#Network Id
-  if [ $id$PLACE.1.$i = $id$PLACE.1.11 ]; then
-      VALUE=1  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)
-  fi
-#TDMA Cycle Type
-  if [ $id$PLACE.1.$i = $id$PLACE.1.12 ]; then
-      VALUE=10 
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)
-  fi
-#ControlLoopPriority
-  if [ $id$PLACE.1.$i = $id$PLACE.1.13 ]; then
-      VALUE=2
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)  
-  fi
-#PacketLifeTime
-  if [ $id$PLACE.1.$i = $id$PLACE.1.14 ]; then
-      VALUE=25  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.1.$i $VALUE)        
-  fi
-done
-
-#BlackStopTx
-tmp=$(redis-cli -h $listen  SET $id$PLACE.2.1 1)  
-
-for (( i=3; i<=12; i++ ))
-do
-        
-#Calendar Time of Network
-  if [ $id$PLACE.$i = $id$PLACE.3 ]; then
-      VALUE="UTC"  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)   
-  fi
-#Algorithmic Time of network
-  if [ $id$PLACE.$i = $id$PLACE.4 ]; then
-      VALUE="NTP"  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)   
-  fi
-#Router Load
-  if [ $id$PLACE.$i = $id$PLACE.5 ]; then
-      VALUE=3  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)
-  fi
-#Data Rate
-  if [ $id$PLACE.$i = $id$PLACE.6 ]; then
-      VALUE=100  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)
-  fi
-#BytesInTxQueue
-  if [ $id$PLACE.$i = $id$PLACE.7 ]; then
-      VALUE=10 
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)
-  fi
-#PacketsInTxQueues
-  if [ $id$PLACE.$i = $id$PLACE.8 ]; then
-      VALUE=2
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)  
-  fi
-#MaxPrtyPendPacket
-  if [ $id$PLACE.$i = $id$PLACE.9 ]; then
-      VALUE=25  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)        
-  fi
-#OldestPacketAge
-  if [ $id$PLACE.$i = $id$PLACE.10 ]; then
-      VALUE=25  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)        
-  fi
-#GlobalXOff
-  if [ $id$PLACE.$i = $id$PLACE.11 ]; then
-      VALUE=0  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)        
-  fi
-#Algorithmic Time of network
-  if [ $id$PLACE.$i = $id$PLACE.12 ]; then
-      VALUE="NTP"  
-      tmp=$(redis-cli -h $listen  SET $id$PLACE.$i $VALUE)        
-  fi
-done
   
+#WAVE_FORM_TYPE_CH1
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_WAVE_FORM_TYPE_CH1 $VALUE)  
+
+#CHANNEL_BANDWIDTH_CH1
+VALUE=10
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CHANNEL_BANDWIDTH_CH1 $VALUE)   
+
+#MODULATION_MODE_CH1
+VALUE=0
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MODULATION_MODE_CH1 $VALUE)
+
+#NODE_ID_CH1
+VALUE=1
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NODE_ID_CH1 $VALUE)
+
+#PRESER_NUMBER_CH1
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_NUMBER_CH1 $VALUE)  
+
+#PRESER_BANK_NUMBER_CH1
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_BANK_NUMBER_CH1 $VALUE)        
+
+#Frequency ch1
+VALUE=225300  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH1 $VALUE)  
+
+#Power ch1
+VALUE=2 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH1 $VALUE)   
+
+#Network Id
+VALUE=7  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NET_ID $VALUE)
+
+#TDMA Cycle Type
+VALUE=10 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TDMA_CYCLE_TYPE $VALUE)
+
+#ControlLoopPriority
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CONTROL_LOOP_PRIORITY $VALUE)  
+
+#PacketLifeTime
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PACKET_LIFE_TIME $VALUE) 
+
+#NUM_OF_MEMBERS
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NUM_OF_MEMBERS $VALUE)        
+       
+#Calendar Time of Network
+VALUE="UTC"  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TIME_CALENDAR $VALUE)   
+
+#Algorithmic Time of network
+VALUE="NTP"  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TIME_ALGORITHM $VALUE)   
+
+#Router Load
+VALUE=3  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_LOAD_ROUTER $VALUE)
+
+#Data Rate
+VALUE=100  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CURRENT_DATA_RATE $VALUE)
+
+#BytesInTxQueue
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_BYTES_IN_TX_QUEUE $VALUE)
+
+#PacketsInTxQueues
+VALUE=0
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PACKETS_IN_TX_QUEUE $VALUE)  
+
+#MaxPrtyPendPacket
+VALUE=64 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MAX_PRTY_PEND_PACKET $VALUE)        
+
+#OldestPacketAge
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_OLDEST_PACKET_AGE $VALUE)        
+
+#GlobalXOff
+VALUE=0  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_GLOBAL_X_Off $VALUE)        
+
+#TRAP_IP
+VALUE=10.100.$id.1
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TRAP_IP $VALUE) 
+
+#TRAP_PORT
+VALUE=42
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TRAP_IP $VALUE)
+
+#WAVE_FORM_TYPE_CH2
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_WAVE_FORM_TYPE_CH2 $VALUE)  
+
+#CHANNEL_BANDWIDTH_CH2
+VALUE=10  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CHANNEL_BANDWIDTH_CH2 $VALUE)   
+
+#MODULATION_MODE_CH2
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MODULATION_MODE_CH2 $VALUE)
+
+#NODE_ID_CH2
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NODE_ID_CH2 $VALUE)
+
+#PRESER_NUMBER_CH2
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_NUMBER_CH2 $VALUE)  
+
+#PRESER_BANK_NUMBER_CH2
+VALUE=2  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_BANK_NUMBER_CH2 $VALUE)
+
+#Frequency ch2
+VALUE=225300  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH2 $VALUE)  
+
+#Power ch2
+VALUE=2 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH2 $VALUE) 
+
 exit 0
