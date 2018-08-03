@@ -122,6 +122,5 @@ RUN sudo cp /usr/local/lib/libhiredis.so.0.13 /usr/lib
 #	RUN sudo make; \
 #		sudo make install
 WORKDIR /home/user/emane-install/
-RUN sudo rm -rf /home/user/emane-install/emane-dlep-tutorial
 RUN sudo rm -rf /home/user/emane-install/destributed-platform
 VOLUME /tmp/
