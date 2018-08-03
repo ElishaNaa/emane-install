@@ -42,7 +42,7 @@ $ sudo apt-get install docker-ce=17.09.0~ce-0~ubuntu
 ```
 After the installion you need to destrbuite the docker image, so you should build the docker image on one machine like this:
 ```
-$ sudo docker build -f dockerFileForModem -t fullsimdoc .
+$ sudo docker build -f emane-install/dockerFileForModem -t fullsimdoc .
 
 $ sudo docker save -o fullsimdocTar fullsimdoc
 ```
