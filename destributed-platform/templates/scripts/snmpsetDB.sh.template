@@ -1,6 +1,11 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 PLACE="_WAVE_FROM_ROOT_"
+=======
+_PLACE_="_WAVE_FROM_ROOT_";
+
+>>>>>>> a34d68f4ab4668602f43f31a0f4069d2eb37c04d
 getId()
 {
   id=$(tr -d "modem-" <<< $(hostname))
@@ -9,7 +14,40 @@ getId()
 
 listen=$1
 id=$(getId)
+  
+#WAVE_FORM_TYPE_CH1
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_WAVE_FORM_TYPE_CH1 $VALUE)  
 
+#CHANNEL_BANDWIDTH_CH1
+VALUE=10
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CHANNEL_BANDWIDTH_CH1 $VALUE)   
+
+#MODULATION_MODE_CH1
+VALUE=0
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MODULATION_MODE_CH1 $VALUE)
+
+#NODE_ID_CH1
+VALUE=1
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NODE_ID_CH1 $VALUE)
+
+#PRESER_NUMBER_CH1
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_NUMBER_CH1 $VALUE)  
+
+#PRESER_BANK_NUMBER_CH1
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_BANK_NUMBER_CH1 $VALUE)        
+
+#Frequency ch1
+VALUE=225300  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH1 $VALUE)  
+
+#Power ch1
+VALUE=2 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH1 $VALUE)   
+
+<<<<<<< HEAD
 
 #WAVE_FORM_TYPE_CH1
 VALUE=5  
@@ -139,4 +177,102 @@ tmp=$(redis-cli -h $listen  SET $id$PLACE"FREQUENCY_CH2" $VALUE)
 VALUE=1  
 tmp=$(redis-cli -h $listen  SET $id$PLACE"POWER_LEVEL_CH2" $VALUE)  
   
+=======
+#Network Id
+VALUE=7  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NET_ID $VALUE)
+
+#TDMA Cycle Type
+VALUE=10 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TDMA_CYCLE_TYPE $VALUE)
+
+#ControlLoopPriority
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CONTROL_LOOP_PRIORITY $VALUE)  
+
+#PacketLifeTime
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PACKET_LIFE_TIME $VALUE) 
+
+#NUM_OF_MEMBERS
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NUM_OF_MEMBERS $VALUE)        
+       
+#Calendar Time of Network
+VALUE="UTC"  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TIME_CALENDAR $VALUE)   
+
+#Algorithmic Time of network
+VALUE="NTP"  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TIME_ALGORITHM $VALUE)   
+
+#Router Load
+VALUE=3  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_LOAD_ROUTER $VALUE)
+
+#Data Rate
+VALUE=100  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CURRENT_DATA_RATE $VALUE)
+
+#BytesInTxQueue
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_BYTES_IN_TX_QUEUE $VALUE)
+
+#PacketsInTxQueues
+VALUE=0
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PACKETS_IN_TX_QUEUE $VALUE)  
+
+#MaxPrtyPendPacket
+VALUE=64 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MAX_PRTY_PEND_PACKET $VALUE)        
+
+#OldestPacketAge
+VALUE=25  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_OLDEST_PACKET_AGE $VALUE)        
+
+#GlobalXOff
+VALUE=0  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_GLOBAL_X_Off $VALUE)        
+
+#TRAP_IP
+VALUE=10.100.$id.1
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TRAP_IP $VALUE) 
+
+#TRAP_PORT
+VALUE=42
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_TRAP_IP $VALUE)
+
+#WAVE_FORM_TYPE_CH2
+VALUE=5  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_WAVE_FORM_TYPE_CH2 $VALUE)  
+
+#CHANNEL_BANDWIDTH_CH2
+VALUE=10  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_CHANNEL_BANDWIDTH_CH2 $VALUE)   
+
+#MODULATION_MODE_CH2
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_MODULATION_MODE_CH2 $VALUE)
+
+#NODE_ID_CH2
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_NODE_ID_CH2 $VALUE)
+
+#PRESER_NUMBER_CH2
+VALUE=2
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_NUMBER_CH2 $VALUE)  
+
+#PRESER_BANK_NUMBER_CH2
+VALUE=2  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_PRESER_BANK_NUMBER_CH2 $VALUE)
+
+#Frequency ch2
+VALUE=225300  
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH2 $VALUE)  
+
+#Power ch2
+VALUE=2 
+tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH2 $VALUE) 
+
+>>>>>>> a34d68f4ab4668602f43f31a0f4069d2eb37c04d
 exit 0
