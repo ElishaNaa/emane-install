@@ -619,7 +619,7 @@ EOF
                 #brctl delbr $routerbridge
 
 
-            echo "Done removing brifge: $routerbridge"
+            echo "Done removing bridge: $routerbridge"
             fi
             #else
             if (! check_bridge $routerbridge)
@@ -639,7 +639,7 @@ EOF
                 #brctl delbr $routerbridge
 
 
-            echo "Done removing brifge: $routerbridge"
+            echo "Done removing bridge: $routerbridge"
             fi
         docker stop $prefix$nodeid
         docker rm -f $prefix$nodeid
@@ -703,7 +703,7 @@ EOF
 
                 #brctl delbr $bridge
 
-                echo "Done removing brifge: $bridge"
+                echo "Done removing bridge: $bridge"
 
                 echo "Removing OpenVSwich: $OpenVSwich"
 
