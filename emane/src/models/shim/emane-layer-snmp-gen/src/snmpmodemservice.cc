@@ -55,6 +55,8 @@ namespace
 
   const char * EtherOUIFormat  = "%02hhx:%02hhx:%02hhx";
 
+  const char * _PLACE_ = "_WAVE_FROM_ROOT_";
+
   template <typename T> 
   T clampit(T min, T max, T val)
    {
@@ -71,42 +73,6 @@ namespace
           return val;
         }
    }
-
-
-  // const EMANE::ConfigParameterMapType DefaultDlepConfiguration =
-  //   {
-  //     // id (no special chars)      alias (special chars ok)   type  value          description
-  //     { "acktimeout",              {"ack-timeout",             "i",  "3",           "seconds to wait for ack signals" } },
-  //     { "ackprobability",          {"ack-probability",         "i",  "100",         "ack probabilty percent 0-100" } },
-  //     { "configfile",              {"config-file",             "f",  "",            "xml config file containing parameter settings" } },
-  //     { "heartbeatinterval",       {"heartbeat-interval",      "i",  "10",          "time between sending heartbeat signals" } },
-  //     { "heartbeatthreshold",      {"heartbeat-threshold",     "i",  "2",           "number of missed heartbeats to tolerate" } },
-  //     { "localtype",               {"local-type",              "s",  "modem",       "which snmp role to play, modem or router?" } },
-  //     { "loglevel",                {"log-level",               "i",  "2",           "1=most logging, 5=least" } },
-  //     { "logfile",                 {"log-file",                "s",  "snmp.log",    "file to write log messages to" } },
-  //     { "peertype",                {"peer-type",               "s",  "emane",       "peer type data item value" } },
-  //     { "sendtries",               {"send-tries",              "i",  "3",           "number of times to send a signal before giving up" } },
-  //     { "sessionport",             {"session-port",            "i",  "4854",        "tcp port number session connections" } },
-  //     { "extensions",              {"extensions",              "iv", "",            "list of extension ids to support" } },
-
-  //     { "protocolconfigfile",      {"protocol-config-file",    "s",  "protocol-config.xml", "xml file containing snmp protocol config." } },
-  //     { "protocolconfigschema",    {"protocol-config-schema",  "s",  "protocol-config.xsd", "xml protocol config schema." } },
-
-  //     { "discoveryiface",          {"discovery-iface",         "s",  "eth0",        "interface for the peerdiscovery protocol" } },
-  //     { "discoveryinterval",       {"discovery-interval",      "i",  "10",          "time between sending peerdiscovery signals" } },
-  //     { "discoverymcastaddress",   {"discovery-mcast-address", "a",  "225.0.0.117", "address to send peerdiscovery signals to" } },
-  //     { "discoveryport",           {"discovery-port",          "i",  "4854",        "port to send peerdiscovery signals to" } },
-  //     { "discoveryenable",         {"discovery-enable",        "b",  "1",           "should the router run the peerdiscovery protocol?" } },
-
-  //     { "destinationadvertenable",       {"destination-advert-enable",        "b",   "1",           "dest advert enable/disable" } },
-  //     { "destinationadvertiface",        {"destination-advert-iface",         "s",   "emane0",      "dest advert interface" } },
-  //     { "destinationadvertsendinterval", {"destination-advert-send-interval", "i",   "10",          "dest advert tx interval" } },
-  //     { "destinationadvertmcastaddress", {"destination-advert-mcast-address", "a",   "225.0.0.118", "dest advert multicast address" } },
-  //     { "destinationadvertport",         {"destination-advert-port",          "i",   "5854",        "dest advert port" } },
-  //     { "destinationadvertholdinterval", {"destination-advert-hold-interval", "i",   "0",           "dest advert hold value, 0 = hold" } },
-  //     { "destinationadvertexpirecount",  {"destination-advert-expire-count",  "i",   "0",           "dest advert expire count, 0 = hold" } },
-  //     { "destinationadvertrfid",         {"destination-advert-rf-id",         "iv",  "",            "dest advert mac id (NEMId)" } },
-  //  };
 
 }
 
@@ -129,24 +95,12 @@ EMANE::ModemService::ModemService(NEMId id,
 
   // set default for emane-snmp-demo log file dir
   const std::string logfile = "persist/" + std::to_string(id) + "/radio/var/log/snmp-modem.log";
-
-  //snmpConfiguration_ = DefaultDlepConfiguration;
-
-  //snmpConfiguration_["logfile"].value = logfile;
 }
 
 
 
 EMANE::ModemService::~ModemService() 
 { }
-
-
-
- //const EMANE::ConfigParameterMapType & EMANE::ModemService::getConfigItems() const
- //{
- //  return snmpConfiguration_;
- //}
-
 
 
 void EMANE::ModemService::configure(const ConfigurationUpdate & update)
@@ -282,16 +236,7 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
        }
        else
          {
-          //  auto iter = snmpConfiguration_.find(item.first);
-
-          //  if(iter != snmpConfiguration_.end())
-             // {
                 const std::string str{item.second[0].asString()};
-
-                // if(item.first == "destinationadvertenable")
-                //   {
-                //      destinationAdvertisementEnable_ = iter->second.value != "0";
-                //   }
 
                  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(), 
                                          INFO_LEVEL,
@@ -301,13 +246,6 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
                                          __func__, 
                                          item.first.c_str(),
                                          str.c_str());
-             // }
-            /*else
-              { 
-                throw makeException<ConfigureException>(__MODULE__,
-                                                        "Unexpected configuration item %s",
-                                                        item.first.c_str());
-              }*/
           }
       } 
 }
@@ -330,8 +268,7 @@ void EMANE::ModemService::start()
     }
   else
     {
-      // configuration complete, create client impl
-      //pDlepClient_.reset(new DlepClientImpl{id_, pPlatformService_, snmpConfiguration_});
+      
     }
 }
 
@@ -419,28 +356,6 @@ void EMANE::ModemService::handleControlMessages(const EMANE::ControlMessages & c
          }
       }
    }
-  // catch(const LLSNMP::ProtocolConfig::BadDataItemName & ex)
-  //  {
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             ERROR_LEVEL,
-  //                             "SHIMI %03hu %s::%s caught bad data item name exception %s", 
-  //                             id_, 
-  //                             __MODULE__, 
-  //                             __func__, 
-  //                             ex.what());
-  //   }
-
-  // catch(const LLSNMP::ProtocolConfig::BadDataItemId & ex)
-  //  {
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             ERROR_LEVEL,
-  //                             "SHIMI %03hu %s::%s caught bad data item id exception %s", 
-  //                             id_, 
-  //                             __MODULE__, 
-  //                             __func__, 
-  //                             ex.what());
-  //   }
-
 
   catch(const std::exception & ex)
    {
@@ -464,18 +379,6 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RISelfM
                                                EMANE::Controls::R2RISelfMetricControlMessageFormatter(pMessage),
                                                "SHIMI %03hu %s::%s R2RISelfMetricControlMessage",
                                                id_, __MODULE__, __func__);
-   
-   // update self metrics
-  //  selfMetrics_.valMaxDataRateRx     = pMessage->getMaxDataRatebps();
-
-  //  selfMetrics_.valMaxDataRateTx     = pMessage->getMaxDataRatebps();
-
-  //  selfMetrics_.valCurrentDataRateRx = pMessage->getMaxDataRatebps();
-
-  //  selfMetrics_.valCurrentDataRateTx = pMessage->getMaxDataRatebps();
-
-   // now send a peer update
-  //  send_peer_update_i();
 
   redisContext *c;
   redisReply *reply;
@@ -513,7 +416,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RISelfM
   // connected to redis successfully
   else{
     // SET datarate
-    std::string mibdr = ".1.3.6.1.4.1.16215.1.24.1.4.6";
+    std::string mibdr = std::string(_PLACE_) + "CURRENT_DATA_RATE"; // old ---> .1.3.6.1.4.1.16215.1.24.1.4.6"
     std::string strkeydr = std::to_string(id_).c_str() + mibdr;
     const char *mackey = strkeydr.c_str();
     const char *val = (std::to_string(pMessage->getMaxDataRatebps())).c_str();    
@@ -606,7 +509,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
       {
         // del the nbr macaddr mib
         // its enough to delete only that one, because passtest counting the nbrs by this mib
-        std::string mibmac = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1.";
+        std::string mibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
         std::string strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
         const char *mackey = strkeymac.c_str(); 
         reply = static_cast<redisReply*>(redisCommand(c,"DEL %s", mackey));
@@ -619,7 +522,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
         // del the member macaddr mib
         // its enough to delete only that one, because passtest counting the members by this mib
-        mibmac = ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1.";
+        mibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
         strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
         mackey = strkeymac.c_str(); 
         reply = static_cast<redisReply*>(redisCommand(c,"DEL %s", mackey));
@@ -780,7 +683,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
   {
     // SET NEIGHBOURS MAC ADDR
     // node_id.PLACE.nbr_id
-    std::string mibmac = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1.";
+    std::string mibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
     std::string strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricSetIndex).c_str();
     const char *mackey = strkeymac.c_str();
     const std::string strvalmac = getEthernetAddress_i(nbr).to_string().c_str();
@@ -833,7 +736,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
                           metric.getSINRAvgdBm(),
                           metric.getNumRxFrames(),
                           metric.getNumMissedFrames());
-    std::string mibLQ = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.2.";
+    std::string mibLQ = std::string(_PLACE_) + "NEIGHBOUR_LINK_QUALITY_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.2."
     std::string strkeyLQ = std::to_string(id_).c_str() + mibLQ + std::to_string(metricSetIndex).c_str();
     const char *LQkey = strkeyLQ.c_str();
     std::string strvalLQ = (std::to_string(LQ)).c_str();
@@ -849,7 +752,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET NEIGHBOURS RSSI (In that implemintation RSSI is SINR)
-    std::string mibrssi = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.3.";
+    std::string mibrssi = std::string(_PLACE_) + "NEIGHBOUR_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.3."
     std::string strkeyrssi = std::to_string(id_).c_str() + mibrssi + std::to_string(metricSetIndex).c_str();
     const char *rssikey = strkeyrssi.c_str();
     std::string strvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
@@ -865,7 +768,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET NEIGHBOURS SINR
-    std::string mibsinr = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.4.";
+    std::string mibsinr = std::string(_PLACE_) + "NEIGHBOUR_SNR_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.4."
     std::string strkeysinr = std::to_string(id_).c_str() + mibsinr + std::to_string(metricSetIndex).c_str();
     const char *sinrkey = strkeysinr.c_str();
     std::string strvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
@@ -881,7 +784,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET NEIGHBOURS busyRate
-    std::string mibbusyrate = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.5.";
+    std::string mibbusyrate = std::string(_PLACE_) + "NEIGHBOUR_BUSY_RATE_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.5."
     std::string strkeybusyrate = std::to_string(id_).c_str() + mibbusyrate + std::to_string(metricSetIndex).c_str();
     const char *busyratekey = strkeybusyrate.c_str();
     const char *busyrateval = "50";
@@ -895,7 +798,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET NEIGHBOURS MemberRank
-    std::string mibMemberRank = ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.6.";
+    std::string mibMemberRank = std::string(_PLACE_) + "NEIGHBOUR_MEMBER_RANK_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.6."
     std::string strkeyMemberRank = std::to_string(id_).c_str() + mibMemberRank + std::to_string(metricSetIndex).c_str();
     const char *memberRankkey = strkeyMemberRank.c_str();
     const char *memberRankval = "99";
@@ -909,7 +812,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
     
     // SET MEMBERS MAC ADDR
     // node_id.PLACE.nbr_id
-    mibmac = ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1.";
+    mibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
     strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricSetIndex).c_str();
     mackey = strkeymac.c_str();
     std::string strvalmac2 = getEthernetAddress_i(nbr).to_string().c_str();
@@ -962,7 +865,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
                           metric.getSINRAvgdBm(),
                           metric.getNumRxFrames(),
                           metric.getNumMissedFrames());
-    mibLQ = ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.2.";
+    mibLQ = std::string(_PLACE_) + "MEMBERS_RACE_ID_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.2."
     strkeyLQ = std::to_string(id_).c_str() + mibLQ + std::to_string(metricSetIndex).c_str();
     LQkey = strkeyLQ.c_str();
     strvalLQ = (std::to_string(LQ)).c_str();
@@ -978,7 +881,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET MEMBERS RSSI (In that implemintation RSSI is SINR)
-    mibrssi = ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.3.";
+    mibrssi = std::string(_PLACE_) + "MEMBERS_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.3."
     strkeyrssi = std::to_string(id_).c_str() + mibrssi + std::to_string(metricSetIndex).c_str();
     rssikey = strkeyrssi.c_str();
     strvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
@@ -994,7 +897,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 
     // SET MEMBERS SINR
-    mibsinr = ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.4.";
+    mibsinr = std::string(_PLACE_) + "MEMBERS_HOP_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.4."
     strkeysinr = std::to_string(id_).c_str() + mibsinr + std::to_string(metricSetIndex).c_str();
     sinrkey = strkeysinr.c_str();
     strvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
@@ -1028,55 +931,9 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
                                     EMANE::Controls::R2RIQueueMetricControlMessageFormatter(pMessage),
                                     "SHIMI %03hu %s::%s R2RIQueueMetricControlMessage",
                                     id_, __MODULE__, __func__);
-  
-  // avg queue delay sum
-  std::uint64_t delaySum{};
 
-  // bytes in queue sum
-  std::uint64_t bytesSum{};
 
-  // packets in queue  sum
-  std::uint64_t packetsSum{};
-
-  size_t count{};
-
-  // since there may be multiple Q's, get the overall avg
-  for(const auto & metric : pMessage->getQueueMetrics())
-    {
-      delaySum += metric.getAvgDelay().count(); // in useconds
-      packetsSum += metric.getCurrentDepth();
-      
-      ++count;
-
-      auto depth = metric.getCurrentDepth();
-      auto queueid = metric.getQueueId();
-      auto capacity = metric.getMaxSize();
-
-      LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-                              INFO_LEVEL,
-                              "SHIMI %03hu %s::%s #Q: %u, Max Size: %u, current depth: %u", 
-                              id_, __MODULE__, __func__, queueid, capacity, depth);
-
-      if(depth/capacity > 0.8)
-        {
-          std::stringstream ss;
-          ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A password -x DES -X mypassword -l authPriv -c public 10.100." << id_ << ".254 42 .1.3.6.1.4.1.8072.2.255.1.0  SNMPv2-MIB::sysLocation.0 s \"Queue #" << queueid <<" Over 80%\"" ;
-          std::string str = ss.str();
-          const char* command = str.c_str();
-          system(command);
-        }
-
-    }
-  if(count)
-    {
-      avgQueueDelayMicroseconds_ = delaySum / count;
-    }
-  else
-    {
-      avgQueueDelayMicroseconds_ = 0;
-    }
-
-    redisContext *c;
+      redisContext *c;
     redisReply *reply;
     std::string str_address = addressRedis_.str(false).c_str();
     std::uint32_t myaddress = inet_addr(str_address.c_str());
@@ -1111,8 +968,126 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
     }
     // connected to redis successfully
     else{
+  
+      // avg queue delay sum
+      std::uint64_t delaySum{};
+
+      // bytes in queue sum
+      std::uint64_t bytesSum{};
+
+      // packets in queue  sum
+      std::uint64_t packetsSum{};
+
+      size_t count{};
+
+      // since there may be multiple Q's, get the overall avg
+      for(const auto & metric : pMessage->getQueueMetrics())
+        {
+          delaySum += metric.getAvgDelay().count(); // in useconds
+          packetsSum += metric.getCurrentDepth();
+          
+          ++count;
+
+          auto depth = metric.getCurrentDepth();
+          auto queueid = metric.getQueueId();
+          auto capacity = metric.getMaxSize();
+
+          LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+                                  INFO_LEVEL,
+                                  "SHIMI %03hu %s::%s #Q: %u, Max Size: %u, current depth: %u", 
+                                  id_, __MODULE__, __func__, queueid, capacity, depth);
+
+          if(depth/capacity > 0.8 && queueid == 0)
+            {
+              // Get ip Address, where trap should be sent
+              std::string mibpktq = std::string(_PLACE_) + "TRAP_IP";
+              std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
+              const char *pktqkey = strkeypktq.c_str();
+              reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
+              std::string TRAP_IP = reply->str;
+              freeReplyObject(reply);
+              // Get ip Port, where trap should be sent
+              mibpktq = std::string(_PLACE_) + "TRAP_PORT";
+              strkeypktq = std::to_string(id_).c_str() + mibpktq;
+              pktqkey = strkeypktq.c_str();
+              reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
+              std::string TRAP_PORT = reply->str;
+              freeReplyObject(reply);
+              std::stringstream ss;
+              ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A password -x DES -X mypassword -l authPriv -c public " << TRAP_IP << ":" << TRAP_PORT << " -M SNMPv2-SMI::enterprises SNMPv2-SMI::enterprises int 1";
+              std::string str = ss.str();
+              const char* command = str.c_str();
+              system(command);
+
+
+              mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
+              strkeypktq = std::to_string(id_).c_str() + mibpktq;
+              pktqkey = strkeypktq.c_str();
+              const char *strvalpktq = "1";
+              reply = static_cast<redisReply*>(redisCommand(c,"SET %s %s", pktqkey, strvalpktq));
+              freeReplyObject(reply);
+              LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+                                            INFO_LEVEL, 
+                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s, VAL: %s",
+                                            id_, __MODULE__, __func__, reply->str, strvalpktq);
+            }
+
+          if(depth/capacity < 0.2 && queueid == 0)
+            {
+              std::string mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
+              std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
+              const char *pktqkey = strkeypktq.c_str();
+              reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
+              std::string GLOBAL_X_Off = reply->str;
+              freeReplyObject(reply);
+              if (!(GLOBAL_X_Off.compare("1")))
+              {
+                // Get ip Address, where trap should be sent
+                mibpktq = std::string(_PLACE_) + "TRAP_IP";
+                strkeypktq = std::to_string(id_).c_str() + mibpktq;
+                pktqkey = strkeypktq.c_str();
+                reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
+                std::string TRAP_IP = reply->str;
+                freeReplyObject(reply);
+                // Get ip Port, where trap should be sent
+                mibpktq = std::string(_PLACE_) + "TRAP_PORT";
+                strkeypktq = std::to_string(id_).c_str() + mibpktq;
+                pktqkey = strkeypktq.c_str();
+                reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
+                std::string TRAP_PORT = reply->str;
+                freeReplyObject(reply);
+                std::stringstream ss;
+                ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A password -x DES -X mypassword -l authPriv -c public " << TRAP_IP << ":" << TRAP_PORT << " -M SNMPv2-SMI::enterprises SNMPv2-SMI::enterprises int 0";
+                std::string str = ss.str();
+                const char* command = str.c_str();
+                system(command);
+
+
+                mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
+                strkeypktq = std::to_string(id_).c_str() + mibpktq;
+                pktqkey = strkeypktq.c_str();
+                const char *strvalpktq = "0";
+                reply = static_cast<redisReply*>(redisCommand(c,"SET %s %s", pktqkey, strvalpktq));
+                freeReplyObject(reply);
+                LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+                                            INFO_LEVEL, 
+                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s, VAL: %s",
+                                            id_, __MODULE__, __func__, reply->str, strvalpktq);
+              }
+            }
+
+        }
+      if(count)
+        {
+          avgQueueDelayMicroseconds_ = delaySum / count;
+        }
+      else
+        {
+          avgQueueDelayMicroseconds_ = 0;
+        }
+
       // SET packets in Qs
-      std::string mibpktq = ".1.3.6.1.4.1.16215.1.24.1.4.8";
+      std::string mibpktq = std::string(_PLACE_) + "PACKETS_IN_TX_QUEUE"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.8"
       std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
       const char *pktqkey = strkeypktq.c_str();
       const char *strvalpktq = (std::to_string(packetsSum)).c_str();
@@ -1177,156 +1152,19 @@ LLSNMP::DlepMac EMANE::ModemService::getEthernetAddress_i(const EMANE::NEMId nbr
 
 
 void EMANE::ModemService::send_peer_update_i()
-{
-  // if(pDlepClient_)
-  //   {
-  //     LLSNMP::DataItems metrics{};
-
-  //     load_datarate_metrics_i(metrics, selfMetrics_);
-
-  //     const bool result = pDlepClient_->send_peer_update(metrics);
-
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             DEBUG_LEVEL,
-  //                             "SHIMI %03hu %s::%s entries %zu, result %s", 
-  //                             id_, __MODULE__, __func__, 
-  //                             metrics.size(), 
-  //                             result ? "success" : "failed");
-  //   }
-  // else
-  //   {
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             ERROR_LEVEL,
-  //                             "SHIMI %03hu %s::%s DlepClient not ready", 
-  //                             id_, __MODULE__, __func__);
-  //   }
-}
+{}
 
 
 void EMANE::ModemService::send_destination_update_i(
      const EMANE::ModemService::NeighborInfo & nbrInfo, 
      bool isNewNbr)
-{
-  // if(pDlepClient_)
-  //   {
-  //     LLSNMP::DataItems metrics{};
-
-  //     load_destination_metrics_i(metrics, nbrInfo.metrics_);
-
-  //     bool result{};
-
-  //     if(isNewNbr)
-  //       {
-  //         // dest up
-  //         result = pDlepClient_->send_destination_up(nbrInfo.macAddress_, metrics);
-  //       }
-  //     else
-  //       {
-  //         // dest update
-  //         result = pDlepClient_->send_destination_update(nbrInfo.macAddress_, metrics);
-  //       }
-
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             DEBUG_LEVEL,
-  //                             "SHIMI %03hu %s::%s %s mac %s, entries %zu, result %s", 
-  //                             id_, __MODULE__, __func__, 
-  //                             isNewNbr ? "new" : "existing",
-  //                             nbrInfo.macAddress_.to_string().c_str(),
-  //                             metrics.size(), 
-  //                             result ? "success" : "failed");
-  //   }
-  // else
-  //   {
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             ERROR_LEVEL,
-  //                             "SHIMI %03hu %s::%s DlepClient not ready", 
-  //                             id_, __MODULE__, __func__);
-  //   }
-}
+{}
 
 
 
 void EMANE::ModemService::send_destination_down_i(const EMANE::ModemService::NeighborInfo & nbrInfo)
-{
-  // if(pDlepClient_)
-  //   {
-  //     const bool result = pDlepClient_->send_destination_down(nbrInfo.macAddress_);
+{}
 
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             DEBUG_LEVEL,
-  //                             "SHIMI %03hu %s::%s mac %s, result %s", 
-  //                             id_, __MODULE__, __func__, 
-  //                             nbrInfo.macAddress_.to_string().c_str(),
-  //                             result ? "success" : "failed");
-  //   }
-  // else
-  //   {
-  //     LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-  //                             ERROR_LEVEL,
-  //                             "SHIMI %03hu %s::%s DlepClient not ready", 
-  //                             id_, __MODULE__, __func__);
-  //   }
-}
-
-
-
-// void EMANE::ModemService::load_datarate_metrics_i(LLSNMP::DataItems & dataItems, const EMANE::DataRateMetricInfo & values)
-// {
-//    // max data rate Rx
-//    dataItems.push_back(getDataItem_i(values.idMaxDataRateRx, values.valMaxDataRateRx));
-
-//    // max data rate Tx
-//    dataItems.push_back(getDataItem_i(values.idMaxDataRateTx, values.valMaxDataRateTx));
-
-//    // curr data rate Rx
-//    dataItems.push_back(getDataItem_i(values.idCurrentDataRateRx, values.valCurrentDataRateRx));
-
-//    // curr data rate Tx
-//    dataItems.push_back(getDataItem_i(values.idCurrentDataRateTx, values.valCurrentDataRateTx));
-
-//    for(auto & item : dataItems)
-//     {
-//       LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-//                        DEBUG_LEVEL,
-//                        "SHIMI %03hu %s::%s item metric [%s]", 
-//                        id_, __MODULE__, __func__, 
-//                        item.to_string().c_str());
-//     }
-// }
-
-
-
-// void EMANE::ModemService::load_destination_metrics_i(LLSNMP::DataItems & dataItems, const EMANE::DestinationMetricInfo & values)
-// {
-//    // load data rate values
-//    load_datarate_metrics_i(dataItems, values.dataRateInfo);
-
-//    // latency
-//    dataItems.push_back(getDataItem_i(values.idLatency, values.valLatency));
-
-//    // resources 
-//    dataItems.push_back(getDataItem_i(values.idResources, values.valResources));
-
-//    // rlq Rx
-//    dataItems.push_back(getDataItem_i(values.idRLQRx, values.valRLQRx));
-
-//    // rlq Tx
-//    dataItems.push_back(getDataItem_i(values.idRLQTx, values.valRLQTx));
-
-// #if 0
-//    // adv lan example
-//    dataItems.push_back(getDataItem_i(values.idIPv4AdvLan, values.valIPv4AdvLan));
-// #endif
-   
-//    for(auto & item : dataItems)
-//     {
-//        LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-//                                DEBUG_LEVEL,
-//                                "SHIMI %03hu %s::%s item metric [%s]", 
-//                                id_, __MODULE__, __func__, 
-//                                item.to_string().c_str());
-//     }
-// }
 
 
 int EMANE::ModemService::getRLQ_i(const std::uint16_t nbr, 
