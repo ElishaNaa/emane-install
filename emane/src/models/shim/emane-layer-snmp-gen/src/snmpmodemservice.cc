@@ -1028,8 +1028,8 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
               freeReplyObject(reply);
               LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
                                             INFO_LEVEL, 
-                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s, VAL: %s",
-                                            id_, __MODULE__, __func__, reply->str, strvalpktq);
+                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s",
+                                            id_, __MODULE__, __func__, strvalpktq);
             }
 
           if(depth/capacity < 0.2 && queueid == 0)
@@ -1071,8 +1071,8 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
                 freeReplyObject(reply);
                 LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
                                             INFO_LEVEL, 
-                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s, VAL: %s",
-                                            id_, __MODULE__, __func__, reply->str, strvalpktq);
+                                            "SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s",
+                                            id_, __MODULE__, __func__, strvalpktq);
               }
             }
 
