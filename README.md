@@ -11,14 +11,16 @@ openvswitch-controller
 ```
 On machine that you want to be a command center you need also to install 
 ```
-bcrypt
-cffi
-cryptography
-enum34
-paramiko
-py2-ipaddress
-pysftp
-setuptools
+sudo apt-get install python-dev libxml2-dev libxslt-dev libffi-dev libssl-dev zlib1g-dev python-pip
+sudo pip install \
+bcrypt \
+cffi \
+cryptography \
+enum34 \
+paramiko \
+py2-ipaddress \
+pysftp \
+setuptools \
 testresources
 ```
 
