@@ -1,11 +1,7 @@
 #!/bin/bash
 
-<<<<<<< HEAD
 PLACE="_WAVE_FROM_ROOT_"
-=======
-_PLACE_="_WAVE_FROM_ROOT_";
 
->>>>>>> a34d68f4ab4668602f43f31a0f4069d2eb37c04d
 getId()
 {
   id=$(tr -d "modem-" <<< $(hostname))
@@ -46,8 +42,6 @@ tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH1 $VALUE)
 #Power ch1
 VALUE=2 
 tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH1 $VALUE)   
-
-<<<<<<< HEAD
 
 #WAVE_FORM_TYPE_CH1
 VALUE=5  
@@ -177,7 +171,6 @@ tmp=$(redis-cli -h $listen  SET $id$PLACE"FREQUENCY_CH2" $VALUE)
 VALUE=1  
 tmp=$(redis-cli -h $listen  SET $id$PLACE"POWER_LEVEL_CH2" $VALUE)  
   
-=======
 #Network Id
 VALUE=7  
 tmp=$(redis-cli -h $listen  SET $id$_PLACE_NET_ID $VALUE)
@@ -274,5 +267,4 @@ tmp=$(redis-cli -h $listen  SET $id$_PLACE_FREQUENCY_CH2 $VALUE)
 VALUE=2 
 tmp=$(redis-cli -h $listen  SET $id$_PLACE_POWER_LEVEL_CH2 $VALUE) 
 
->>>>>>> a34d68f4ab4668602f43f31a0f4069d2eb37c04d
 exit 0
