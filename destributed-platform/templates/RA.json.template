@@ -15,7 +15,7 @@
 		},
         {
 			"name": "image",
-			"val": "fullsimdoc"
+			"val": "@IMAGE@"
 		}
 	],
 	"internalList":
