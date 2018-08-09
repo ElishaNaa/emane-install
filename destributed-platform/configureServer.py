@@ -195,7 +195,7 @@ class distribToServers():
 
             sftp = paramiko.SFTPClient.from_transport(transport)
             sftp.chdir(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType)
-            sftp.put(dockerImage, NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/' + dockerImage)  # copy all files from host to server
+            sftp.put(EMANE_HOST_PATH + 'Images', NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/' + dockerImage)  # copy all files from host to server
             sftp.chmod(NODES_DIRECTORY_PATH_SERVER + i_TransmissionType + '/' + dockerImage, 0777)  # chmod the files
             os.remove(EMANE_HOST_PATH + 'Images')
 
