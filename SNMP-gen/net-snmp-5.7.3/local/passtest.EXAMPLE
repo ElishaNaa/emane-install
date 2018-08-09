@@ -1,0 +1,915 @@
+#!/bin/bash
+
+PLACE=".1.3.6.1.4.1.16215.11.24.5"
+macNeighborsCh1Entry=".2.5.1.1.1"
+routesCh1Entry=".2.5.1.2.1"
+NeighboursEntry=".2.10.2.15.1"
+MemebersEntry=".2.10.2.16.1"
+macNeighborsCh2Entry=".3.5.1.1.1"
+routesCh2Entry=".3.5.1.2.1"
+
+getId()
+{
+	id=$(tr -d "modem-" <<< $(hostname))
+	echo $id
+}
+
+getNumOfMacNeighborsCh1()
+{
+ 	id=$(getId)
+        tmp=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH1_"* -c) # $id_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH1_*
+	echo $tmp
+}
+
+getNumOfRoutesCh1()
+{
+ 	id=$(getId)
+        tmp=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_ROUTES_INDEX_CH1_"* -c) # $id_WAVE_FROM_ROOT_ROUTES_INDEX_CH1_*
+	echo $tmp
+}
+
+getNumOfNeighbours()
+{
+ 	id=$(getId)
+        tmp=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_NEIGHBOUR_MAC_ADDRESS_"* -c) # $id_WAVE_FROM_ROOT_NEIGHBOUR_MAC_ADDRESS_*
+	echo $tmp
+}
+
+getNumOfMembers()
+{
+	id=$(getId)
+        var=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_MEMBERS_MAC_ADDRESS_"* -c) # $id_WAVE_FROM_ROOT_MEMBER_MAC_ADDRESS_*
+	echo $var
+}
+
+getNumOfMacNeighborsCh2()
+{
+ 	id=$(getId)
+        tmp=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH2_"* -c) # $id_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH2_*
+	echo $tmp
+}
+
+getNumOfRoutesCh2()
+{
+ 	id=$(getId)
+        tmp=$(redis-cli -h $listen KEYS "*" | grep $id"_WAVE_FROM_ROOT_ROUTES_INDEX_CH2_"* -c) # $id_WAVE_FROM_ROOT_ROUTES_INDEX_CH2_*
+	echo $tmp
+}
+
+
+
+listen=@flag for ipAddressRedis@
+id=$(getId)
+REQ="$2"                         # Requested OID
+NUM_OF_MAC_NEIGHBOURS_CH1=$(getNumOfMacNeighborsCh1)
+NUM_OF_ROUTES_CH1=$(getNumOfRoutesCh1)
+NUM_OF_NEIGHBOURS=$(getNumOfNeighbours)
+NUM_OF_MEMBERS=$(getNumOfMembers)
+NUM_OF_MAC_NEIGHBOURS_CH2=$(getNumOfMacNeighborsCh2)
+NUM_OF_ROUTES_CH2=$(getNumOfRoutesCh2)
+
+
+#  Process SET requests by simply logging the assigned value
+#      Note that such "assignments" are not persistent,
+#      nor is the syntax or requested value validated
+#  
+if [ "$1" = "-s" ]; then
+  REQ=$2
+  VALUE=$4
+  flag=0
+  PRE_KEY=$id"_WAVE_FROM_ROOT_"
+  KEY=""
+  #set the current parameters channel number
+  if [ $REQ = $PLACE.2.2.5 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 9 ]; then 
+	  flag=1 
+	  KEY="PRESET_NUMBER_CH1"
+      fi 
+  fi
+  #set the current parameters channel bank number
+  if [ $REQ = $PLACE.2.2.6 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 9 ]; then 
+	  flag=1 
+	  KEY="PRESET_BANK_NUMBER_CH1"
+      fi 
+  fi
+  #frequencyCh1, set the Frequency for transmission in fixed frequency modes
+  if [ $REQ = $PLACE.2.3.1 ]; then
+      if [ $VALUE -ge 30000 -a $VALUE -le 511975 ]; then 
+	  flag=1 
+	  KEY="FREQUENCY_CH1"
+      fi 
+  fi
+  #powerLevelCh1, set transmission power level
+  if [ $REQ = $PLACE.2.3.2 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 2 ]; then 
+	  flag=1 
+	  KEY="POWER_LEVEL_CH1"
+      fi 
+  fi
+
+################ macNeighborsCh1Entry HERE ###############
+################ routesCh1Entry HERE ###############
+
+  #set network Id
+  if [ $REQ = $PLACE.2.10.1.11 ]; then
+	flag=1 
+	KEY="NET_ID"
+  fi
+  #set TDMA Cycle Type
+  if [ $REQ = $PLACE.2.10.1.12 ]; then
+	flag=1 
+	KEY="TDMA_CYCLE_TYPE"
+  fi
+  #set ControlLoopPriority
+  if [ $REQ = $PLACE.2.10.1.13 ]; then
+	flag=1 
+	KEY="CONTROL_LOOP_PRIORITY"
+  fi
+  #set PacketLifeTime
+  if [ $REQ = $PLACE.2.10.1.14 ]; then
+	flag=1 
+	KEY="PACKET_LIFE_TIME"
+  fi
+  #set Router Load
+  if [ $REQ = $PLACE.2.10.2.5 ]; then
+	flag=1 
+	KEY="LOAD_ROUTER"
+  fi
+  #set Ip Address, where trap should be sent
+  if [ $REQ = $PLACE.2.10.2.12 ]; then
+	flag=1 
+	KEY="TRAP_IP"
+  fi
+  #set IP port, where trap should be sent
+  if [ $REQ = $PLACE.2.10.2.13 ]; then
+	flag=1
+	KEY="TRAP_PORT" 
+  fi
+
+################ NeighboursEntry HERE ###############
+################ MemebersEntry HERE ###############
+
+  #set the current parameters channel number
+  if [ $REQ = $PLACE.3.2.5 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 9 ]; then 
+	  flag=1 
+	  KEY="PRESET_NUMBER_CH2"
+      fi 
+  fi
+  #set the current parameters channel bank number
+  if [ $REQ = $PLACE.3.2.6 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 9 ]; then 
+	  flag=1 
+	  KEY="PRESET_NUMBER_CH2"
+      fi 
+  fi
+  #frequencyCh2, set the Frequency for transmission in fixed frequency modes
+  if [ $REQ = $PLACE.3.3.1 ]; then
+      if [ $VALUE -ge 30000 -a $VALUE -le 511975 ]; then 
+	  flag=1 
+	  KEY="FREQUENCY_CH2"
+      fi 
+  fi
+  #powerLevelCh2, set transmission power level
+  if [ $REQ = $PLACE.3.3.2 ]; then
+      if [ $VALUE -ge 0 -a $VALUE -le 2 ]; then 
+	  flag=1 
+	  KEY="POWER_LEVEL_CH2"
+      fi 
+  fi
+
+################ macNeighborsCh2Entry HERE ###############
+################ routesCh2Entry HERE ###############
+
+  if [ $flag -eq 1 ]; then
+  tmp=$(redis-cli -h $listen SET $PRE_KEY$KEY $VALUE) 
+  
+  else
+      echo "Invalid value" >> /tmp/error_from_passtest
+  fi
+  exit 0
+fi
+
+#
+#  GETNEXT requests ("-n") - determine next valid instance
+#
+# run over all optional places, and return the next place in the order.
+if [ "$1" = "-n" ]; then
+ RET=none
+  case "$REQ" in
+    $PLACE|				\
+    $PLACE.0|			\
+    $PLACE.0.*|			\
+    $PLACE.1|			\
+    $PLACE.1.*|			\
+    $PLACE.2.1|		    \
+    $PLACE.2.1.*|		\
+    $PLACE.2.2)		  RET=$PLACE.2.2.1 ;;
+    $PLACE.2.2.1)     RET=$PLACE.2.2.2 ;;
+    $PLACE.2.2.2)     RET=$PLACE.2.2.3 ;;
+    $PLACE.2.2.3)     RET=$PLACE.2.2.4 ;;
+    $PLACE.2.2.4)     RET=$PLACE.2.2.5 ;;
+    $PLACE.2.2.5)     RET=$PLACE.2.2.6 ;;
+    $PLACE.2.2.6)     RET=$PLACE.2.3.1 ;;
+    $PLACE.2.3.1)     RET=$PLACE.2.3.2 ;;
+  esac
+
+  for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH1; i++ ))
+  do
+
+	if [ $REQ = $PLACE.2.3.2 ]; then
+		RET=$PLACE$macNeighborsCh1Entry.1.1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.1.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			RET=$PLACE$macNeighborsCh1Entry.2.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.1.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.2.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			RET=$PLACE$macNeighborsCh1Entry.3.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.2.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.3.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			RET=$PLACE$macNeighborsCh1Entry.4.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.3.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.4.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			RET=$PLACE$macNeighborsCh1Entry.5.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.4.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.5.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			RET=$PLACE$macNeighborsCh1Entry.6.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.5.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH1
+
+	elif [ $REQ = $PLACE$macNeighborsCh1Entry.6.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH1 ]; then
+			break
+		fi
+		RET=$PLACE$macNeighborsCh1Entry.6.$(($i+1))
+	fi
+  done
+
+  if [ $NUM_OF_MAC_NEIGHBOURS_CH1 -eq 0 ];then
+  	next_hop=$PLACE.2.3.2
+  else 
+  	next_hop=$PLACE$macNeighborsCh1Entry.6.$NUM_OF_MAC_NEIGHBOURS_CH1
+  fi
+
+  for (( i=1; i<=$NUM_OF_ROUTES_CH1; i++ ))
+  do
+
+	if [ $REQ = $next_hop ]; then
+		RET=$PLACE$routesCh1Entry.1.1
+
+	elif [ $REQ = $PLACE$routesCh1Entry.1.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH1 ]; then
+			RET=$PLACE$routesCh1Entry.2.1
+			break
+		fi
+		RET=$PLACE$routesCh1Entry.1.$(($i+1))
+		i=$NUM_OF_ROUTES_CH1
+
+	elif [ $REQ = $PLACE$routesCh1Entry.2.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH1 ]; then
+			RET=$PLACE$routesCh1Entry.3.1
+			break
+		fi
+		RET=$PLACE$routesCh1Entry.2.$(($i+1))
+		i=$NUM_OF_ROUTES_CH1
+
+	elif [ $REQ = $PLACE$routesCh1Entry.3.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH1 ]; then
+			RET=$PLACE$routesCh1Entry.4.1
+			break
+		fi
+		RET=$PLACE$routesCh1Entry.3.$(($i+1))
+		i=$NUM_OF_ROUTES_CH1
+
+	elif [ $REQ = $PLACE$routesCh1Entry.4.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH1 ]; then
+			RET=$PLACE$routesCh1Entry.5.1
+			break
+		fi
+		RET=$PLACE$routesCh1Entry.4.$(($i+1))
+		i=$NUM_OF_ROUTES_CH1
+
+	elif [ $REQ = $PLACE$routesCh1Entry.5.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH1 ]; then
+			break
+		fi
+		RET=$PLACE$routesCh1Entry.5.$(($i+1))
+	fi
+  done
+
+  if [ $NUM_OF_ROUTES_CH1 -eq 0 -a $NUM_OF_MAC_NEIGHBOURS_CH1 -ne 0 ];then
+  	next_hop=$PLACE$macNeighborsCh1Entry.6.$NUM_OF_MAC_NEIGHBOURS_CH1
+  elif [ $NUM_OF_ROUTES_CH1 -ne 0 ];then
+  	next_hop=$PLACE$routesCh1Entry.5.$NUM_OF_ROUTES_CH1
+  fi
+
+
+	case "$REQ" in
+    $next_hop)     								RET=$PLACE.2.10.1.11 ;;
+    $PLACE.2.10.1.11) 							RET=$PLACE.2.10.1.12 ;;
+    $PLACE.2.10.1.12) 							RET=$PLACE.2.10.1.13 ;;
+    $PLACE.2.10.1.13) 							RET=$PLACE.2.10.1.14 ;;
+    $PLACE.2.10.1.14) 							RET=$PLACE.2.10.2.1 ;;
+    $PLACE.2.10.2.1) 							RET=$PLACE.2.10.2.3 ;;
+    $PLACE.2.10.2.3) 							RET=$PLACE.2.10.2.4 ;;
+    $PLACE.2.10.2.4) 							RET=$PLACE.2.10.2.5 ;;
+    $PLACE.2.10.2.5) 							RET=$PLACE.2.10.2.6 ;;
+    $PLACE.2.10.2.6) 							RET=$PLACE.2.10.2.7 ;;
+    $PLACE.2.10.2.7) 							RET=$PLACE.2.10.2.8 ;;
+    $PLACE.2.10.2.8) 							RET=$PLACE.2.10.2.9 ;;
+    $PLACE.2.10.2.9) 							RET=$PLACE.2.10.2.10 ;;
+    $PLACE.2.10.2.10) 							RET=$PLACE.2.10.2.11 ;;
+    $PLACE.2.10.2.11) 							RET=$PLACE.2.10.2.12 ;;
+    $PLACE.2.10.2.12) 							RET=$PLACE.2.10.2.13 ;;
+
+  esac
+
+  # NeighboursEntry sequence
+  for (( i=1; i<=$NUM_OF_NEIGHBOURS; i++ ))
+  do
+
+	if [ $REQ = $PLACE.2.10.2.13 ]; then
+		RET=$PLACE$NeighboursEntry.1.1
+
+	elif [ $REQ = $PLACE$NeighboursEntry.1.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			RET=$PLACE$NeighboursEntry.2.1
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.1.$(($i+1))
+		i=$NUM_OF_NEIGHBOURS
+
+	elif [ $REQ = $PLACE$NeighboursEntry.2.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			RET=$PLACE$NeighboursEntry.3.1
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.2.$(($i+1))
+		i=$NUM_OF_NEIGHBOURS
+
+	elif [ $REQ = $PLACE$NeighboursEntry.3.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			RET=$PLACE$NeighboursEntry.4.1
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.3.$(($i+1))
+		i=$NUM_OF_NEIGHBOURS
+
+	elif [ $REQ = $PLACE$NeighboursEntry.4.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			RET=$PLACE$NeighboursEntry.5.1
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.4.$(($i+1))
+		i=$NUM_OF_NEIGHBOURS
+
+	elif [ $REQ = $PLACE$NeighboursEntry.5.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			RET=$PLACE$NeighboursEntry.6.1
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.5.$(($i+1))
+		i=$NUM_OF_NEIGHBOURS
+
+	elif [ $REQ = $PLACE$NeighboursEntry.6.$i ]; then
+		if [ $i = $NUM_OF_NEIGHBOURS ]; then
+			break
+		fi
+		RET=$PLACE$NeighboursEntry.6.$(($i+1))
+	fi
+  done
+
+  if [ $NUM_OF_NEIGHBOURS -eq 0 ];then
+  	next_hop=$PLACE.2.10.2.13
+  else 
+  	next_hop=$PLACE$NeighboursEntry.6.$NUM_OF_NEIGHBOURS
+  fi
+
+# MembersEntry sequence
+ for (( i=1; i<=$NUM_OF_MEMBERS; i++ ))
+  do
+
+	if [ $REQ = $next_hop ]; then
+		RET=$PLACE$MemebersEntry.1.1
+
+	elif [ $REQ = $PLACE$MemebersEntry.1.$i ]; then
+		if [ $i = $NUM_OF_MEMBERS ]; then
+			RET=$PLACE$MemebersEntry.2.1
+			break
+		fi
+		RET=$PLACE$MemebersEntry.1.$(($i+1))
+		i=$NUM_OF_MEMBERS
+
+	elif [ $REQ = $PLACE$MemebersEntry.2.$i ]; then
+		if [ $i = $NUM_OF_MEMBERS ]; then
+			RET=$PLACE$MemebersEntry.3.1
+			break
+		fi
+		RET=$PLACE$MemebersEntry.2.$(($i+1))
+		i=$NUM_OF_MEMBERS
+
+	elif [ $REQ = $PLACE$MemebersEntry.3.$i ]; then
+		if [ $i = $NUM_OF_MEMBERS ]; then
+			RET=$PLACE$MemebersEntry.4.1
+			break
+		fi
+		RET=$PLACE$MemebersEntry.3.$(($i+1))
+		i=$NUM_OF_MEMBERS
+
+	elif [ $REQ = $PLACE$MemebersEntry.4.$i ]; then
+		if [ $i = $NUM_OF_MEMBERS ]; then
+			break
+		fi
+		RET=$PLACE$MemebersEntry.4.$(($i+1))
+	fi
+  done
+
+  if [ $NUM_OF_MEMBERS -eq 0 -a $NUM_OF_NEIGHBOURS -ne 0 ];then
+  	next_hop=$PLACE$NeighboursEntry.6.$NUM_OF_NEIGHBOURS
+  elif [ $NUM_OF_MEMBERS -ne 0 ];then
+  	next_hop=$PLACE$MemebersEntry.4.$NUM_OF_MEMBERS
+  fi
+
+	case "$REQ" in
+    $next_hop) 		  RET=$PLACE.3.2.1 ;;
+    $PLACE.3.2.1)     RET=$PLACE.3.2.2 ;;
+    $PLACE.3.2.2)     RET=$PLACE.3.2.3 ;;
+    $PLACE.3.2.3)     RET=$PLACE.3.2.4 ;;
+    $PLACE.3.2.4)     RET=$PLACE.3.2.5 ;;
+    $PLACE.3.2.5)     RET=$PLACE.3.2.6 ;;
+    $PLACE.3.2.6)     RET=$PLACE.3.3.1 ;;
+    $PLACE.3.3.1)     RET=$PLACE.3.3.2 ;;
+
+  esac
+
+  for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH2; i++ ))
+  do
+
+	if [ $REQ = $PLACE.3.3.2 ]; then
+		RET=$PLACE$macNeighborsCh2Entry.1.1
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.1.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			RET=$PLACE$macNeighborsCh2Entry.2.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.1.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH2
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.2.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			RET=$PLACE$macNeighborsCh2Entry.3.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.2.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH2
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.3.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			RET=$PLACE$macNeighborsCh2Entry.4.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.3.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH2
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.4.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			RET=$PLACE$macNeighborsCh2Entry.5.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.4.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH2
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.5.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			RET=$PLACE$macNeighborsCh2Entry.6.1
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.5.$(($i+1))
+		i=$NUM_OF_MAC_NEIGHBOURS_CH2
+
+	elif [ $REQ = $PLACE$macNeighborsCh2Entry.6.$i ]; then
+		if [ $i = $NUM_OF_MAC_NEIGHBOURS_CH2 ]; then
+			break
+		fi
+		RET=$PLACE$macNeighborsCh2Entry.6.$(($i+1))
+	fi
+  done
+
+  if [ $NUM_OF_MAC_NEIGHBOURS_CH2 -eq 0 ];then
+  	next_hop=$PLACE.3.3.2
+  else 
+  	next_hop=$PLACE$macNeighborsCh2Entry.6.$NUM_OF_MAC_NEIGHBOURS_CH2
+  fi
+
+  for (( i=1; i<=$NUM_OF_ROUTES_CH2; i++ ))
+  do
+
+	if [ $REQ = $next_hop ]; then
+		RET=$PLACE$routesCh2Entry.1.1
+
+	elif [ $REQ = $PLACE$routesCh2Entry.1.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH2 ]; then
+			RET=$PLACE$routesCh2Entry.2.1
+			break
+		fi
+		RET=$PLACE$routesCh2Entry.1.$(($i+1))
+		i=$NUM_OF_ROUTES_CH2
+
+	elif [ $REQ = $PLACE$routesCh2Entry.2.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH2 ]; then
+			RET=$PLACE$routesCh2Entry.3.1
+			break
+		fi
+		RET=$PLACE$routesCh2Entry.2.$(($i+1))
+		i=$NUM_OF_ROUTES_CH2
+
+	elif [ $REQ = $PLACE$routesCh2Entry.3.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH2 ]; then
+			RET=$PLACE$routesCh2Entry.4.1
+			break
+		fi
+		RET=$PLACE$routesCh2Entry.3.$(($i+1))
+		i=$NUM_OF_ROUTES_CH2
+
+	elif [ $REQ = $PLACE$routesCh2Entry.4.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH2 ]; then
+			RET=$PLACE$routesCh2Entry.5.1
+			break
+		fi
+		RET=$PLACE$routesCh2Entry.4.$(($i+1))
+		i=$NUM_OF_ROUTES_CH2
+
+	elif [ $REQ = $PLACE$routesCh2Entry.5.$i ]; then
+		if [ $i = $NUM_OF_ROUTES_CH2 ]; then
+			break
+		fi
+		RET=$PLACE$routesCh2Entry.5.$(($i+1))
+	fi
+  done
+
+ if [ $RET = none ]; then
+ 	exit 0
+ fi
+fi
+
+#
+#  GET requests - check for valid instance
+#
+# check if the REQ is an exist PLACE
+
+if [ "$1" = "-g" ]; then 
+
+ isSeqence=$0
+
+#check if seqence
+ for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH1; i++ ))
+  do
+	if [ $REQ = $PLACE$macNeighborsCh1Entry.1.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh1Entry.2.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh1Entry.3.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh1Entry.4.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh1Entry.5.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh1Entry.6.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+
+ for (( i=1; i<=$NUM_OF_ROUTES_CH1; i++ ))
+  do
+	if [ $REQ = $PLACE$routesCh1Entry.1.$i ] ||
+	   [ $REQ = $PLACE$routesCh1Entry.2.$i ] ||
+	   [ $REQ = $PLACE$routesCh1Entry.3.$i ] ||
+	   [ $REQ = $PLACE$routesCh1Entry.4.$i ] ||
+	   [ $REQ = $PLACE$routesCh1Entry.5.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+
+ for (( i=1; i<=$NUM_OF_NEIGHBOURS; i++ ))
+  do
+	if [ $REQ = $PLACE$NeighboursEntry.1.$i ] ||
+	   [ $REQ = $PLACE$NeighboursEntry.2.$i ] ||
+	   [ $REQ = $PLACE$NeighboursEntry.3.$i ] ||
+	   [ $REQ = $PLACE$NeighboursEntry.4.$i ] ||
+	   [ $REQ = $PLACE$NeighboursEntry.5.$i ] ||
+	   [ $REQ = $PLACE$NeighboursEntry.6.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+
+ for (( i=1; i<=$NUM_OF_MEMBERS; i++ ))
+  do
+	if [ $REQ = $PLACE$MemebersEntry.1.$i ] ||
+	   [ $REQ = $PLACE$MemebersEntry.2.$i ] ||
+	   [ $REQ = $PLACE$MemebersEntry.3.$i ] ||
+	   [ $REQ = $PLACE$MemebersEntry.4.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+
+ for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH2; i++ ))
+  do
+	if [ $REQ = $PLACE$macNeighborsCh2Entry.1.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh2Entry.2.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh2Entry.3.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh2Entry.4.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh2Entry.5.$i ] ||
+	   [ $REQ = $PLACE$macNeighborsCh2Entry.6.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+ for (( i=1; i<=$NUM_OF_ROUTES_CH2; i++ ))
+  do
+	if [ $REQ = $PLACE$routesCh2Entry.1.$i ] ||
+	   [ $REQ = $PLACE$routesCh2Entry.2.$i ] ||
+	   [ $REQ = $PLACE$routesCh2Entry.3.$i ] ||
+	   [ $REQ = $PLACE$routesCh2Entry.4.$i ] ||
+	   [ $REQ = $PLACE$routesCh2Entry.5.$i ]; then
+		RET=$REQ
+		isSeqence=$1
+	fi
+  done
+
+#if not seqence
+if [ "$isSeqence" = "$0" ]; then 
+  case "$REQ" in
+    $PLACE.2.2.1|     \
+    $PLACE.2.2.2|     \
+    $PLACE.2.2.3|     \
+    $PLACE.2.2.4|     \
+    $PLACE.2.2.5|     \
+    $PLACE.2.2.6|     \
+    $PLACE.2.3.1|     \
+    $PLACE.2.3.2|     \
+    $PLACE.2.10.1.11| \
+    $PLACE.2.10.1.12| \
+    $PLACE.2.10.1.13| \
+    $PLACE.2.10.1.14| \
+    $PLACE.2.10.2.1|  \
+    $PLACE.2.10.2.3|  \
+    $PLACE.2.10.2.4|  \
+    $PLACE.2.10.2.5|  \
+    $PLACE.2.10.2.6|  \
+    $PLACE.2.10.2.7|  \
+    $PLACE.2.10.2.8|  \
+    $PLACE.2.10.2.9|  \
+    $PLACE.2.10.2.10| \
+    $PLACE.2.10.2.11| \
+    $PLACE.2.10.2.12| \
+    $PLACE.2.10.2.13| \
+    $PLACE.3.2.1|     \
+    $PLACE.3.2.2|     \
+    $PLACE.3.2.3|     \
+    $PLACE.3.2.4|     \
+    $PLACE.3.2.5|     \
+    $PLACE.3.2.6|     \
+    $PLACE.3.3.1|     \
+    $PLACE.3.3.2)     RET=$REQ ;;
+    *)         	    exit 0 ;;
+  esac
+ fi
+fi
+
+
+echo "$RET"
+isSeqence=$0
+
+#print seqence
+
+for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH1; i++ ))
+  do
+	if [ $RET = $PLACE$macNeighborsCh1Entry".1."$i ]; then
+		# get neighbourMacAddressCh1
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh1Entry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_NODE_ID_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh1Entry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_RSSI_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh1Entry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_DISTANCE_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh1Entry.5.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_SNR_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh1Entry.6.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_LINK_QUAL_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+for (( i=1; i<=$NUM_OF_ROUTES_CH1; i++ ))
+  do
+	if [ $RET = $PLACE$routesCh1Entry.1.$i ]; then
+		# get routestableCh1
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_INDEX_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh1Entry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_DEST_NODE_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh1Entry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_NEXT_NODE_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh1Entry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_DISTANCE_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh1Entry.5.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_COST_CH1_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+for (( i=1; i<=$NUM_OF_NEIGHBOURS; i++ ))
+  do
+	if [ $RET = $PLACE$NeighboursEntry.1.$i ]; then
+		# get Listofneighbourshop1
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_MAC_ADDRESS_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$NeighboursEntry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_LINK_QUALITY_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$NeighboursEntry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_RSSI_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$NeighboursEntry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_SNR_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$NeighboursEntry.5.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_BUSY_RATE_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$NeighboursEntry.6.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NEIGHBOUR_MEMBER_RANK_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+for (( i=1; i<=$NUM_OF_MEMBERS; i++ ))
+  do
+  	# get Members
+	if [ $RET = $PLACE$MemebersEntry.1.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MEMBERS_MAC_ADDRESS_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$MemebersEntry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MEMBERS_RACE_ID_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$MemebersEntry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MEMBERS_RSSI_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$MemebersEntry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MEMBERS_HOP_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+for (( i=1; i<=$NUM_OF_MAC_NEIGHBOURS_CH2; i++ ))
+  do
+	if [ $RET = $PLACE$macNeighborsCh2Entry.1.$i ]; then
+		# get neighbourMacAddressCh1
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_INDEX_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh2Entry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_NODE_ID_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh2Entry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_RSSI_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh2Entry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_DISTANCE_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh2Entry.5.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_SNR_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$macNeighborsCh2Entry.6.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAC_NEIGHBOUR_LINK_QUAL_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+for (( i=1; i<=$NUM_OF_ROUTES_CH2; i++ ))
+  do
+	if [ $RET = $PLACE$routesCh2Entry.1.$i ]; then
+		# get routestableCh2
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_INDEX_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh2Entry.2.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_DEST_NODE_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh2Entry.3.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_NEXT_NODE_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh2Entry.4.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_DISTANCE_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	elif [ $RET = $PLACE$routesCh2Entry.5.$i ]; then
+		val=$(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_ROUTES_COST_CH2_"$i)
+		echo "integer";	echo $val;	exit 0 ;
+		isSeqence=$1
+	fi
+  done
+
+#print non seqence
+if [ "$isSeqence" = "$0" ]; then 
+ case "$RET" in
+    $PLACE.2.2.1)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_WAVE_FORM_TYPE_CH1");	exit 0 ;;
+    $PLACE.2.2.2)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_CHANNEL_BANDWIDTH_CH1");	exit 0 ;;
+    $PLACE.2.2.3)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MODULATION_MODE_CH1");	exit 0 ;;
+    $PLACE.2.2.4)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NODE_ID_CH1");	exit 0 ;;
+    $PLACE.2.2.5)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PRESER_NUMBER_CH1");	exit 0 ;;
+    $PLACE.2.2.6)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PRESER_BANK_NUMBER_CH1");	exit 0 ;;
+    $PLACE.2.3.1)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_FREQUENCY_CH1");	exit 0 ;;
+    $PLACE.2.3.2)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_POWER_LEVEL_CH1");	exit 0 ;;
+    $PLACE.2.10.1.11) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NET_ID");	exit 0 ;;
+    $PLACE.2.10.1.12) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_TDMA_CYCLE_TYPE");	exit 0 ;;
+    $PLACE.2.10.1.13) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_CONTROL_LOOP_PRIORITY");	exit 0 ;;
+    $PLACE.2.10.1.14) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PACKET_LIFE_TIME");	exit 0 ;;
+    $PLACE.2.10.2.1)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NUM_OF_MEMBERS");	exit 0 ;;
+    $PLACE.2.10.2.3)  echo "string";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_TIME_CALENDAR");	exit 0 ;;
+    $PLACE.2.10.2.4)  echo "string";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_TIME_ALGORITHM");	exit 0 ;;
+    $PLACE.2.10.2.5)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_LOAD_ROUTER");	exit 0 ;;
+    $PLACE.2.10.2.6)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_CURRENT_DATA_RATE");	exit 0 ;;
+    $PLACE.2.10.2.7)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_BYTES_IN_TX_QUEUE");	exit 0 ;;
+    $PLACE.2.10.2.8)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PACKETS_IN_TX_QUEUE");	exit 0 ;;
+    $PLACE.2.10.2.9)  echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MAX_PRTY_PEND_PACKET");	exit 0 ;;
+    $PLACE.2.10.2.10) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_OLDEST_PACKET_AGE");	exit 0 ;;
+    $PLACE.2.10.2.11) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_GLOBAL_X_Off");	exit 0 ;;
+    $PLACE.2.10.2.12) echo "string";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_TRAP_IP");	exit 0 ;;
+    $PLACE.2.10.2.13) echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_TRAP_PORT");	exit 0 ;;
+    $PLACE.3.2.1)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_WAVE_FORM_TYPE_CH2");	exit 0 ;;
+    $PLACE.3.2.2)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_CHANNEL_BANDWIDTH_CH2");	exit 0 ;;
+    $PLACE.3.2.3)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_MODULATION_MODE_CH2");	exit 0 ;;
+    $PLACE.3.2.4)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_NODE_ID_CH2");	exit 0 ;;
+    $PLACE.3.2.5)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PRESER_NUMBER_CH2");	exit 0 ;;
+    $PLACE.3.2.6)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_PRESER_BANK_NUMBER_CH2");	exit 0 ;;
+    $PLACE.3.3.1)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_FREQUENCY_CH2");	exit 0 ;;
+    $PLACE.3.3.2)     echo "integer";	echo $(redis-cli -h $listen get $id"_WAVE_FROM_ROOT_POWER_LEVEL_CH2");	exit 0 ;;
+   *)                 echo "string";    echo "ack... $RET $REQ";                                                exit 0 ;;  # Should not happen
+ esac
+fi

@@ -1,0 +1,32 @@
+./configure --prefix=/usr <<EOF
+
+
+
+
+
+
+EOF
+make 
+sudo make install
+if [ ! -d "/etc/snmp/" ]; then
+  mkdir /etc/snmp/
+fi
+
+if [ ! -d "/var/net-snmp/" ]; then
+  mkdir /var/net-snmp/
+fi
+
+if [ ! -d "/usr/share/snmp/" ]; then
+  mkdir /usr/share/snmp/
+fi
+
+if [ ! -d "/usr/share/snmp/mibs/" ]; then
+  mkdir /usr/share/snmp/mibs/
+fi
+
+cp ../snmpd.EXAMPLE /etc/snmp/
+cp ../snmptrapd.conf /etc/snmp/
+cp ../snmpd.EXAMPLE /var/net-snmp/
+cp ../snmptrapd.conf /var/net-snmp/
+cp ../redis.EXAMPLE /etc/redis/
+cp mibs/* /usr/share/snmp/mibs/

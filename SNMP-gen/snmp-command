@@ -1,0 +1,1 @@
+snmpwalk -v 3 -u authOnlyUser -a MD5 -A password -l authNoPriv 10.100.1.254:161 .1.3.6.1.4.1.16215.11.24.5

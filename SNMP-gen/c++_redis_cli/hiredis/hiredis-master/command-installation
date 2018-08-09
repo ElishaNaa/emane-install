@@ -1,0 +1,2 @@
+make
+cp libhiredis.* /usr/local/lib/
