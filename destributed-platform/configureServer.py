@@ -480,6 +480,7 @@ class hatchNodes():
 
         for index in range(1, i_NumberOfNodes):
             rid = i_Base + 1
+            flag = 0
             for addr in addrPath:
                 for ID in addr[1]:
                     if index == ID:
@@ -489,11 +490,13 @@ class hatchNodes():
                         for element in IpPath:
                             temp = element[1].split(',')
                             for line in temp:
-                                if "rt-" + str(index) in line:
+                                if "rt-" + str(index) + "=" in line:
                                     tmp = line.split("rt-" + str(index) + "=")
                                     image = tmp[1]
                                     if image[-2:] == '\r\n':
                                         image = image[:-2]
+                                    if image[-1:] == '\n':
+                                        image = image[:-1]
 
                                     replacements = [["NEMID", str(index)], ["NETTYPE", '1'], ["RID", str(rid)],
                                                     ["SERVERIP", str(ip)], ["IMAGE", str(image)]]
@@ -501,6 +504,14 @@ class hatchNodes():
                                     pathToNewFiles = pathWhereFind + 'RA' + str(index) + '.json'
                                     self.preprocess(replacements, template, pathToNewFiles)
                                     i_Base = i_Base + 1
+                                    flag = 1
+                                    break
+                            if flag == 1:
+                                break
+                    if flag == 1:
+                        break
+                if flag == 1:
+                    break
 
 
     def hatchScripts(self, i_TransmiionType):
