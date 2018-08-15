@@ -4,7 +4,7 @@
   <transport definition="transraw.xml"/>
   <shim definition="emanelayerdlep.xml">
   	<paramlist name="macaddress">
-      <item value="@HEX@ 0a:B2:C3:D4:00:@HEX@"/>
+      <item value="@NEMID@ 0a:B2:C3:D4:00:@HEX@"/>
     </paramlist>
     <param name="etheraddroui" value="00:00:@HEX@"/>
     <param name="logfile"               value="dlep@NEMID@.log"/>
