@@ -20,7 +20,7 @@ SERVERS_EMANE_TOP_DIR = '/tmp/'
 
 port = 22
 
-timeout = 100
+timeout = 60
 
 PLATFORMS_TO_SERVER_FILE = "nodes2s"
 

@@ -1,42 +1,11 @@
-/*
- * Copyright (c) 2015 - Adjacent Link LLC, Bridgewater, New Jersey
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- * * Redistributions of source code must retain the above copyright
- *   notice, this list of conditions and the following disclaimer.
- * * Redistributions in binary form must reproduce the above copyright
- *   notice, this list of conditions and the following disclaimer in
- *   the documentation and/or other materials provided with the
- *   distribution.
- * * Neither the name of Adjacent Link, LLC nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
-
-
 #ifndef EMANEMODEL_SNMPLAYER_MODEMSERVICE_HEADER_
 #define EMANEMODEL_SNMPLAYER_MODEMSERVICE_HEADER_
 
 #include "emane/shimlayerimpl.h"
 #include "emane/utils/netutils.h"
 #include "dlepMac.h"
+
+#include "hiredisinclude/hiredis.h"
 
 #include "emane/controls/r2rineighbormetriccontrolmessage.h"
 #include "emane/controls/r2riqueuemetriccontrolmessage.h"
@@ -48,122 +17,125 @@
 
 namespace EMANE
 {
-  // namespace R2RI
-  // {
-  //   namespace SNMP
-  //   {
-      /**
-       * @class ModemService
-       *
-       * @brief Implements EMANE SNMP ModemService
-       */
+	// namespace R2RI
+	// {
+	//   namespace SNMP
+	//   {
+	/**
+	* @class ModemService
+	*
+	* @brief Implements EMANE SNMP ModemService
+	*/
 
-      class ModemService
-      {
-      public:
-        ModemService(NEMId id,
-                     PlatformServiceProvider *pPlatformService,
-                     RadioServiceProvider * pRadioServiceProvider);
+	class ModemService
+	{
+	public:
+		ModemService(NEMId id,
+			PlatformServiceProvider *pPlatformService,
+			RadioServiceProvider * pRadioServiceProvider);
 
-        ~ModemService();
+		~ModemService();
 
-        void handleControlMessages(const ControlMessages & controlMessages);
+		void handleControlMessages(const ControlMessages & controlMessages);
 
-        void configure(const ConfigurationUpdate & update);
+		void configure(const ConfigurationUpdate & update);
 
-        void start();
+		void start();
 
-        //const ConfigParameterMapType & getConfigItems() const;
-        
-      private:
-        INETAddr addressRedis_;
-        struct NeighborInfo {
-          std::uint64_t           lastTxDataRate_;
-          std::uint64_t           lastRxDataRate_;
+		void destroy();
 
-          float                   fSINRlast_;
-          float                   fRRlast_;
+		//const ConfigParameterMapType & getConfigItems() const;
 
-          // DestinationMetricInfo   metrics_;
+	private:
+		redisContext *c;
+		INETAddr addressRedis_;
+		struct NeighborInfo {
+			std::uint64_t           lastTxDataRate_;
+			std::uint64_t           lastRxDataRate_;
 
-          LLSNMP::DlepMac macAddress_;
+			float                   fSINRlast_;
+			float                   fRRlast_;
 
-          NeighborInfo() :
-           lastTxDataRate_{},
-           lastRxDataRate_{},
-           fSINRlast_{-256.0f},
-           fRRlast_{0.0f}
-            { 
-              memset(&macAddress_, 0x0, sizeof(macAddress_));
-            }
-         };
+			// DestinationMetricInfo   metrics_;
 
+			LLSNMP::DlepMac macAddress_;
 
-        void handleMetricMessage_i(const Controls::R2RINeighborMetricControlMessage * pMessage);
-
-        void handleMetricMessage_i(const Controls::R2RIQueueMetricControlMessage * pMessage);
-
-        void handleMetricMessage_i(const Controls::R2RISelfMetricControlMessage * pMessage);
-
-        void handleFlowControlMessage_i();
-
-        void send_peer_update_i();
-
-        void send_destination_update_i(const NeighborInfo & nbrInfo, bool isNewNbr);
-
-        void send_destination_down_i(const NeighborInfo & nbrInfo);
-
-        //void load_datarate_metrics_i(LLSNMP::DataItems & dataItems, const DataRateMetricInfo & values);
-
-        //void load_destination_metrics_i(LLSNMP::DataItems & dataItems, const DestinationMetricInfo & values);
-
-        int getRLQ_i(const std::uint16_t nbr, const float fSINRAvg, const size_t numRxFrames, const size_t numMissedFrames);
-
-        // template <typename T>
-        // LLSNMP::DataItem getDataItem_i(const std::string & id, const T & val)
-        //  {
-        //    return LLSNMP::DataItem{id, LLSNMP::DataItemValue{val}, pDlepClient_->get_protocol_config()};
-        //  }
+			NeighborInfo() :
+				lastTxDataRate_{},
+				lastRxDataRate_{},
+				fSINRlast_{ -256.0f },
+				fRRlast_{ 0.0f }
+			{
+				memset(&macAddress_, 0x0, sizeof(macAddress_));
+			}
+		};
 
 
-        LLSNMP::DlepMac getEthernetAddress_i(const NEMId id) const;
+		void handleMetricMessage_i(const Controls::R2RINeighborMetricControlMessage * pMessage);
 
-        // storage for NEM to ether mac addr mapping
-        using NEMEtherAddrMap = std::map<NEMId, Utils::EtherAddr>;
+		void handleMetricMessage_i(const Controls::R2RIQueueMetricControlMessage * pMessage);
 
-        // storage for nbr info
-        using NeighborInfoMap = std::map<NEMId, NeighborInfo>;
-    
-        NEMId id_;
+		void handleMetricMessage_i(const Controls::R2RISelfMetricControlMessage * pMessage);
 
-        PlatformServiceProvider * pPlatformService_;
- 
-        RadioServiceProvider * pRadioService_;
+		void handleFlowControlMessage_i();
 
-        NeighborInfoMap currentNeighbors_; 
+		void send_peer_update_i();
 
-        NEMEtherAddrMap nemEtherAddrMap_;
+		void send_destination_update_i(const NeighborInfo & nbrInfo, bool isNewNbr);
 
-        Utils::EtherAddr etherOUI_;
+		void send_destination_down_i(const NeighborInfo & nbrInfo);
 
-        Utils::EtherAddr etherBroadcastAddr_;
+		//void load_datarate_metrics_i(LLSNMP::DataItems & dataItems, const DataRateMetricInfo & values);
 
-        //std::unique_ptr<DlepClientImpl> pDlepClient_;
+		//void load_destination_metrics_i(LLSNMP::DataItems & dataItems, const DestinationMetricInfo & values);
 
-        //ConfigParameterMapType snmpConfiguration_;
+		int getRLQ_i(const std::uint16_t nbr, const float fSINRAvg, const size_t numRxFrames, const size_t numMissedFrames);
 
-        // DataRateMetricInfo selfMetrics_;
+		// template <typename T>
+		// LLSNMP::DataItem getDataItem_i(const std::string & id, const T & val)
+		//  {
+		//    return LLSNMP::DataItem{id, LLSNMP::DataItemValue{val}, pDlepClient_->get_protocol_config()};
+		//  }
 
-        std::uint64_t avgQueueDelayMicroseconds_;
 
-        float fSINRMin_;
+		LLSNMP::DlepMac getEthernetAddress_i(const NEMId id) const;
 
-        float fSINRMax_;
+		// storage for NEM to ether mac addr mapping
+		using NEMEtherAddrMap = std::map<NEMId, Utils::EtherAddr>;
 
-        bool destinationAdvertisementEnable_;
-      };
-  //   }
-  // }
+		// storage for nbr info
+		using NeighborInfoMap = std::map<NEMId, NeighborInfo>;
+
+		NEMId id_;
+
+		PlatformServiceProvider * pPlatformService_;
+
+		RadioServiceProvider * pRadioService_;
+
+		NeighborInfoMap currentNeighbors_;
+
+		NEMEtherAddrMap nemEtherAddrMap_;
+
+		Utils::EtherAddr etherOUI_;
+
+		Utils::EtherAddr etherBroadcastAddr_;
+
+		//std::unique_ptr<DlepClientImpl> pDlepClient_;
+
+		//ConfigParameterMapType snmpConfiguration_;
+
+		// DataRateMetricInfo selfMetrics_;
+
+		std::uint64_t avgQueueDelayMicroseconds_;
+
+		float fSINRMin_;
+
+		float fSINRMax_;
+
+		bool destinationAdvertisementEnable_;
+	};
+	//   }
+	// }
 }
 
 #endif

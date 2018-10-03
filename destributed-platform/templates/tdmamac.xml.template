@@ -8,7 +8,7 @@
   <param name='queue.aggregationenable' value='on'/>
   <param name='queue.aggregationslotthreshold' value='90.0'/>
   <param name='queue.depth' value='64'/>
-  <param name='queue.fragmentationenable' value='off'/>
+  <param name='queue.fragmentationenable' value='on'/>
   <param name='queue.strictdequeueenable' value='off'/>
   <param name="pcrcurveuri"
          value='file:///usr/share/emane/xml/models/mac/tdmaeventscheduler/tdmabasemodelpcr.xml'/>
