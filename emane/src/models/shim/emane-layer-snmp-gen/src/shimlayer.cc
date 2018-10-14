@@ -87,6 +87,21 @@ void EMANE::R2RI::ShimLayer::initialize(Registrar & registrar)
 			{},
 			"IPv4 or IPv6 virutal device address.");
 
+		configRegistrar.registerNumeric<std::uint64_t>("timeToUpdateRedis",
+			ConfigurationProperties::DEFAULT,
+		{10000000000},
+		"Time to update redis in nanoseconds.");
+
+		configRegistrar.registerNumeric<double>("upperBound",
+			ConfigurationProperties::DEFAULT,
+		{ 0.8 },
+		"Send trap (X_OFF), when the packages in the queue cross upper bound");
+
+		configRegistrar.registerNumeric<double>("lowerBound",
+			ConfigurationProperties::DEFAULT,
+		{ 0.2 },
+		"Send trap (X_ON), when the packages in the queue smallest from lower bound");
+
 		//const EMANE::ModemService::ConfigParameterMapType & snmpConfiguration{snmpModemService_.getConfigItems()};
 
 		// snmp config items we will be queried for by lib snmp after initialization
@@ -146,6 +161,45 @@ void EMANE::R2RI::ShimLayer::configure(const ConfigurationUpdate & update)
 				__func__,
 				item.first.c_str(),
 				addressRedis_.str(false).c_str());
+		}
+		else if (item.first == "timeToUpdateRedis")
+		{
+			timeToUpdateRedis_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03hu %s::%s %s=%u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				timeToUpdateRedis_);
+		}
+		else if (item.first == "upperBound")
+		{
+			upperBound_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_);
+		}
+		else if (item.first == "lowerBound")
+		{
+			lowerBound_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_);
 		}
 		else {
 

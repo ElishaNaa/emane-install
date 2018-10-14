@@ -202,6 +202,45 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
 				item.first.c_str(),
 				addressRedis_.str(false).c_str());
 		}
+		else if (item.first == "timeToUpdateRedis")
+		{
+			timeToUpdateRedis_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03hu %s::%s %s=%u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				timeToUpdateRedis_);
+		}
+		else if (item.first == "upperBound")
+		{
+			upperBound_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_);
+		}
+		else if (item.first == "lowerBound")
+		{
+			lowerBound_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_);
+		}
 		else
 		{
 			const std::string str{ item.second[0].asString() };
@@ -277,6 +316,8 @@ void EMANE::ModemService::start()
 			DEBUG_LEVEL,
 			"SHIMI %03hu %s::%s Connection Successful",
 			id_, __MODULE__, __func__);
+
+		start_timer = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count());
 	}
 }
 
@@ -373,6 +414,21 @@ void EMANE::ModemService::handleControlMessages(const EMANE::ControlMessages & c
 			}
 			break;
 			}
+
+			std::uint64_t t = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count());
+			std::uint64_t int_nsec = t - start_timer;
+
+			if (int_nsec >= timeToUpdateRedis_)
+			{
+				UpdateRedis();
+
+				LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+					INFO_LEVEL,
+					"SHIMI %03hu %s::%s update redis",
+					id_, __MODULE__, __func__);
+
+				start_timer = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count());
+			}
 		}
 	}
 
@@ -388,7 +444,44 @@ void EMANE::ModemService::handleControlMessages(const EMANE::ControlMessages & c
 	}
 }
 
+void EMANE::ModemService::UpdateRedis()
+{
+	redisReply *reply;
+	const char* command;
+	std::string str;
+	std::stringstream ss;
+	ss << "MSET ";
+	while (!listOids.empty())
+	{
+		ss << listOids.back().oidName << " " << listOids.back().oidValue << " ";
+		listOids.pop_back();
+	}
+	str = ss.str();
+	command = str.c_str();
+	LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+		INFO_LEVEL,
+		"SHIMI %03hu %s::%s ------ %s",
+		id_, __MODULE__, __func__, command);
+	reply = static_cast<redisReply*>(redisCommand(c, command));
+	freeReplyObject(reply);
+}
 
+void EMANE::ModemService::deleteOidFromList(const char* key)
+{
+	std::list<oid>::iterator it = listOids.begin();
+	while(it != listOids.end())
+	{
+		if (it->oidName == key)
+		{
+			listOids.erase(it++);
+		}
+		else
+		{
+			++it;
+		}
+	}
+
+}
 
 // self metrics
 void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RISelfMetricControlMessage * pMessage)
@@ -399,18 +492,23 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RISelfM
 		"SHIMI %03hu %s::%s R2RISelfMetricControlMessage",
 		id_, __MODULE__, __func__);
 
-	redisReply *reply;
 	// SET datarate
-	std::string mibdr = std::string(_PLACE_) + "CURRENT_DATA_RATE"; // old ---> .1.3.6.1.4.1.16215.1.24.1.4.6"
+	std::string mibdr = std::string(_PLACE_) + "CURRENT_DATA_RATE";
 	std::string strkeydr = std::to_string(id_).c_str() + mibdr;
 	const char *mackey = strkeydr.c_str();
 	const char *val = (std::to_string(pMessage->getMaxDataRatebps())).c_str();
-	reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", mackey, val));
+
+	deleteOidFromList(mackey);
+
+	oid datarate;
+	datarate.oidName = mackey;
+	datarate.oidValue = val;
+	listOids.push_back(datarate);
+
 	LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 		INFO_LEVEL,
-		"SHIMI %03hu %s::%s SET datarate: %s, KEY: %s VAL: %s",
-		id_, __MODULE__, __func__, reply->str, mackey, val);
-	freeReplyObject(reply);
+		"SHIMI %03hu %s::%s SET datarate - KEY: %s VAL: %s",
+		id_, __MODULE__, __func__, mackey, val);
 
 }
 
@@ -454,51 +552,22 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 				id_, __MODULE__, __func__, nbr.first);
 
 			redisReply *reply;
-			
-			/*
-			// del the nbr macaddr mib
-			// its enough to delete only that one, because passtest counting the nbrs by this mib
-			std::string mibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
-			std::string strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
-			const char *mackey = strkeymac.c_str();
-			reply = static_cast<redisReply*>(redisCommand(c, "DEL %s", mackey));
-			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-				INFO_LEVEL,
-				"SHIMI %03hu %s::%s DEL NBR MACADDR: %hu, KEY: %s ",
-				id_, __MODULE__, __func__, reply->integer, mackey);
-			freeReplyObject(reply);
-
-
-			// del the member macaddr mib
-			// its enough to delete only that one, because passtest counting the members by this mib
-			mibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
-			strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
-			mackey = strkeymac.c_str();
-			reply = static_cast<redisReply*>(redisCommand(c, "DEL %s", mackey));
-			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-				INFO_LEVEL,
-				"SHIMI %03hu %s::%s DEL MEMBER MACADDR: %hu, KEY: %s ",
-				id_, __MODULE__, __func__, reply->integer, mackey);
-			freeReplyObject(reply);
-			*/
-
-
-			/////////////////////////////////////////////////////////////
-
 
 			// del the nbr macaddr mib
 			// its enough to delete only that one, because passtest counting the nbrs by this mib
-			std::string mibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
-			std::string strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
-			const char *nbrmackey = strkeymac.c_str();
+			std::string nbrmibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_";
+			std::string nbrstrkeymac = std::to_string(id_).c_str() + nbrmibmac + std::to_string(metricDelIndex).c_str();
+			const char *nbrmackey = nbrstrkeymac.c_str();
 
-			// del the member macaddr mib
+            // del the member macaddr mib
 			// its enough to delete only that one, because passtest counting the members by this mib
-			mibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
-			strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricDelIndex).c_str();
-			const char *membermackey = strkeymac.c_str();
+			std::string membermibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_";
+			std::string memberstrkeymac = std::to_string(id_).c_str() + membermibmac + std::to_string(metricDelIndex).c_str();
+			const char *membermackey = memberstrkeymac.c_str();
 
-			reply = static_cast<redisReply*>(redisCommand(c, "DEL %s, %s", nbrmackey, membermackey));
+			deleteOidFromList(nbrmackey);
+			deleteOidFromList(membermackey);
+			reply = static_cast<redisReply*>(redisCommand(c, "DEL %s %s", nbrmackey, membermackey));
 
 			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 				INFO_LEVEL,
@@ -511,9 +580,6 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 				id_, __MODULE__, __func__, reply->integer, membermackey);
 			freeReplyObject(reply);
 
-
-
-			/////////////////////////////////////////////////////////////
 
 			metricDelIndex++;
 		}
@@ -620,246 +686,13 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 			boost::asio::ip::address_v4::from_string("0.0.0.0"),
 			32 };
 #endif
-		/*
-		// send nbr up/update
-		//send_destination_update_i(iter->second, isNewNbr);
-
-		redisReply *reply;
-		// SET NEIGHBOURS MAC ADDR
-		// node_id.PLACE.nbr_id
-		std::string mibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
-		std::string strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricSetIndex).c_str();
-		const char *mackey = strkeymac.c_str();
-		const std::string strvalmac = getEthernetAddress_i(nbr).to_string().c_str();
-
-		// convert mac addr to int64
-		// now the MAC is 00:00:00:00:00:# (number of node)
-		// to get effective converting, the first 4 bytes value will be changed to "CA:FE"
-
-		std::string strvalmacint64;
-		std::string cafeaddr = "CA:FE:00:00:00:00";
-		unsigned char real[6];
-		unsigned char cafe[6];
-		int last = -1;
-		int rcreal = sscanf(strvalmac.c_str(), "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx%n",
-			real + 0, real + 1, real + 2, real + 3, real + 4, real + 5, &last);
-		int rccafe = sscanf(cafeaddr.c_str(), "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx%n",
-			cafe + 0, cafe + 1, cafe + 2, cafe + 3, cafe + 4, cafe + 5, &last);
-		if (rcreal != 6 || strvalmac.size() != last)
-		{
-			strvalmacint64 = "0";
-		}
-		else
-		{
-			uint64_t mac64 = uint64_t(cafe[0]) << 40 |
-				uint64_t(cafe[1]) << 32 |
-				uint64_t(cafe[0]) << 24 |
-				uint64_t(cafe[1]) << 16 |
-				uint64_t(real[4]) << 8 |
-				uint64_t(real[5]);
-			strvalmacint64 = std::to_string(mac64);
-		}
-
-		const char *macint64val = strvalmacint64.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", mackey, macint64val));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS MACADDR: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, mackey, macint64val);
-		freeReplyObject(reply);
-
-
-		// SET NEIGHBOURS Link Quality
-		float LQ = getRLQ_i(metric.getId(),
-			metric.getSINRAvgdBm(),
-			metric.getNumRxFrames(),
-			metric.getNumMissedFrames());
-		std::string mibLQ = std::string(_PLACE_) + "NEIGHBOUR_LINK_QUALITY_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.2."
-		std::string strkeyLQ = std::to_string(id_).c_str() + mibLQ + std::to_string(metricSetIndex).c_str();
-		const char *LQkey = strkeyLQ.c_str();
-		std::string strvalLQ = (std::to_string(LQ)).c_str();
-		const char *LQval = strvalLQ.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", LQkey, LQval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS Link-Quality: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, LQkey, LQval);
-		freeReplyObject(reply);
-
-
-		// SET NEIGHBOURS RSSI (In that implemintation RSSI is SINR)
-		std::string mibrssi = std::string(_PLACE_) + "NEIGHBOUR_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.3."
-		std::string strkeyrssi = std::to_string(id_).c_str() + mibrssi + std::to_string(metricSetIndex).c_str();
-		const char *rssikey = strkeyrssi.c_str();
-		std::string strvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
-		const char *rssival = strvalrssi.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", rssikey, rssival));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS RSSI: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, rssikey, rssival);
-		freeReplyObject(reply);
-
-
-		// SET NEIGHBOURS SINR
-		std::string mibsinr = std::string(_PLACE_) + "NEIGHBOUR_SNR_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.4."
-		std::string strkeysinr = std::to_string(id_).c_str() + mibsinr + std::to_string(metricSetIndex).c_str();
-		const char *sinrkey = strkeysinr.c_str();
-		std::string strvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
-		const char *sinrval = strvalsinr.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", sinrkey, sinrval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS SINR: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, sinrkey, sinrval);
-		freeReplyObject(reply);
-
-
-		// SET NEIGHBOURS busyRate
-		std::string mibbusyrate = std::string(_PLACE_) + "NEIGHBOUR_BUSY_RATE_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.5."
-		std::string strkeybusyrate = std::to_string(id_).c_str() + mibbusyrate + std::to_string(metricSetIndex).c_str();
-		const char *busyratekey = strkeybusyrate.c_str();
-		const char *busyrateval = "50";
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", busyratekey, busyrateval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS busyRate: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, busyratekey, busyrateval);
-		freeReplyObject(reply);
-
-
-		// SET NEIGHBOURS MemberRank
-		std::string mibMemberRank = std::string(_PLACE_) + "NEIGHBOUR_MEMBER_RANK_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.6."
-		std::string strkeyMemberRank = std::to_string(id_).c_str() + mibMemberRank + std::to_string(metricSetIndex).c_str();
-		const char *memberRankkey = strkeyMemberRank.c_str();
-		const char *memberRankval = "99";
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", memberRankkey, memberRankval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS MemberRabk: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, memberRankkey, memberRankval);
-		freeReplyObject(reply);
-
-		// SET MEMBERS MAC ADDR
-		// node_id.PLACE.nbr_id
-		mibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
-		strkeymac = std::to_string(id_).c_str() + mibmac + std::to_string(metricSetIndex).c_str();
-		mackey = strkeymac.c_str();
-		std::string strvalmac2 = getEthernetAddress_i(nbr).to_string().c_str();
-
-		// convert mac addr to int64
-		// now the MAC is 00:00:00:00:00:# (number of node)
-		// to get effective converting, the first 4 bytes value will be changed to "CA:FE"
-
-		strvalmacint64;
-		cafeaddr = "CA:FE:00:00:00:00";
-		real[6];
-		cafe[6];
-		last = -1;
-		rcreal = sscanf(strvalmac2.c_str(), "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx%n",
-			real + 0, real + 1, real + 2, real + 3, real + 4, real + 5, &last);
-		rccafe = sscanf(cafeaddr.c_str(), "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx%n",
-			cafe + 0, cafe + 1, cafe + 2, cafe + 3, cafe + 4, cafe + 5, &last);
-		if (rcreal != 6 || strvalmac2.size() != last)
-		{
-			strvalmacint64 = "0";
-		}
-		else
-		{
-			uint64_t mac64 = uint64_t(cafe[0]) << 40 |
-				uint64_t(cafe[1]) << 32 |
-				uint64_t(cafe[0]) << 24 |
-				uint64_t(cafe[1]) << 16 |
-				uint64_t(real[4]) << 8 |
-				uint64_t(real[5]);
-			strvalmacint64 = std::to_string(mac64);
-		}
-
-		macint64val = strvalmacint64.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", mackey, macint64val));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET MEMBERS MACADDR: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, mackey, macint64val);
-		freeReplyObject(reply);
-
-
-		// SET MEMBERS Link Quality
-		LQ = getRLQ_i(metric.getId(),
-			metric.getSINRAvgdBm(),
-			metric.getNumRxFrames(),
-			metric.getNumMissedFrames());
-		mibLQ = std::string(_PLACE_) + "MEMBERS_RACE_ID_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.2."
-		strkeyLQ = std::to_string(id_).c_str() + mibLQ + std::to_string(metricSetIndex).c_str();
-		LQkey = strkeyLQ.c_str();
-		strvalLQ = (std::to_string(LQ)).c_str();
-		LQval = strvalLQ.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", LQkey, LQval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET MEMBERS Link-Quality: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, LQkey, LQval);
-		freeReplyObject(reply);
-
-
-		// SET MEMBERS RSSI (In that implemintation RSSI is SINR)
-		mibrssi = std::string(_PLACE_) + "MEMBERS_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.3."
-		strkeyrssi = std::to_string(id_).c_str() + mibrssi + std::to_string(metricSetIndex).c_str();
-		rssikey = strkeyrssi.c_str();
-		strvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
-		rssival = strvalrssi.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", rssikey, rssival));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET MEMBERS RSSI: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, rssikey, rssival);
-		freeReplyObject(reply);
-
-
-		// SET MEMBERS SINR
-		mibsinr = std::string(_PLACE_) + "MEMBERS_HOP_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.4."
-		strkeysinr = std::to_string(id_).c_str() + mibsinr + std::to_string(metricSetIndex).c_str();
-		sinrkey = strkeysinr.c_str();
-		strvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
-		sinrval = strvalsinr.c_str();
-
-		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", sinrkey, sinrval));
-
-		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET MEMBERS SINR: %s, KEY: %s, VAL: %s",
-			id_, __MODULE__, __func__, reply->str, sinrkey, sinrval);
-		freeReplyObject(reply);
-
-		reply = static_cast<redisReply*>(redisCommand(c, "DEL mykey"));
-		freeReplyObject(reply);
-		*/
-
-
-		////////////////////////////////////////////////////////////////////////////
-
-
 
 		// send nbr up/update
 		//send_destination_update_i(iter->second, isNewNbr);
 
-		redisReply *reply;
+		//redisReply *reply;
+		
+		
 		// SET NEIGHBOURS MAC ADDR
 		// node_id.PLACE.nbr_id
 		std::string nbrmibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
@@ -901,48 +734,89 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 		const char *nbrmacint64val = strvalmacint64.c_str();
 
+		deleteOidFromList(nbrmackey);
+
+		oid nbrmacaddr;
+		nbrmacaddr.oidName = nbrmackey;
+		nbrmacaddr.oidValue = nbrmacint64val;
+		listOids.push_back(nbrmacaddr);
+
 		// SET NEIGHBOURS Link Quality
 		float LQ = getRLQ_i(metric.getId(),
 			metric.getSINRAvgdBm(),
 			metric.getNumRxFrames(),
 			metric.getNumMissedFrames());
-		std::string mibLQ = std::string(_PLACE_) + "NEIGHBOUR_LINK_QUALITY_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.2."
+		std::string mibLQ = std::string(_PLACE_) + "NEIGHBOUR_LINK_QUALITY_";
 		std::string strkeyLQ = std::to_string(id_).c_str() + mibLQ + std::to_string(metricSetIndex).c_str();
 		const char *LQkey = strkeyLQ.c_str();
 		std::string strvalLQ = (std::to_string(LQ)).c_str();
 		const char *LQval = strvalLQ.c_str();
 
+		deleteOidFromList(LQkey);
+
+		oid nbrLQ;
+		nbrLQ.oidName = LQkey;
+		nbrLQ.oidValue = LQval;
+		listOids.push_back(nbrLQ);
+
 		// SET NEIGHBOURS RSSI (In that implemintation RSSI is SINR)
-		std::string mibrssi = std::string(_PLACE_) + "NEIGHBOUR_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.3."
+		std::string mibrssi = std::string(_PLACE_) + "NEIGHBOUR_RSSI_";
 		std::string strkeyrssi = std::to_string(id_).c_str() + mibrssi + std::to_string(metricSetIndex).c_str();
 		const char *rssikey = strkeyrssi.c_str();
 		std::string strvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
 		const char *rssival = strvalrssi.c_str();
 
+		deleteOidFromList(rssikey);
+
+		oid nbrrssi;
+		nbrrssi.oidName = rssikey;
+		nbrrssi.oidValue = rssival;
+		listOids.push_back(nbrrssi);
+
 		// SET NEIGHBOURS SINR
-		std::string mibsinr = std::string(_PLACE_) + "NEIGHBOUR_SNR_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.4."
+		std::string mibsinr = std::string(_PLACE_) + "NEIGHBOUR_SNR_";
 		std::string strkeysinr = std::to_string(id_).c_str() + mibsinr + std::to_string(metricSetIndex).c_str();
 		const char *sinrkey = strkeysinr.c_str();
 		std::string strvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
 		const char *sinrval = strvalsinr.c_str();
 
+		deleteOidFromList(sinrkey);
+
+		oid nbrsinr;
+		nbrsinr.oidName = sinrkey;
+		nbrsinr.oidValue = sinrval;
+		listOids.push_back(nbrsinr);
+
 		// SET NEIGHBOURS busyRate
-		std::string mibbusyrate = std::string(_PLACE_) + "NEIGHBOUR_BUSY_RATE_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.5."
+		std::string mibbusyrate = std::string(_PLACE_) + "NEIGHBOUR_BUSY_RATE_";
 		std::string strkeybusyrate = std::to_string(id_).c_str() + mibbusyrate + std::to_string(metricSetIndex).c_str();
 		const char *busyratekey = strkeybusyrate.c_str();
 		const char *busyrateval = "50";
 
+		deleteOidFromList(busyratekey);
+
+		oid nbrbusyrate;
+		nbrbusyrate.oidName = busyratekey;
+		nbrbusyrate.oidValue = busyrateval;
+		listOids.push_back(nbrsinr);
+
 		// SET NEIGHBOURS MemberRank
-		std::string mibMemberRank = std::string(_PLACE_) + "NEIGHBOUR_MEMBER_RANK_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.6."
+		std::string mibMemberRank = std::string(_PLACE_) + "NEIGHBOUR_MEMBER_RANK_";
 		std::string strkeyMemberRank = std::to_string(id_).c_str() + mibMemberRank + std::to_string(metricSetIndex).c_str();
 		const char *memberRankkey = strkeyMemberRank.c_str();
 		const char *memberRankval = "99";
 
+		deleteOidFromList(memberRankkey);
+
+		oid nbrmemberrank;
+		nbrmemberrank.oidName = memberRankkey;
+		nbrmemberrank.oidValue = memberRankval;
+		listOids.push_back(nbrmemberrank);
 
 
 		// SET MEMBERS MAC ADDR
 		// node_id.PLACE.nbr_id
-		std::string membermibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.1."
+		std::string membermibmac = std::string(_PLACE_) + "MEMBERS_MAC_ADDRESS_";
 		std::string memberstrkeymac = std::to_string(id_).c_str() + membermibmac + std::to_string(metricSetIndex).c_str();
 		const char *membermackey = memberstrkeymac.c_str();
 		std::string strvalmac2 = getEthernetAddress_i(nbr).to_string().c_str();
@@ -981,78 +855,84 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 
 		const char *membermacint64val = memberstrvalmacint64.c_str();
 
-		// SET MEMBERS Link Quality
+		deleteOidFromList(membermackey);
+
+		oid membermacaddr;
+		membermacaddr.oidName = membermackey;
+		membermacaddr.oidValue = membermacint64val;
+		listOids.push_back(membermacaddr);
+
+		// SET MEMBERS Link Quality == RACE_ID
 		float memberLQ = getRLQ_i(metric.getId(),
 			metric.getSINRAvgdBm(),
 			metric.getNumRxFrames(),
 			metric.getNumMissedFrames());
-		std::string membermibLQ = std::string(_PLACE_) + "MEMBERS_RACE_ID_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.2."
+		std::string membermibLQ = std::string(_PLACE_) + "MEMBERS_RACE_ID_";
 		std::string memberstrkeyLQ = std::to_string(id_).c_str() + membermibLQ + std::to_string(metricSetIndex).c_str();
 		const char *memberLQkey = memberstrkeyLQ.c_str();
 		std::string memberstrvalLQ = (std::to_string(memberLQ)).c_str();
 		const char *memberLQval = memberstrvalLQ.c_str();
 
+		deleteOidFromList(memberLQkey);
+
+		oid memberLinkQ;
+		memberLinkQ.oidName = memberLQkey;
+		memberLinkQ.oidValue = memberLQval;
+		listOids.push_back(memberLinkQ);
+
 		// SET MEMBERS RSSI (In that implemintation RSSI is SINR)
-		std::string membermibrssi = std::string(_PLACE_) + "MEMBERS_RSSI_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.3."
+		std::string membermibrssi = std::string(_PLACE_) + "MEMBERS_RSSI_";
 		std::string memberstrkeyrssi = std::to_string(id_).c_str() + membermibrssi + std::to_string(metricSetIndex).c_str();
 		const char *memberrssikey = memberstrkeyrssi.c_str();
 		std::string memberstrvalrssi = (std::to_string(metric.getSINRAvgdBm())).c_str();
 		const char *memberrssival = memberstrvalrssi.c_str();
 
-		// SET MEMBERS SINR
-		std::string membermibsinr = std::string(_PLACE_) + "MEMBERS_HOP_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.16.1.4."
+		deleteOidFromList(memberrssikey);
+
+		oid memberrssi;
+		memberrssi.oidName = memberrssikey;
+		memberrssi.oidValue = memberrssival;
+		listOids.push_back(memberrssi);
+
+		// SET MEMBERS SINR == MEMBERS_HOP
+		std::string membermibsinr = std::string(_PLACE_) + "MEMBERS_HOP_";
 		std::string memberstrkeysinr = std::to_string(id_).c_str() + membermibsinr + std::to_string(metricSetIndex).c_str();
 		const char *membersinrkey = memberstrkeysinr.c_str();
 		std::string memberstrvalsinr = (std::to_string(metric.getSINRAvgdBm())).c_str();
 		const char *membersinrval = memberstrvalsinr.c_str();
 
-		reply = static_cast<redisReply*>(redisCommand(c, "MSET %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s", 
-			nbrmackey, nbrmacint64val,
-			LQkey, LQval,
-			rssikey, rssival, 
-			sinrkey, sinrval, 
-			busyratekey, busyrateval, 
-			memberRankkey, memberRankval, 
-			membermackey, membermacint64val, 
-			memberLQkey, memberLQval, 
-			memberrssikey, memberrssival, 
-			membersinrkey, membersinrval));
+		deleteOidFromList(membersinrkey);
+
+		oid membersinr;
+		membersinr.oidName = membersinrkey;
+		membersinr.oidValue = membersinrval;
+		listOids.push_back(membersinr);
 
 		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET NEIGHBOURS MACADDR: %s, KEY: %s, VAL: %s\n"
-			"SET NEIGHBOURS Link-Quality: %s, KEY: %s, VAL: %s\n"
-			"SET NEIGHBOURS RSSI: %s, KEY: %s, VAL: %s\n"
-			"SET NEIGHBOURS SINR: %s, KEY: %s, VAL: %s\n"
-			"SET NEIGHBOURS busyRate: %s, KEY: %s, VAL: %s\n"
-			"SET NEIGHBOURS MemberRabk: %s, KEY: %s, VAL: %s\n",
-			id_, __MODULE__, __func__,
-			reply->str, nbrmackey, nbrmacint64val,
-			reply->str, LQkey, LQval,
-			reply->str, rssikey, rssival,
-			reply->str, sinrkey, sinrval,
-			reply->str, busyratekey, busyrateval,
-			reply->str, memberRankkey, memberRankval);
+			"SHIMI %03hu %s::%s SET NEIGHBOURS MACADDR - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET NEIGHBOURS Link-Quality - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET NEIGHBOURS RSSI - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET NEIGHBOURS SINR - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET NEIGHBOURS busyRate - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET NEIGHBOURS MemberRabk - KEY: %s, VAL: %s\n",
+			id_, __MODULE__, __func__, nbrmackey, nbrmacint64val,
+			id_, __MODULE__, __func__, LQkey, LQval,
+			id_, __MODULE__, __func__, rssikey, rssival,
+			id_, __MODULE__, __func__, sinrkey, sinrval,
+			id_, __MODULE__, __func__, busyratekey, busyrateval,
+			id_, __MODULE__, __func__, memberRankkey, memberRankval);
 
 		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 			INFO_LEVEL,
-			"SHIMI %03hu %s::%s SET MEMBERS MACADDR: %s, KEY: %s, VAL: %s\n"
-			"SET MEMBERS Link-Quality: %s, KEY: %s, VAL: %s\n"
-			"SET MEMBERS RSSI: %s, KEY: %s, VAL: %s\n"
-			"SET MEMBERS SINR: %s, KEY: %s, VAL: %s\n",
-			id_, __MODULE__, __func__,
-			reply->str, membermackey, membermacint64val,
-			reply->str, memberLQkey, memberLQval,
-			reply->str, memberrssikey, memberrssival,
-			reply->str, membersinrkey, membersinrval);
-
-		freeReplyObject(reply);
-
-		reply = static_cast<redisReply*>(redisCommand(c, "DEL mykey"));
-		freeReplyObject(reply);
-
-
-		////////////////////////////////////////////////////////////////////////////
+			"SHIMI %03hu %s::%s SET MEMBERS MACADDR - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET MEMBERS Link-Quality - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET MEMBERS RSSI - KEY: %s, VAL: %s\n"
+			"                      SHIMI %03hu %s::%s SET MEMBERS SINR - KEY: %s, VAL: %s\n",
+			id_, __MODULE__, __func__, membermackey, membermacint64val,
+			id_, __MODULE__, __func__, memberLQkey, memberLQval,
+			id_, __MODULE__, __func__, memberrssikey, memberrssival,
+			id_, __MODULE__, __func__, membersinrkey, membersinrval);
 
 	metricSetIndex++;
 	}
@@ -1099,7 +979,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 			"SHIMI %03hu %s::%s #Q: %u, Max Size: %u, current depth: %u",
 			id_, __MODULE__, __func__, queueid, capacity, depth);
 
-		if(depth/capacity > 0.8 && queueid == 0)
+		if(depth/capacity > upperBound_ && queueid == 0)
 		{
 			// Get ip Address, where trap should be sent
 			std::string mibpktq = std::string(_PLACE_) + "TRAP_IP";
@@ -1134,7 +1014,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 				id_, __MODULE__, __func__, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
 		}
 
-		if(depth/capacity < 0.2 && queueid == 0)
+		if(depth/capacity < lowerBound_ && queueid == 0)
 		{
 			std::string mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
 			std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
@@ -1189,18 +1069,22 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 	}
 
 	// SET packets in Qs
-	std::string mibpktq = std::string(_PLACE_) + "PACKETS_IN_TX_QUEUE"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.8"
+	std::string mibpktq = std::string(_PLACE_) + "PACKETS_IN_TX_QUEUE";
 	std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
 	const char *pktqkey = strkeypktq.c_str();
 	const char *strvalpktq = (std::to_string(packetsSum)).c_str();
 
-	reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", pktqkey, strvalpktq));
+	deleteOidFromList(pktqkey);
+
+	oid pktq;
+	pktq.oidName = pktqkey;
+	pktq.oidValue = strvalpktq;
+	listOids.push_back(pktq);
 
 	LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 		INFO_LEVEL,
-		"SHIMI %03hu %s::%s SET packets in Queues: %s, KEY: %s, VAL: %s",
-		id_, __MODULE__, __func__, reply->str, pktqkey, strvalpktq);
-	freeReplyObject(reply);
+		"SHIMI %03hu %s::%s SET packets in Queues - KEY: %s, VAL: %s",
+		id_, __MODULE__, __func__, pktqkey, strvalpktq);
 
 }
 

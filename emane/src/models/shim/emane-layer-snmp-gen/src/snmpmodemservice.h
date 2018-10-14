@@ -12,6 +12,7 @@
 #include "emane/controls/r2riselfmetriccontrolmessage.h"
 #include "emane/controls/flowcontrolcontrolmessage.h"
 
+#include <chrono>
 
 #include <map>
 
@@ -48,7 +49,16 @@ namespace EMANE
 
 	private:
 		redisContext *c;
+		struct oid{
+			std::string oidName;
+			std::string oidValue;
+		};
+		std::list<oid> listOids; // cache
+		std::uint64_t start_timer;
+		std::uint64_t timeToUpdateRedis_; // interval to update redis 
 		INETAddr addressRedis_;
+		double upperBound_; 
+		double lowerBound_; 
 		struct NeighborInfo {
 			std::uint64_t           lastTxDataRate_;
 			std::uint64_t           lastRxDataRate_;
@@ -70,6 +80,9 @@ namespace EMANE
 			}
 		};
 
+		void UpdateRedis();
+
+		void deleteOidFromList(const char * key);
 
 		void handleMetricMessage_i(const Controls::R2RINeighborMetricControlMessage * pMessage);
 

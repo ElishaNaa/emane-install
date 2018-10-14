@@ -9,6 +9,7 @@
 #include "emane/shimlayerimpl.h"
 #include "snmpmodemservice.h"
 
+
 namespace EMANE
 {
 	namespace R2RI
@@ -54,6 +55,9 @@ namespace EMANE
 		private:
 			ModemService snmpModemService_;
 			INETAddr addressRedis_;
+			std::uint64_t timeToUpdateRedis_;
+			double upperBound_; 
+			double lowerBound_; 
 		};
 		// }
 	}
