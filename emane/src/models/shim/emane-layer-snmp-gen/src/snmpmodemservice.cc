@@ -974,12 +974,14 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 		auto queueid = metric.getQueueId();
 		auto capacity = metric.getMaxSize();
 
+		double proportion = static_cast<double>(depth) / (double)(1.0 * capacity);
+
 		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 			INFO_LEVEL,
 			"SHIMI %03hu %s::%s #Q: %u, Max Size: %u, current depth: %u",
 			id_, __MODULE__, __func__, queueid, capacity, depth);
 
-		if(depth/capacity > upperBound_ && queueid == 0)
+		if(proportion > upperBound_ && queueid == 0)
 		{
 			// Get ip Address, where trap should be sent
 			std::string mibpktq = std::string(_PLACE_) + "TRAP_IP";
@@ -1014,7 +1016,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 				id_, __MODULE__, __func__, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
 		}
 
-		if(depth/capacity < lowerBound_ && queueid == 0)
+		if(proportion < lowerBound_ && queueid == 0)
 		{
 			std::string mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
 			std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
