@@ -1,0 +1,17 @@
+FROM fullsimdoc
+RUN apt-get update && apt-get install -y \
+python-crypto \
+python-mako \
+python-markupsafe \
+python-paramiko
+
+RUN sudo mkdir -p /opt/etce 
+WORKDIR /opt/etce
+    RUN sudo git clone https://github.com/adjacentlink/etce-wrappers-emane wrappers
+COPY python-etce /home/user/python-etce
+WORKDIR /home/user/python-etce
+	RUN /home/user/python-etce/autogen.sh
+	RUN /home/user/python-etce/configure --prefix=/usr
+	RUN make deb; \
+		sudo dpkg -i deb_dist/python-etce_1.1.1-1_all.deb; \
+		sudo apt-get install -f

@@ -343,12 +343,6 @@ done
 
 shift $((OPTIND-1))
 
-#if [ $#  -ne 2 ]
-#then
-#    echo "Invalid number of arguments" >&2
-#    exit 1
-#fi
-
 #if [ -d "$1" ]
 if  [ -d "$topdir" ]
 then
@@ -360,101 +354,21 @@ else
 fi
 
 
-#nodeId=$2
 nodeId=$nodeid
 # add take node id from printenv or env
 # fix devpts
 mount /dev/pts -o remount,rw,mode=620,ptmxmode=666,gid=5
+######################Interface that connected to the rt-bridge-$nodeid#################
 #docker will create interface with broadcast address 0.0.0.0 which kills all the routing
 ifconfig eth0 10.100.$nodeId.1/16 broadcast 10.100.255.255
-ethtool -K eth0 tx off
+
+######################Interface that connected to the rt-bridge-$nodeid#################
+ethtool -K eth0 tx off 
+########################################################################################
+
 snmptrapd -f -Lf $topdir/persist/$nodeId/var/log/snmptrapd.log -Ducd-snmp/pass -C -c /etc/snmp/snmptrapd.conf  &
 
-if [ -x ./node-prestart ]
-then
-    ./node-prestart $nodeId
-elif [ -x node-prestart$nodeId ]
-then
-    ./node-prestart$nodeId $nodeId
-fi
-
-start_sshd $PWD/persist/$nodeId/var/run/ssh.pid
-
-if [ -f transportdaemon$nodeId.xml ] &&
-       [ ! -f NO-node-emanetransportd$nodeId ] &&
-       [ ! -f NO-node-emanetransportd ]
-then
-
-    start_emanetransportd \
-        transportdaemon$nodeId.xml \
-        $PWD/persist/$nodeId/var/log/transportdaemon.log \
-        $PWD/persist/$nodeId/var/run/transportdaemon.pid \
-        $PWD/persist/$nodeId/var/run/transportdaemon.uuid
-
-    wait_for_device emane0 10
-fi
-
-#if [ -f platform$nodeId.xml ] &&
-#       [ ! -f NO-node-emane$nodeId ] &&
-#       [ ! -f NO-node-emane ]
-#then
-
-    #start_emane \
-    #    platform$nodeId.xml \
-    #    $PWD/persist/$nodeId/var/log/emane.log \
-    #    $PWD/persist/$nodeId/var/run/emane.pid \
-    #    $PWD/persist/$nodeId/var/run/emane.uuid
-
-#fi
-
-if [ -f eventdaemon$nodeId.xml ] &&
-       [ ! -f NO-node-emaneeventd$nodeId ] &&
-       [ ! -f NO-node-emaneeventd ]
-then
-    start_emaneeventd_and_wait_for_gpspty \
-        eventdaemon$nodeId.xml \
-        $PWD/persist/$nodeId/var/log/emaneeventd.log  \
-        $PWD/persist/$nodeId/var/run/emaneeventd.pid  \
-        $PWD/persist/$nodeId/var/run/emaneeventd.uuid \
-        $PWD/persist/$nodeId/var/run/gps.pty
-
-    start_gpsd \
-        $PWD/persist/$nodeId/var/run/gps.pty \
-        $PWD/persist/$nodeId/var/run/gpsd.pid
-fi
-
-#if [ -f otestpoint-recorder$nodeId.xml ] &&
-#       [ ! -f NO-node-otestpoint-recorder$nodeId ] &&
-#       [ ! -f NO-node-otestpoint-recorder ]
-#then
-#    start_otestpoint_recorder \
-#        otestpoint-recorder$nodeId.xml \
-#        $PWD/persist/$nodeId/var/log/otestpoint-recorder.log \
-#        $PWD/persist/$nodeId/var/run/otestpoint-recorder.pid \
-#        $PWD/persist/$nodeId/var/run/otestpoint-recorder.uuid
-#fi
-
-#if [ -f otestpoint-broker$nodeId.xml ] &&
-#       [ ! -f NO-node-otestpoint-broker$nodeId ] &&
-#       [ ! -f NO-node-otestpoint-broker ]
-#then
-#    start_otestpoint_broker \
-#        otestpoint-broker$nodeId.xml \
-#        $PWD/persist/$nodeId/var/log/otestpoint-broker.log \
-#        $PWD/persist/$nodeId/var/run/otestpoint-broker.pid \
-#        $PWD/persist/$nodeId/var/run/otestpoint-broker.uuid
-#fi
-
-#if [ -f otestpointd$nodeId.xml ] &&
-#       [ ! -f NO-node-otestpointd$nodeId ] &&
-#       [ ! -f NO-node-otestpointd ]
-#then
-#    start_otestpointd \
-#       otestpointd$nodeId.xml \
-#       $PWD/persist/$nodeId/var/log/otestpointd.log \
-#       $PWD/persist/$nodeId/var/run/otestpointd.pid \
-#       $PWD/persist/$nodeId/var/run/otestpointd.uuid
-#fi
+#start_sshd $PWD/persist/$nodeId/var/run/ssh.pid
 
 if [ -x ./node-preapplication ]
 then
@@ -568,12 +482,4 @@ then
         $PWD/persist/$nodeId/var/log/iperf.log \
         $PWD/persist/$nodeId/var/run/iperf.pid \
         "$starttime"
-fi
-
-if [ -x ./node-poststart ]
-then
-    ./node-poststart $nodeId
-elif [ -x node-poststart$nodeId ]
-then
-    ./node-poststart$nodeId $nodeId
 fi

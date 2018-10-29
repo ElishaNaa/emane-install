@@ -320,6 +320,7 @@ echo "demo-init start"
 echo $nodeid
 echo $topdir
 echo $ipaddressredis
+echo $withEmane
 # process options
 while getopts ":s:e:h" opt; do
     case $opt in
@@ -365,20 +366,19 @@ ipaddressredis=$ipaddressredis
 # add take node id from printenv or env
 # fix devpts
 mount /dev/pts -o remount,rw,mode=620,ptmxmode=666,gid=5
+######################Interface that connected to the rt-bridge-$nodeid#################
 #docker will create interface with broadcast address 0.0.0.0 which kills all the routing
 ifconfig eth1 10.100.$nodeId.254/16 broadcast 10.100.255.255
-ethtool -K eth1 tx off
-ethtool -K eth0 tx off
 
-if [ -x ./node-prestart ]
-then
-    ./node-prestart $nodeId
-elif [ -x node-prestart$nodeId ]
-then
-    ./node-prestart$nodeId $nodeId
-fi
+######################Interface that connected to the rt-bridge-$nodeid#################
+ethtool -K eth1 tx off 
+########################################################################################
+######################Interface that connected to the emanenode$nodeid#################
+ethtool -K eth0 tx off 
+########################################################################################
 
-start_sshd $PWD/persist/modem-$nodeid/var/run/ssh.pid
+
+#start_sshd $PWD/persist/modem-$nodeid/var/run/ssh.pid
 
 
 ##########################for set value to DB##########################
@@ -405,7 +405,8 @@ fi
 
 if [ -f platform$nodeId.xml ] &&
        [ ! -f NO-node-emane$nodeId ] &&
-       [ ! -f NO-node-emane ]
+       [ ! -f NO-node-emane ] &&
+       [ "$withEmane" == "true" ]
 then
 
     start_emane \
@@ -485,23 +486,6 @@ then
     ./node-preapplication$nodeId $nodeId
 fi
 
-#if [ -f routing$nodeId.conf ] &&
-#       [ ! -f NO-node-routing$nodeId ] &&
-#       [ ! -f NO-node-routing ]
-#then
-
-#    if [ -f  $PWD/persist/modem-$nodeid/var/run/transportdaemon.pid ]
-#    then
-#        wait_for_device emane0 10
-#    fi
-
-    #start_routing routing$nodeId.conf $nodeId
-
-#elif [ -f routing.conf ] &&
-#         [ ! -f NO-node-routing$nodeId ] &&
-#         [ ! -f NO-node-routing ]
-#then
-
     if [ -f  $PWD/persist/modem-$nodeid/var/run/transportdaemon.pid ]
     then
         wait_for_device emane0 10
@@ -577,19 +561,4 @@ then
         $PWD/persist/modem-$nodeid/var/log/iperf.log \
         $PWD/persist/modem-$nodeid/var/run/iperf.pid \
         "$starttime"
-fi
-
-if [ -x ./node-poststart ]
-then
-    ./node-poststart $nodeId
-elif [ -x node-poststart$nodeId ]
-then
-    ./node-poststart$nodeId $nodeId
-fi
-if [ -x ./node-prestop ]
-then
-    nodeId=$nodeid
-    topDir=$topdir
-    ./node-prestop $nodeId $topDir
-echo "node-prestop"
 fi

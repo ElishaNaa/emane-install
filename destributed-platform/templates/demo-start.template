@@ -17,7 +17,7 @@ for j in $(seq 2 ${#NodesID[@]})
 
     sed -i -e 's/@NODEID@/'"${nodeid}/g" ${MyFile}
 
-    FileList+=(tdmanem$nodeid.xml)
+    FileList+=(@DEMOIDNEM@$nodeid.xml)
 
 done
 
@@ -33,5 +33,7 @@ done
 
 tr -d "\n\r" < dockerImage >> dockerImage1; mv dockerImage1 dockerImage
 
+
 scripts/docker-democtl-host start "$@" "$TOPDIR" "@DEMOID@"
+
 scripts/docker-rtctl-host start "$@" "$TOPDIR" "@DEMOID@"

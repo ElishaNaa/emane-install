@@ -204,7 +204,7 @@ def clear (host, senario):
 
 def usage():
     print 'To start/stop the simulation, the command should be like that:'
-    print 'python simulation.py start/stop SenarioNameDir (optional - servers to run, if empty; all servers will run)'
+    print 'python simulation.py start/stop SenarioNameDir (optional - servers to run, if empty; all servers will run) (optional - if you want emane run NOW add --with-emane)'
     print 'The servers need to be written like that: Name of server1,Name of server2'
     print ''
     print 'To clear the files, the command should be like that:'
@@ -213,20 +213,27 @@ def usage():
 
 if __name__ == '__main__':
     numbOfSysArg = len(sys.argv)
-    if numbOfSysArg == 3 or numbOfSysArg == 4:
+    if numbOfSysArg == 3 or numbOfSysArg == 4 or numbOfSysArg == 5:
         cmd = sys.argv[1]
         senario = sys.argv[2]
-        if numbOfSysArg == 4:
+        if (numbOfSysArg == 5 and '--with-emane' in sys.argv[1:]) or (numbOfSysArg == 4 and '--with-emane' not in sys.argv[1:]):
             serverNames = sys.argv[3]
             serversExist = checkIfServerExist(serverNames)
         else:
             serversExist = True
         if(serversExist != False):
             if cmd == 'start' or cmd == 'stop':
-                if numbOfSysArg == 4:
-                    run(cmd, serverNames, senario)
+                if (numbOfSysArg == 5 and '--with-emane' in sys.argv[1:]) or (numbOfSysArg == 4 and '--with-emane' not in sys.argv[1:]):
+                    if '--with-emane' in sys.argv[1:] and cmd == 'start':
+                        run(cmd + ' -w', serverNames, senario)
+                    else:
+                        run(cmd, serverNames, senario)
                 else:
-                    run(cmd, serversExist, senario)
+                    if '--with-emane' in sys.argv[1:] and cmd == 'start':
+                        run(cmd + ' -w', serversExist, senario)
+                    else:
+                        run(cmd, serversExist, senario)
+                    
             elif cmd == 'clear':
                 if numbOfSysArg == 4:
                      serverAddrList = getServersAddrs(serverNames)

@@ -36,13 +36,6 @@ my_IP=$(hostname -I | awk -F ' ' '{print $1}')
 prefix=modem-
 routerbridgeprefix=rt-bridge-
 bridgecontrol=1
-#lxcmajorversion=
-
-#if (which lxc-version &> /dev/null); then
-#    lxcmajorversion=$(lxc-version | awk -F: '{print $2}' | awk -F. '{print $1}')
-#else
-#    lxcmajorversion=$(lxc-stop --version  | awk -F. '{print $1}')
-#fi
 
 check_bridge()
 {
@@ -203,6 +196,7 @@ usage()
     echo "                 syntax (i.e. 'now + 30 sec')"
     echo "  -e ENVFILE    Environment file to source"
     echo "  -n            Do not control the bridge"
+    echo "  -w WITH-EMANE Run with emane"
     echo
     echo " stop options:"
     echo "  -e ENVFILE    Environment file to source"
@@ -221,10 +215,12 @@ case "$1" in
         starttime=
         envcommand=
 
+        withEmane=
+
         OPTIND=2
 
         # process options
-        while getopts ":s:e:n" opt; do
+        while getopts ":s:e:n:w" opt; do
             case $opt in
                 n)
                     bridgecontrol=0
@@ -236,6 +232,9 @@ case "$1" in
                 e)
                     envcommand="-e $OPTARG"
                     . "$OPTARG"
+                    ;;
+                w)
+                    withEmane="true"
                     ;;
                 \?)
                     echo "Invalid option: -$OPTARG" >&2
@@ -255,19 +254,6 @@ case "$1" in
         shopt -s extglob
         topdir=$1
         demoid=$2
-        #nodecount=$3
-
-        #if [[ $demoid != +([0-9]) ]]
-        #then
-        #    echo "Invalid demo id: $demoid" >&2
-        #    exit 1
-        #fi
-
-        #if [[ $nodecount != +([0-9]) ]]
-        #then
-        #    echo "Invalid node count: nodecount" >&2
-        #    exit 1
-        #fi
 
         if [ -z "$starttime" ]
         then
@@ -338,7 +324,7 @@ case "$1" in
                 j=1
                 for i in $(seq 3 ${#listIP[@]})
                 do
-                sudo ovs-vsctl add-port $OpenVSwich gre$i -- set interface gre$i type=gre options:remote_ip=${listIP[i-1]}
+                sudo ovs-vsctl add-port $OpenVSwich vxlan$i -- set interface vxlan$i type=vxlan options:local_ip=$my_IP options:remote_ip=${listIP[i-1]}
                 j=$j+1
                 done
                 
@@ -431,6 +417,7 @@ case "$1" in
 nodeid=$nodeid
 topdir=$topdir/$demoid
 ipaddressredis=$ipaddressredis
+withEmane=$withEmane
 
 EOF
 
@@ -450,15 +437,6 @@ EOF
 $modemImage \
 
 EOF
-
-
-#--entrypoint /home/user/emane-dlep-tutorial/scripts/demo-init \
-# to connect to container sudo docker exec -i -t node-1 /bin/bash
-# to run sim emane platform1.xml -l 4 -f log1.tmp
-            #if [[ $lxcmajorversion -ne 0 ]]
-            #then
-            #    echo "lxc.aa_profile = unconfined" >> persist/modem-$nodeid/var/run/docker.conf.$nodeid
-            #fi
 
             echo "Starting docker instance: $name"
 
@@ -524,10 +502,10 @@ EOF
         #        persist/host/var/run/otestpoint-broker.uuid
         #fi
 
-        if [ -x host-poststart ]
-        then
-            ./host-poststart $demoid $nodecount
-        fi
+        #if [ -x host-poststart ]
+        #then
+        #    ./host-poststart $demoid $nodecount
+        #fi
         ;;
 
     stop)
@@ -562,29 +540,10 @@ EOF
         topdir=$1
         demoid=$2
 
-        #if [[ $demoid != +([0-9]) ]]
-        #then
-        #    echo "Invalid demo id: $demoid" >&2
-        #    exit 1
-        #fi
-
-        #if [[ $nodecount != +([0-9]) ]]
-        #then
-        #    echo "Invalid node count: nodecount" >&2
-        #    exit 1
-        #fi
-
         if [ ! -f  /var/run/demo.lock ]
         then
             echo "There does not appear to be a running demo. No /var/run/demo.lock present." >&2
             exit 1
-        fi
-
-
-        if [ -x ./host-prestop ]
-        then
-            #./host-prestop $demoid $nodecount !!!!!!!!!!!!!!!!
-        echo "host-prestop"
         fi
 
         IFS=$'\r\n' GLOBIGNORE='*' command eval  'list=($(cat $topdir/$demoid/ServerIPNodeID))'
@@ -600,7 +559,7 @@ EOF
             #if [[ $lxcmajorversion -ne 0 ]]
             #then
                 #lxc-stop -n $prefix$nodeid -k
-        docker stop $prefix$nodeid 
+        #docker stop $prefix$nodeid 
         #docker rm $prefix$nodeid
             if (! check_bridge $routerbridge)
             then
@@ -610,41 +569,18 @@ EOF
 
                 iptables -D FORWARD -i $routerbridge -j ACCEPT
 
-                ip link set $routerbridge down
-
                 docker network disconnect -f $routerbridge $prefix$nodeid
 
+                ip link set $routerbridge down
+                
                 docker network rm $routerbridge
-
-                #brctl delbr $routerbridge
 
 
             echo "Done removing bridge: $routerbridge"
             fi
-            #else
-            if (! check_bridge $routerbridge)
-            then
-                echo "Removing bridge: $routerbridge"
 
-                iptables -D INPUT -i $routerbridge -j ACCEPT
-
-                iptables -D FORWARD -i $routerbridge -j ACCEPT
-
-                ip link set $routerbridge down
-
-                docker network disconnect -f $routerbridge $prefix$nodeid
-
-                docker network rm $routerbridge
-
-                #brctl delbr $routerbridge
-
-
-            echo "Done removing bridge: $routerbridge"
-            fi
-        docker stop $prefix$nodeid
-        docker rm -f $prefix$nodeid
-                #lxc-stop -n $prefix$nodeid
-            #fi
+            docker network disconnect -f $bridgecontrol $prefix$nodeid
+            docker rm -f $prefix$nodeid
 
         done
 
@@ -718,7 +654,7 @@ EOF
                 j=1
                 for i in $(seq 3 ${#listIP[@]})
                 do
-                  sudo ovs-vsctl del-port $OpenVSwich gre$i
+                  sudo ovs-vsctl del-port $OpenVSwich vxlan$i
                   j=j+1
                 done
 
@@ -755,10 +691,10 @@ EOF
             kill -9 $i;
         done
 
-        if [ -x ./host-poststop ]
-        then
-            ./host-poststop $demoid $nodecount
-        fi
+        #if [ -x ./host-poststop ]
+        #then
+        #    ./host-poststop $demoid $nodecount
+        #fi
 
         rm -f /var/run/demo.lock
         ;;

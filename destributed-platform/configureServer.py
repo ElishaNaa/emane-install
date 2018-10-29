@@ -275,7 +275,7 @@ class distribToServers():
                          nodesDirPathServer + fileName)  # copy all files from host to server
                 sftp.chmod(nodesDirPathServer + fileName, 0777)  # chmod the files
                 file.close()
-            listfile = ['NO-host-emaneeventservice', 'node-prestop', 'redis.EXAMPLE', 'demo-start', 'demo-stop',
+            listfile = ['tdmactmac.xml', 'NO-host-emaneeventservice', 'node-prestop', 'redis.EXAMPLE', 'demo-start', 'demo-stop',
                         'protocol-config.xsd', 'emanelayerdlep.xml', 'emanelayersnmp.xml', 'emanelayerfilter.xml',
                         'eventservice.xml', 'eventdaemon.xml', 'transraw.xml', 'tdmamac.xml', 'credit-windowing-03.xml',
                         'dlep-draft-24.xml', 'dlep-rfc-8175.xml', 'schedule.xml']
@@ -365,14 +365,16 @@ class hatchNodes():
     def StartHatching(self, i_TransmiionType, i_NumberOfNodes, i_Base):
         self.hatchRouting(i_TransmiionType, i_NumberOfNodes)
         self.hatchTDMAPlatform(i_TransmiionType, i_NumberOfNodes)
-        self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
-        self.hatchFileAlways(i_TransmiionType)
+        #self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
+        if 'tdmact' in i_TransmiionType:
+             self.hatchTDMACTNem(i_TransmiionType, i_NumberOfNodes)
+        else:
+            self.hatchTDMANEM(i_TransmiionType, i_NumberOfNodes)
+        self.hatchFileAlways(i_TransmiionType, i_NumberOfNodes)
         self.hatchScripts(i_TransmiionType)
         self.hatchRouters(i_TransmiionType, i_NumberOfNodes, i_Base)
         self.hatchOtestPoint(i_TransmiionType, i_NumberOfNodes)
         # self.copyanything(EMANE_TEMPLATES_PATH_HOST + 'scripts', EMANE_HOST_PATH + i_TransmiionType + '/scripts')
-        if i_TransmiionType == 'tdmact':
-            self.hatchTDMACTNem(i_NumberOfNodes)
 
     def scanNumbers(self, i_NumbersString):
         '''
@@ -529,12 +531,15 @@ class hatchNodes():
             self.preprocess(replacements, template, pathToNewFiles)
 
 
-    def hatchFileAlways(self, i_TransmiionType):
+    def hatchFileAlways(self, i_TransmiionType, i_NumberOfNodes):
         listfile = ['eventservice', 'eelgenerator', 'emanelayerdlep', 'emanelayersnmp', 'emanelayerfilter', 'eventservice',
                     'eventdaemon', 'transraw', 'tdmamac', 'credit-windowing-03', 'dlep-draft-24', 'dlep-rfc-8175',
                     'schedule']
         pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmiionType + '/'
         replacements = []
+        if 'tdmact' in i_TransmiionType:
+            listfile.remove('tdmamac')
+
         for file in listfile:
             template = EMANE_TEMPLATES_PATH_HOST + file + '.xml.template'
             pathToNewFiles = pathWhereFind + file + '.xml'
@@ -542,7 +547,11 @@ class hatchNodes():
         template = EMANE_TEMPLATES_PATH_HOST + 'protocol-config.xsd.template'
         pathToNewFiles = pathWhereFind + 'protocol-config.xsd'
         self.preprocess(replacements, template, pathToNewFiles)
-        replacements = [["DEMOID", i_TransmiionType]]
+        if 'tdmact' in i_TransmiionType:
+            demoNem = 'tdmactnem'
+        else:
+            demoNem = 'tdmanem'
+        replacements = [["DEMOID", i_TransmiionType], ["DEMOIDNEM", demoNem]]
         template = EMANE_TEMPLATES_PATH_HOST + 'demo-start.template'
         pathToNewFiles = pathWhereFind + 'demo-start'
         self.preprocess(replacements, template, pathToNewFiles)
@@ -566,13 +575,25 @@ class hatchNodes():
         template = EMANE_TEMPLATES_PATH_HOST + 'NO-host-emaneeventservice.template'
         pathToNewFiles = pathWhereFind + 'NO-host-emaneeventservice'
         self.preprocess(replacements, template, pathToNewFiles)
+        if 'tdmact' in i_TransmiionType:
+            for index in range(1, i_NumberOfNodes):
+            
+                logPath = NODES_DIRECTORY_PATH_SERVER + i_TransmiionType + '/persist/modem-' + str(index) + '/var/log/CT'
+                replacements = [["LOG", logPath]]
+                template = EMANE_TEMPLATES_PATH_HOST + 'tdmactmac.xml.template'
+                pathToNewFiles = pathWhereFind + 'tdmactmac' + str(index) + '.xml'
+                self.preprocess(replacements, template, pathToNewFiles)
 
 
     def hatchTDMAPlatform(self, i_TransmissionType, i_NumberOfNodes):
         pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, 'platform')
         for index in range(1, i_NumberOfNodes):
-            nemxmlChangeTo = 'tdmanem' + str(index) + '.xml'
+            if 'tdmact' in i_TransmissionType:
+                nemxmlChangeTo = 'tdmactnem' + str(index) + '.xml'
+            else:
+                nemxmlChangeTo = 'tdmanem' + str(index) + '.xml'
+
             replacements = [["NEMID", str(index)], ["NEMXML", nemxmlChangeTo]]
             template = EMANE_TEMPLATES_PATH_HOST + 'platform.xml.template'
             pathToNewFiles = pathWhereFind + 'platform' + str(index) + '.xml'
@@ -617,14 +638,18 @@ class hatchNodes():
             self.preprocess(replacements, template, pathToNewFiles)
 
 
-    def hatchTDMACTNem(self, i_NumberOfNodes):
-        pathWhereFind = EMANE_HOST_PATH + 'tdmact_scenario/'
+    def hatchTDMACTNem(self, i_TransmissionType, i_NumberOfNodes):
+        pathWhereFind = EMANE_HOST_PATH + 'scenario-' + i_TransmissionType + '/'
         self.removeFile(pathWhereFind, 'tdmactnem')
         for index in range(1, i_NumberOfNodes):
-            replacements = [["NODEID", index]]
+            hexa = '{:X}'.format(index)
+            if index <= 15:
+                replacements = [["NEMID", str(index)], ["HEX", '0' + str(hexa)]]
+            else:
+                replacements = [["NEMID", str(index)], ["HEX", str(hexa)]]
             template = EMANE_TEMPLATES_PATH_HOST + 'tdmactnem.xml.template'
-            i_PathToNewFiles = pathWhereFind + 'tdmactnem' + str(index) + '.xml'
-            self.preprocess(replacements, template, i_PathToNewFiles)
+            pathToNewFiles = pathWhereFind + 'tdmactnem' + str(index) + '.xml'
+            self.preprocess(replacements, template, pathToNewFiles)
 
 
     def hatchRouting(self, i_TransmissionType, i_NumberOfNodes):
