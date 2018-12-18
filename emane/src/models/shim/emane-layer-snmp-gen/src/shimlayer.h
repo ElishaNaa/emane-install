@@ -56,8 +56,22 @@ namespace EMANE
 			ModemService snmpModemService_;
 			INETAddr addressRedis_;
 			std::uint64_t timeToUpdateRedis_;
-			double upperBound_; 
-			double lowerBound_; 
+			
+			double upperBound_queue_0_;
+			double lowerBound_queue_0_;
+
+			double upperBound_queue_1_;
+			double lowerBound_queue_1_;
+
+			double upperBound_queue_2_;
+			double lowerBound_queue_2_;
+
+			double upperBound_queue_3_;
+			double lowerBound_queue_3_;
+
+			std::uint64_t severity_;
+			std::uint64_t radio_tx_overload_on_;
+			std::uint64_t radio_tx_overload_off_;
 		};
 		// }
 	}

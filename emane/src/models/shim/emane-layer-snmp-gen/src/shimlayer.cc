@@ -92,15 +92,60 @@ void EMANE::R2RI::ShimLayer::initialize(Registrar & registrar)
 		{10000000000},
 		"Time to update redis in nanoseconds.");
 
-		configRegistrar.registerNumeric<double>("upperBound",
+		configRegistrar.registerNumeric<double>("upperBoundQueue0",
 			ConfigurationProperties::DEFAULT,
 		{ 0.8 },
-		"Send trap (X_OFF), when the packages in the queue cross upper bound");
+		"Send trap (X_OFF), when the packages in the queue cross upper bound for queue-0");
 
-		configRegistrar.registerNumeric<double>("lowerBound",
+		configRegistrar.registerNumeric<double>("lowerBoundQueue0",
 			ConfigurationProperties::DEFAULT,
 		{ 0.2 },
-		"Send trap (X_ON), when the packages in the queue smallest from lower bound");
+		"Send trap (X_ON), when the packages in the queue smallest from lower bound for queue-0");
+
+		configRegistrar.registerNumeric<double>("upperBoundQueue1",
+			ConfigurationProperties::DEFAULT,
+			{ 0.8 },
+			"Send trap (X_OFF), when the packages in the queue cross upper bound for queue-1");
+
+		configRegistrar.registerNumeric<double>("lowerBoundQueue1",
+			ConfigurationProperties::DEFAULT,
+			{ 0.2 },
+			"Send trap (X_ON), when the packages in the queue smallest from lower bound for queue-1");
+
+		configRegistrar.registerNumeric<double>("upperBoundQueue2",
+			ConfigurationProperties::DEFAULT,
+			{ 0.8 },
+			"Send trap (X_OFF), when the packages in the queue cross upper bound for queue-2");
+
+		configRegistrar.registerNumeric<double>("lowerBoundQueue2",
+			ConfigurationProperties::DEFAULT,
+			{ 0.2 },
+			"Send trap (X_ON), when the packages in the queue smallest from lower bound for queue-2");
+
+		configRegistrar.registerNumeric<double>("upperBoundQueue3",
+			ConfigurationProperties::DEFAULT,
+			{ 0.8 },
+			"Send trap (X_OFF), when the packages in the queue cross upper bound for queue-3");
+
+		configRegistrar.registerNumeric<double>("lowerBoundQueue3",
+			ConfigurationProperties::DEFAULT,
+			{ 0.2 },
+			"Send trap (X_ON), when the packages in the queue smallest from lower bound for queue-3");
+
+		configRegistrar.registerNumeric<std::uint64_t>("severity",
+			ConfigurationProperties::DEFAULT,
+			{ 0 },
+			"The trap severity.");
+
+		configRegistrar.registerNumeric<std::uint64_t>("radioTxOverloadOn",
+			ConfigurationProperties::DEFAULT,
+			{ 1022 },
+			"The trap ID code.");
+
+		configRegistrar.registerNumeric<std::uint64_t>("radioTxOverloadOff",
+			ConfigurationProperties::DEFAULT,
+			{ 1023 },
+			"The trap ID code.");
 
 		//const EMANE::ModemService::ConfigParameterMapType & snmpConfiguration{snmpModemService_.getConfigItems()};
 
@@ -175,22 +220,48 @@ void EMANE::R2RI::ShimLayer::configure(const ConfigurationUpdate & update)
 				item.first.c_str(),
 				timeToUpdateRedis_);
 		}
-		else if (item.first == "upperBound")
+		else if (item.first == "severity")
 		{
-			upperBound_ = item.second[0].asDouble();
+			severity_ = item.second[0].asUINT64();
 
 			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 				INFO_LEVEL,
-				"SHIMI %03d %s::%s %s = %f",
+				"SHIMI %03d %s::%s %s = %u",
 				id_,
 				__MODULE__,
 				__func__,
 				item.first.c_str(),
-				upperBound_);
+				severity_);
 		}
-		else if (item.first == "lowerBound")
+		else if (item.first == "radioTxOverloadOn")
 		{
-			lowerBound_ = item.second[0].asDouble();
+			radio_tx_overload_on_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				radio_tx_overload_on_);
+		}
+		else if (item.first == "radioTxOverloadOff")
+		{
+			radio_tx_overload_off_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				radio_tx_overload_off_);
+		}
+		else if (item.first == "upperBoundQueue0")
+		{
+			upperBound_queue_0_ = item.second[0].asDouble();
 
 			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 				INFO_LEVEL,
@@ -199,7 +270,98 @@ void EMANE::R2RI::ShimLayer::configure(const ConfigurationUpdate & update)
 				__MODULE__,
 				__func__,
 				item.first.c_str(),
-				lowerBound_);
+				upperBound_queue_0_);
+		}
+		else if (item.first == "lowerBoundQueue0")
+		{
+			lowerBound_queue_0_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_0_);
+		}
+		else if (item.first == "upperBoundQueue1")
+		{
+			upperBound_queue_1_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_1_);
+		}
+		else if (item.first == "lowerBoundQueue1")
+		{
+			lowerBound_queue_1_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_1_);
+		}
+		else if (item.first == "upperBoundQueue2")
+		{
+			upperBound_queue_2_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_2_);
+		}
+		else if (item.first == "lowerBoundQueue2")
+		{
+			lowerBound_queue_2_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_2_);
+		}
+		else if (item.first == "upperBoundQueue3")
+		{
+			upperBound_queue_3_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_3_);
+		}
+		else if (item.first == "lowerBoundQueue3")
+		{
+			lowerBound_queue_3_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_3_);
 		}
 		else {
 

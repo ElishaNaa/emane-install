@@ -47,6 +47,8 @@
 #include "aggregationstatuspublisher.h"
 #include "downstreamqueue.h"
 
+#include <map>
+
 namespace EMANE
 {
   namespace Models
@@ -117,6 +119,8 @@ namespace EMANE
         std::unique_ptr<Scheduler> pScheduler_;
         std::unique_ptr<QueueManager> pQueueManager_;
         MACLayerImplementor * pRadioModel_;
+
+		std::map<std::uint8_t, std::string> queueMapping_;
 
         bool bFlowControlEnable_;
         bool bRadioMetricEnable_; //dev - Enable radio metric for R2RI.

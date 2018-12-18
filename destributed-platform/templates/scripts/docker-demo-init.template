@@ -373,13 +373,38 @@ ifconfig eth1 10.100.$nodeId.254/16 broadcast 10.100.255.255
 ######################Interface that connected to the rt-bridge-$nodeid#################
 ethtool -K eth1 tx off 
 ########################################################################################
-######################Interface that connected to the emanenode$nodeid#################
+######################Interface that connected to the emanenode$nodeid##################
 ethtool -K eth0 tx off 
 ########################################################################################
 
 
 #start_sshd $PWD/persist/modem-$nodeid/var/run/ssh.pid
 
+##########################start ssh####################################
+service ssh start &
+#######################################################################
+##########################generate key#################################
+ssh-keygen -N "" -f '/root/.ssh/id_rsa'
+#######################################################################
+
+if [ ! -d $topdir'/keys' ]
+then
+    mkdir $topdir'/keys'
+fi
+cp '/root/.ssh/id_rsa.pub' $topdir'/keys/id_rsa.pub-modem-'$nodeId
+chmod 777 $topdir'/keys/id_rsa.pub-modem-'$nodeId
+
+#############Add hostname and ip to /etc/hosts, for DNS################
+id=1 
+while [ $id -lt 80 ]  
+do
+if [ $id -ne $nodeId ] 
+    then 
+        echo '10.99.0.'$id'           modem-'$id >> /etc/hosts
+    fi 
+    id=$((id+1))
+done
+#######################################################################
 
 ##########################for set value to DB##########################
 scripts/snmpsetDB.sh $ipaddressredis

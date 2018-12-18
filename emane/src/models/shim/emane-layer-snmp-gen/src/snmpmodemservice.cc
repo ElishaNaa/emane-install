@@ -10,6 +10,8 @@
 #include <sstream>
 #include <vector>
 
+#include <stdio.h>
+
 #include "emane/configureexception.h"
 #include "emane/utils/parameterconvert.h"
 #include "emane/controls/serializedcontrolmessage.h"
@@ -215,22 +217,48 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
 				item.first.c_str(),
 				timeToUpdateRedis_);
 		}
-		else if (item.first == "upperBound")
+		else if (item.first == "severity")
 		{
-			upperBound_ = item.second[0].asDouble();
+			severity_ = item.second[0].asUINT64();
 
 			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 				INFO_LEVEL,
-				"SHIMI %03d %s::%s %s = %f",
+				"SHIMI %03d %s::%s %s = %u",
 				id_,
 				__MODULE__,
 				__func__,
 				item.first.c_str(),
-				upperBound_);
+				severity_);
 		}
-		else if (item.first == "lowerBound")
+		else if (item.first == "radioTxOverloadOn")
 		{
-			lowerBound_ = item.second[0].asDouble();
+			radio_tx_overload_on_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				radio_tx_overload_on_);
+		}
+		else if (item.first == "radioTxOverloadOff")
+		{
+			radio_tx_overload_off_ = item.second[0].asUINT64();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %u",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				radio_tx_overload_off_);
+		}
+		else if (item.first == "upperBoundQueue0")
+		{
+			upperBound_queue_0_ = item.second[0].asDouble();
 
 			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 				INFO_LEVEL,
@@ -239,7 +267,98 @@ void EMANE::ModemService::configure(const ConfigurationUpdate & update)
 				__MODULE__,
 				__func__,
 				item.first.c_str(),
-				lowerBound_);
+				upperBound_queue_0_);
+		}
+		else if (item.first == "lowerBoundQueue0")
+		{
+			lowerBound_queue_0_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_0_);
+		}
+		else if (item.first == "upperBoundQueue1")
+		{
+			upperBound_queue_1_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_1_);
+		}
+		else if (item.first == "lowerBoundQueue1")
+		{
+			lowerBound_queue_1_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_1_);
+		}
+		else if (item.first == "upperBoundQueue2")
+		{
+			upperBound_queue_2_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_2_);
+		}
+		else if (item.first == "lowerBoundQueue2")
+		{
+			lowerBound_queue_2_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_2_);
+		}
+		else if (item.first == "upperBoundQueue3")
+		{
+			upperBound_queue_3_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				upperBound_queue_3_);
+		}
+		else if (item.first == "lowerBoundQueue3")
+		{
+			lowerBound_queue_3_ = item.second[0].asDouble();
+
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03d %s::%s %s = %f",
+				id_,
+				__MODULE__,
+				__func__,
+				item.first.c_str(),
+				lowerBound_queue_3_);
 		}
 		else
 		{
@@ -263,6 +382,10 @@ void EMANE::ModemService::start()
 	LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
 		DEBUG_LEVEL,
 		"SHIMI %03hu %s::%s", id_, __MODULE__, __func__);
+
+	time_stamp = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count()); // for trap
+
+	global_counter_for_trap_sent = 0;
 
 	// sinr saniity check
 	if (fSINRMin_ > fSINRMax_)
@@ -695,7 +818,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RINeigh
 		
 		// SET NEIGHBOURS MAC ADDR
 		// node_id.PLACE.nbr_id
-		std::string nbrmibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_"; // old ---> ".1.3.6.1.4.1.16215.1.24.1.4.2.1.15.1.1."
+		std::string nbrmibmac = std::string(_PLACE_) + "NEIGHBOUR_MAC_ADDRESS_";
 		std::string nbrstrkeymac = std::to_string(id_).c_str() + nbrmibmac + std::to_string(metricSetIndex).c_str();
 		const char *nbrmackey = nbrstrkeymac.c_str();
 		const std::string strvalmac = getEthernetAddress_i(nbr).to_string().c_str();
@@ -949,7 +1072,7 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 		id_, __MODULE__, __func__);
 
 
-	redisReply *reply;
+	//redisReply *reply;
 
 	// avg queue delay sum
 	std::uint64_t delaySum{};
@@ -981,85 +1104,29 @@ void EMANE::ModemService::handleMetricMessage_i(const EMANE::Controls::R2RIQueue
 			"SHIMI %03hu %s::%s #Q: %u, Max Size: %u, current depth: %u",
 			id_, __MODULE__, __func__, queueid, capacity, depth);
 
-		if(proportion > upperBound_ && queueid == 0)
+		switch (queueid)
 		{
-			// Get ip Address, where trap should be sent
-			std::string mibpktq = std::string(_PLACE_) + "TRAP_IP";
-			std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
-			const char *pktqkey = strkeypktq.c_str();
-			reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
-			std::string TRAP_IP = reply->str;
-			freeReplyObject(reply);
-			// Get ip Port, where trap should be sent
-			mibpktq = std::string(_PLACE_) + "TRAP_PORT";
-			strkeypktq = std::to_string(id_).c_str() + mibpktq;
-			pktqkey = strkeypktq.c_str();
-			reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
-			std::string TRAP_PORT = reply->str;
-			freeReplyObject(reply);
-			std::stringstream ss;
-			ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A 'password' -x DES -X 'mypassword' -l authPriv " << TRAP_IP << ":" << TRAP_PORT << " -M SNMPv2-SMI::enterprises SNMPv2-SMI::enterprises int 0";
-			std::string str = ss.str();
-			const char* command = str.c_str();
-			system(command);
-
-
-			mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
-			strkeypktq = std::to_string(id_).c_str() + mibpktq;
-			pktqkey = strkeypktq.c_str();
-			const char *strvalpktq = "0";
-			reply = static_cast<redisReply*>(redisCommand(c,"SET %s %s", pktqkey, strvalpktq));
-			freeReplyObject(reply);
-			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-				INFO_LEVEL, 
-				"SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s to %s:%s",
-				id_, __MODULE__, __func__, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
-		}
-
-		if(proportion < lowerBound_ && queueid == 0)
+		case 0:
 		{
-			std::string mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
-			std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
-			const char *pktqkey = strkeypktq.c_str();
-			reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
-			std::string GLOBAL_X_Off = reply->str;
-			freeReplyObject(reply);
-			if (!(GLOBAL_X_Off.compare("0")))
-			{
-				// Get ip Address, where trap should be sent
-				mibpktq = std::string(_PLACE_) + "TRAP_IP";
-				strkeypktq = std::to_string(id_).c_str() + mibpktq;
-				pktqkey = strkeypktq.c_str();
-				reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
-				std::string TRAP_IP = reply->str;
-				freeReplyObject(reply);
-				// Get ip Port, where trap should be sent
-				mibpktq = std::string(_PLACE_) + "TRAP_PORT";
-				strkeypktq = std::to_string(id_).c_str() + mibpktq;
-				pktqkey = strkeypktq.c_str();
-				reply = static_cast<redisReply*>(redisCommand(c,"GET %s", pktqkey));
-				std::string TRAP_PORT = reply->str;
-				freeReplyObject(reply);
-				std::stringstream ss;
-				ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A 'password' -x DES -X 'mypassword' -l authPriv " << TRAP_IP << ":" << TRAP_PORT << " -M SNMPv2-SMI::enterprises SNMPv2-SMI::enterprises int 1";
-				std::string str = ss.str();
-				const char* command = str.c_str();
-				system(command);
-
-
-				mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off";
-				strkeypktq = std::to_string(id_).c_str() + mibpktq;
-				pktqkey = strkeypktq.c_str();
-				const char *strvalpktq = "1";
-				reply = static_cast<redisReply*>(redisCommand(c,"SET %s %s", pktqkey, strvalpktq));
-				freeReplyObject(reply);
-				LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
-					INFO_LEVEL, 
-					"SHIMI %03hu %s::%s SET GLOBAL_X_Off: %s to %s:%s",
-					id_, __MODULE__, __func__, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
-			}
+			send_trap(queueid, proportion, upperBound_queue_0_, lowerBound_queue_0_);
 		}
-
+		break;
+		case 1:
+		{
+			send_trap(queueid, proportion, upperBound_queue_1_, lowerBound_queue_1_);
+		}
+		break;
+		case 2:
+		{
+			send_trap(queueid, proportion, upperBound_queue_2_, lowerBound_queue_2_);
+		}
+		break;
+		case 3:
+		{
+			send_trap(queueid, proportion, upperBound_queue_3_, lowerBound_queue_3_);
+		}
+		break;
+		}
 	}
 	if (count)
 	{
@@ -1220,4 +1287,100 @@ int EMANE::ModemService::getRLQ_i(const std::uint16_t nbr,
 		iRLQ);
 
 	return iRLQ;
+}
+
+void EMANE::ModemService::send_trap(std::uint64_t queueid, double proportion, double upperBound, double lowerBound)
+{
+	redisReply *reply;
+
+	if (proportion > upperBound)
+	{
+		// Get ip Address, where trap should be sent
+		std::string mibpktq = std::string(_PLACE_) + "TRAP_IP";
+		std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
+		const char *pktqkey = strkeypktq.c_str();
+		reply = static_cast<redisReply*>(redisCommand(c, "GET %s", pktqkey));
+		std::string TRAP_IP = reply->str;
+		freeReplyObject(reply);
+		// Get ip Port, where trap should be sent
+		mibpktq = std::string(_PLACE_) + "TRAP_PORT";
+		strkeypktq = std::to_string(id_).c_str() + mibpktq;
+		pktqkey = strkeypktq.c_str();
+		reply = static_cast<redisReply*>(redisCommand(c, "GET %s", pktqkey));
+		std::string TRAP_PORT = reply->str;
+		freeReplyObject(reply);
+
+		++global_counter_for_trap_sent;
+
+		std::stringstream ss;
+		ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A 'password' -x DES -X 'mypassword' -l authPriv "
+			<< TRAP_IP << ":" << TRAP_PORT << " '' 1.3.6.1.6.3.1.1.5  1.3.6.1.2.1.1.3.0 t " << time_stamp << " 1.3.6.1.6.3.1.1.4.1.0 oid 1.3.6.1.4.1.1111.1.18.1.0.1.0 "
+			<< " 1.3.6.1.4.1.1111.1.18.1.0.2.0 i " << radio_tx_overload_off_ << " 1.3.6.1.4.1.1111.1.18.1.0.3.0 i " << severity_
+			<< " 1.3.6.1.4.1.1111.1.18.1.0.4.0 i " << global_counter_for_trap_sent << " 1.3.6.1.4.1.1111.1.18.1.0.5.0 i " << queueid;
+		std::string str = ss.str();
+		const char* command = str.c_str();
+		system(command);
+
+
+		mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off_QUEUE_" + std::to_string(queueid);
+		strkeypktq = std::to_string(id_).c_str() + mibpktq;
+		pktqkey = strkeypktq.c_str();
+		const char *strvalpktq = "0";
+		reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", pktqkey, strvalpktq));
+		freeReplyObject(reply);
+		LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+			INFO_LEVEL,
+			"SHIMI %03hu %s::%s SET GLOBAL_X_Off_QUEUE_%d: %s to %s:%s",
+			id_, __MODULE__, __func__, queueid, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
+	}
+
+	if (proportion < lowerBound)
+	{
+		std::string mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off_QUEUE_" + std::to_string(queueid);
+		std::string strkeypktq = std::to_string(id_).c_str() + mibpktq;
+		const char *pktqkey = strkeypktq.c_str();
+		reply = static_cast<redisReply*>(redisCommand(c, "GET %s", pktqkey));
+		std::string GLOBAL_X_Off = reply->str;
+		freeReplyObject(reply);
+		if (!(GLOBAL_X_Off.compare("0")))
+		{
+			// Get ip Address, where trap should be sent
+			mibpktq = std::string(_PLACE_) + "TRAP_IP";
+			strkeypktq = std::to_string(id_).c_str() + mibpktq;
+			pktqkey = strkeypktq.c_str();
+			reply = static_cast<redisReply*>(redisCommand(c, "GET %s", pktqkey));
+			std::string TRAP_IP = reply->str;
+			freeReplyObject(reply);
+			// Get ip Port, where trap should be sent
+			mibpktq = std::string(_PLACE_) + "TRAP_PORT";
+			strkeypktq = std::to_string(id_).c_str() + mibpktq;
+			pktqkey = strkeypktq.c_str();
+			reply = static_cast<redisReply*>(redisCommand(c, "GET %s", pktqkey));
+			std::string TRAP_PORT = reply->str;
+			freeReplyObject(reply);
+
+			++global_counter_for_trap_sent;
+
+			std::stringstream ss;
+			ss << "snmptrap -e 0x0102030405 -v 3 -u authOnlyUser -a MD5 -A 'password' -x DES -X 'mypassword' -l authPriv "
+				<< TRAP_IP << ":" << TRAP_PORT << " '' 1.3.6.1.6.3.1.1.5  1.3.6.1.2.1.1.3.0 t " << time_stamp << " 1.3.6.1.6.3.1.1.4.1.0 oid 1.3.6.1.4.1.1111.1.18.1.0.1.0 "
+				<< " 1.3.6.1.4.1.1111.1.18.1.0.2.0 i " << radio_tx_overload_on_ << " 1.3.6.1.4.1.1111.1.18.1.0.3.0 i " << severity_
+				<< " 1.3.6.1.4.1.1111.1.18.1.0.4.0 i " << global_counter_for_trap_sent << " 1.3.6.1.4.1.1111.1.18.1.0.5.0 i " << queueid;
+			std::string str = ss.str();
+			const char* command = str.c_str();
+			system(command);
+
+
+			mibpktq = std::string(_PLACE_) + "GLOBAL_X_Off_QUEUE_" + std::to_string(queueid);
+			strkeypktq = std::to_string(id_).c_str() + mibpktq;
+			pktqkey = strkeypktq.c_str();
+			const char *strvalpktq = "1";
+			reply = static_cast<redisReply*>(redisCommand(c, "SET %s %s", pktqkey, strvalpktq));
+			freeReplyObject(reply);
+			LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+				INFO_LEVEL,
+				"SHIMI %03hu %s::%s SET GLOBAL_X_Off_QUEUE_%d: %s to %s:%s",
+				id_, __MODULE__, __func__, queueid, strvalpktq, TRAP_IP.c_str(), TRAP_PORT.c_str());
+		}
+	}
 }

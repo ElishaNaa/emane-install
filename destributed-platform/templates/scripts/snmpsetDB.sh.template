@@ -95,9 +95,21 @@ tmp=$(redis-cli -h $listen  SET $id$PLACE"MAX_PRTY_PEND_PACKET" $VALUE)
 VALUE=25  
 tmp=$(redis-cli -h $listen  SET $id$PLACE"OLDEST_PACKET_AGE" $VALUE)  
   
-#GlobalXOff
+#GlobalXOffQUEUE0
 VALUE=0 
-tmp=$(redis-cli -h $listen  SET $id$PLACE"GLOBAL_X_Off" $VALUE)  
+tmp=$(redis-cli -h $listen  SET $id$PLACE"GLOBAL_X_Off_QUEUE_0" $VALUE)  
+
+#GlobalXOffQUEUE1
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$PLACE"GLOBAL_X_Off_QUEUE_1" $VALUE)  
+
+#GlobalXOffQUEUE2
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$PLACE"GLOBAL_X_Off_QUEUE_2" $VALUE)  
+
+#GlobalXOffQUEUE3
+VALUE=0 
+tmp=$(redis-cli -h $listen  SET $id$PLACE"GLOBAL_X_Off_QUEUE_3" $VALUE)  
   
 #TRAP_IP
 VALUE="10.100."$id".1"  

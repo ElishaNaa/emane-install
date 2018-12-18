@@ -35,6 +35,15 @@
 
 #include "emane/types.h"
 
+#include <sstream>
+#include <vector>
+#include <map>
+
+#include "emane/models/tdma/queuemanager.h"
+#include "basemodelimpl.h"
+
+#include "queuemappingsingalton.h"
+
 namespace EMANE
 {
   namespace Models
@@ -49,26 +58,46 @@ namespace EMANE
        *
        * @return %Queue index
        */
-      inline
-      std::uint8_t priorityToQueue(Priority priority)
+	  template<typename Out>
+	  inline void split(const std::string &s, char delim, Out result) {
+		  std::stringstream ss(s);
+		  std::string item;
+		  while (std::getline(ss, item, delim)) {
+			  *(result++) = item;
+		  }
+	  }
+
+	  inline std::vector<std::string> split(const std::string &s, char delim) {
+		  std::vector<std::string> elems;
+		  split(s, delim, std::back_inserter(elems));
+		  return elems;
+	  }
+	  
+	  inline std::uint8_t priorityToQueue(Priority priority)
       {
-        std::uint8_t u8Queue{0}; // default
+		  std::uint8_t u8Queue{0}; // default
+		  std::map<std::uint8_t, std::string> queueMapping_ = queuemappingsingalton::instance()->getQueueMapping();
 
-        if(priority >= 8 && priority <= 23)
-          {
-            u8Queue = 1;
-          }
-        else if(priority >= 32 && priority <= 47)
-          {
-            u8Queue = 2;
-          }
-        else if(priority >= 48 && priority <= 63)
-          {
-            u8Queue = 3;
-          }
+		  for (std::map<std::uint8_t, std::string>::iterator it = queueMapping_.begin(); it != queueMapping_.end(); ++it)
+		  {
+			  std::vector<std::string> x;
+			  std::vector<std::string> xx = split(it->second, ',');
+			  for (auto const& value : xx)
+			  {
+				  x = split(value, '-');
+				  const int numA = stoi(x.front());
+				  const int numB = stoi(x.back());
+			
+				  if (priority >= numA && priority <= numB)
+				  {
+					  u8Queue = it->first;
+					  break;
+				  }
+			  }
+		  }
 
-        return u8Queue;
-      }
+		  return u8Queue;
+	  }
     }
   }
 }

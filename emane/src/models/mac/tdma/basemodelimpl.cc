@@ -53,6 +53,8 @@
 #include "basemodelmessage.h"
 #include "priority.h"
 
+#include "queuemappingsingalton.h"
+
 namespace
 {
   const std::string QUEUEMANAGER_PREFIX{"queue."};
@@ -61,29 +63,29 @@ namespace
 
 EMANE::Models::TDMA::BaseModel::Implementation::
 Implementation(NEMId id,
-               PlatformServiceProvider *pPlatformServiceProvider,
-               RadioServiceProvider * pRadioServiceProvider,
-               Scheduler * pScheduler,
-               QueueManager * pQueueManager,
-               MACLayerImplementor * pRadioModel):
-  MACLayerImplementor{id,pPlatformServiceProvider,pRadioServiceProvider},
-  pScheduler_{pScheduler},
-  pQueueManager_{pQueueManager},
-  pRadioModel_{pRadioModel},
-  bFlowControlEnable_{},
-  u16FlowControlTokens_{},
-  sPCRCurveURI_{},
-  transmitTimedEventId_{},
-  nextMultiFrameTime_{},
-  txSlotInfos_{},
-  slotDuration_{},
-  slotOverhead_{},
-  u64SequenceNumber_{},
-  frequencies_{},
-  u64BandwidthHz_{},
-  packetStatusPublisher_{},
-  neighborMetricManager_(id), //dlep
-  queueMetricManager_(id), //dlep
+	PlatformServiceProvider *pPlatformServiceProvider,
+	RadioServiceProvider * pRadioServiceProvider,
+	Scheduler * pScheduler,
+	QueueManager * pQueueManager,
+	MACLayerImplementor * pRadioModel) :
+	MACLayerImplementor{ id,pPlatformServiceProvider,pRadioServiceProvider },
+	pScheduler_{ pScheduler },
+	pQueueManager_{ pQueueManager },
+	pRadioModel_{ pRadioModel },
+	bFlowControlEnable_{},
+	u16FlowControlTokens_{},
+	sPCRCurveURI_{},
+	transmitTimedEventId_{},
+	nextMultiFrameTime_{},
+	txSlotInfos_{},
+	slotDuration_{},
+	slotOverhead_{},
+	u64SequenceNumber_{},
+	frequencies_{},
+	u64BandwidthHz_{},
+	packetStatusPublisher_{},
+	neighborMetricManager_(id), //dlep
+	queueMetricManager_(id), //dlep
   radioMetricTimedEventId_{},
   receiveManager_{id,
       pRadioModel,
@@ -93,7 +95,8 @@ Implementation(NEMId id,
       &packetStatusPublisher_,
       &neighborMetricManager_},
   flowControlManager_{*pRadioModel},
-  u64ScheduleIndex_{}{}
+  u64ScheduleIndex_{}
+{}
 
 
 EMANE::Models::TDMA::BaseModel::Implementation::~Implementation()
@@ -183,6 +186,26 @@ EMANE::Models::TDMA::BaseModel::Implementation::initialize(Registrar & registrar
                                         {false},
                                         "Defines if radio metrics will be reported up via the Radio to Router Interface"
                                         " (R2RI).");
+
+  configRegistrar.registerNonNumeric<std::string>("dscpqueue0",
+	  ConfigurationProperties::REQUIRED,
+	  { "0-7,24-31" },
+	  "Defines dscp of queue 0");
+
+  configRegistrar.registerNonNumeric<std::string>("dscpqueue1",
+	  ConfigurationProperties::REQUIRED,
+	  { "8-23" },
+	  "Defines dscp of queue 1");
+
+  configRegistrar.registerNonNumeric<std::string>("dscpqueue2",
+	  ConfigurationProperties::REQUIRED,
+	  { "32-47" },
+	  "Defines dscp of queue 2");
+
+  configRegistrar.registerNonNumeric<std::string>("dscpqueue3",
+	  ConfigurationProperties::REQUIRED,
+	  { "48-63" },
+	  "Defines dscp of queue 3");
 
   auto & statisticRegistrar = registrar.statisticRegistrar();
 
@@ -340,6 +363,58 @@ EMANE::Models::TDMA::BaseModel::Implementation::configure(const ConfigurationUpd
                                   item.first.c_str(),
                                   std::chrono::duration_cast<DoubleSeconds>(neighborMetricUpdateInterval_).count());
         }
+	  else if (item.first == "dscpqueue0")
+	  {
+	  queueMapping_[0] = item.second[0].asString();
+
+	  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+		  INFO_LEVEL,
+		  "MACI %03hu TDMA::BaseModel::%s: %s = %s",
+		  id_,
+		  __func__,
+		  item.first.c_str(),
+		  queueMapping_[0].c_str());
+
+	  }
+	  else if (item.first == "dscpqueue1")
+	  {
+	  queueMapping_[1] = item.second[0].asString();
+
+	  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+		  INFO_LEVEL,
+		  "MACI %03hu TDMA::BaseModel::%s: %s = %s",
+		  id_,
+		  __func__,
+		  item.first.c_str(),
+		  queueMapping_[1].c_str());
+
+	  }
+	  else if (item.first == "dscpqueue2")
+	  {
+	  queueMapping_[2] = item.second[0].asString();
+
+	  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+		  INFO_LEVEL,
+		  "MACI %03hu TDMA::BaseModel::%s: %s = %s",
+		  id_,
+		  __func__,
+		  item.first.c_str(),
+		  queueMapping_[2].c_str());
+
+	  }
+	  else if (item.first == "dscpqueue3")
+	  {
+	  queueMapping_[3] = item.second[0].asString();
+
+	  LOGGER_STANDARD_LOGGING(pPlatformService_->logService(),
+		  INFO_LEVEL,
+		  "MACI %03hu TDMA::BaseModel::%s: %s = %s",
+		  id_,
+		  __func__,
+		  item.first.c_str(),
+		  queueMapping_[3].c_str());
+
+	  }
       else
         {
           if(!item.first.compare(0,SCHEDULER_PREFIX.size(),SCHEDULER_PREFIX))
@@ -362,6 +437,8 @@ EMANE::Models::TDMA::BaseModel::Implementation::configure(const ConfigurationUpd
   pQueueManager_->configure(queueManagerConfiguration);
 
   pScheduler_->configure(schedulerConfiguration);
+
+  queuemappingsingalton::instance()->setQueueMapping(queueMapping_);
 }
 
 void

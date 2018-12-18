@@ -33,6 +33,11 @@
 #include "emane/models/tdma/basemodel.h"
 #include "basemodelimpl.h"
 
+#include "queuemappingsingalton.h"
+
+/* Null, because instance will be initialized on demand. */
+EMANE::Models::TDMA::queuemappingsingalton* EMANE::Models::TDMA::queuemappingsingalton::s_instance = 0;
+
 EMANE::Models::TDMA::BaseModel::BaseModel(NEMId id,
                                           PlatformServiceProvider * pPlatformServiceProvider,
                                           RadioServiceProvider * pRadioServiceProvider,

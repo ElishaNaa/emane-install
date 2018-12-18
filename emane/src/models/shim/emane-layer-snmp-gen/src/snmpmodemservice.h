@@ -57,8 +57,25 @@ namespace EMANE
 		std::uint64_t start_timer;
 		std::uint64_t timeToUpdateRedis_; // interval to update redis 
 		INETAddr addressRedis_;
-		double upperBound_; 
-		double lowerBound_; 
+
+		double upperBound_queue_0_;
+		double lowerBound_queue_0_;
+
+		double upperBound_queue_1_;
+		double lowerBound_queue_1_;
+
+		double upperBound_queue_2_;
+		double lowerBound_queue_2_;
+
+		double upperBound_queue_3_;
+		double lowerBound_queue_3_;
+
+		std::uint64_t severity_;
+		std::uint64_t radio_tx_overload_on_;
+		std::uint64_t radio_tx_overload_off_;
+		std::uint64_t time_stamp; // for trap
+		std::uint64_t global_counter_for_trap_sent;
+
 		struct NeighborInfo {
 			std::uint64_t           lastTxDataRate_;
 			std::uint64_t           lastRxDataRate_;
@@ -83,6 +100,8 @@ namespace EMANE
 		void UpdateRedis();
 
 		void deleteOidFromList(const char * key);
+
+		void send_trap(std::uint64_t queueid, double proportion, double upperBound, double lowerBound);
 
 		void handleMetricMessage_i(const Controls::R2RINeighborMetricControlMessage * pMessage);
 
